@@ -22,7 +22,7 @@ $complemento = $_POST['complemento'];
 
 $dbh = Conexao::getConexao();
 
-$query = "INSERT INTO techjobsdb.usuario (nome, razao_social, email, cnpj, senha, ddi, 
+$query = "INSERT INTO usuario (nome, razao_social, email, cnpj, senha, ddi, 
             ddd, telefone, cep, cidade, logradouro, bairro, rua, complemento) 
             VALUES (:nome, :razao_social, :email, :cnpj, :senha, :ddi, 
             :ddd, :telefone, :cep, :cidade, :logradouro, :bairro, :rua, :complemento);";

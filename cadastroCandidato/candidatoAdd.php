@@ -10,7 +10,7 @@ $email = $_POST['email'];
 
 $dbh = Conexao::getConexao();
 
-$query = "INSERT INTO  techjobsdb.usuario (razao_social, email) 
+$query = "INSERT INTO usuario (razao_social, email) 
             VALUES ( :razao_social, :email  );";
 
 

@@ -38,9 +38,9 @@
       <!-- Abre formulário -->
       <form action="candidatoAdd.php" method="POST">
         <div class="card-login-field1">
-            <label for="nome"></label>
+
           <input type="text" name="nome" id="nome" placeholder="Insira seu nome">
-            <label for="email"></label>
+
           <input type="email" name="email" id="email" placeholder="Insira seu e-mail">
         </div>
 
