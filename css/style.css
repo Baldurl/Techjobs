@@ -119,7 +119,7 @@ body {
 }
 .main-header .btn-outline:hover {
     background: #333333;
-    opacity: 0.8ms;
+    opacity: 0.8;
 }
 
 .main-header .btn-gordo a {
@@ -127,7 +127,7 @@ body {
 }
 .main-header .btn-gordo:hover {
     background: #333333;
-    opacity: 0.8ms;
+    opacity: 0.8;
 }
 
 
@@ -188,7 +188,7 @@ body {
 }
 .main-cta .main-cta-banner .saiba-mais:hover {
     background: #333333;
-    opacity: 0.8ms;
+    opacity: 0.8;
 }
 
 
