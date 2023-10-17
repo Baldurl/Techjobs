@@ -10,10 +10,10 @@
           integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous"/>
     <link href="https://unpkg.com/progressive-image@1.2.0/dist/index.css" rel="stylesheet" type="text/css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <!--Título do Browser-->
 
-    <title>TECH JOBS</title>
+    <title>Home</title>
 </head>
 
 <body id="home">
@@ -24,7 +24,7 @@
     <nav class="main-header-content">
 
         <div class="logo">
-            <a href="index.html">TechJobs</a>
+            <a href="../index.html">TechJobs</a>
         </div>
         <ul>
 
@@ -33,8 +33,7 @@
             <li><a href="#news" title="Noticias">ÁREA T.I</a></li>
         </ul>
         <span class="btn">
-        <button class="btn-outline"><a href="login/index.php">Login</a></button>
-        <button class="btn-gordo"><a href="cadastro/cadastro.php">Cadastrar</a></button>
+        <button class="btn-outline"><a href="login/index.php">Logoff</a></button>
         </span>
     </nav>
 
@@ -47,7 +46,9 @@
 
         <article class="main-cta-banner">
             <div class="main-cta-banner-spacer">
-                <p>Aqui conectamos provedores de emprego e candidatos a trabalho</p>
+                <p>Bem vindo ao techjobs</p>
+                <p>Á procura de um emprego? aqui conectamos provedores de emprego e candidatos a trabalho de todas as
+                    regiões de Brasília</p>
                 <h1>Não perca tempo e aproveite</h1>
                 <div class="seta">
                     <i class="fa fa-arrow-down"></i>
@@ -510,7 +511,7 @@
                         games.
                     </p>
                     <p><a href="https://www.adrenaline.com.br/" target="_blank" rel="external">Ver Mais <i
-                            class="fa fa-arrow-right"></i></a></p>
+                                    class="fa fa-arrow-right"></i></a></p>
                 </div>
             </div>
             <div class="clear"></div>
@@ -571,7 +572,7 @@
         </div>
         <div class="w50 medias-footer2">
             <a href="https://www.instagram.com/Tosaka_61" title="#" target="_blank"><i
-                    class="fa fa-instagram"></i></a>
+                        class="fa fa-instagram"></i></a>
         </div>
         <div class="clear"></div>
     </footer>

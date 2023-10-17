@@ -1,6 +1,6 @@
 <?php
 header('Content-Type text/html; charset=utf-8;');
-require_once '../src/conexao.php';
+require_once '../../src/conexao.php';
 $nome = $_POST['nome'];
 $razao_social = $_POST['razao_social'];
 /* $cpf = $_POST['cpf']; */
@@ -17,6 +17,7 @@ $logradouro = $_POST['logradouro'];
 $bairro = $_POST['bairro'];
 $rua = $_POST['rua'];
 $complemento = $_POST['complemento'];
+$perfil = 'Empresa';
 
 
 
@@ -43,16 +44,29 @@ $stmt->bindParam(':logradouro', $logradouro);
 $stmt->bindParam(':bairro', $bairro);
 $stmt->bindParam(':rua', $rua);
 $stmt->bindParam(':complemento', $complemento);
-
 $result = $stmt->execute();
 
 
+
+
+$query = "INSERT INTO perfil(id, nome) 
+            VALUES(:id, :nome);";
+$stmt = $dbh->prepare($query);
+$stmt->bindParam(':id', $id);
+$stmt->bindParam(':nome', $perfil);
+$result = $stmt->execute();
+
+
+
+
+
 if ($result) {
-    echo 'Usuário criado com sucesso';
+    echo 'Empresa cadastrada com sucesso';
 } else {
-    echo 'Erro ao criar usuário';
+    echo 'Erro ao cadastrar empresa';
 }
 
 
+
 $dbh = null;
-echo '<p><a href="../index.html">Voltar</a></p>';
+echo '<p><a href="../../index.html">Voltar</a></p>';

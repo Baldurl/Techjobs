@@ -8,15 +8,29 @@
      initial-scale=1, shrink-to-fit=no">
 
   <!--Estilo CSS -->
-  <link rel="stylesheet" href="../css/login.css">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../../css/login.css">
+  <link rel="stylesheet" href="../../css/style.css">
   <title>TECH JOBS - Cadastro empresa</title>
 </head>
 
 <body>
 
-  <?php include_once '../css/navs/navHeader.html'; ?>
-
+<header class="main-header">
+    <nav class="main-header-content">
+        <div class="logo">
+            <a href="../index.html">TechJobs</a>
+        </div>
+        <ul>
+            <li><a href="index.html" title="Home">HOME</a></li>
+            <li><a href="#expecialista" title="expecialistas">EQUIPE</a></li>
+            <li><a href="#news" title="Noticias">ÁREA T.I</a></li>
+        </ul>
+        <span class="btn">
+        <button class="btn-outline"><a href="login/index.php">Login</a></button>
+        <button class="btn-gordo"><a href="cadastroEmpresa/cadastroEmpresa.php">Cadastrar</a></button>
+        </span>
+    </nav>
+</header>
 
 
   <main class="main-blog">
@@ -63,12 +77,12 @@
       <!-- Fecha formulário -->
 
 
-      <a class="a1" href="#">
+      <a class="a1" href="../../login/recuperarSenha.php">
         Recuperar senha
       </a>
       <br>
-      <a class="a2" href="../cadastroCandidato/cadastroCandidato.php">
-        Você é um candidato? Faça aqui o seu cadastro!
+      <a class="a2" href="../cadastro.php">
+        Está a procura de emprego? Faça o seu cadastro!
       </a>
 
     </section>
@@ -78,7 +92,31 @@
   </main>
 
 
-  <?php include_once '../css/navs/navFooter.html'; ?>
+<footer class="footer-main">
+    <ul>
+        <li>
+            <h2>Nossas páginas</h2>
+        </li>
+        <li>
+            <a href="../../index.html">
+                <h3>Home</h3>
+            </a>
+        </li>
+        <li>
+            <a href="../../index.html">
+                <h3>Sobre</h3>
+            </a>
+        </li>
+        <li>
+            <a href="../../index.html">
+                <h3>Contato</h3>
+            </a>
+        </li>
+    </ul>
+
+
+
+</footer>
 
 
 

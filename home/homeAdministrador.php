@@ -34,7 +34,7 @@
         </ul>
         <span class="btn">
         <button class="btn-outline"><a href="login/index.php">Login</a></button>
-        <button class="btn-gordo"><a href="cadastro/cadastro.php">Cadastrar</a></button>
+        <button class="btn-gordo"><a href="cadastroEmpresa/cadastroEmpresa.php">Cadastrar</a></button>
         </span>
     </nav>
 
@@ -510,7 +510,7 @@
                         games.
                     </p>
                     <p><a href="https://www.adrenaline.com.br/" target="_blank" rel="external">Ver Mais <i
-                            class="fa fa-arrow-right"></i></a></p>
+                                class="fa fa-arrow-right"></i></a></p>
                 </div>
             </div>
             <div class="clear"></div>
