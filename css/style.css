@@ -746,30 +746,6 @@ section.noticias {
 }
 
 
-/*    .w100,
-    .w25,
-    .w50 {
-        width: 100%
-    }*/
-/*
-    section.projectos .box {
-        padding: 0 40px
-    }
-
-    .box-single {
-        margin: 40px 0
-    }
-
-    .box-single-especialista {
-        width: 100%;
-        margin: 20px 0
-    }
-
-    .box-especialista .box-single-especialista .box-single-especialista-content p {
-        width: 90%;
-        margin: 0 auto
-    }
-}*/
 @media (max-width: 1005px) {
     .banner h1 {
         font-size: 4rem

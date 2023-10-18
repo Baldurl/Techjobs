@@ -63,16 +63,6 @@ body * {
 
 }
 
-/* .right-login {
-  width: 50%;
-  justify-content: none;
-  align-items: center;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -25%);
-}*/
-
 .card-login {
     width: 1300px;
     background: #ffffff;
@@ -95,6 +85,59 @@ body * {
 
 
 }
+
+
+/*.card-login-field1 {
+    width: 1300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+
+}
+
+.card-login-field1 input {
+    flex-basis: 60%;
+    margin: 20px 0;
+    padding: 20px;
+
+
+}
+
+.card-login-field2 {
+    width: 1300px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly
+}
+
+.card-login-field2 input {
+    flex-basis: 20%;
+    margin: 20px 0;
+    padding: 20px;
+
+
+}
+
+
+
+.card-login-field3 {
+    width: 1300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.card-login-field3 input {
+    flex-basis: 28%;
+    margin: 20px 0;
+    padding: 20px;
+
+
+
+}*/
+
 
 .card-login-content {
     display: flex;
@@ -177,12 +220,14 @@ body * {
     justify-content: space-around;
     flex-wrap: wrap;
     text-align: center;
+
 }
 
 .footer-main-content {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin: 150px 0;
 }
 
 .footer-main-content ul {
