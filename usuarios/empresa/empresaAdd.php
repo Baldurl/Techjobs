@@ -17,7 +17,7 @@ $logradouro = $_POST['logradouro'];
 $bairro = $_POST['bairro'];
 $rua = $_POST['rua'];
 $complemento = $_POST['complemento'];
-$perfil = 'Empresa';
+$perfil = 'empresa';
 
 
 
@@ -61,7 +61,7 @@ $result = $stmt->execute();
 
 
 if ($result) {
-    echo 'Empresa cadastrada com sucesso';
+    echo 'empresa cadastrada com sucesso';
 } else {
     echo 'Erro ao cadastrar empresa';
 }

@@ -6,7 +6,7 @@ $nome = $_POST['nome'];
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 $id = NULL;
-$perfil = 'Candidato';
+$perfil = 'candidato';
 
 
 $dbh = Conexao::getConexao();
@@ -34,7 +34,7 @@ $result = $stmt->execute();
 
 
 if ($result) {
-    echo 'Candidato cadastrado com sucesso. </br>';
+    echo 'candidato cadastrado com sucesso. </br>';
     echo '<a href="../../login/index.php">Fazer login</a></br>';
 } else {
     echo 'Erro ao cadastrar perfil';

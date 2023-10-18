@@ -7,10 +7,10 @@ $_SESSION['id'];*/
 $dbh = Conexao::getConexao();
 $senha = $_POST['senha'];
 $senha2 = $_POST['senha2'];
-$id = 37;
+$id = 1;
 
 
-$query = "UPDATE usuario SET senha= :senha WHERE id = 37;";
+$query = "UPDATE usuario SET senha= :senha WHERE id = 1;";
 
 $stmt = $dbh->prepare($query);
 $stmt->bindParam(':senha', $senha);
@@ -45,7 +45,7 @@ $dbh = null;
         </ul>
         <span class="btn">
         <button class="btn-outline"><a href="index.php">Login</a></button>
-        <button class="btn-gordo"><a href="../cadastro/cadastroEmpresa/cadastroEmpresa.php">Cadastrar</a></button>
+        <button class="btn-gordo"><a href="../usuarios/empresa/cadastroEmpresa.php">Cadastrar</a></button>
         </span>
     </nav>
 </header>

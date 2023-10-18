@@ -25,9 +25,9 @@
             <a href="../index.html">TechJobs</a>
         </div>
         <ul>
-            <li><a href="index.html" title="Home">HOME</a></li>
-            <li><a href="#expecialista" title="expecialistas">EQUIPE</a></li>
-            <li><a href="#news" title="Noticias">ÁREA T.I</a></li>
+            <li><a href="../index.html" title="Home">HOME</a></li>
+            <li><a href="../index.html" title="Expecialistas">EQUIPE</a></li>
+            <li><a href="../index.html" title="Noticias">ÁREA T.I</a></li>
         </ul>
         <span class="btn">
         <button class="btn-outline"><a href="../login/index.php">Login</a></button>
@@ -44,7 +44,7 @@
 
                 <div class="btn-cadastro">
                     <button type="submit" class="btn btn-primary btn-lg">
-                        <a href="cadastroCandidato/cadastroCandidato.php">Candidato</a></button>
+                        <a href="candidato/cadastroCandidato.php">Candidato</a></button>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum error est minus pariatur quae
                         quis
                         tempore temporibus vel! Architecto
@@ -55,7 +55,7 @@
             <div class="cadastro-content">
                 <div class="btn-cadastro">
                     <button type="submit" class="btn btn-primary btn-lg">
-                    <a href="cadastroEmpresa/cadastroEmpresa.php">Empresa</a></button>
+                    <a href="empresa/cadastroEmpresa.php">Empresa</a></button>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis cum dolor dolore ea
                         excepturi illo ipsam labore
                         laboriosam maxime necessitatibus nostrum, odio porro sed tenetur, ullam veritatis. Labore,
@@ -64,8 +64,6 @@
                 </div>
             </div>
         </div>
-
-
 </main>
 
 </body>

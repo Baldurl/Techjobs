@@ -73,7 +73,7 @@
         Já é cadastrado? Faça aqui o login!
       </a>
       <br>
-      <a class="a2" href="../cadastroEmpresa/cadastroEmpresa.php">
+      <a class="a2" href="../empresa/cadastroEmpresa.php">
         Está contratando? Faça o seu cadastro!
       </a>
 

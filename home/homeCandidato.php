@@ -33,7 +33,7 @@
             <li><a href="#news" title="Noticias">ÁREA T.I</a></li>
         </ul>
         <span class="btn">
-        <button class="btn-outline"><a href="login/index.php">Logoff</a></button>
+        <button class="btn-outline"><a href="../index.html">Logoff</a></button>
         </span>
     </nav>
 

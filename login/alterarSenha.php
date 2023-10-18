@@ -1,10 +1,3 @@
-<?php
-
-
-
-?>
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
     <title>Alterar senha</title>
 </head>
 <body>
@@ -35,23 +32,32 @@
 </header>
 
 
-    <main class="main-blog">
+<main class="main-blog">
     <div class="card-login">
         <form action="senhaUpdate.php" method="post">
 
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card-login-content"
+                        <div class="card-body font-weight-bold">
+                            <div style="color: #333333; padding: 5px 0 ; font-size: 1.2rem"
+                                 class="form-group card-login-content-input">
+                                <label for="senha">Senha</label>
+                                <input name="senha" type="password" class="form-control" id="senha"
+                                       placeholder="********">
 
-            <div class="card-login-field1">
-
-                <input type="password" name="senha" id="senha" placeholder="Nova senha ">
-
-
-                <input type="password" name="senha2" id="senha2" placeholder="Confirme sua senha">
+                                <label for="senha2">Confirmar senha</label>
+                                <input name="senha2" type="password" class="form-control" id="senha2"
+                                       placeholder="********">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-login">Alterar senha</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <br>
-            <button type="submit" value="Confirmar" class="btn-login">Confirmar</button>
         </form>
     </div>
-    </main>
+</main>
 </body>
 </html>

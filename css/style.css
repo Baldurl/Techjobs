@@ -24,7 +24,6 @@ body {
 }
 
 
-
 .main-header {
     width: 100%;
     background: #333333;
@@ -64,7 +63,7 @@ body {
     flex-basis: 20%;
     justify-content: space-evenly;
     padding: 10px;
-    margin: 10px ;
+    margin: 10px;
 
 }
 
@@ -117,6 +116,7 @@ body {
 .main-header .btn-outline a {
     color: #ffffff;
 }
+
 .main-header .btn-outline:hover {
     background: #333333;
     opacity: 0.8;
@@ -125,6 +125,7 @@ body {
 .main-header .btn-gordo a {
     color: #ffffff;
 }
+
 .main-header .btn-gordo:hover {
     background: #333333;
     opacity: 0.8;
@@ -133,7 +134,7 @@ body {
 
 .main-cta {
     width: 100%;
-    background-image: url(../css/img/1235.jpg);
+    background-image: url(../css/img/blue2.jpg);
     background-color: #333333;
     background-position: center center;
     background-size: cover;
@@ -186,11 +187,11 @@ body {
     border-radius: 20px;
     margin-right: 10px;
 }
+
 .main-cta .main-cta-banner .saiba-mais:hover {
     background: #333333;
     opacity: 0.8;
 }
-
 
 
 .seta i {
@@ -721,201 +722,136 @@ section.noticias {
 
 }
 
-.footer2 .container {
-    display: flex;
-    align-items: center
+
+.box-icones {
+    flex-wrap: wrap
 }
 
-.footer2 .container .w50 a {
-    color: #fff;
-    margin: 0 3px;
-    transition: .5s
+.box-single-noticias {
+    width: 100%;
+    margin-top: 30px
 }
 
-.footer2 .container .w50 p {
-    text-align: left
+.box-single-noticias-content h2 {
+    font-size: 2.5rem
 }
 
-.footer2 .container .w50 i {
-    cursor: pointer;
-    transition: .5s;
-    margin: 0 4px
+
+.menu-desktop {
+    display: none
 }
 
-.footer2 .container .w50 a:hover {
-    color: #000000
+.banner {
+    text-align: center
 }
 
-.footer2 .container .w50 i:hover {
-    color: #000000
-}
 
-.medias-footer2 {
-    text-align: right;
-    font-size: 25px
-}
-
-@media (max-width: 890px) {
-    .footer2 .container {
-        display: block
-    }
-
-
-    .footer2 .container .w50 p {
-        text-align: center
-    }
-
-    .medias-footer2 {
-        text-align: center;
-        margin: 25px 0
-    }
-
-    .box-footer1 .box-single-footer1 {
-        width: 100%;
-        text-align: center
-    }
-
-    .box-footer1 .box-single-footer1 h2 {
-        padding: 0;
-        margin-top: 30px
-    }
-
-    .contacto-container {
-        padding: 10px
-    }
-
-    .box-icones {
-        flex-wrap: wrap
-    }
-
-    .box-single-noticias {
-        width: 100%;
-        margin-top: 30px
-    }
-
-    .box-single-noticias-content h2 {
-        font-size: 2.5rem
-    }
-
-
-    .menu-desktop {
-        display: none
-    }
-
-    .banner {
-        text-align: center
-    }
-
-
-    /*    .w100,
-        .w25,
-        .w50 {
-            width: 100%
-        }*/
-    /*
-        section.projectos .box {
-            padding: 0 40px
-        }
-
-        .box-single {
-            margin: 40px 0
-        }
-
-        .box-single-especialista {
-            width: 100%;
-            margin: 20px 0
-        }
-
-        .box-especialista .box-single-especialista .box-single-especialista-content p {
-            width: 90%;
-            margin: 0 auto
-        }
+/*    .w100,
+    .w25,
+    .w50 {
+        width: 100%
     }*/
-    @media (max-width: 1005px) {
-        .banner h1 {
-            font-size: 4rem
-        }
+/*
+    section.projectos .box {
+        padding: 0 40px
     }
 
-    @media (max-width: 840px) {
-        .banner h1 {
-            font-size: 3rem
-        }
+    .box-single {
+        margin: 40px 0
     }
 
-    @media (max-width: 690px) {
-
-        .banner h1,
-        .titulo-projectos h1 {
-            font-size: 2rem
-        }
+    .box-single-especialista {
+        width: 100%;
+        margin: 20px 0
     }
 
-    @media (max-width: 540px) {
-        .btn-gordo {
-            margin-top: 20px
-        }
+    .box-especialista .box-single-especialista .box-single-especialista-content p {
+        width: 90%;
+        margin: 0 auto
+    }
+}*/
+@media (max-width: 1005px) {
+    .banner h1 {
+        font-size: 4rem
+    }
+}
 
-        .titulo-contacto {
-            font-size: 30px
-        }
+@media (max-width: 840px) {
+    .banner h1 {
+        font-size: 3rem
+    }
+}
 
-        div.titulo-projectos h1 {
-            font-size: 3rem
-        }
+@media (max-width: 690px) {
+
+    .banner h1,
+    .titulo-projectos h1 {
+        font-size: 2rem
+    }
+}
+
+@media (max-width: 540px) {
+    .btn-gordo {
+        margin-top: 20px
     }
 
-    @media (max-width: 420px) {
-        .titulo-contacto {
-            font-size: 27px
-        }
+    .titulo-contacto {
+        font-size: 30px
     }
 
-    @media (max-width: 330px) {
-        .medias-footer2 {
-            margin-top: 10px
-        }
+    div.titulo-projectos h1 {
+        font-size: 3rem
     }
+}
 
-
-
-    @media (max-width: 768px) {
-        .fixed {
-            padding-left: 20px;
-            position: fixed;
-            top: 0;
-            margin: 0 auto;
-            right: 0;
-            left: 0;
-            z-index: 1030
-        }
+@media (max-width: 420px) {
+    .titulo-contacto {
+        font-size: 27px
     }
+}
 
-    .show-scroll {
-        bottom: 5rem
+@media (max-width: 330px) {
+    .medias-footer2 {
+        margin-top: 10px
     }
+}
 
-    .scrollup {
-        border: 1px solid #000;
-        padding: 5px;
-        border-radius: 50%;
+
+@media (max-width: 768px) {
+    .fixed {
+        padding-left: 20px;
         position: fixed;
-        right: 1.9rem;
-        bottom: 5%;
-        transition: 1s
+        top: 0;
+        margin: 0 auto;
+        right: 0;
+        left: 0;
+        z-index: 1030
     }
+}
 
-    .scrollup:hover {
-        background-color: #000000;
-        color: #fff
-    }
+.show-scroll {
+    bottom: 5rem
+}
 
-    .scrollup__icon {
-        color: #000;
-        font-size: 24px;
-        transition: 4s
-    }
+.scrollup {
+    border: 1px solid #000;
+    padding: 5px;
+    border-radius: 50%;
+    position: fixed;
+    right: 1.9rem;
+    bottom: 5%;
+    transition: 1s
+}
 
+.scrollup:hover {
+    background-color: #000000;
+    color: #fff
+}
+
+.scrollup__icon {
+    color: #000;
+    font-size: 24px;
+    transition: 4s
 }
 
 
