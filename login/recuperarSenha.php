@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css"
+    <link rel="stylesheet" href="../assets/css/style.css"
 </head>
 
 <body>
@@ -15,7 +15,7 @@
     <nav style="padding: 30px 0"
          class="main-header-content">
         <div class="logo">
-            <a href="../index.html">TechJobs</a>
+            <a href="../index.php">TechJobs</a>
         </div>
     </nav>
 </header>

@@ -1,10 +1,12 @@
 <?php
+
+
 require_once '../src/conexao.php';
 /*session_start();
 $_SESSION['id'];*/
 
 # solicita a conexão com o banco de dados e guarda na váriavel dbh.
-$dbh = Conexao::getConexao();
+//$dbh = Conexao::getConexao();
 $senha = $_POST['senha'];
 $senha2 = $_POST['senha2'];
 $id = 1;
@@ -36,7 +38,7 @@ $dbh = null;
 <header class="main-header">
     <nav class="main-header-content">
         <div class="logo">
-            <a href="../index.html">TechJobs</a>
+            <a href="../index.php">TechJobs</a>
         </div>
         <ul>
             <li><a href="index.html" title="Home">HOME</a></li>
@@ -45,7 +47,7 @@ $dbh = null;
         </ul>
         <span class="btn">
         <button class="btn-outline"><a href="index.php">Login</a></button>
-        <button class="btn-gordo"><a href="../usuarios/empresa/cadastroEmpresa.php">Cadastrar</a></button>
+        <button class="btn-gordo"><a href="../usuarios/empresa/index.php">Cadastrar</a></button>
         </span>
     </nav>
 </header>

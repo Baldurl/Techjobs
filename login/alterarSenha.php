@@ -17,7 +17,7 @@
 <header class="main-header">
     <nav class="main-header-content">
         <div class="logo">
-            <a href="../index.html">TechJobs</a>
+            <a href="../index.php">TechJobs</a>
         </div>
         <ul>
             <li><a href="index.html" title="Home">HOME</a></li>

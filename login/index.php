@@ -1,6 +1,11 @@
+<?php
+ include_once __DIR__ . '/../layouts/header.php';
+ include_once __DIR__ . '/../layouts/footer.php';
+
+?>
+
 <!doctype html>
 <html lang="pt-br">
-
 
 <head>
 
@@ -16,28 +21,12 @@
           crossorigin="anonymous">
 
     <!--Estilo CSS -->
-    <link rel="stylesheet" href="../css/login.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <title>TECH JOBS</title>
 </head>
 
 <body>
-<header class="main-header">
-    <nav class="main-header-content">
-        <div class="logo">
-            <a href="../index.html">TechJobs</a>
-        </div>
-        <ul>
-            <li><a href="../index.html" title="Home">HOME</a></li>
-            <li><a href="../index.html" title="expecialistas">EQUIPE</a></li>
-            <li><a href="../index.html" title="Noticias">ÁREA T.I</a></li>
-        </ul>
-        <span class="btn">
-        <button class="btn-outline"><a href="login/index.php">Login</a></button>
-        <button class="btn-gordo"><a href="../usuarios/cadastro.php">Cadastrar</a></button>
-        </span>
-    </nav>
-</header>
 
 
 <main class="main-blog">
@@ -73,42 +62,13 @@
                     <button type="submit" class="btn btn-primary btn-lg btn-login">Login</button>
                 </div>
             </div>
+        </form>
     </div>
-    </form>
-    </div>
+
 
 </main>
 
-<section class="footer-main">
-    <div class="footer-main-content">
-        <ul>
-            <li>
-                <h2>Nossas páginas</h2>
-            </li>
-            <li>
-                <a href="../index.html">
-                    <h3>Home</h3>
-                </a>
-            </li>
-            <li>
-                <a href="../index.html">
-                    <h3>Sobre</h3>
-                </a>
-            </li>
-            <li>
-                <a href="../index.html">
-                    <h3>Contato</h3>
-                </a>
-            </li>
-        </ul>
-        <div/>
-</section>
 
-
-<footer>
-
-
-</footer>
 </body>
 
 </html>

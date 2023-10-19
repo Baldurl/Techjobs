@@ -1,4 +1,3 @@
-
 <?php
 
 require '../bibliotecas/phpmailer/Exception.php';
@@ -8,9 +7,9 @@ require '../bibliotecas/phpmailer/PHPMailer.php';
 require '../bibliotecas/phpmailer/POP3.php';
 require '../bibliotecas/phpmailer/SMTP.php';
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\PHPMailer;
 
 
 //print_r($_POST);
@@ -56,19 +55,15 @@ if (!$mensagem->mensagemValida()) {
     header('location:recuperarSenha.php?login=erro');
 }
 
-require_once '../src/conexao.php';
-$dbh = Conexao::getConexao();
-$email = $_POST['para'];
+require_once __DIR__ . '/../src/database/conexao.php';
+require_once __DIR__ . '/../src/dao/usuariodao.php';
 
-$query = "SELECT email FROM usuario WHERE email = :email";
-$stmt = $dbh->prepare($query);
-$stmt->bindParam(':email', $email);
-$stmt->execute();
-$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+$dao = new Usuariodao();
+$usuario = $dao->processarEnvioEmail('$email');
 
 
 if ($usuario) {
-    
+
 } else {
     echo 'O e-mail inserido não é válido';
     header('location:recuperarSenha.php?login=erro2');
@@ -130,7 +125,7 @@ try {
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
           crossorigin="anonymous">
-          <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 <div class="container">
@@ -148,7 +143,7 @@ try {
                         <p class="py-3 text-center"><?php echo $mensagem->status['descrição_status']; ?></p>
                         <img class="d-block mx-auto mb-2"
                              style="border-radius: 10px; margin-top: 20px;"
-                             src="../css/img/l-intro-1653068038.jpg"
+                             src="../assets/img/l-intro-1653068038.jpg"
                              width="300"
                              height="200"
                              alt="robot">
@@ -163,7 +158,7 @@ try {
                         <p class="py-3 text-center"><?php echo $mensagem->status['descrição_status']; ?></p>
                         <img class="d-block mx-auto mb-2"
                              style="border-radius: 10px; margin-top: 20px;"
-                             src="../css/img/ops.jpg"
+                             src="../assets/img/ops.jpg"
                              width="300"
                              height="200"
                              alt="robot">

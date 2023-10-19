@@ -1,8 +1,10 @@
 <?php
+
+
 require_once '../src/conexao.php';
 
 # solicita a conexão com o banco de dados e guarda na váriavel dbh.
-$dbh = Conexao::getConexao();
+//$dbh = Conexao::getConexao();
 
 # cria uma instrução SQL para selecionar todos os dados na tabela usuarios.
 $query = "SELECT * FROM escolabd.usuarios;";

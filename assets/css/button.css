@@ -1,0 +1,47 @@
+
+.section__btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    width: 120px;
+    height: 35px;
+    background-color: rgb(87, 87, 207);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 3px;
+}
+
+.btnalterar {
+    border: none;
+    width: 100px;
+    padding: 5px 0px;
+    background-color: rgb(1, 165, 42);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: .8rem;
+    font-weight: 600;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.btnexcluir {
+    border: none;
+    width: 100px;
+    padding: 5px 0px;
+    background-color: rgb(182, 51, 46);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: .8rem;
+    font-weight: 600;
+    border-radius: 3px;
+    display: inline-block;
+}

@@ -1,0 +1,81 @@
+.main-blog {
+    max-width: 1300px;
+}
+
+
+.main-blog-container {
+    align-items: center;
+    margin: 0 auto;
+    width: 80%;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px -12px rgb(174, 164, 164);
+    padding: 20px 0;
+    margin: 20px auto;
+
+}
+
+
+.cadastro .cadastro-content {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 20px 0;
+    margin: 70px 10%;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 40px -12px rgb(174, 164, 164);
+
+
+}
+
+.cadastro .cadastro-content .btn-cadastro {
+    background-color: #ffffff;
+    margin: 15px;
+
+
+}
+
+.cadastro .cadastro-content:hover {
+    opacity: 0.9;
+    transition-delay: 0.9ms;
+
+}
+
+.cadastro .cadastro-content p {
+    padding: 15px 23%;
+    align-items: center;
+    color: #333333;
+
+}
+
+
+.cadastro .cadastro-content button {
+
+    width: 60%;
+    padding: 20px 0;
+    margin: 20px 20%;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    background-color: coral;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 10px 40px -12px rgb(174, 164, 164);
+
+}
+
+
+.cadastro .cadastro-content button:hover {
+    opacity: 0.9;
+    transition-delay: 0.9ms;
+
+}
