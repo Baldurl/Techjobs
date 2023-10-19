@@ -27,8 +27,8 @@
             <li><a href="#news" title="Noticias">ÁREA T.I</a></li>
         </ul>
         <div class="main-header-content-btn">
-            <button><a class="btn-outline" href="/login/index.php">Login</a></button>
-            <button><a class="btn-outline" href="/usuarios/cadastro.php">Cadastre-se</a></button>
+            <button><a class="btn-outline" href="login/index.php">Login</a></button>
+            <button><a class="btn-outline" href="usuarios/cadastro.php">Cadastre-se</a></button>
         </div>
     </nav>
 </header>
