@@ -8,8 +8,8 @@
      initial-scale=1, shrink-to-fit=no">
 
   <!--Estilo CSS -->
-  <link rel="stylesheet" href="../../css/login.css">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../..//assets/css/login.css">
+  <link rel="stylesheet" href="../../assets/css/style.css">
   <title>TECH JOBS - Cadastro empresa</title>
 </head>
 
@@ -18,7 +18,7 @@
 <header class="main-header">
     <nav class="main-header-content">
         <div class="logo">
-            <a href="../index.html">TechJobs</a>
+            <a href="../../index.php">TechJobs</a>
         </div>
         <ul>
             <li><a href="index.html" title="Home">HOME</a></li>
@@ -26,8 +26,8 @@
             <li><a href="#news" title="Noticias">ÁREA T.I</a></li>
         </ul>
         <span class="btn">
-        <button class="btn-outline"><a href="login/index.php">Login</a></button>
-        <button class="btn-gordo"><a href="cadastroEmpresa/cadastroEmpresa.php">Cadastrar</a></button>
+        <button class="btn-outline"><a href="../../login/login.php">Login</a></button>
+        <button class="btn-gordo"><a href="../cadastro.php">Cadastrar</a></button>
         </span>
     </nav>
 </header>

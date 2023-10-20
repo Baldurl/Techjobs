@@ -11,6 +11,7 @@
     <link href="https://unpkg.com/progressive-image@1.2.0/dist/index.css" rel="stylesheet" type="text/css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <!--Título do Browser-->
 
     <title>TECH JOBS</title>
@@ -27,7 +28,7 @@
             <li><a href="#news" title="Noticias">ÁREA T.I</a></li>
         </ul>
         <div class="main-header-content-btn">
-            <button><a class="btn-outline" href="login/index.php">Login</a></button>
+            <button><a class="btn-outline" href="login/login.php">Login</a></button>
             <button><a class="btn-outline" href="usuarios/cadastro.php">Cadastre-se</a></button>
         </div>
     </nav>
@@ -216,140 +217,138 @@
 </article>
 
 <section class="main-assinatura">
-    <div class="main-assinatura-spacer"></div>
-    <img src="assets/img/undraw_Reading_time_re_phf7.png" width="800px" height="600px" alt="">
-<
-    <div class="assinatura-boxes">
-        <div class="assinatura-boxe-content">
 
-            <div class="div-border">
-                <div class="progressive">
-                    <img data-src="img/20px/procedimento.jpg" class="preview lazy aos-animate"
-                         src="img/20px/" alt="Nossas câmeras com excelentes qualidades" title="Nossas câmeras com excelentes
-                            qualidades">
-                </div>
-                <div class="box-single-content">
-                    <h1><a href="">Turma G<br>Mão na Massa</a></h1>
-                    <p>
-                        Nasce da idéia de tornar o aprendizado em relação ao que é exigido pelo setor, mais
-                        fácil
-                        intuitivo e Dinâmico. Uma vez que são muitos protocolos e procedimentos para
-                        absorver,
-                        as
-                        vezes em pouco tempo. Esse trabalho serve como base para tirar duvidas e aprender.
-                    </p>
-                </div>
-            </div>
+    <article class="main-assinatura-content">
+        <div class="main-assinatura-spacer"></div>
+        <img src="assets/img/undraw_Reading_time_re_phf7.png" width="800px" height="600px" alt="">
 
-            <div class="div-border">
-                <div class="progressive">
-                    <img data-src="img/20px/procedimento.jpg" class="preview lazy aos-animate"
-                         src="img/20px/" alt="Nossas câmeras com excelentes qualidades" title="Nossas câmeras com excelentes
-                            qualidades">
-                </div>
-                <div class="box-single-content">
-                    <h1><a href="">Turma G<br>Mão na Massa</a></h1>
-                    <p>
-                        Nasce da idéia de tornar o aprendizado em relação ao que é exigido pelo setor, mais
-                        fácil
-                        intuitivo e Dinâmico. Uma vez que são muitos protocolos e procedimentos para
-                        absorver,
-                        as
-                        vezes em pouco tempo. Esse trabalho serve como base para tirar duvidas e aprender.
-                    </p>
-                </div>
-            </div>
+        <div class="assinatura-boxes">
+            <div class="assinatura-box-content">
 
-            <div class="div-border">
-                <div class="progressive">
-                    <img data-src="img/20px/procedimento.jpg" class="preview lazy aos-animate"
-                         src="img/20px/" alt="Nossas câmeras com excelentes qualidades" title="Nossas câmeras com excelentes
+                <div class="div-border">
+                    <div class="progressive">
+                        <img data-src="img/20px/procedimento.jpg" class="preview lazy aos-animate"
+                             src="img/20px/" alt="Nossas câmeras com excelentes qualidades" title="Nossas câmeras com excelentes
                             qualidades">
+                    </div>
+                    <div class="box-single-content">
+                        <h1><a href="">Turma G<br>Mão na Massa</a></h1>
+                        <p>
+                            Nasce da idéia de tornar o aprendizado em relação ao que é exigido pelo setor, mais
+                            fácil
+                            intuitivo e Dinâmico.
+
+                        </p>
+                    </div>
                 </div>
-                <div class="box-single-content">
-                    <h1><a href="">Turma G<br>Mão na Massa</a></h1>
-                    <p>
-                        Nasce da idéia de tornar o aprendizado em relação ao que é exigido pelo setor, mais
-                        fácil
-                        intuitivo e Dinâmico. Uma vez que são muitos protocolos e procedimentos para
-                        absorver,
-                        as
-                        vezes em pouco tempo. Esse trabalho serve como base para tirar duvidas e aprender.
-                    </p>
+
+                <div class="div-border">
+                    <div class="progressive">
+                        <img data-src="img/20px/procedimento.jpg" class="preview lazy aos-animate"
+                             src="img/20px/" alt="Nossas câmeras com excelentes qualidades" title="Nossas câmeras com excelentes
+                            qualidades">
+                    </div>
+                    <div class="box-single-content">
+                        <h1><a href="">Turma G<br>Mão na Massa</a></h1>
+                        <p>
+                           Uma vez que são muitos protocolos e procedimentos para
+                            absorver,
+                            as
+                            vezes em pouco tempo. Esse trabalho serve como base para tirar duvidas e aprender.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="div-border">
+                    <div class="progressive">
+                        <img data-src="img/20px/procedimento.jpg" class="preview lazy aos-animate"
+                             src="img/20px/" alt="Nossas câmeras com excelentes qualidades" title="Nossas câmeras com excelentes
+                            qualidades">
+                    </div>
+                    <div class="box-single-content">
+                        <h1><a href="">Turma G<br>Mão na Massa</a></h1>
+                        <p>
+                            Nasce da idéia de tornar o aprendizado em relação ao que é exigido pelo setor, mais
+                            fácil
+                            intuitivo e Dinâmico. Uma vez que são muitos protocolos e procedimentos para
+                            absorver,
+                            as
+                            vezes em pouco tempo. Esse trabalho serve como base para tirar duvidas e aprender.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-        <!--  <div class="div-border2">
+    </article>
+    <!--  <div class="div-border2">
 
-              <div class="progressive">
-                  <img data-src="img/20px/teste.jpg" src="img/20px/contrato.webp" class="preview lazy"
-                       alt="Faço um Contrato Rapido, façil com um clique"
-                       title="Faço um Contrato Rapido, façil com um clique" width="100%">
-              </div>
-              <div class="box-single-content">
-                  <h1>
-                      <a href="" target="_blank" rel="external">Vagas Informação</a>
-                  </h1>
-                  <p>
-                      Uma tentativa de deixar mais prático o acesso as pendências do setor deixando o uso
-                      do
-                      caderno opcional. Estamos trabalhando para implantação de um Banco de Dados, para
-                      que
-                      todos
-                      tenham acesso simultaneamente a mesma informação. Por enquanto, todas as informações
-                      colocadas nesse projeto é salvo no LocalStorage do Browser, ou seja, só vc tem
-                      acesso ao
-                      que
-                      você escreve.
-                  </p>
-
-              </div>
+          <div class="progressive">
+              <img data-src="img/20px/teste.jpg" src="img/20px/contrato.webp" class="preview lazy"
+                   alt="Faço um Contrato Rapido, façil com um clique"
+                   title="Faço um Contrato Rapido, façil com um clique" width="100%">
           </div>
+          <div class="box-single-content">
+              <h1>
+                  <a href="" target="_blank" rel="external">Vagas Informação</a>
+              </h1>
+              <p>
+                  Uma tentativa de deixar mais prático o acesso as pendências do setor deixando o uso
+                  do
+                  caderno opcional. Estamos trabalhando para implantação de um Banco de Dados, para
+                  que
+                  todos
+                  tenham acesso simultaneamente a mesma informação. Por enquanto, todas as informações
+                  colocadas nesse projeto é salvo no LocalStorage do Browser, ou seja, só vc tem
+                  acesso ao
+                  que
+                  você escreve.
+              </p>
 
-          <div class="div-border3">
-              <div class="progressive">
-                  <img data-src="img/20px/portal.jpg" class="preview lazy" src="img/20px/teste.jpg"
-                       alt="Nossas gamas de equipamentos" title="Nossas gamas de equipamentos"
-                       width="100%">
-              </div>
-              <div class="box-single-content">
-                  <h1><a href="#home" title="home">Sobre</a></h1>
-                  <p>
-                      O site TechEmpregos tem de facilitar a acessibilidade de vagas de empregos online
-                      sem
-                      sair de casa e mais alguma coisa tem em um
-                      só lugar. Incluindo uma Biblioteca de cursos e a opção de susgestão também para
-                      melhorar
-                      seus conhecimentos na aréa da Tecnologia da Informação.
-                      <a href="" target="_blank" rel="external">Click aqui</a>
-                      e deixe a sua. Obrigado por deixar nosso
-                      ambiente mais rico com sua Visita e Sugestão.
-                  </p>
-              </div>
           </div>
+      </div>
+
+      <div class="div-border3">
+          <div class="progressive">
+              <img data-src="img/20px/portal.jpg" class="preview lazy" src="img/20px/teste.jpg"
+                   alt="Nossas gamas de equipamentos" title="Nossas gamas de equipamentos"
+                   width="100%">
+          </div>
+          <div class="box-single-content">
+              <h1><a href="#home" title="home">Sobre</a></h1>
+              <p>
+                  O site TechEmpregos tem de facilitar a acessibilidade de vagas de empregos online
+                  sem
+                  sair de casa e mais alguma coisa tem em um
+                  só lugar. Incluindo uma Biblioteca de cursos e a opção de susgestão também para
+                  melhorar
+                  seus conhecimentos na aréa da Tecnologia da Informação.
+                  <a href="" target="_blank" rel="external">Click aqui</a>
+                  e deixe a sua. Obrigado por deixar nosso
+                  ambiente mais rico com sua Visita e Sugestão.
+              </p>
+          </div>
+      </div>
 
 
-          <div class="div-border4">
+      <div class="div-border4">
 
-              <div class="progressive">
-                  <img data-src="img/pixabay2.webp" class="preview lazy" src="img/20px/pixbay2.webp"
-                       alt="usamos tecnicas modernas" width="100%">
-              </div>
-              <div class="box-single-content">
-                  <h1>Adicionais</h1>
-                  <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem doloribus adipisci
-                      cum
-                      laboriosam quisquam dolor dicta a et quam facilis enim laudantium, provident modi
-                      ad,
-                      sed
-                      pariatur nihil eius nobis? Lorem ipsum dolor sit amet consectetur adipisicing
-                      elit. Corrupti placeat repellat nemo
-                  </p>
-              </div>
-          </div>-->
-
-    </div>
+          <div class="progressive">
+              <img data-src="img/pixabay2.webp" class="preview lazy" src="img/20px/pixbay2.webp"
+                   alt="usamos tecnicas modernas" width="100%">
+          </div>
+          <div class="box-single-content">
+              <h1>Adicionais</h1>
+              <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem doloribus adipisci
+                  cum
+                  laboriosam quisquam dolor dicta a et quam facilis enim laudantium, provident modi
+                  ad,
+                  sed
+                  pariatur nihil eius nobis? Lorem ipsum dolor sit amet consectetur adipisicing
+                  elit. Corrupti placeat repellat nemo
+              </p>
+          </div>
+      </div>-->
 
 
 </section>

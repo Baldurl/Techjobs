@@ -16,7 +16,7 @@
     $dbh = null;
     if ($quantidadeUsuarios() > 0)
     {
-        header('location: index.php');
+        header('location: login.php');
     } else {
-        header('location: index.php?msg=Não foi possível excluir o usuário com ID: {$id}');    
+        header('location: login.php?msg=Não foi possível excluir o usuário com ID: {$id}');
     }

@@ -26,7 +26,7 @@ $result = $stmt->execute();
 
 if ($result) {
     echo 'candidato cadastrado com sucesso. </br>';
-    echo '<a href="../../login/index.php">Fazer login</a></br>';
+    echo '<a href="../../login/login.php">Fazer login</a></br>';
 } else {
     echo 'Erro ao cadastrar perfil';
 }

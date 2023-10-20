@@ -38,7 +38,7 @@ require_once __DIR__ . '/../../layouts/nav.php';
             <li><a href="../index.html" title="Noticias">ÁREA T.I</a></li>
         </ul>
         <span class="btn">
-        <button class="btn-outline"><a href="../../login/index.php">Login</a></button>
+        <button class="btn-outline"><a href="../../login/login.php">Login</a></button>
         <button class="btn-gordo"><a href="../cadastro.php">Cadastrar</a></button>
         </span>
     </nav>
@@ -81,7 +81,7 @@ require_once __DIR__ . '/../../layouts/nav.php';
         </form>
         <!-- Fecha formulário -->
 
-        <a class="a1" href="../../login/index.php">
+        <a class="a1" href="../../login/login.php">
             Já é cadastrado? Faça aqui o login!
         </a>
         <br>

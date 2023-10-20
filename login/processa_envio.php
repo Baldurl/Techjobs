@@ -38,7 +38,7 @@ class  Mensagem
 
     public function mensagemValida()
     {
-        // if (empty($_POST['para']) || (empty($_POST['assunto'])) || (empty($_POST['mensagem']))) {header('location: index.php?login=erro');}
+        // if (empty($_POST['para']) || (empty($_POST['assunto'])) || (empty($_POST['mensagem']))) {header('location: login.php?login=erro');}
         if (empty($this->para)) {
             return false;
         }
@@ -147,7 +147,7 @@ try {
                              width="300"
                              height="200"
                              alt="robot">
-                        <a href="index.php"
+                        <a href="login.php"
                            class="d-block mx-auto mb-2 btn btn-success btn-lg mt-5 text-white">Voltar</br></a>
                     </div>
                 <?php } ?>
@@ -162,7 +162,7 @@ try {
                              width="300"
                              height="200"
                              alt="robot">
-                        <a href="index.php"
+                        <a href="login.php"
                            class="d-block mx-auto mb-2 btn btn-danger btn-lg mt-5 text-white">Voltar</a>
                     </div>
 

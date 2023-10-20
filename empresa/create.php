@@ -71,4 +71,4 @@ if ($result) {
 
 
 $dbh = null;
-echo '<p><a href="../../index.php">Voltar</a></p>';
+echo '<p><a href="../../login.php">Voltar</a></p>';

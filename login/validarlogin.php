@@ -10,13 +10,13 @@ $usuario = $dao->validarLogin('$email', '$senha');
 
 if (!$usuario) {
 
-    header("location:index.php?login=erro");
+    header("location:login.php?login=erro");
     exit;
-//redireciona para a pagina login/index.php para preencher os dados
+//redireciona para a pagina login/login.php para preencher os dados
 } else {
     //senão significa que o usuario foi encontrado
 
-    header('Location: home.php');
+    header('Location: index.php');
     session_start(); //inicializando a sessão
     $_SESSION["id"] = $usuario['nome'];
     $_SESSION["nome"] = $usuario['nome'];

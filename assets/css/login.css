@@ -13,6 +13,112 @@ body * {
     box-sizing: border-box;
 }
 
+
+.main-header {
+    width: 100%;
+    background: #333333;
+    padding: 10px 0;
+    height: 100px;
+
+}
+
+.main-header .main-header-content {
+    display: flex;
+    max-width: 1300px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.main-header .main-header-content .logo {
+    flex-basis: 25%;
+    padding: 10px 0;
+
+}
+
+.main-header .main-header-content .logo a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    color: coral;
+}
+
+
+.main-header .main-header-content ul {
+    display: flex;
+    flex-basis: 31%;
+    padding: 15px 0;
+    margin: auto;
+
+
+}
+
+.main-header .main-header-content ul li {
+    align-items: center;
+    margin: 0 7px;
+    list-style: none
+}
+
+.main-header .main-header-content ul li a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .5s
+}
+
+.main-header .main-header-content ul li a:hover {
+    color: #080808
+}
+
+.main-header .main-header-content-btn {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 7px 0;
+    flex-basis: 10%;
+
+}
+
+.main-header .main-header-content-btn button {
+    border: none;
+    margin: 0 10px;
+    padding: 10px 0;
+    width: 130px;
+    color: #fff;
+    text-decoration: none;
+    background: url("../img/0-white-bg-1.jpeg");
+    border-radius: 4px;
+    display: inline-block;
+    transition: .5s
+}
+
+.main-header .main-header-content-btn button a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+
+.nav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.nav nav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 18px;
+    text-decoration: none;
+}
+
+.nav nav a:hover {
+    background-color: #ddd;
+    color: #000;
+    font-weight: 600;
+}
+
+
 .main-blog {
     max-width: 1300px;
     margin: 0 auto;
@@ -20,23 +126,6 @@ body * {
     display: flex;
     justify-content: space-around;
     flex-wrap: nowrap;
-}
-
-
-.main-header {
-    background-image: linear-gradient(rgba(30, 31, 20, .267), rgba(49, 45, 2, .205)), url(../img/1235.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: #fff
-}
-
-.main-header-content {
-
-    padding: 10px 5px;
-    display: flex;
-    justify-content: center;
 }
 
 .text {
@@ -205,7 +294,6 @@ body * {
 .card-login a {
     color: #000000;
     display: flex;
-    justify-content: center;
     justify-content: space-around;
     font-size: 1.5rem;
     margin: 0 auto;
