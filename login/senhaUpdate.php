@@ -1,24 +1,19 @@
 <?php
 
-
-require_once '../src/conexao.php';
+require_once __DIR__ . '/../src/database/conexao.php';
+require_once __DIR__ . '/../src/dao/usuariodao.php';
+require_once __DIR__ . '/../layouts/header.php';
 /*session_start();
 $_SESSION['id'];*/
 
 # solicita a conexão com o banco de dados e guarda na váriavel dbh.
 //$dbh = Conexao::getConexao();
-$senha = $_POST['senha'];
-$senha2 = $_POST['senha2'];
-$id = 1;
 
 
-$query = "UPDATE usuario SET senha= :senha WHERE id = 1;";
+$dao = new Usuariodao();
+$usuario = $dao->senhaUpdate('$senha', '$id');
 
-$stmt = $dbh->prepare($query);
-$stmt->bindParam(':senha', $senha);
-$result = $stmt->execute();
 
-$dbh = null;
 ?>
 
 
@@ -30,34 +25,16 @@ $dbh = null;
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css"
+    <link rel="stylesheet" href="../assets/css/style.css"
 </head>
 
 <body>
-
-<header class="main-header">
-    <nav class="main-header-content">
-        <div class="logo">
-            <a href="../index.php">TechJobs</a>
-        </div>
-        <ul>
-            <li><a href="index.html" title="Home">HOME</a></li>
-            <li><a href="#expecialista" title="expecialistas">EQUIPE</a></li>
-            <li><a href="#news" title="Noticias">ÁREA T.I</a></li>
-        </ul>
-        <span class="btn">
-        <button class="btn-outline"><a href="index.php">Login</a></button>
-        <button class="btn-gordo"><a href="../usuarios/empresa/index.php">Cadastrar</a></button>
-        </span>
-    </nav>
-</header>
-
 
 
 <div class="container">
     <div class="row">
         <div class="col col-md-12">
-            <?php if ($result = true && $_POST['senha2'] == $_POST['senha']) { ?>
+            <?php if ($usuario) { ?>
                 <div class="container">
                     <h1 class="display-4 text-success">Senha alterada com sucesso</h1>
                     <a href="index.php" class="btn btn-success btn-lg mt-5 text-white">Voltar</a>

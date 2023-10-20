@@ -37,7 +37,6 @@ body {
     max-width: 1300px;
     margin: 0 auto;
     justify-content: space-between;
-
 }
 
 .main-header .main-header-content .logo {
@@ -56,9 +55,10 @@ body {
 
 .main-header .main-header-content ul {
     display: flex;
-    justify-content: space-evenly;
+    flex-basis: 50%;
     padding: 15px 0;
     margin: auto;
+
 
 }
 
@@ -341,74 +341,112 @@ a {
     color: rgb(0, 0, 0)
 }
 
-.main-project {
-    max-width: 1300px;
-    margin: 50px auto;
+.main-assinatura {
+    max-width: 100%;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+
 
 
 }
 
-.main-project-header {
-    width: 100%;
-    padding-bottom: 50px;
-    margin-bottom: 30px;
 
+.main-assinatura-spacer {
+
+    display: flex;
+    margin-left: auto;
 }
 
-.main-project-header h2 {
+
+
+.main-assinatura-header h2 {
     font-size: 2rem;
     font-weight: 700;
     color: #000000;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px 5px;
+
 
 }
 
 
-.projetos .project-title h1 {
-    position: relative;
-    display: block;
+.assinatura-boxes {
+    max-width: 1300px;
+    margin-bottom: 50px;
     justify-content: center;
-    text-align: center;
-    padding: 0 20px;
-    text-transform: uppercase;
-    color: #130f40;
-    font-size: 60px;
-    letter-spacing: -2px
+    margin-right: auto;
+    align-self: center;
+
+
+
 }
 
-.project .project-content {
+.assinatura-boxe-content {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0 20px;
-    align-items: center;
+    margin-right: auto;
+    justify-content: start;
+    align-self: center;
 
 
 }
 
-
-/*.box {
-    margin-bottom: 100px !important
+.box-single-content {
+    margin-bottom: 50px !important
 }
 
-.box-single {
-    padding: 10px;
-    cursor: pointer;
-    transition: .5s;
-    transition-timing-function: ease-in-out
-}
 
-.box-single:hover {
+.box-single-content:hover {
     transform: scale(1.1)
 }
+
 
 .div-border {
     background: #fff;
     box-shadow: 0 10px 50px rgba(0, 0, 0, .2);
     border: 1px solid #e2dddd;
-    border-radius: 10px
+    border-radius: 10px;
+    flex-basis: calc(70% - 5px);
+    padding: 50px;
 }
+
+
+.div-border2 {
+    background: #fff;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, .2);
+    border: 1px solid #e2dddd;
+    border-radius: 10px;
+    flex-basis: calc(30 - 5px);
+    padding: 50px;
+
+
+}
+
+.div-border3 {
+    background: #fff;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, .2);
+    border: 1px solid #e2dddd;
+    border-radius: 10px;
+    flex-basis: calc(100% - 5px);
+    padding: 50px;
+
+
+}
+
+.div-border4 {
+    background: #fff;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, .2);
+    border: 1px solid #e2dddd;
+    border-radius: 10px;
+    flex-basis: calc(100% - 5px);
+    padding: 50px;
+
+
+}
+
 
 .div-border img {
     border-top-left-radius: 10px;
@@ -416,11 +454,11 @@ a {
     height: 200%
 }
 
-.box-single img {
-    width: 100%
+.box-single-content img {
+
 }
 
-.box-single .div-border .box-single-content {
+.div-border .box-single-content {
     padding: 8px;
     text-align: center
 }
@@ -437,13 +475,11 @@ a {
     padding-bottom: 10px;
     line-height: 20px;
     color: #666
-}*/
+}
 
 .main-team {
-    background-image: linear-gradient(rgba(213, 213, 213, 0.96), #ffffff);
-
-
-
+    background-image: url("/assets/img/0-white-bg-1.jpeg");
+    background: no-repeat center;
 }
 
 .main-team-header {
@@ -525,6 +561,7 @@ div.main-team-box {
     color: #000000;
     cursor: pointer
 }
+
 .line {
     background-color: #000;
     position: absolute;
@@ -535,6 +572,7 @@ div.main-team-box {
     width: 100%;
     padding: 0 5%
 }
+
 section.noticias {
     margin-top: 90px;
     margin-bottom: 50px
@@ -680,7 +718,6 @@ section.noticias {
     display: inline-block;
     padding: 0 15px
 }
-
 
 
 .footer1 {

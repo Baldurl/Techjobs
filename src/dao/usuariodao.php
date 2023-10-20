@@ -121,6 +121,40 @@ class  Usuariodao
         return $row;
     }
 
+    public function senhaUpdate($senha, $id)
+    {
+        $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
+        $query = "UPDATE usuario SET  senha = :senha WHERE id = :id";
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(":senha", $senha);
+        $stmt->bindParam(":id", $id);
+        $usuario = $stmt->execute();
+        $this->dbh = null;
+
+        return $usuario;
+
+
+    }
+
+    public function getbyEmail($email)
+    {
+
+        $query = "SELECT * from usuario WHERE email = :email";
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(":email", $email);
+
+        $stmt->execute();
+
+        $row = $stmt->fetch(PDO::FETCH_BOTH);
+        $this->dbh = null;
+        return $row;
+    }
+
+
+
+
+
 
 
     /*    public function getAll()
