@@ -46,7 +46,6 @@ include_once '../layouts/footer.php';
                     <span>Está contratando?</span>
                 </button>
             </a>
-
         </div>
     </div>
 </main>
