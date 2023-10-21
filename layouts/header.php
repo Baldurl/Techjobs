@@ -1,21 +1,40 @@
 <link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 
 <header class="main-header">
+
     <nav class="main-header-content">
+
         <div class="logo">
             <a href="../index.php">TechJobs</a>
         </div>
-        <ul>
-            <li><a href="../index.php" title="Home">HOME</a></li>
-            <li><a href="#expecialista" title="expecialistas">EQUIPE</a></li>
-            <li><a href="#news" title="Noticias">ÁREA T.I</a></li>
-        </ul>
-        <div class="main-header-content-btn">
-            <button><a class="btn-outline" href="../login/login.php">Login</a></button>
-            <button><a class="btn-outline" href="../usuarios/cadastro.php">Cadastre-se</a></button>
-        </div>
+
+        <nav class="menu">
+
+            <ul>
+                <li class="item-menu">
+                    <a href="../index.php">
+                        <span class="icon"><i class="bi bi-house-door"></i></span>
+                        <span class="txt-link">Home</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a style="color: coral" href="/login/login.php">
+                        <span class="icon"><i class="bi bi-box-arrow-in-right"></i></span>
+                        <span class="txt-link">Login</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a style="color: coral" href="/usuarios/cadastro.php">
+                        <span class="icon"><i class="bi bi-box-arrow-in-right"></i></span>
+                        <span class="txt-link">Cadastrar</span>
+                    </a>
+                </li>
+
+            </ul>
+
+
+        </nav>
     </nav>
 </header>
-
-

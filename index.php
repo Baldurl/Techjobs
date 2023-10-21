@@ -17,7 +17,7 @@
     <title>TECH JOBS</title>
 </head>
 
-<header class="main-header">
+<!--<header class="main-header">
     <nav class="main-header-content">
         <div class="logo">
             <p><a href="../index.php">TechJobs</a></p>
@@ -32,9 +32,46 @@
             <button><a class="btn-outline" href="usuarios/cadastro.php">Cadastre-se</a></button>
         </div>
     </nav>
-</header>
+</header>-->
 
 <body id="home">
+<header class="main-header">
+
+    <nav class="main-header-content">
+
+        <div class="logo">
+            <a href="index.php">TechJobs</a>
+        </div>
+
+        <nav class="menu">
+
+            <ul>
+                <li class="item-menu">
+                    <a href="index.php">
+                        <span class="icon"><i class="bi bi-house-door"></i></span>
+                        <span class="txt-link">Home</span>
+                    </a>
+                </li>
+                </li>
+                <li class="item-menu">
+                    <a style="color: coral" href="login/login.php">
+                        <span class="icon"><i class="bi bi-box-arrow-in-right"></i></span>
+                        <span class="txt-link">Login</span>
+                    </a>
+                </li>
+                                <li class="item-menu">
+                    <a style="color: coral" href="./usuarios/cadastro.php">
+                        <span class="icon"><i class="bi bi-box-arrow-in-right"></i></span>
+                        <span class="txt-link">Cadastrar</span>
+                    </a>
+                </li>
+
+            </ul>
+
+
+        </nav>
+    </nav>
+</header>
 <div class="main-cta">
     <article class="main-cta-banner">
         <div class="main-cta-banner-spacer">

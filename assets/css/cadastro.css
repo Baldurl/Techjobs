@@ -1,81 +1,148 @@
 .main-blog {
-    max-width: 1300px;
+    max-width: 100%;
+    margin-top: 100px;
+
+    height: 50vh;
 }
 
 
 .main-blog-container {
-    align-items: center;
-    margin: 0 auto;
-    width: 80%;
-    background-color: #f2f2f2;
-    border-radius: 8px;
-    box-shadow: 0 10px 40px -12px rgb(174, 164, 164);
-    padding: 20px 0;
-    margin: 20px auto;
-
-}
-
-
-.cadastro .cadastro-content {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1300px;
     display: flex;
-    justify-content: space-between;
-    width: 80%;
-    padding: 20px 0;
-    margin: 70px 10%;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 3px;
+    flex-wrap: wrap;
+}
+
+
+
+.main-blog-container .container {
+border: none;
+    border-radius: 10px;
+    transition: 0.7s;
+    max-height: 200px;
+    width: 100%;
+    flex-basis: 30%;
+    margin: 50px;
+
+
+}
+
+.main-blog-container .container .container-text {
+    display: block;
+    font-size: 1.6rem;
+
+}
+
+
+
+.main-blog-container .container button span {
+    display: block;
+    font-size: 1.2rem;
+}
+
+
+
+
+
+
+
+
+/*.main-blog-container .container:hover {
+    transform: scale(1.1);
+    box-shadow: 8px 8px 2px 1px #ffaa8b;
+    background-color: #f2f2f2;
+    opacity: 0.8;
+}*/
+
+.main-blog-container .container button h2 {
     background-color: #ffffff;
-    box-shadow: 0 10px 40px -12px rgb(174, 164, 164);
+    padding: 10px 0 10px 0;
+    text-align: center;
+    border-radius: 20px 20px 0 0;
 
-
-}
-
-.cadastro .cadastro-content .btn-cadastro {
-    background-color: #ffffff;
-    margin: 15px;
 
 
 }
 
-.cadastro .cadastro-content:hover {
-    opacity: 0.9;
-    transition-delay: 0.9ms;
-
-}
-
-.cadastro .cadastro-content p {
-    padding: 15px 23%;
-    align-items: center;
-    color: #333333;
-
-}
-
-
-.cadastro .cadastro-content button {
-
-    width: 60%;
-    padding: 20px 0;
-    margin: 20px 20%;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 3px;
-    background-color: coral;
-    color: #fff;
+.main-blog-container .container button {
+    width: 100%;
+    outline: 0;
     cursor: pointer;
-    box-shadow: 0 10px 40px -12px rgb(174, 164, 164);
+    padding: 9px 25px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: 0.7s;
+    border: 1px solid #333333;
+
+
+}
+.main-blog-container .container button:hover {
+    transform: scale(1.1);
+    box-shadow: 8px 8px 2px 1px #ffaa8b;
+    background-color: #ffffff;
+    opacity: 0.8;
+
 
 }
 
 
-.cadastro .cadastro-content button:hover {
-    opacity: 0.9;
-    transition-delay: 0.9ms;
 
+
+
+.main-blog-container .container a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #333333;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+
+
+
+.main-blog-container .container2 {
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    transition: 0.7s;
+    max-height: 200px;
+
+}
+
+.main-blog-container .container2:hover {
+    transform: scale(1.1);
+    box-shadow: 8px 8px 2px 1px #ffaa8b;
+    background-color: #f2f2f2;
+    opacity: 0.8;
+}
+
+
+.main-blog-container .container2 button {
+    outline: 0;
+    cursor: pointer;
+    padding: 9px 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.main-blog-container .container2 button h2 {
+    background-color: #ffffff;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+
+}
+
+
+.main-blog-container .container2 a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #333333;
+    text-align: center;
+    text-decoration: none;
 }

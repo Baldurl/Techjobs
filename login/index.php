@@ -26,14 +26,14 @@
     <nav class="main-header-content">
 
         <div class="logo">
-            <a href="login.php">TechJobs</a>
+            <a href="index.php">TechJobs</a>
         </div>
 
         <nav class="menu">
 
             <ul>
                 <li class="item-menu">
-                    <a href="#">
+                    <a href="index.php">
                         <span class="icon"><i class="bi bi-house-door"></i></span>
                         <span class="txt-link">Home</span>
                     </a>
@@ -45,14 +45,14 @@
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="#">
+                    <a href="../perfis/index.php">
                         <span class="icon"><i class="bi bi-person"></i></span>
                         <span class="txt-link">Perfil</span>
                     </a>
                 </li>
                 </li>
                 <li class="item-menu">
-                    <a href="#">
+                    <a href="../index.php">
                         <span class="icon"><i class="bi bi-box-arrow-right"></i></span>
                         <span class="txt-link">Logoff</span>
                     </a>

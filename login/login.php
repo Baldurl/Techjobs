@@ -1,8 +1,3 @@
-<?php
-include_once __DIR__ . '/../layouts/footer.php';
-
-?>
-
 <!doctype html>
 <html lang="pt-br">
 
@@ -18,28 +13,47 @@ include_once __DIR__ . '/../layouts/footer.php';
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
           crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
 
     <!--Estilo CSS -->
     <link rel="stylesheet" href="../assets/css/login.css">
-    <title>TECH JOBS</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <title>TechJobs - login</title>
 </head>
+<body>
 <header class="main-header">
+
     <nav class="main-header-content">
+
         <div class="logo">
             <a href="../index.php">TechJobs</a>
         </div>
-        <ul >
-            <li><a href="../index.php" title="Home">HOME</a></li>
-            <li><a href="#expecialista" title="expecialistas">EQUIPE</a></li>
-            <li><a href="#news" title="Noticias">ÁREA T.I</a></li>
-        </ul>
-        <div class="main-header-content-btn">
-            <button><a class="btn-outline" href="../usuarios/cadastro.php">Cadastre-se</a></button>
-        </div>
+
+        <nav class="menu">
+
+            <ul>
+                <li class="item-menu">
+                    <a href="../index.php">
+                        <span class="icon"><i class="bi bi-house-door"></i></span>
+                        <span class="txt-link">Home</span>
+                    </a>
+                </li>
+
+                <li class="item-menu">
+                    <a style="color: coral" href="/usuarios/cadastro.php">
+                        <span class="icon"><i class="bi bi-box-arrow-in-right"></i></span>
+                        <span class="txt-link">Cadastrar</span>
+                    </a>
+                </li>
+
+            </ul>
+
+
+        </nav>
     </nav>
 </header>
-
-<body>
 
 
 <main class="main-blog">
