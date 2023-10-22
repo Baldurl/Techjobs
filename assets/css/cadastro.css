@@ -1,11 +1,19 @@
-.main-blog {
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(../img/0-white-bg-1.jpeg);
+    background-size: cover;
+}
+
+/*COMEÇO TELA INICIAL DE CADASTRO */
+
+.main-cadastro {
     max-width: 100%;
     margin-top: 100px;
     height: 50vh;
 }
 
 
-.main-blog-container {
+.main-cadastro-container {
     width: 1300px;
     margin: 0 auto;
     display: flex;
@@ -14,7 +22,7 @@
 }
 
 
-.main-blog-container .container {
+.main-cadastro-container .container {
     border: none;
     border-radius: 10px;
     transition: 0.7s;
@@ -26,16 +34,17 @@
 
 }
 
-.main-blog-container .container .container-text {
+.main-cadastro-container .container .container-text {
     display: block;
     font-size: 1.6rem;
 
 }
 
 
-.main-blog-container .container button span {
+.main-cadastro-container .container button span:last-child {
     display: block;
     font-size: 1.2rem;
+    color: dodgerblue;
 }
 
 
@@ -46,7 +55,7 @@
     opacity: 0.8;
 }*/
 
-.main-blog-container .container button h2 {
+.main-cadastro-container .container button h2 {
     background-color: #ffffff;
     padding: 10px 0 10px 0;
     text-align: center;
@@ -54,7 +63,7 @@
 
 }
 
-.main-blog-container .container button {
+.main-cadastro-container .container button {
     width: 100%;
     outline: 0;
     cursor: pointer;
@@ -66,7 +75,7 @@
 
 }
 
-.main-blog-container .container button:hover {
+.main-cadastro-container .container button:hover {
     transform: scale(1.1);
     box-shadow: 8px 8px 2px 1px #ffaa8b;
     background-color: #ffffff;
@@ -74,7 +83,7 @@
 
 }
 
-.main-blog-container .container a {
+.main-cadastro-container .container a {
     font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 2px;
@@ -84,7 +93,502 @@
 
 }
 
+/*FIM TELA INICIAL DE CADASTRO */
 
+
+/*COMEÇO TELA DE CADASTRO DE CANDIDATO*/
+
+
+.main-candidato {
+    max-width: 1300px;
+    margin: 0 auto;
+
+
+}
+
+.text {
+    text-align: center;
+    width: 100%;
+}
+
+.text p {
+    font-weight: 600;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    outline: none;
+
+}
+
+.text p a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 1.1rem;
+    width: 40%;
+
+}
+
+.card-candidato {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgb(0, 0, 0);
+    margin: 50px auto;
+
+}
+
+.card-candidato > h2 {
+    color: #333333;
+    font-weight: 600;
+    margin: 0 auto;
+    letter-spacing: 3px;
+    text-align: center;
+    border: none;
+    outline: none;
+    padding: 20px 0;
+}
+
+
+.card-candidato header h2 {
+    color: #fff;
+    font-weight: 600;
+    margin: 0 auto;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    outline: none;
+
+
+}
+
+
+.card-candidato-content {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+.card-candidato-content-row {
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+
+}
+
+
+/*.card-candidato-content-input label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding: 10px 30px;
+
+}*/
+
+.card-candidato-content > input {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 20px;
+    flex-basis: 40%;
+
+}
+
+.group-btns {
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.group-btns:last-child {
+    margin-right: 40px;
+
+}
+
+
+.card-candidato .btn-login {
+    font-size: 1.2rem;
+    flex-basis: 50%;
+    padding: 15px 0;
+    margin: 30px 30%;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #333333;
+    cursor: pointer;
+    box-shadow: 0 10px 40px -12px rgb(174, 164, 164);
+}
+
+.card-candidato .btn-login:last-child {
+    padding: 15px 0;
+    margin: 30px 30%;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #333333;
+    background-color: #bdbaba;
+    cursor: pointer;
+    box-shadow: 0 10px 40px -12px rgb(174, 164, 164);
+}
+
+.card-candidato .btn-login:hover {
+    color: #080707;
+    opacity: 0.9;
+}
+
+.card-candidato .btn-login:active {
+    color: #333333;
+    opacity: 0.8;
+}
+
+.card-candidato a {
+    color: #000000;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    margin: 0 auto;
+    text-decoration: underline;
+    flex-basis: 60%;
+    margin-bottom: 15px;
+}
+
+
+/*FIM TELA DE CADASTRO DE CANDIDATO*/
+
+
+/*COMEÇO TELA DE CADASTRO DE EMPRESA*/
+
+.main-empresa {
+    max-width: 1300px;
+    margin: 0 auto;
+
+
+}
+
+.text {
+    text-align: center;
+    width: 100%;
+}
+
+.text p {
+    font-weight: 600;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    outline: none;
+
+}
+
+.text p a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 1.1rem;
+    width: 40%;
+
+}
+
+.card-empresa {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgb(0, 0, 0);
+    margin: 50px auto;
+
+}
+
+.card-empresa > h2 {
+    color: #333333;
+    font-weight: 600;
+    margin: 0 auto;
+    letter-spacing: 3px;
+    text-align: center;
+    border: none;
+    outline: none;
+    padding: 20px 0;
+}
+
+
+.card-empresa header h2 {
+    color: #fff;
+    font-weight: 600;
+    margin: 0 auto;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    outline: none;
+
+
+}
+
+
+.card-empresa-content {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+.card-empresa-content-row {
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+
+}
+
+
+/*.card-empresa-content-input label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding: 10px 30px;
+
+}*/
+
+.card-empresa-content > input {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 20px;
+    flex-basis: 40%;
+
+}
+
+
+.card-empresa .btn-login {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    padding: 15px 0;
+    margin: 30px 30%;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 10px 40px -12px rgb(174, 164, 164);
+
+}
+
+.card-empresa .btn-login:hover {
+    color: #080707;
+    opacity: 0.9;
+}
+
+.card-empresa .btn-login:active {
+    color: #333333;
+    opacity: 0.8;
+}
+
+.card-empresa a {
+    color: #000000;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    margin: 0 auto;
+    text-decoration: underline;
+    flex-basis: 60%;
+    margin-bottom: 15px;
+}
+
+/*FIM TELA DE CADASTRO DE EMPRESA*/
+
+/*COMEÇO TELA DE INFORMAÇÃO*/
+
+
+.main-information {
+    max-width: 1300px;
+    margin: 0 auto;
+
+
+}
+
+.text {
+    text-align: center;
+    width: 100%;
+}
+
+.text p {
+    font-weight: 600;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    outline: none;
+
+}
+
+.text p a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 1.1rem;
+    width: 40%;
+
+}
+
+.card-information {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgb(0, 0, 0);
+    margin: 50px auto;
+
+}
+
+.card-information-header {
+    margin: 30px;
+    flex-basis: 50%;
+}
+
+.card-information-header > h1 {
+    color: cornflowerblue;
+    font-weight: 600;
+    padding-top: 30px;
+}
+
+.card-information-box-text {
+    display: flex;
+    justify-content: center;
+}
+
+
+.card-information-box-text div > h2 {
+    color: red;
+    font-weight: 600;
+    padding-top: 5px;
+    font-size: 1.7rem;
+}
+
+
+.card-information-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.card-information > h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+
+
+}
+
+.card-information-box {
+    display: block;
+    flex-wrap: wrap;
+    flex-basis: 40%;
+    margin: 30px 50px;
+}
+
+
+.update-group-btns {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+
+.update-group-btns > button {
+    flex-basis: 30%;
+    margin: 20px;
+    color: #333333;
+}
+
+
+.update-group-btns > a {
+    flex-basis: 30%;
+    margin: 20px;
+    color: #333333;
+}
+
+.update-group-btns > a:hover {
+    opacity: 0.9;
+    color: #ffffff;
+}
+
+.update-group-btns > a > button {
+    text-decoration: none;
+    color: #333333;
+    transition: 0.2s;
+    background-color: #beb5b5;
+
+}
+
+.update-group-btns > a > button:hover {
+    color: #ffffff;
+}
+
+.update-confirmation-success {
+
+    width: 100%;
+    background: #198754;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgb(0, 0, 0);
+    margin: 50px auto;
+
+}
+
+.update-confirmation-header {
+
+    margin: 50px auto;
+}
+
+.update-confirmation-header > h2 {
+
+    color: #333333;
+    padding: 30px;
+    text-align: center;
+    font-size: 1.6rem;
+
+}
+
+.update-confirmation-error {
+
+    width: 100%;
+    background: #955251;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgb(0, 0, 0);
+    margin: 50px auto;
+
+}
+
+
+
+
+
+/*FIM TELA DE INFORMAÇÃO*/
 
 
 

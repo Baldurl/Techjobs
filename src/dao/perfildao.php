@@ -22,7 +22,7 @@ class  PerfilDao
         return $rows;
     }
 
-    public function getById($id)
+    public function getById(int $id)
     {
         $query = "SELECT * FROM perfil WHERE id = :id";
         $stmt = $this->dbh->prepare($query);
@@ -35,33 +35,39 @@ class  PerfilDao
         $this->dbh = null;
     }
 
-    public function insert(Perfil $perfil)
+    public function insert(string $nome)
     {
         $query = "insert into perfil (nome) values (:nome)";
-        $stmt = $this->prepare($query);
-        $stmt->bindParam(":nome", $perfil->getNome());
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(":nome", $nome);
         $result = $stmt->execute();
         $this->dbh = null;
+
+        return $result;
     }
 
 
-    public function update(Perfil $perfil)
+    public function update(int $id, string $nome)
     {
         $query = "update perfil set nome = :nome where id = :id";
         $stmt = $this->dbh->prepare($query);
-        $stmt->bindParam(":nome", $perfil->getNome());
-        $stmt->bindParam(":id", $perfil->getId());
+        $stmt->bindParam(":nome", $nome());
+        $stmt->bindParam(":id", $id());
         $result = $stmt->execute();
         $this->dbh = null;
+
+        return $result;
     }
 
-    public function delete($id)
+    public function delete(int $id)
     {
         $query = "delete from perfil where id = :id";
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(":id", $id);
+        $stmt->execute();
 
-        $result = $stmt->execute();
+
+        $result = $stmt->rowCount();
         $this->dbh = null;
         return $result;
 

@@ -33,7 +33,7 @@ $quantidadeRegistros = $stmt->rowCount();
 </header>
 <nav>
     <a href="../index.php">Home</a>
-    <a href="index.php">Usuários</a>
+    <a href="cadastro.php">Usuários</a>
     <a href="">Perfil</a>
 </nav>
 

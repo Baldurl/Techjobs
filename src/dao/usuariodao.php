@@ -23,45 +23,83 @@ class  Usuariodao
 
     public function getById($id)
     {
-        $query = "SELECT * FROM usuario WHERE id = :id";
+        $id = $_SESSION['usuario']['id'];
+        $query = "SELECT * FROM usuario WHERE id = :id;";
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(":id", $id);
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_BOTH);
+
 
         $this->dbh = null;
         return $row;
     }
 
 
-    public function insert($nome, $email, $senha, $perfilId)
+    public function insert($nome, $razao_social, $cpf, $cnpj, $senha, $email, $sexo, $ddi, $ddd, $telefone, $cep, $cidade, $logradouro, $bairro, $rua, $complemento, $perfil)
     {
 
+        $nome = filter_input(INPUT_POST, 'name');
+        $razao_social = filter_input(INPUT_POST, 'razao_social');
+        $cpf = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_NUMBER_INT);
+        $cnpj = filter_input(INPUT_POST, 'cnpj');
+        $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
+        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+        $sexo = filter_input(INPUT_POST, 'sexo');
+        $ddi = filter_input(INPUT_POST, 'ddi');
+        $ddd = filter_input(INPUT_POST, 'ddd', FILTER_SANITIZE_NUMBER_INT);
+        $telefone = filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_NUMBER_INT);
+        $cep = filter_input(INPUT_POST, 'cep');
+        $cidade = filter_input(INPUT_POST, 'cidade');
+        $logradouro = filter_input(INPUT_POST, 'logradouro');
+        $bairro = filter_input(INPUT_POST, 'bairro');
+        $rua = filter_input(INPUT_POST, 'rua');
+        $complemento = filter_input(INPUT_POST, 'complemento');
+        $perfil = filter_input(INPUT_POST, 'perfil', FILTER_VALIDATE_INT);
 
-        $query = "INSERT INTO usuario (nome, senha, email, perfilId)
-        VALUES ( :nome, :senha, :email, :perfilId);";
+        $query = "INSERT INTO usuario (nome, razao_social, cpf, cnpj, senha, email, sexo , ddi, 
+            ddd, numero, cep, cidade, logradouro, bairro, rua, complemento, perfil_id) 
+            VALUES (:nome, :razao_social, :cpf, :cnpj, :senha, :email, 
+            :sexo, :ddi, :ddd, :numero, :cep, :cidade, :logradouro, :bairro, :rua, :complemento, :perfil_id);";
 
 
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':razao_social', $razao_social);
+        $stmt->bindParam(':cpf', $cpf);
+        $stmt->bindParam(':cnpj', $cnpj);
         $stmt->bindParam(':senha', $senha);
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':perfilId', $perfilId);
+        $stmt->bindParam(':sexo', $sexo);
+        $stmt->bindParam(':ddi', $ddi);
+        $stmt->bindParam(':ddd', $ddd);
+        $stmt->bindParam(':numero', $telefone);
+        $stmt->bindParam(':cep', $cep);
+        $stmt->bindParam(':cidade', $cidade);
+        $stmt->bindParam(':logradouro', $logradouro);
+        $stmt->bindParam(':bairro', $bairro);
+        $stmt->bindParam(':rua', $rua);
+        $stmt->bindParam(':complemento', $complemento);
+        $stmt->bindParam(':perfil_id', $perfil);
+
+
         $result = $stmt->execute();
 
         $this->dbh = null;
+
+        return $result;
     }
 
-    public function update($id, $nome, $email, $senha, $perfilId)
+    public function update($id, $nome, $senha)
     {
-
-        $query = "UPDATE usuario SET nome = :nome, senha = :senha, email = :email, perfilId = :perfilId WHERE id = :id";
+        $id = $_SESSION['usuario']['id'];
+        $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
+        $nome = filter_input(INPUT_POST, 'name');
+        $query = "UPDATE usuario SET nome = :nome, senha = :senha WHERE id = :id";
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(":nome", $nome);
-        $stmt->bindParam(":senha", $senha);
-        $stmt->bindParam(":email", $email);
-        $stmt->bindParam(":perfilId", $perfilId);
         $stmt->bindParam(":id", $id);
+        $stmt->bindParam(":senha", $senha);
         $result = $stmt->execute();
         $this->dbh = null;
 
@@ -90,7 +128,7 @@ class  Usuariodao
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
         #cria uma instrução SQL para selecionar todos os dados na tabela usuarios.
-        $query = "SELECT * FROM usuario WHERE email=:email and senha=:senha";
+        $query = "SELECT id, nome, email, perfil_id FROM usuario WHERE email=:email and senha=:senha";
 
         # prepara a execução da query e retorna para uma variável chamada stmt.
         $stmt = $this->dbh->prepare($query);
@@ -136,77 +174,6 @@ class  Usuariodao
 
 
     }
-
-    public function getbyEmail($email)
-    {
-
-        $query = "SELECT * from usuario WHERE email = :email";
-        $stmt = $this->dbh->prepare($query);
-        $stmt->bindParam(":email", $email);
-
-        $stmt->execute();
-
-        $row = $stmt->fetch(PDO::FETCH_BOTH);
-        $this->dbh = null;
-        return $row;
-    }
-
-
-
-
-
-
-
-    /*    public function getAll()
-        {
-            $query = "SELECT * FROM usuario";
-            $stmt = $this->dbh->prepare($query);
-            $stmt->execute();
-            $stmt->fetchAll();
-            return $rows;
-            $this->dbh = null;
-        }*/
-
-    /*    public function getById($id)
-        {
-            $query = "SELECT * FROM usuario WHERE id = :id";
-            $stmt = $this->dbh->prepare($query);
-            $stmt->bindParam(":id", $id);
-            $stmt->execute();
-            $stmt->fetch();
-            $row = $stmt->fetch(PDO::FETCH_BOTH);
-            return $row;
-
-            $this->dbh = null;
-        }*/
-
-    /*    public function insert(Perfil $usuario)
-        {
-            $query = "insert into usuario (nome) values (:nome)";
-            $stmt = $this->prepare($query);
-            $stmt->bindParam(":nome", $usuario->getNome());
-            $result = $stmt->execute();
-            $this->dbh = null;
-        }*/
-
-
-    /*    public function update(usuario $usuario)
-        {
-            $query = "update usuario set nome = :nome where id = :id";
-            $stmt = $this->dbh->prepare($query);
-            $stmt->bindParam(":nome", $usuario->getNome());
-            $stmt->bindParam(":id", $usuario->getId());
-            $result = $stmt->execute();
-            $this->dbh = null;
-        }*/
-
-    /*    public function delete($id)
-        {
-            $query = "delete from usuario where id = :id";
-            $stmt->prepare($query);
-            $stmt->bindParam(":id", $id);
-            $this->dbh = null;
-        }*/
 
 
 }

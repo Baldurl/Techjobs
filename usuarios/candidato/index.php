@@ -1,126 +1,124 @@
 <?php
+session_start();
 require_once __DIR__ . '/../../layouts/header.php';
-require_once __DIR__ . '/../../layouts/nav.php';
+require_once __DIR__ . '/../../src/database/conexao.php';
+require_once __DIR__ . '/../../src/dao/usuariodao.php';
 
+$id = $_SESSION['usuario']['id'];
+$dao = new Usuariodao();
+$usuario = $dao->getById('$id');
+
+
+if (!$usuario) {
+    header('location: cadastro.php?error=Usuário não encontrado!');
+    exit;
+
+}
+
+
+# executa o loop para ler os campos retornados da tabela pelos indices do array.
+# começando no valor zero. Guarda o valor de cada linha na variável $row.
 
 ?>
 
-
-
-
-
-
 <!doctype html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,
-     initial-scale=1, shrink-to-fit=no">
-
-    <!--Estilo CSS -->
-    <link rel="stylesheet" href="../../css/login.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <title>TECH JOBS - Cadastro empresa</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../assets/css/button.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/cadastro.css" rel="stylesheet">
+    <title>Tech Jobs - Informações</title>
 </head>
-
 <body>
-
-<header class="main-header">
-    <nav class="main-header-content">
-        <div class="logo">
-            <a href="../../index.php">TechJobs</a>
-        </div>
-        <ul>
-            <li><a href="../index.html" title="Home">HOME</a></li>
-            <li><a href="../index.html" title="expecialistas">EQUIPE</a></li>
-            <li><a href="../index.html" title="Noticias">ÁREA T.I</a></li>
-        </ul>
-        <span class="btn">
-        <button class="btn-outline"><a href="../../login/login.php">Login</a></button>
-        <button class="btn-gordo"><a href="../cadastro.php">Cadastrar</a></button>
-        </span>
-    </nav>
-</header>
+<main class="main-information">
 
 
-<main class="main-blog">
+    <div class="card-information">
+        <!-- INFORMAÇÕES DA SESSÃO DO USUÁRIO
+        <hr>
+        <h1><?php /*echo $_SESSION['usuario']['id']; */ ?></h1>
+        <h2><?php /*echo $_SESSION['usuario']['nome']; */ ?></h2>
+        <h3><?php /*echo $_SESSION['usuario']['email']; */ ?></h3>
+        <hr>
+        -->
+        <div class="container">
+            <div class="row text ">
+                <div class="col-md-12">
+                    <div class="card-body font-weight-bold card-information-main">
 
 
-    <section class="card-login">
-        <header>
-            <h1>Em busca de emprego</h1>
-        </header>
+                        <div class="card-information-box">
+                            <span class="card-information-header"><h1>Informações</h1></span>
+                            <!--INFORMAÇÕES DA CONTA DO USUÁRIO-->
 
+                            <div class="card-information-box-text">
+                                <div><h2>ID: </h2></div>
+                                <div><h2><?php echo $usuario[0]; ?></h2></div>
+                            </div>
 
+                            <div class="card-information-box-text">
+                                <div><h2>Nome: </h2></div>
+                                <div><h2><?php echo $usuario[1]; ?></h2></div>
+                            </div>
 
-        <!-- Abre formulário -->
-        <form action="create.php" method="POST">
-            <div class="card-login-field1">
+                            <div class="card-information-box-text">
+                                <div><h2>Cpf: </h2></div>
+                                <div><h2><?php echo $usuario[3]; ?></h2></div>
+                            </div>
 
-                <input type="text" name="nome" id="nome" placeholder="Insira seu nome">
+                            <div class="card-information-box-text">
+                                <div><h2>Senha: </h2></div>
+                                <div><h2><?php echo $usuario[5]; ?></h2></div>
+                            </div>
 
-                <input type="email" name="email" id="email" placeholder="Insira seu e-mail">
-
-                <input type="password" name="senha" id="senha" placeholder="Insira sua senha">
-            </div>
-
-            <!--        <header>
-                      <h2>Telefone</h2>
-                    </header>
-                    <div class="card-login-field2">
+                            <div class="card-information-box-text">
+                                <div><h2>Email: </h2></div>
+                                <div><h2><?php echo $usuario[6]; ?></h2></div>
+                            </div>
+                            <div class="btn-group">
+                                <a class="btnalterar" href="edit.php?id=<?php /*= $usuario[0]; */ ?>">Alterar dados</a>
+                                <a class="btnexcluir" href="delete.php?id=<?php /*= $usuario[0]; */ ?>"
+                                   onclick="return confirm('Deseja confirmar a operação?');">Deletar conta</a>
+                            </div>
+                        </div>
 
                     </div>
-                    <header>
-                      <h2>Endereço</h2>
-                    </header>-->
-            <div class="card-login-field3">
+                </div>
             </div>
-            <button type="submit" class="btn-login">Cadastrar</button>
-        </form>
-        <!-- Fecha formulário -->
+        </div>
+    </div>
 
-        <a class="a1" href="../../login/login.php">
-            Já é cadastrado? Faça aqui o login!
-        </a>
-        <br>
-        <a class="a2" href="../empresa/index.php">
-            Está contratando? Faça o seu cadastro!
-        </a>
+    <?php if (isset($_GET['msg']) && $_GET['msg'] == 'sucesso') { ?>
+        <div class="update-confirmation-success">
+            <div class="update-confirmation-header">
+                <h2>Dados alterados com sucesso!</h2>
+            </div>
+        </div>
+    <?php } else if (isset($_GET['msg']) && $_GET['msg'] == 'erro') { ?>
 
-    </section>
+    <div class="update-confirmation-error">
+
+        <div class="update-confirmation-header">
+            <h2>Erro ao alterar dados!</h2>
+        </div>
 
 
-
+        <?php } ?>
+    </div>
 </main>
 
-
-<footer class="footer-main">
-    <ul>
-        <li>
-            <h2>Nossas páginas</h2>
-        </li>
-        <li><a href="../../index.php">
-                <h3>Home</h3>
-            </a>
-        </li>
-        <li><a href="#">
-                <h3>Sobre</h3>
-            </a>
-        </li>
-
-        <li><a href="#">
-                <h3>Contato</h3>
-            </a>
-        </li>
-    </ul>
-
-
-
-</footer>
-
-
 </body>
-
 </html>
+
+
+<!--
+
+-->
+
+
+
+

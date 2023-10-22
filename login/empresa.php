@@ -1,6 +1,14 @@
+<?php
+require_once __DIR__ . '/../src/database/conexao.php';
+require_once __DIR__ . '/../src/dao/usuariodao.php';
+require_once 'validarAcesso.php';
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <link rel="shortcut icon" href="" type="">
     <meta charset="UTF-8">
@@ -10,31 +18,17 @@
           integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous"/>
     <link href="https://unpkg.com/progressive-image@1.2.0/dist/index.css" rel="stylesheet" type="text/css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
     <!--Título do Browser-->
 
-    <title>TECH JOBS</title>
+    <title>TechJobs </title>
+
 </head>
 
-<!--<header class="main-header">
-    <nav class="main-header-content">
-        <div class="logo">
-            <p><a href="../index.php">TechJobs</a></p>
-        </div>
-        <ul>
-            <li><a href="index.php" title="Home">HOME</a></li>
-            <li><a href="#expecialista" title="expecialistas">EQUIPE</a></li>
-            <li><a href="#news" title="Noticias">ÁREA T.I</a></li>
-        </ul>
-        <div class="main-header-content-btn">
-            <button><a class="btn-outline" href="login/login.php">Login</a></button>
-            <button><a class="btn-outline" href="usuarios/cadastro.php">Cadastre-se</a></button>
-        </div>
-    </nav>
-</header>-->
-
 <body id="home">
+
 <header class="main-header">
 
     <nav class="main-header-content">
@@ -42,6 +36,7 @@
         <div class="logo">
             <a href="index.php">TechJobs</a>
         </div>
+
 
         <nav class="menu">
 
@@ -52,29 +47,39 @@
                         <span class="txt-link">Home</span>
                     </a>
                 </li>
+                <li class="item-menu">
+                    <a href="#">
+                        <span class="icon"><i class="bi bi-columns"></i></span>
+                        <span class="txt-link">Dashboard</span>
+                    </a>
+                </li>
+
+                <!--Colocar condição de acesso à configuração.
+                 Se for um candidato, ele pode alterar dados sendo um perfil candidato.
+                 Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
+
+                <li class="item-menu">
+                    <a href="../usuarios/candidato/index.php?id ">
+                        <span class="icon"><i class="bi bi-person"></i></span>
+                        <span class="txt-link">Perfil</span>
+                    </a>
                 </li>
                 <li class="item-menu">
-                    <a style="color: coral" href="login/login.php">
-                        <span class="icon"><i class="bi bi-box-arrow-in-right"></i></span>
-                        <span class="txt-link">Login</span>
+                    <a href="logoff.php">
+                        <span class="icon"><i class="bi bi-box-arrow-right"></i></span>
+                        <span class="txt-link">Logoff</span>
                     </a>
                 </li>
-                                <li class="item-menu">
-                    <a style="color: coral" href="usuarios/opçõesCadastro.php">
-                        <span class="icon"><i class="bi bi-box-arrow-in-right"></i></span>
-                        <span class="txt-link">Cadastrar</span>
-                    </a>
-                </li>
-
             </ul>
-
-
         </nav>
     </nav>
 </header>
+
+
 <div class="main-cta">
     <article class="main-cta-banner">
         <div class="main-cta-banner-spacer">
+            <p>Bem-vindo</p>
             <p>Aqui conectamos provedores de emprego e candidatos a trabalho</p>
             <h1>Não perca tempo e aproveite</h1>
             <div class="seta">
@@ -253,141 +258,97 @@
     </div>
 </article>
 
-<section class="main-assinatura">
+<section class="main-project">
+    <div class="main-project-header">
+        <h2>Projetos</h2>
+    </div>
 
-    <article class="main-assinatura-content">
-        <div class="main-assinatura-spacer"></div>
-        <img src="assets/img/undraw_Reading_time_re_phf7.png" width="800px" height="600px" alt="">
+    <div class="project-content">
 
-        <div class="assinatura-boxes">
-            <div class="assinatura-box-content">
 
-                <div class="div-border">
-                    <div class="progressive">
-                        <img data-src="img/20px/procedimento.jpg" class="preview lazy aos-animate"
-                             src="img/20px/" alt="Nossas câmeras com excelentes qualidades" title="Nossas câmeras com excelentes
+        <div class="div-border">
+            <div class="progressive">
+                <img data-src="img/20px/procedimento.jpg" class="preview lazy aos-animate" src="img/20px/"
+                     alt="Nossas câmeras com excelentes qualidades" title="Nossas câmeras com excelentes
                             qualidades">
-                    </div>
-                    <div class="box-single-content">
-                        <h1><a href="">Turma G<br>Mão na Massa</a></h1>
-                        <p>
-                            Nasce da idéia de tornar o aprendizado em relação ao que é exigido pelo setor, mais
-                            fácil
-                            intuitivo e Dinâmico.
+            </div>
+            <div class="box-single-content">
+                <h1><a href="">Turma G<br>Mão na Massa</a></h1>
+                <p>
+                    Nasce da idéia de tornar o aprendizado em relação ao que é exigido pelo setor, mais
+                    fácil
+                    intuitivo e Dinâmico. Uma vez que são muitos protocolos e procedimentos para
+                    absorver,
+                    as
+                    vezes em pouco tempo. Esse trabalho serve como base para tirar duvidas e aprender.
+                </p>
+            </div>
+        </div>
 
-                        </p>
-                    </div>
+        <div class="div-border">
+            <div class="progressive">
+                <img data-src="img/20px/teste.jpg" src="img/20px/contrato.webp" class="preview lazy"
+                     alt="Faço um Contrato Rapido, façil com um clique"
+                     title="Faço um Contrato Rapido, façil com um clique" width="100%">
+            </div>
+            <div class="box-single-content">
+                <h1>
+                    <a href="" target="_blank" rel="external">Vagas Informação</a>
+                </h1>
+                <p>
+                    Uma tentativa de deixar mais prático o acesso as pendências do setor deixando o uso
+                    do
+                    caderno opcional. Estamos trabalhando para implantação de um Banco de Dados, para
+                    que
+                    todos
+                    tenham acesso simultaneamente a mesma informação. Por enquanto, todas as informações
+                    colocadas nesse projeto é salvo no LocalStorage do Browser, ou seja, só vc tem
+                    acesso ao
+                    que
+                    você escreve.
+                </p>
+            </div>
+
+            <div class="div-border">
+                <div class="progressive">
+                    <img data-src="img/20px/portal.jpg" class="preview lazy" src="img/20px/teste.jpg"
+                         alt="Nossas gamas de equipamentos" title="Nossas gamas de equipamentos" width="100%">
                 </div>
-
-                <div class="div-border">
-                    <div class="progressive">
-                        <img data-src="img/20px/procedimento.jpg" class="preview lazy aos-animate"
-                             src="img/20px/" alt="Nossas câmeras com excelentes qualidades" title="Nossas câmeras com excelentes
-                            qualidades">
-                    </div>
-                    <div class="box-single-content">
-                        <h1><a href="">Turma G<br>Mão na Massa</a></h1>
-                        <p>
-                           Uma vez que são muitos protocolos e procedimentos para
-                            absorver,
-                            as
-                            vezes em pouco tempo. Esse trabalho serve como base para tirar duvidas e aprender.
-                        </p>
-                    </div>
+                <div class="box-single-content">
+                    <h1><a href="#home" title="home">Sobre</a></h1>
+                    <p>
+                        O site TechEmpregos tem de facilitar a acessibilidade de vagas de empregos online
+                        sem
+                        sair de casa e mais alguma coisa tem em um
+                        só lugar. Incluindo uma Biblioteca de cursos e a opção de susgestão também para
+                        melhorar
+                        seus conhecimentos na aréa da Tecnologia da Informação.
+                        <a href="" target="_blank" rel="external">Click aqui</a>
+                        e deixe a sua. Obrigado por deixar nosso
+                        ambiente mais rico com sua Visita e Sugestão.
+                    </p>
                 </div>
-
-                <div class="div-border">
-                    <div class="progressive">
-                        <img data-src="img/20px/procedimento.jpg" class="preview lazy aos-animate"
-                             src="img/20px/" alt="Nossas câmeras com excelentes qualidades" title="Nossas câmeras com excelentes
-                            qualidades">
-                    </div>
-                    <div class="box-single-content">
-                        <h1><a href="">Turma G<br>Mão na Massa</a></h1>
-                        <p>
-                            Nasce da idéia de tornar o aprendizado em relação ao que é exigido pelo setor, mais
-                            fácil
-                            intuitivo e Dinâmico. Uma vez que são muitos protocolos e procedimentos para
-                            absorver,
-                            as
-                            vezes em pouco tempo. Esse trabalho serve como base para tirar duvidas e aprender.
-                        </p>
-                    </div>
+            </div>
+            <div class="div-border">
+                <div class="progressive">
+                    <img data-src="img/pixabay2.webp" class="preview lazy" src="img/20px/pixbay2.webp"
+                         alt="usamos tecnicas modernas" width="100%">
+                </div>
+                <div class="box-single-content">
+                    <h1>Adicionais</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem doloribus adipisci
+                        cum
+                        laboriosam quisquam dolor dicta a et quam facilis enim laudantium, provident modi
+                        ad,
+                        sed
+                        pariatur nihil eius nobis? Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Corrupti placeat repellat nemo
+                    </p>
                 </div>
             </div>
         </div>
-    </article>
-    <!--  <div class="div-border2">
-
-          <div class="progressive">
-              <img data-src="img/20px/teste.jpg" src="img/20px/contrato.webp" class="preview lazy"
-                   alt="Faço um Contrato Rapido, façil com um clique"
-                   title="Faço um Contrato Rapido, façil com um clique" width="100%">
-          </div>
-          <div class="box-single-content">
-              <h1>
-                  <a href="" target="_blank" rel="external">Vagas Informação</a>
-              </h1>
-              <p>
-                  Uma tentativa de deixar mais prático o acesso as pendências do setor deixando o uso
-                  do
-                  caderno opcional. Estamos trabalhando para implantação de um Banco de Dados, para
-                  que
-                  todos
-                  tenham acesso simultaneamente a mesma informação. Por enquanto, todas as informações
-                  colocadas nesse projeto é salvo no LocalStorage do Browser, ou seja, só vc tem
-                  acesso ao
-                  que
-                  você escreve.
-              </p>
-
-          </div>
-      </div>
-
-      <div class="div-border3">
-          <div class="progressive">
-              <img data-src="img/20px/portal.jpg" class="preview lazy" src="img/20px/teste.jpg"
-                   alt="Nossas gamas de equipamentos" title="Nossas gamas de equipamentos"
-                   width="100%">
-          </div>
-          <div class="box-single-content">
-              <h1><a href="#home" title="home">Sobre</a></h1>
-              <p>
-                  O site TechEmpregos tem de facilitar a acessibilidade de vagas de empregos online
-                  sem
-                  sair de casa e mais alguma coisa tem em um
-                  só lugar. Incluindo uma Biblioteca de cursos e a opção de susgestão também para
-                  melhorar
-                  seus conhecimentos na aréa da Tecnologia da Informação.
-                  <a href="" target="_blank" rel="external">Click aqui</a>
-                  e deixe a sua. Obrigado por deixar nosso
-                  ambiente mais rico com sua Visita e Sugestão.
-              </p>
-          </div>
-      </div>
-
-
-      <div class="div-border4">
-
-          <div class="progressive">
-              <img data-src="img/pixabay2.webp" class="preview lazy" src="img/20px/pixbay2.webp"
-                   alt="usamos tecnicas modernas" width="100%">
-          </div>
-          <div class="box-single-content">
-              <h1>Adicionais</h1>
-              <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem doloribus adipisci
-                  cum
-                  laboriosam quisquam dolor dicta a et quam facilis enim laudantium, provident modi
-                  ad,
-                  sed
-                  pariatur nihil eius nobis? Lorem ipsum dolor sit amet consectetur adipisicing
-                  elit. Corrupti placeat repellat nemo
-              </p>
-          </div>
-      </div>-->
-
-
+    </div>
 </section>
 <article class="opt-in">
     <div class="opt-in-content">
@@ -425,15 +386,14 @@
                 </p>
                 <div class="box-single-medias">
                     <!--<i class="fa fa-2x fa-facebook"></i>
-                    <i class="fa fa-2x fa-instagram"></i>
-                    <i class="fa fa-2x fa-github"></i>-->
+            <i class="fa fa-2x fa-instagram"></i>
+            <i class="fa fa-2x fa-github"></i>-->
                 </div>
             </div>
         </div>
         <div class="box-single-team">
             <div class="box-single-team-img progressive">
-                <img data-src="" class="lazy preview" src="" alt=""
-                     title="TURMA G GRUPO 1 | Criador de site">
+                <img data-src="" class="lazy preview" src="" alt="" title="TURMA G GRUPO 1 | Criador de site">
             </div>
             <div class="box-single-team-content">
                 <h1>Lucas Caio</h1>
@@ -446,16 +406,15 @@
                     officia corporis voluptatum rem ut perspiciatis. Fuga?
                 </p>
                 <!--<div class="box-single-medias">
-                <i class="fa fa-2x fa-facebook"></i>
-                <i class="fa fa-2x fa-instagram"></i>
-                <i class="fa fa-2x fa-github"></i>
-            </div> -->
+        <i class="fa fa-2x fa-facebook"></i>
+        <i class="fa fa-2x fa-instagram"></i>
+        <i class="fa fa-2x fa-github"></i>
+    </div> -->
             </div>
         </div>
         <div class="box-single-team">
             <div class="box-single-team-img progressive">
-                <img data-src="" class="lazy preview" src="" alt=""
-                     title="TURMA G GRUPO 1 | Criador de site">
+                <img data-src="" class="lazy preview" src="" alt="" title="TURMA G GRUPO 1 | Criador de site">
             </div>
             <div class="box-single-team-content">
                 <h1>Jordan de Carvalho</h1>
@@ -469,15 +428,14 @@
                 </p>
                 <div class="box-single-medias">
                     <!--<i class="fa fa-2x fa-instagram"></i>
-                <i class="fa fa-2x fa-github"></i>-->
+        <i class="fa fa-2x fa-github"></i>-->
                 </div>
             </div>
         </div>
 
         <div class="box-single-team">
             <div class="box-single-team-img progressive">
-                <img data-src="" class="lazy preview" src="" alt=""
-                     title="TURMA G GRUPO 1 | Criador de site">
+                <img data-src="" class="lazy preview" src="" alt="" title="TURMA G GRUPO 1 | Criador de site">
             </div>
             <div class="box-single-team-content">
                 <h1>Felipe Victor</h1>
@@ -491,14 +449,13 @@
                 </p>
                 <div class="box-single-medias">
                     <!--<i class="fa fa-2x fa-instagram"></i>
-                <i class="fa fa-2x fa-github"></i>-->
+        <i class="fa fa-2x fa-github"></i>-->
                 </div>
             </div>
         </div>
         <div class="box-single-team">
             <div class="box-single-team-img progressive">
-                <img data-src="" class="lazy preview" src="" alt=""
-                     title="TURMA G GRUPO 1 | Criador de site">
+                <img data-src="" class="lazy preview" src="" alt="" title="TURMA G GRUPO 1 | Criador de site">
             </div>
             <div class="box-single-team-content">
                 <h1>Raylson Silva</h1>
@@ -550,14 +507,13 @@
                     <li><a href="https://stg.ada.tech/sou-aluno" target="_blank" rel="external" style="color:
                                  rgb(4, 78, 1);">Ada-Tech</a></li>
                 </p>
-                <p><a href="https://drive.google.com/drive/folders/1AnNVHVEhmznbk9azvJSLPNATw23-uca5"
-                      target="_blank" rel="external">Livros<i class="fa fa-arrow-right"></i></a></p>
+                <p><a href="https://drive.google.com/drive/folders/1AnNVHVEhmznbk9azvJSLPNATw23-uca5" target="_blank"
+                      rel="external">Livros<i class="fa fa-arrow-right"></i></a></p>
             </div>
         </div>
         <div class="box-single-noticias">
             <div class="box-single-noticias-img progressive">
-                <img data-src="" src="" class="preview lazy" alt="Como pensar como um programador | Dicas"
-                     title="Como Pensar como um
+                <img data-src="" src="" class="preview lazy" alt="Como pensar como um programador | Dicas" title="Como Pensar como um
                           programador | Dicas">
             </div>
             <div class="box-single-noticias-content">
@@ -569,7 +525,8 @@
                 </p>
                 <p>
                     <a href="https://www.freecodecamp.org/portuguese/news/como-pensar-como-um-programador-licoes-de-resolucao-de-problemas/"
-                       target="_blank" rel="external">Ver Mais <i class="fa fa-arrow-right"></i></a></p>
+                       target="_blank" rel="external">Ver Mais <i class="fa fa-arrow-right"></i></a>
+                </p>
             </div>
         </div>
         <div class="box-single-noticias">
@@ -586,7 +543,7 @@
                     games.
                 </p>
                 <p><a href="https://www.adrenaline.com.br/" target="_blank" rel="external">Ver Mais <i
-                                class="fa fa-arrow-right"></i></a></p>
+                            class="fa fa-arrow-right"></i></a></p>
             </div>
         </div>
         <div class="clear"></div>
@@ -646,8 +603,7 @@
         <p>Desenvolvido por Turma G - GRUPO 1<i class="#" aria-hidden="true"></i></p>
     </div>
     <div class="w50 medias-footer2">
-        <a href="https://www.instagram.com/Tosaka_61" title="#" target="_blank"><i
-                    class="fa fa-instagram"></i></a>
+        <a href="https://www.instagram.com/Tosaka_61" title="#" target="_blank"><i class="fa fa-instagram"></i></a>
     </div>
     <div class="clear"></div>
 </footer>
@@ -687,7 +643,6 @@
 
     gtag('config', 'G-RDBD06ZRL9');
 </script>
-</main>
 </body>
 
 </html>

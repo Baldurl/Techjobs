@@ -24,26 +24,26 @@ include_once '../layouts/footer.php';
     <title>Cadastro</title>
 </head>
 <body id="home">
-<main class="main-blog">
+<main class="main-cadastro">
 
-    <div class="main-blog-container">
+    <div class="main-cadastro-container">
 
 
         <div class="container">
-            <a href="empresa/index.php">
+            <a href="candidato/cadastro.php">
                 <button type="submit">
-                    <span class="container-text">Área de Candidatos</span>
-                    <span>Em busca de emprego?</span>
+                    <span class="container-text">Em busca de emprego?</span>
+                    <span>Inscrição de candidatos!</span>
                 </button>
             </a>
         </div>
 
 
         <div class="container">
-            <a href="empresa/index.php">
+            <a href="empresa/cadastro.php">
                 <button type="submit">
-                    <span class="container-text">Área de recrutadores</span>
-                    <span>Está contratando?</span>
+                    <span class="container-text">Está contratando?</span>
+                    <span>Inscrição de empresas!</span>
                 </button>
             </a>
         </div>

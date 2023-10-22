@@ -1,34 +1,26 @@
 <?php
+session_start();
+header('Content-Type: text/html; charset=utf-8;');
+
+require_once __DIR__ . '/../../layouts/header.php';
+require_once __DIR__ . '/../../src/database/conexao.php';
+require_once __DIR__ . '/../../src/dao/usuariodao.php';
 
 
+# recebe os valores enviados do formulário via método post.
 
-require_once '../../src/conexao.php';
-$nome = $_POST['nome'];
-$email = $_POST['email'];
-$senha = $_POST['senha'];
-$id = NULL;
-$perfil = 'candidato';
+$dao = new UsuarioDAO();
+$usuario = $dao->update('$id', '$nome', '$senha');
 
 
+if ($usuario && !empty($_POST['nome']) || !empty($_POST['senha'])
+    && $_POST['nome'] != $_SESSION['usuario']['nome'] || $_POST['senha'] != $_SESSION['usuario']['senha']) {
+    header('location: index.php?msg=sucesso');
 
+} else if ($usuario && empty($_POST['nome']) || empty($_POST['senha'])) {
+    header('location: edit.php?msg=erro');
 
-
-
-
-$query = "INSERT INTO perfil(id, nome) 
-            VALUES(:id, :nome);";
-$stmt = $dbh->prepare($query);
-$stmt->bindParam(':id', $id);
-$stmt->bindParam(':nome', $perfil);
-$result = $stmt->execute();
-
-
-if ($result) {
-    echo 'candidato cadastrado com sucesso. </br>';
-    echo '<a href="../../login/login.php">Fazer login</a></br>';
-} else {
-    echo 'Erro ao cadastrar perfil';
+} else if ($usuario && $_POST['nome'] == $usuario['nome'] && $_POST['senha'] == $usuario['senha']) {
+    header('location: index.php?msg=erro2');
 }
 
-
-$dbh = null;

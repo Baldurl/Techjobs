@@ -77,7 +77,7 @@ try {
     //Server settings
     $mail->SMTPDebug = false;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host = 'smt.gmail.com';                     //Set the SMTP server to send through
+    $mail->Host = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth = true;                                   //Enable SMTP authentication
     $mail->Username = 'pandamandeus@gmail.com';                     //SMTP username
     $mail->Password = 'joto zmxl kkoo tznh';                               //SMTP password

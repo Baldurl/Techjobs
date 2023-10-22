@@ -42,7 +42,7 @@
                 </li>
 
                 <li class="item-menu">
-                    <a style="color: coral" href="../usuarios/cadastro.php">
+                    <a style="color: coral" href="../usuarios/opçõesCadastro.php">
                         <span class="icon"><i class="bi bi-box-arrow-in-right"></i></span>
                         <span class="txt-link">Cadastrar</span>
                     </a>
@@ -84,7 +84,7 @@
                         </div>
                     </div>
                     <p class="text"><a href="recuperarSenha.php">Recuperar senha</a></p>
-                    <p class="text"><a href="../usuarios/cadastro.php">Ainda não é cadastrado? cadastre-se</a></p>
+                    <p class="text"><a href="../usuarios/opçõesCadastro.php">Não possui uma conta?</a></p>
 
                     <button type="submit" class="btn btn-primary btn-lg btn-login">Login</button>
                 </div>

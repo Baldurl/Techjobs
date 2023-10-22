@@ -18,30 +18,39 @@
     border-radius: 3px;
 }
 
+.btn-group{
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+}
+
 .btnalterar {
     border: none;
-    width: 100px;
-    padding: 5px 0px;
+    width: 150px;
+    padding: 15px 0px;
     background-color: rgb(1, 165, 42);
     color: #fff;
     text-align: center;
     text-decoration: none;
-    font-size: .8rem;
+    font-size: 1.1rem;
     font-weight: 600;
     border-radius: 3px;
     display: inline-block;
+    margin: 10px;
 }
 
 .btnexcluir {
+
     border: none;
-    width: 100px;
-    padding: 5px 0px;
+    width: 150px;
+    padding: 15px 0px;
     background-color: rgb(182, 51, 46);
     color: #fff;
     text-align: center;
     text-decoration: none;
-    font-size: .8rem;
+    font-size: 1.1rem;
     font-weight: 600;
     border-radius: 3px;
     display: inline-block;
+    margin: 10px;
 }

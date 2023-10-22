@@ -1,6 +1,14 @@
+<?php
+require_once __DIR__ . '/../src/database/conexao.php';
+require_once __DIR__ . '/../src/dao/usuariodao.php';
+require_once 'validarAcesso.php';
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <link rel="shortcut icon" href="" type="">
     <meta charset="UTF-8">
@@ -29,6 +37,7 @@
             <a href="index.php">TechJobs</a>
         </div>
 
+
         <nav class="menu">
 
             <ul>
@@ -44,27 +53,29 @@
                         <span class="txt-link">Dashboard</span>
                     </a>
                 </li>
+
+                <!--Colocar condição de acesso à configuração.
+                 Se for um candidato, ele pode alterar dados sendo um perfil candidato.
+                 Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
+
                 <li class="item-menu">
-                    <a href="../perfis/index.php">
+                    <a href="../usuarios/candidato/index.php?id ">
                         <span class="icon"><i class="bi bi-person"></i></span>
                         <span class="txt-link">Perfil</span>
                     </a>
                 </li>
-                </li>
                 <li class="item-menu">
-                    <a href="../index.php">
+                    <a href="logoff.php">
                         <span class="icon"><i class="bi bi-box-arrow-right"></i></span>
                         <span class="txt-link">Logoff</span>
                     </a>
                 </li>
             </ul>
-
-
         </nav>
     </nav>
 </header>
 
-<body id="home">
+
 <div class="main-cta">
     <article class="main-cta-banner">
         <div class="main-cta-banner-spacer">
@@ -632,7 +643,6 @@
 
     gtag('config', 'G-RDBD06ZRL9');
 </script>
-</main>
 </body>
 
 </html>
