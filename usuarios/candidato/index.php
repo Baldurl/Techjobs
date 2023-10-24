@@ -1,6 +1,5 @@
 <?php
 session_start();
-require_once __DIR__ . '/../../layouts/header.php';
 require_once __DIR__ . '/../../src/database/conexao.php';
 require_once __DIR__ . '/../../src/dao/usuariodao.php';
 
@@ -31,9 +30,37 @@ if (!$usuario) {
     <link href="../../assets/css/button.css" rel="stylesheet">
     <link href="../../assets/css/style.css" rel="stylesheet">
     <link href="../../assets/css/cadastro.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
     <title>Tech Jobs - Informações</title>
 </head>
 <body>
+<header class="main-header">
+
+    <nav class="main-header-content">
+
+        <div class="logo">
+            <a href="../../login/index.php">TechJobs</a>
+        </div>
+
+        <nav class="menu">
+
+            <ul>
+                <li class="item-menu">
+                    <a href="../../index.php">
+                        <span class="icon"><i class="bi bi-house-door"></i></span>
+                        <span class="txt-link">Home</span>
+                    </a>
+                </li>
+
+
+            </ul>
+
+
+        </nav>
+    </nav>
+</header>
+
 <main class="main-information">
 
 

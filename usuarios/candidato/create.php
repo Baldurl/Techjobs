@@ -9,14 +9,8 @@ $usuario = $dao->insert('$nome', '$razao_social', '$cpf', '$cnpj', '$senha', '$e
 
 
 if ($usuario) {
-    echo 'Candidato cadastrado com sucesso. </br>';
-    $_SESSION['usuario'] = array(
-        'id' => $usuario['id'],
-        'nome' => $usuario['nome'],
-        'email' => $usuario['email'],
-        'perfil' => $usuario['perfil_id'],
-    );
-    header('location: ../../login/index.php?cadastro=sucesso');
+
+    header('location: ../../login/login.php?cadastro=sucesso');
 
 } else {
     header('location: ../opçõesCadastro.php?cadastro=erro');
