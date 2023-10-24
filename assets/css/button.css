@@ -9,7 +9,6 @@
     padding: 10px;
     margin: 10px;
     width: 120px;
-    height: 35px;
     background-color: rgb(87, 87, 207);
     color: #fff;
     text-align: center;
@@ -53,4 +52,39 @@
     border-radius: 3px;
     display: inline-block;
     margin: 10px;
+}
+
+
+.update-confirmation-success {
+
+    width: 100%;
+    background: #198754;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgb(0, 0, 0);
+    margin: 50px auto;
+
+}
+
+.update-confirmation-header {
+
+    margin: 50px auto;
+}
+
+.update-confirmation-header > h2 {
+
+    color: #333333;
+    padding: 30px;
+    text-align: center;
+    font-size: 1.6rem;
+
+}
+
+.update-confirmation-error {
+
+    width: 100%;
+    background: #955251;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgb(0, 0, 0);
+    margin: 50px auto;
+
 }

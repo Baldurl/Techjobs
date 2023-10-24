@@ -44,7 +44,7 @@ body * {
 }
 
 
-.main-blog {
+.main-blog-login {
     max-width: 1300px;
     margin: 0 auto;
     margin-bottom: 30px;
@@ -226,6 +226,9 @@ body * {
     flex-basis: 60%;
     margin-bottom: 15px;
 }
+
+
+
 
 
 

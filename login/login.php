@@ -19,6 +19,8 @@
     <!--Estilo CSS -->
     <link rel="stylesheet" href="../assets/css/login.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/button.css">
+
 
     <title>TechJobs - login</title>
 </head>
@@ -94,7 +96,13 @@
 
 
 </main>
-
+<?php if (isset($_GET['cadastro']) && $_GET['cadastro'] == 'sucesso') { ?>
+    <div class="update-confirmation-success" style="width: 38%">
+        <div class="update-confirmation-header">
+            <h2>Você foi cadastrado, faça o login para ter o acesso!</h2>
+        </div>
+    </div>
+<?php } ?>
 
 </body>
 
