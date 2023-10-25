@@ -3,6 +3,8 @@ header('Content-Type: text/html; charset=utf-8;');
 
 require_once __DIR__ . '/../src/dao/usuariodao.php';
 
+$id = $_SESSION['usuario']['id'];
+
 
 # recebe os valores enviados do formulário via método post.
 $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT) ?? 0;
@@ -14,7 +16,7 @@ $cargaHoraria = filter_input(INPUT_POST, 'cargahoraria', FILTER_VALIDATE_INT) ??
 $publicacao = filter_input(INPUT_POST, 'publicacao', FILTER_VALIDATE_INT) ?? 0;;
 $expiracao = filter_input(INPUT_POST, 'expiracao', FILTER_VALIDATE_INT) ?? 0;;
 
-$dao = new UsuarioDAO();
+$dao = new Vagadao();
 $result = $dao->update($id, $nome, $tipo, $salario, $cargaHoraria, $descricao, $publicacao, $expiracao);
 
 
