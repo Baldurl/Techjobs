@@ -13,6 +13,7 @@ class  UsuarioDAO
 
     public function getAll()
     {
+
         $query = "SELECT * FROM usuario";
         $stmt = $this->dbh->query($query);
         $rows = $stmt->fetchAll();
@@ -24,14 +25,14 @@ class  UsuarioDAO
     public function getById(int $id)
     {
 
-        $query = "SELECT * FROM usuario WHERE id = :id;";
+        $query = "SELECT * FROM usuario WHERE id = :id";
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(":id", $id);
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_BOTH);
 
-
         $this->dbh = null;
+
         return $row;
     }
 
@@ -97,6 +98,8 @@ class  UsuarioDAO
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
         $perfil = filter_input(INPUT_POST, 'perfil', FILTER_SANITIZE_NUMBER_INT) ?? 0;
+
+
         $query = "UPDATE usuario SET nome = :nome, email = :email, senha = :senha, perfil_id = :perfil_id WHERE id = :id";
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(":nome", $nome);
@@ -133,10 +136,10 @@ class  UsuarioDAO
     {
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
-        #cria uma instrução SQL para selecionar todos os dados na tabela usuarios.
+
+
         $query = "SELECT id, nome, email, perfil_id FROM usuario WHERE email=:email and senha=:senha";
 
-        # prepara a execução da query e retorna para uma variável chamada stmt.
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':senha', $senha);
@@ -169,6 +172,7 @@ class  UsuarioDAO
     {
         $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
         $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
+
         $query = "UPDATE usuario SET  senha = :senha WHERE id = :id";
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(":senha", $senha);
