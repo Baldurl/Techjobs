@@ -4,4 +4,4 @@
 session_start();
 unset ($_SESSION['id']);
 session_destroy();
-header('location: ../index.php?login=logoff');
+header('location: ../index.php?auth=logoff');

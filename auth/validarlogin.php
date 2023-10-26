@@ -4,15 +4,15 @@ require_once __DIR__ . '/../src/database/conexao.php';
 require_once __DIR__ . '/../src/dao/usuariodao.php';
 
 
-$dao = new Usuariodao();
+$dao = new UsuarioDAO();
 $usuario = $dao->validarLogin('$email', '$senha');
 
 
 if (!$usuario) {
 
-    header("location:login.php?login=erro");
+    header("location:auth.php?auth=erro");
     exit;
-//redireciona para a pagina login.php para preencher os dados
+//redireciona para a pagina auth.php para preencher os dados
 } else {
     //senão significa que o usuario foi encontrado
     $_SESSION['usuario'] = array(
@@ -22,7 +22,7 @@ if (!$usuario) {
         'perfil' => $usuario['perfil_id'],
     );
 
-    header('Location: index.php?login=sucesso');
+    header('Location: home.php?auth=sucesso');
 }
 
 

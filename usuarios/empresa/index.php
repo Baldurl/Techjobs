@@ -4,12 +4,12 @@ require_once __DIR__ . '/../../src/database/conexao.php';
 require_once __DIR__ . '/../../src/dao/usuariodao.php';
 
 
-$dao = new Usuariodao();
+$dao = new UsuarioDAO();
 $usuario = $dao->getById();
 
 
 if (!$usuario) {
-    header('location: cadastro.php?error=Empresa não encontrada!');
+    header('location: save.php?error=Empresa não encontrada!');
     exit;
 }
 

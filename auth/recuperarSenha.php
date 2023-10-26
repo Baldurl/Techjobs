@@ -39,10 +39,10 @@
                     <div class="form-group">
 
                         <?php
-                        if (isset($_GET['login']) && $_GET['login'] == 'erro') {
+                        if (isset($_GET['auth']) && $_GET['auth'] == 'erro') {
                             echo '<div style="color: darkred; font-size: 1rem; "> Preencha o campo do e-mail.
                                 </div> ';
-                        } else if (isset($_GET['login']) && $_GET['login'] == 'erro2') {
+                        } else if (isset($_GET['auth']) && $_GET['auth'] == 'erro2') {
                             echo '<div style="color: darkred; font-size: 1rem; "> E-mail não encontrado.
                                 </div> ';
                         }

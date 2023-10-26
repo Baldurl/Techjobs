@@ -9,16 +9,12 @@ $usuario = $dao->insert('$nome', '$razao_social', '$cpf', '$cnpj', '$senha', '$e
 
 
 if ($usuario) {
-    echo 'Usuário cadastrado com sucesso';
-    header('location: ../../auth/home.php?cadastro=sucesso');
 
+    header('location: index.php?cadastro=sucesso');
 
 } else {
-    echo 'Erro ao cadastrar usuário';
-    header('location: save.php?cadastro=erro');
+    header('location: index.php?cadastro=erro');
 }
-
-
 
 
 

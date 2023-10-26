@@ -77,7 +77,7 @@
                                 <input name="senha" type="password" class="form-control" id="senha"
                                        placeholder="********">
                                 <?php
-                                if (isset($_GET['login']) && $_GET['login'] == 'erro') { ?>
+                                if (isset($_GET['auth']) && $_GET['auth'] == 'erro') { ?>
                                     <div style="color: darkred; font-size: 1.2rem"> Login
                                         inválido.
                                     </div>
@@ -88,7 +88,7 @@
                     <p class="text"><a href="recuperarSenha.php">Recuperar senha</a></p>
                     <p class="text"><a href="../usuarios/opçõesCadastro.php">Não possui uma conta?</a></p>
 
-                    <button type="submit" class="btn btn-primary btn-lg btn-login">Login</button>
+                    <button type="submit" class=" btn-primary btn-lg btn-login">Login</button>
                 </div>
             </div>
         </form>

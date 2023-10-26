@@ -50,7 +50,7 @@ class OAuth implements OAuthTokenProvider
     protected $oauthToken;
 
     /**
-     * The user's email address, usually used as the login ID
+     * The user's email address, usually used as the auth ID
      * and also the from address when sending email.
      *
      * @var string

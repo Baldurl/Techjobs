@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 24/10/2023 às 08:47
+-- Tempo de geração: 26/10/2023 às 01:41
 -- Versão do servidor: 8.0.30
 -- Versão do PHP: 8.1.10
 
@@ -111,7 +111,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `razao_social`, `cpf`, `cnpj`, `senha`, `email`, `sexo`, `ddi`, `ddd`, `numero`, `cep`, `cidade`, `logradouro`, `bairro`, `lote`, `rua`, `complemento`, `perfil_id`) VALUES
-(1, 'Jordan', NULL, '075-276-691-01', NULL, '123', 'jordanvieiracarvalho@hotmail.com', 'Masculino', '', '61', '998490406', '72251702', 'Ceilândia', NULL, 'QNO 7', '10', 'B', NULL, 1);
+(1, 'Jordan', NULL, '075-276-691-01', NULL, '123456', 'jordan@gmail.com', 'Masculino', '', '61', '998490406', '72251702', 'Ceilândia', NULL, 'QNO 7', '10', 'B', NULL, 1),
+(29, 'Panda', NULL, '1212312312', NULL, '123', 'pandamandeus@gmail.com', NULL, NULL, '61', '998490406', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -123,19 +124,12 @@ CREATE TABLE `vaga` (
   `id` int NOT NULL,
   `nome` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `tipo` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `descrição` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
-  `salário` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `carga_horária` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `data_publicação` date NOT NULL,
-  `data_expiração` date NOT NULL
+  `descricao` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `salario` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `carga_horaria` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `data_publicacao` date NOT NULL,
+  `data_expiracao` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `vaga`
---
-
-INSERT INTO `vaga` (`id`, `nome`, `tipo`, `descrição`, `salário`, `carga_horária`, `data_publicação`, `data_expiração`) VALUES
-(1, 'Suporte de redes', 'Efetivo/CLT', 'Bla bla, trabalho bom pra quem gosta na área de redes, benefícios, etc', 'R$1.500,00', 'Segunda à sexta feira.', '2023-11-21', '2023-10-23');
 
 --
 -- Índices para tabelas despejadas
@@ -216,7 +210,7 @@ ALTER TABLE `perfil`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de tabela `vaga`

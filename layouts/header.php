@@ -20,7 +20,7 @@
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a style="color: coral" href="/login/login.php">
+                    <a style="color: coral" href="/auth/index.php">
                         <span class="icon"><i class="bi bi-box-arrow-in-right"></i></span>
                         <span class="txt-link">Login</span>
                     </a>

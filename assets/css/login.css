@@ -101,7 +101,7 @@ body * {
 }
 
 
-/*.card-login-field1 {
+/*.card-auth-field1 {
     width: 1300px;
     display: flex;
     flex-wrap: wrap;
@@ -110,7 +110,7 @@ body * {
 
 }
 
-.card-login-field1 input {
+.card-auth-field1 input {
     flex-basis: 60%;
     margin: 20px 0;
     padding: 20px;
@@ -118,14 +118,14 @@ body * {
 
 }
 
-.card-login-field2 {
+.card-auth-field2 {
     width: 1300px;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-evenly
 }
 
-.card-login-field2 input {
+.card-auth-field2 input {
     flex-basis: 20%;
     margin: 20px 0;
     padding: 20px;
@@ -135,7 +135,7 @@ body * {
 
 
 
-.card-login-field3 {
+.card-auth-field3 {
     width: 1300px;
     display: flex;
     flex-wrap: wrap;
@@ -143,7 +143,7 @@ body * {
 
 }
 
-.card-login-field3 input {
+.card-auth-field3 input {
     flex-basis: 28%;
     margin: 20px 0;
     padding: 20px;

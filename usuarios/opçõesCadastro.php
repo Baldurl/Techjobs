@@ -16,7 +16,7 @@ include_once '../layouts/footer.php';
           integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
     <link href="https://unpkg.com/progressive-image@1.2.0/dist/index.css" rel="stylesheet" type="text/css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/cadastro.css">
+    <link rel="stylesheet" href="../assets/css/usuario.css">
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 
@@ -30,7 +30,7 @@ include_once '../layouts/footer.php';
 
 
         <div class="container">
-            <a href="candidato/cadastro.php">
+            <a href="candidato/create.php">
                 <button type="submit">
                     <span class="container-text">Em busca de emprego?</span>
                     <span>Inscrição de candidatos!</span>
@@ -40,7 +40,7 @@ include_once '../layouts/footer.php';
 
 
         <div class="container">
-            <a href="empresa/cadastro.php">
+            <a href="empresa/create.php">
                 <button type="submit">
                     <span class="container-text">Está contratando?</span>
                     <span>Inscrição de empresas!</span>

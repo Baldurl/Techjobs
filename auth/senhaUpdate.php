@@ -10,7 +10,7 @@ $_SESSION['id'];*/
 //$dbh = Conexao::getConexao();
 
 
-$dao = new Usuariodao();
+$dao = new UsuarioDAO();
 $usuario = $dao->senhaUpdate('$senha', '$id');
 
 
@@ -37,7 +37,7 @@ $usuario = $dao->senhaUpdate('$senha', '$id');
             <?php if ($usuario) { ?>
                 <div class="container">
                     <h1 class="display-4 text-success">Senha alterada com sucesso</h1>
-                    <a href="login.php" class="btn btn-success btn-lg mt-5 text-white">Voltar</a>
+                    <a href="index.php" class="btn btn-success btn-lg mt-5 text-white">Voltar</a>
                 </div>
             <?php } else { ?>
                 <div class="container">

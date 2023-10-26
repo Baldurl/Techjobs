@@ -1,14 +1,9 @@
 <?php
-require_once __DIR__ . '/../../layouts/header.php';
-require_once __DIR__ . '/../../layouts/nav.php';
+require_once __DIR__ . "/../../src/dao/perfildao.php";
 
-
+$perfilDAO = new PerfilDAO();
+$perfis = $perfilDAO->getAll();
 ?>
-
-
-<!doctype html>
-<html lang="pt-br">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -16,7 +11,7 @@ require_once __DIR__ . '/../../layouts/nav.php';
      initial-scale=1, shrink-to-fit=no">
 
     <!--Estilo CSS -->
-    <link rel="stylesheet" href="../../assets/css/cadastro.css">
+    <link rel="stylesheet" href="../../assets/css/usuario.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -26,15 +21,58 @@ require_once __DIR__ . '/../../layouts/nav.php';
 
     <title>Tech Jobs - Candidato</title>
 </head>
-
 <body>
+<header class="main-header">
+    <nav class="main-header-content">
+
+        <div class="logo">
+            <a href="../../auth/home.php">TechJobs</a>
+        </div>
 
 
+        <nav class="menu">
+
+
+            <ul>
+                <li class="item-menu">
+                    <a href="../../auth/home.php">
+                        <span class="icon"><i class="bi bi-house-door"></i></span>
+                        <span class="txt-link">Home</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="#">
+                        <span class="icon"><i class="bi bi-columns"></i></span>
+                        <span class="txt-link">Dashboard</span>
+                    </a>
+                </li>
+
+                <!--Colocar condição de acesso à configuração.
+                 Se for um candidato, ele pode alterar dados sendo um perfil candidato.
+                 Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
+
+                <li class="item-menu">
+                    <a href="index.php ">
+                        <span class="icon"><i class="bi bi-person"></i></span>
+                        <span class="txt-link">Perfil</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="../../auth/logoff.php">
+                        <span class="icon"><i class="bi bi-box-arrow-right"></i></span>
+                        <span class="txt-link">Logoff</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </nav>
+</header>
 <main class="main-candidato">
     <div class="card-candidato">
-        <h2>Criar uma nova conta de usuário</h2>
 
-        <form action="create.php" method="post">
+        <h2>Novo Usuário</h2>
+
+        <form action="save.php" method="post">
             <div class="container">
 
                 <div class="row text">
@@ -42,10 +80,8 @@ require_once __DIR__ . '/../../layouts/nav.php';
                         <div class="card-body font-weight-bold">
 
                             <div class="form-group card-candidato-content">
-
                                 <input name="name" type="text" class="form-control" id="name"
                                        placeholder="Nome">
-
 
                                 <input name="email" type="email" class="form-control" id="email"
                                        placeholder="E-mail">
@@ -55,48 +91,42 @@ require_once __DIR__ . '/../../layouts/nav.php';
                                         <label for="cpf">Cpf</label>
                                         <input name="cpf" type="cpf" class="form-control" id="cpf"
                                                placeholder="00-000-000-00">
+
                                     </div>
-
-
                                     <div class="form-group col-xs-3">
-
                                         <label for="ddd"> DDD</label>
                                         <input name="ddd" type="ddd" class="form-control" id="ddd"
                                                placeholder="00">
+
                                     </div>
-
-
                                     <div class="form-group col-xs-3">
                                         <label for="telefone">Telefone</label>
                                         <input name="telefone" type="telefone" class="form-control" id="telefone"
                                                placeholder="00000-0000">
                                     </div>
                                 </div>
-
                                 <input name="senha" type="password" class="form-control" id="senha"
                                        placeholder="Senha">
-
-
                                 <input name="senha2" type="password" class="form-control" id="senha2"
                                        placeholder="Confirme a senha">
 
-                                <input type="hidden" id="perfil" name="perfil" value="2">
+                                <div>
+                                    <label for="perfil" style="display: block">Perfil</label>
+                                    <select name="perfil">
+                                        <?php foreach ($perfis as $perfil) : ?>
+                                            <option value="<?= $perfil['id'] ?>"><?= $perfil['nome'] ?></option>
+                                        <?php endforeach ?>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-login">Salvar</button>
 
-
-                    <button type="submit" class="btn btn-primary btn-lg btn-login">Cadastrar</button>
-                    <p class="text"><a href="../../login/login.php">Já tem uma conta?</a></p>
                 </div>
             </div>
         </form>
+
     </div>
-
-
 </main>
-
-
 </body>
-
-</html>

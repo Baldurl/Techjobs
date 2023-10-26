@@ -174,6 +174,7 @@ body {
 
 }
 
+
 .card-candidato-content-row {
 
     display: flex;
@@ -460,7 +461,8 @@ body {
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgb(0, 0, 0);
-    margin: 50px auto;
+    margin: 40px auto;
+    padding: 40px;
 
 }
 
@@ -469,10 +471,16 @@ body {
     flex-basis: 50%;
 }
 
-.card-information-header > h1 {
-    color: cornflowerblue;
+.card-information-header > h2 {
+    color: #333333;
     font-weight: 600;
-    padding-top: 30px;
+    margin: 0 auto;
+    letter-spacing: 3px;
+    text-align: center;
+    border: none;
+    outline: none;
+    padding: 20px 0;
+
 }
 
 .card-information-box-text {
@@ -516,6 +524,7 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 15px;
 
 }
 
@@ -529,7 +538,7 @@ body {
 
 .update-group-btns > a {
     flex-basis: 30%;
-    margin: 20px;
+    margin: 10px;
     color: #333333;
 }
 
@@ -584,12 +593,134 @@ body {
 
 }
 
+main h1 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 20px;
 
 
+}
+
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+td a1 {
+    color: rgb(87, 87, 207);
+
+}
+
+.td__operacao {
+    display: flex;
+}
 
 
 /*FIM TELA DE INFORMAÇÃO*/
 
+/*COMEÇO TELA VAGA*/
+.main-vaga {
+    max-width: 100%;
+    margin: 0 auto;
 
+}
+
+
+.card-vaga {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgb(0, 0, 0);
+    margin: 50px auto;
+    padding: 100px;
+
+}
+
+.card-vaga-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.card-vaga > h2 {
+    color: #333333;
+    font-weight: 600;
+    margin: 0 auto;
+    letter-spacing: 3px;
+    text-align: center;
+    border: none;
+    outline: none;
+    padding: 20px 0;
+}
+
+
+.card-vaga header h2 {
+    color: #333333;
+    font-weight: 600;
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    outline: none;
+
+
+}
+
+
+.card-vaga-content {
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.card-vaga-content > div {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 20px;
+    flex-basis: 20%;
+
+}
+
+
+.card-vaga-content > div > input {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 10px 30px;
+    letter-spacing: 1px;
+
+
+}
+
+
+.card-vaga-content {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+
+/*FIM TELA VAGA*/
 
 

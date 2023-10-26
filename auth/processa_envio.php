@@ -38,7 +38,7 @@ class  Mensagem
 
     public function mensagemValida()
     {
-        // if (empty($_POST['para']) || (empty($_POST['assunto'])) || (empty($_POST['mensagem']))) {header('location: login.php?login=erro');}
+        // if (empty($_POST['para']) || (empty($_POST['assunto'])) || (empty($_POST['mensagem']))) {header('location: auth.php?auth=erro');}
         if (empty($this->para)) {
             return false;
         }
@@ -52,13 +52,13 @@ $mensagem = new Mensagem();
 $mensagem->__set('para', $_POST['para']);
 if (!$mensagem->mensagemValida()) {
     echo 'O e-mail inserido não é válido';
-    header('location:recuperarSenha.php?login=erro');
+    header('location:recuperarSenha.php?auth=erro');
 }
 
 require_once __DIR__ . '/../src/database/conexao.php';
 require_once __DIR__ . '/../src/dao/usuariodao.php';
 
-$dao = new Usuariodao();
+$dao = new UsuarioDAO();
 $usuario = $dao->processarEnvioEmail('$email');
 
 
@@ -66,7 +66,7 @@ if ($usuario) {
 
 } else {
     echo 'O e-mail inserido não é válido';
-    header('location:recuperarSenha.php?login=erro2');
+    header('location:recuperarSenha.php?auth=erro2');
 }
 
 
@@ -98,8 +98,8 @@ try {
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = ('Recuperar senha');
-    $mail->Body = ('Olá, aqui está o link para você redefinir sua senha: <br> http://localhost/techjobs/login/alterarSenha.php <br>Boa sorte!');
-    $mail->AltBody = 'Oi, é necessário utilizar um client que suporte HTML para ter acesso total ao conteúdo dessa mensagem ';
+    $mail->Body = ('Olá, aqui está o link para você redefinir sua senha: <br> http://localhost/techjobs/auth/alterarSenha.php <br>Boa sorte!');
+    $mail->AltBody = 'Olá, aqui está o link para você redefinir sua senha: http://localhost/techjobs/auth/alterarSenha.php. Boa sorte!';
     $mail->send();
 
 
@@ -147,7 +147,7 @@ try {
                              width="300"
                              height="200"
                              alt="robot">
-                        <a href="login.php"
+                        <a href="index.php"
                            class="d-block mx-auto mb-2 btn btn-success btn-lg mt-5 text-white">Voltar</br></a>
                     </div>
                 <?php } ?>
@@ -162,7 +162,7 @@ try {
                              width="300"
                              height="200"
                              alt="robot">
-                        <a href="login.php"
+                        <a href="index.php"
                            class="d-block mx-auto mb-2 btn btn-danger btn-lg mt-5 text-white">Voltar</a>
                     </div>
 

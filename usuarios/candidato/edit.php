@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../src/database/conexao.php';
 require_once __DIR__ . '/../../src/dao/usuariodao.php';
 
 $id = $_SESSION['usuario']['id'];
-$dao = new Usuariodao();
+$dao = new UsuarioDAO();
 $usuario = $dao->getById($id);
 
 if (!$usuario) {
@@ -26,7 +26,7 @@ if (!$usuario) {
      initial-scale=1, shrink-to-fit=no">
 
     <!--Estilo CSS -->
-    <link rel="stylesheet" href="../../assets/css/cadastro.css">
+    <link rel="stylesheet" href="../../assets/css/usuario.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -45,19 +45,18 @@ if (!$usuario) {
     <nav class="main-header-content">
 
         <div class="logo">
-            <a href="../../login/index.php">TechJobs</a>
+            <a href="../../auth/home.php">TechJobs</a>
         </div>
 
         <nav class="menu">
 
             <ul>
                 <li class="item-menu">
-                    <a href="../../login/index.php">
+                    <a href="../../auth/home.php">
                         <span class="icon"><i class="bi bi-house-door"></i></span>
                         <span class="txt-link">Home</span>
                     </a>
                 </li>
-
 
 
             </ul>
@@ -69,7 +68,17 @@ if (!$usuario) {
 
 <main class="main-information">
 
+    <?php if (isset($_GET['msg']) && $_GET['msg'] == 'erro') { ?>
 
+    <div class="update-confirmation-error">
+
+        <div class="update-confirmation-header">
+            <h2>Erro ao alterar dados!</h2>
+        </div>
+
+
+        <?php } ?>
+    </div>
     <div class="card-information">
 
         <!-- INFORMAÇÕES DA SESSÃO DO USUÁRIO
@@ -133,6 +142,7 @@ if (!$usuario) {
                                                placeholder="Senha">
                                     </div>
                                 </div>
+
                                 <div class="update-group-btns">
                                     <button type="submit" class="btn btn-primary btn-lg ">Alterar
 
@@ -147,28 +157,12 @@ if (!$usuario) {
                             </form>
                         </div>
 
-                        <div class="group-btns">
-
-
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-
-    <?php if (isset($_GET['msg']) && $_GET['msg'] == 'erro') { ?>
-
-    <div class="update-confirmation-error">
-
-        <div class="update-confirmation-header">
-            <h2>Erro ao alterar dados!</h2>
-        </div>
-
-
-        <?php } ?>
-    </div>
 
 </main>
 

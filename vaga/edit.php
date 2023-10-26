@@ -1,9 +1,19 @@
 <?php
+
+require_once __DIR__ . '/../src/dao/usuariodao.php';
 require_once __DIR__ . "/../src/dao/vagadao.php";
 
-$vagaDAO = new VagaDAO();
-$vagas = $vagaDAO->getAll();
+$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT) ?? 0;
+$dao = new VagaDAO();
+$vaga = $dao->getById($id);
+
+
+if (!$vaga) {
+    header('location: index.php?error=Vaga não encontrada!');
+    exit;
+}
 ?>
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -23,13 +33,16 @@ $vagas = $vagaDAO->getAll();
     <title>Tech Jobs - Vaga</title>
 </head>
 <header class="main-header">
-
     <nav class="main-header-content">
 
         <div class="logo">
             <a href="../auth/home.php">TechJobs</a>
         </div>
+
+
         <nav class="menu">
+
+
             <ul>
                 <li class="item-menu">
                     <a href="../auth/home.php">
@@ -65,63 +78,81 @@ $vagas = $vagaDAO->getAll();
     </nav>
 </header>
 
-
 <body>
 <main class="main-vaga">
+
+    <?php if (isset($_GET['msg']) && $_GET['msg'] == 'erro') { ?>
+
+        <div class="update-confirmation-error">
+            <div class="update-confirmation-header">
+                <h2>Erro ao alterar dados!</h2>
+            </div>
+
+        </div>
+    <?php } ?>
+
     <div class="card-vaga">
+        <h2>Alterar vaga</h2>
 
-        <h2>Adicionar vaga</h2>
-
-        <form action="save.php" method="post">
+        <form action="update.php" method="post">
             <div class="container">
                 <div class="row text">
                     <div class="col-md-12">
                         <div class="card-body font-weight-bold card-vaga-content">
 
                             <div class="form-group card-vaga-content">
+                                <input type="hidden" name="id" value="<?= $vaga['id'] ?>">
                                 <div>
                                     <label for="nome">Nome do cargo: </label>
-                                    <input type="text" name="nome" placeholder="Informe o cargo" size="80" required
-                                           autofocus>
+                                    <input type="text" name="nome" placeholder="Informe o cargo"
+                                           size="80" required
+                                           autofocus value="<?= htmlspecialchars($vaga['nome']) ?>">
                                 </div>
-
 
                                 <div>
                                     <label for="tipo">Tipo: </label>
-                                    <input type="text" name="tipo" placeholder="Informe o tipo de contrato" required>
+                                    <input type="text" name="tipo"
+                                           placeholder="Informe o tipo de contrato" required
+                                           value="<?= htmlspecialchars($vaga['tipo']) ?>">
                                 </div>
                                 <div style="font-size: 1.5rem;">
-                                    <label>Descrição: </label>
-                                    <textarea name="descricao" rows="16" cols="100" required></textarea>
+                                    <label for="descricao">Descrição: </label>
+                                    <textarea id="descricao" name="descricao" rows="16" cols="100"
+                                              required
+                                              placeholder="<?= htmlspecialchars($vaga['descricao']) ?>"></textarea>
                                 </div>
                                 <div>
                                     <label for="salario">Salário: </label>
-                                    <input type="text" name="salario" placeholder="Informe o salário." required>
+                                    <input type="text" name="salario"
+                                           placeholder="Informe o salário." required
+                                           value="<?= htmlspecialchars($vaga['salario']) ?>">
                                 </div>
                                 <div>
                                     <label for="carga_horaria">Carga horária: </label>
-                                    <input type="text" name="carga_horaria" placeholder="Informe a carga horária."
-                                           required>
+                                    <input type="text" name="carga_horaria"
+                                           placeholder="Informe a carga horária."
+                                           required value="<?= htmlspecialchars($vaga['carga_horaria']) ?>">
                                 </div>
                                 <div>
                                     <label for="data_publicacao">Data de Publicação: </label>
                                     <input type="date" name="data_publicacao"
                                            placeholder="Informe a data de publicacao."
-                                           required>
+                                           required value="<?= htmlspecialchars($vaga['data_publicacao']) ?>">
                                 </div>
                                 <div>
                                     <label style
                                            for="data_expiracao">Data de Expiração: </label>
-                                    <input type="date" name="data_expiracao" placeholder="Informe a data de publicacao."
-                                           required>
+                                    <input type="date" name="data_expiracao"
+                                           placeholder="Informe a data de publicacao."
+                                           required value="<?= htmlspecialchars($vaga['data_expiracao']) ?>">
                                 </div>
 
                             </div>
 
-
                         </div>
                         <div class="update-group-btns">
-                            <button type="submit" class="btn btn-primary btn-lg ">Salvar</button>
+                            <button type="submit" class="btn btn-primary btn-lg ">Salvar
+                            </button>
 
                             <a href="index.php">
                                 <button type="button" class="btn btn-primary btn-lg ">

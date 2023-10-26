@@ -2,7 +2,7 @@
 
 include_once __DIR__ . '/../database/conexao.php';
 
-class  Usuariodao
+class  UsuarioDAO
 {
     private $dbh;
 
@@ -21,9 +21,9 @@ class  Usuariodao
 
     }
 
-    public function getById($id)
+    public function getById(int $id)
     {
-        $id = $_SESSION['usuario']['id'];
+
         $query = "SELECT * FROM usuario WHERE id = :id;";
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(":id", $id);
@@ -90,16 +90,21 @@ class  Usuariodao
         return $result;
     }
 
-    public function update($id, $nome, $senha)
+    public function update($id, $email, $senha, $nome, $perfil): int
     {
-        $id = $_SESSION['usuario']['id'];
+        $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT) ?? 0;
+        $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
-        $nome = filter_input(INPUT_POST, 'name');
-        $query = "UPDATE usuario SET nome = :nome, senha = :senha WHERE id = :id";
+        $perfil = filter_input(INPUT_POST, 'perfil', FILTER_SANITIZE_NUMBER_INT) ?? 0;
+        $query = "UPDATE usuario SET nome = :nome, email = :email, senha = :senha, perfil_id = :perfil_id WHERE id = :id";
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(":nome", $nome);
-        $stmt->bindParam(":id", $id);
+        $stmt->bindParam(":email", $email);
         $stmt->bindParam(":senha", $senha);
+        $stmt->bindParam(":perfil_id", $perfil);
+        $stmt->bindParam(":id", $id);
+
         $result = $stmt->execute();
         $this->dbh = null;
 
@@ -111,6 +116,7 @@ class  Usuariodao
 
     public function delete($id)
     {
+
         $query = "DELETE FROM usuario WHERE id = :id";
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(":id", $id);

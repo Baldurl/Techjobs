@@ -4,12 +4,12 @@ require_once __DIR__ . '/../../src/database/conexao.php';
 require_once __DIR__ . '/../../src/dao/usuariodao.php';
 
 $id = $_SESSION['usuario']['id'];
-$dao = new Usuariodao();
+$dao = new UsuarioDAO();
 $usuario = $dao->getById('$id');
 
 
 if (!$usuario) {
-    header('location: cadastro.php?error=Usuário não encontrado!');
+    header('location: save.php?error=Usuário não encontrado!');
     exit;
 
 }
@@ -29,7 +29,7 @@ if (!$usuario) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="../../assets/css/button.css" rel="stylesheet">
     <link href="../../assets/css/style.css" rel="stylesheet">
-    <link href="../../assets/css/cadastro.css" rel="stylesheet">
+    <link href="../../assets/css/usuario.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <title>Tech Jobs - Informações</title>
@@ -40,7 +40,7 @@ if (!$usuario) {
     <nav class="main-header-content">
 
         <div class="logo">
-            <a href="../../login/index.php">TechJobs</a>
+            <a href="../../auth/home.php">TechJobs</a>
         </div>
 
         <nav class="menu">
@@ -63,7 +63,23 @@ if (!$usuario) {
 
 <main class="main-information">
 
+    <?php if (isset($_GET['msg']) && $_GET['msg'] == 'sucesso') { ?>
+        <div class="update-confirmation-success">
+            <div class="update-confirmation-header">
+                <h2>Dados alterados com sucesso!</h2>
+            </div>
+        </div>
+    <?php } else if (isset($_GET['msg']) && $_GET['msg'] == 'erro') { ?>
 
+    <div class="update-confirmation-error">
+
+        <div class="update-confirmation-header">
+            <h2>Erro ao alterar dados!</h2>
+        </div>
+
+
+        <?php } ?>
+    </div>
     <div class="card-information">
         <!-- INFORMAÇÕES DA SESSÃO DO USUÁRIO
         <hr>
@@ -107,8 +123,8 @@ if (!$usuario) {
                                 <div><h2><?php echo $usuario[6]; ?></h2></div>
                             </div>
                             <div class="btn-group">
-                                <a class="btnalterar" href="edit.php?id=<?php /*= $usuario[0]; */ ?>">Alterar dados</a>
-                                <a class="btnexcluir" href="delete.php?id=<?php /*= $usuario[0]; */ ?>"
+                                <a class="btnalterar" href="edit.php?id=<?php $usuario[0]; ?>">Alterar dados</a>
+                                <a class="btnexcluir" href="delete.php?id=<?php $usuario[0]; ?>"
                                    onclick="return confirm('Deseja confirmar a operação?');">Deletar conta</a>
                             </div>
                         </div>
@@ -119,23 +135,7 @@ if (!$usuario) {
         </div>
     </div>
 
-    <?php if (isset($_GET['msg']) && $_GET['msg'] == 'sucesso') { ?>
-        <div class="update-confirmation-success">
-            <div class="update-confirmation-header">
-                <h2>Dados alterados com sucesso!</h2>
-            </div>
-        </div>
-    <?php } else if (isset($_GET['msg']) && $_GET['msg'] == 'erro') { ?>
 
-    <div class="update-confirmation-error">
-
-        <div class="update-confirmation-header">
-            <h2>Erro ao alterar dados!</h2>
-        </div>
-
-
-        <?php } ?>
-    </div>
 </main>
 
 </body>

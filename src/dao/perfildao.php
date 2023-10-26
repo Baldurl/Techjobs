@@ -4,7 +4,7 @@
 include_once __DIR__ . '/../database/conexao.php';
 
 
-class  PerfilDao
+class  PerfilDAO
 {
     private $dbh;
 
@@ -28,11 +28,25 @@ class  PerfilDao
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(":id", $id);
         $stmt->execute();
-        $stmt->fetch();
         $row = $stmt->fetch(PDO::FETCH_BOTH);
-        return $row;
+
 
         $this->dbh = null;
+        return $row;
+    }
+
+    public function getByNome(string $nome)
+    {
+        $query = "SELECT * FROM perfil WHERE nome = :nome";
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(":nome", $nome);
+        $stmt->execute();
+        $stmt->fetch();
+        $row = $stmt->fetch(PDO::FETCH_BOTH);
+
+
+        $this->dbh = null;
+        return $row;
     }
 
     public function insert(string $nome)
@@ -51,8 +65,9 @@ class  PerfilDao
     {
         $query = "update perfil set nome = :nome where id = :id";
         $stmt = $this->dbh->prepare($query);
-        $stmt->bindParam(":nome", $nome());
-        $stmt->bindParam(":id", $id());
+        $stmt->bindParam(":id", $id);
+        $stmt->bindParam(":nome", $nome);
+
         $result = $stmt->execute();
         $this->dbh = null;
 
