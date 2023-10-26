@@ -17,19 +17,18 @@
     border-radius: 3px;
     flex-basis: 20%;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.6s;
 }
+
 .btn:hover {
     color: #ffffff;
     text-decoration: none;
     font-weight: 600;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 
-
-
-.btn-blue{
+.btn-blue {
     border: none;
     padding: 10px;
     margin: 10px;
@@ -42,9 +41,10 @@
     border-radius: 3px;
     flex-basis: 20%;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.6s;
 }
-.btn-blue:hover{
+
+.btn-blue:hover {
     color: #ffffff;
     text-decoration: none;
     font-weight: 600;
@@ -54,9 +54,7 @@
 }
 
 
-
-
-.btn-group{
+.btn-group {
     display: flex;
     justify-content: center;
     margin: 40px;
@@ -75,6 +73,12 @@
     border-radius: 3px;
     display: inline-block;
     margin: 10px;
+    transition: 0.4s;
+}
+
+.btnalterar:hover {
+    opacity: 0.9;
+    color: #333333;
 }
 
 .btnexcluir {
@@ -91,6 +95,13 @@
     border-radius: 3px;
     display: inline-block;
     margin: 10px;
+    transition: 0.4s;
+}
+
+.btnexcluir:hover {
+    opacity: 0.9;
+    color: #333333;
+
 }
 
 

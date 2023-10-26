@@ -14,6 +14,21 @@ if (!$usuario) {
     exit;
 }
 ?>
+
+
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="../../assets/css/button.css" rel="stylesheet">
+<link href="../../assets/css/style.css" rel="stylesheet">
+<link href="../../assets/css/usuario.css" rel="stylesheet">
+<link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
 <header class="main-header">
 
     <nav class="main-header-content">
@@ -60,14 +75,7 @@ if (!$usuario) {
         </nav>
     </nav>
 </header>
-<meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link href="../../assets/css/button.css" rel="stylesheet">
-<link href="../../assets/css/style.css" rel="stylesheet">
-<link href="../../assets/css/usuario.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
 
 
 <main class="main-information">
@@ -115,8 +123,16 @@ if (!$usuario) {
                                         <option value="<?= $perfil['id'] ?>"><?= $perfil['nome'] ?></option>
                                     <?php endforeach ?>
                                 </select><br>
-                                <br>
-                                <button class="btn" type="submit">Salvar</button>
+                                <div class="update-group-btns">
+                                    <button type="submit" class="btn-blue btn-primary btn-lg ">Salvar
+                                    </button>
+
+                                    <a href="index.php">
+                                        <button type="button" class="btn btn-primary btn-lg ">
+                                            Voltar
+                                        </button>
+                                    </a>
+                                </div>
                             </form>
                         </div>
                     </div>
