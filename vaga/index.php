@@ -5,6 +5,7 @@ $dao = new VagaDAO();
 $vagas = $dao->getAll();
 $quantidadeRegistros = count($vagas);
 ?>
+
 <link rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -17,6 +18,8 @@ $quantidadeRegistros = count($vagas);
 <link href="../assets/css/style.css" rel="stylesheet">
 <link href="../assets/css/usuario.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link href=" https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+
 
 <header class="main-header">
 
@@ -109,7 +112,7 @@ $quantidadeRegistros = count($vagas);
                             <!--INFORMAÇÕES DA CONTA DO USUÁRIO-->
 
                             <section>
-                                <table>
+                                <table id="example" class="display" style="width:100%">
                                     <thead>
                                     <tr>
                                         <th>#</th>
@@ -140,7 +143,8 @@ $quantidadeRegistros = count($vagas);
 
                                                 <td><?php echo $vaga['id']; ?></td>
 
-                                                <!--<td><?php /*= htmlspecialchars($usuario['nome']); */?></td>-->
+                                                <!--<td><?php /*= htmlspecialchars($usuario['nome']); */
+                                                ?></td>-->
                                                 <td><?= htmlspecialchars($vaga['nome']); ?></td>
                                                 <td><?= htmlspecialchars($vaga['tipo']); ?></td>
                                                 <td><?= htmlspecialchars($vaga['descricao']); ?></td>
@@ -160,6 +164,7 @@ $quantidadeRegistros = count($vagas);
                                     <?php endif; ?>
                                     </tbody>
                                 </table>
+
                             </section>
                         </div>
                     </div>
@@ -168,5 +173,11 @@ $quantidadeRegistros = count($vagas);
         </div>
     </div>
 </main>
-
+<script src=" https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src=" https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script>
+    new DataTable('#example', {
+        order: [[3, 'desc']]
+    });
+</script>
 

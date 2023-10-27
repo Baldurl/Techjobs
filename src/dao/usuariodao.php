@@ -186,16 +186,6 @@ class  UsuarioDAO
     }
 
 
-
-    public function nomeAsc()
-    {
-        $query = "SELECT * FROM usuario ORDER BY nome";
-        $stmt = $this->dbh->query($query);
-        $rows = $stmt->fetchAll();
-        $this->dbh = null;
-        return $rows;
-
-    }
 }
 
 
