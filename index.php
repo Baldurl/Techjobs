@@ -16,24 +16,6 @@
 
     <title>TECH JOBS</title>
 </head>
-
-<!--<header class="main-header">
-    <nav class="main-header-content">
-        <div class="logo">
-            <p><a href="../index.php">TechJobs</a></p>
-        </div>
-        <ul>
-            <li><a href="index.php" title="Home">HOME</a></li>
-            <li><a href="#expecialista" title="expecialistas">EQUIPE</a></li>
-            <li><a href="#news" title="Noticias">ÁREA T.I</a></li>
-        </ul>
-        <div class="main-header-content-btn">
-            <button><a class="btn-outline" href="login/login.php">Login</a></button>
-            <button><a class="btn-outline" href="usuarios/cadastro.php">Cadastre-se</a></button>
-        </div>
-    </nav>
-</header>-->
-
 <body id="home">
 <header class="main-header">
 
@@ -60,7 +42,7 @@
                         <span class="txt-link">Login</span>
                     </a>
                 </li>
-                                <li class="item-menu">
+                <li class="item-menu">
                     <a style="color: coral" href="usuarios/opçõesCadastro.php">
                         <span class="icon"><i class="bi bi-box-arrow-in-right"></i></span>
                         <span class="txt-link">Cadastrar</span>
@@ -289,7 +271,7 @@
                     <div class="box-single-content">
                         <h1><a href="">Turma G<br>Mão na Massa</a></h1>
                         <p>
-                           Uma vez que são muitos protocolos e procedimentos para
+                            Uma vez que são muitos protocolos e procedimentos para
                             absorver,
                             as
                             vezes em pouco tempo. Esse trabalho serve como base para tirar duvidas e aprender.
@@ -318,90 +300,21 @@
             </div>
         </div>
     </article>
-    <!--  <div class="div-border2">
-
-          <div class="progressive">
-              <img data-src="img/20px/teste.jpg" src="img/20px/contrato.webp" class="preview lazy"
-                   alt="Faço um Contrato Rapido, façil com um clique"
-                   title="Faço um Contrato Rapido, façil com um clique" width="100%">
-          </div>
-          <div class="box-single-content">
-              <h1>
-                  <a href="" target="_blank" rel="external">Vagas Informação</a>
-              </h1>
-              <p>
-                  Uma tentativa de deixar mais prático o acesso as pendências do setor deixando o uso
-                  do
-                  caderno opcional. Estamos trabalhando para implantação de um Banco de Dados, para
-                  que
-                  todos
-                  tenham acesso simultaneamente a mesma informação. Por enquanto, todas as informações
-                  colocadas nesse projeto é salvo no LocalStorage do Browser, ou seja, só vc tem
-                  acesso ao
-                  que
-                  você escreve.
-              </p>
-
-          </div>
-      </div>
-
-      <div class="div-border3">
-          <div class="progressive">
-              <img data-src="img/20px/portal.jpg" class="preview lazy" src="img/20px/teste.jpg"
-                   alt="Nossas gamas de equipamentos" title="Nossas gamas de equipamentos"
-                   width="100%">
-          </div>
-          <div class="box-single-content">
-              <h1><a href="#home" title="home">Sobre</a></h1>
-              <p>
-                  O site TechEmpregos tem de facilitar a acessibilidade de vagas de empregos online
-                  sem
-                  sair de casa e mais alguma coisa tem em um
-                  só lugar. Incluindo uma Biblioteca de cursos e a opção de susgestão também para
-                  melhorar
-                  seus conhecimentos na aréa da Tecnologia da Informação.
-                  <a href="" target="_blank" rel="external">Click aqui</a>
-                  e deixe a sua. Obrigado por deixar nosso
-                  ambiente mais rico com sua Visita e Sugestão.
-              </p>
-          </div>
-      </div>
-
-
-      <div class="div-border4">
-
-          <div class="progressive">
-              <img data-src="img/pixabay2.webp" class="preview lazy" src="img/20px/pixbay2.webp"
-                   alt="usamos tecnicas modernas" width="100%">
-          </div>
-          <div class="box-single-content">
-              <h1>Adicionais</h1>
-              <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem doloribus adipisci
-                  cum
-                  laboriosam quisquam dolor dicta a et quam facilis enim laudantium, provident modi
-                  ad,
-                  sed
-                  pariatur nihil eius nobis? Lorem ipsum dolor sit amet consectetur adipisicing
-                  elit. Corrupti placeat repellat nemo
-              </p>
-          </div>
-      </div>-->
-
 
 </section>
-<article class="opt-in">
+
+<!--<article class="opt-in">
     <div class="opt-in-content">
         <a href="#home" class="scrollup show-scroll">
             <i class="fa fa-arrow-up scrollup__icon"></i>
         </a>
     </div>
-</article>
+</article>-->
 
 
 <section class="main-team">
     <div class="main-team-header">
-        <h2>Equipe:</h2>
+        <h2>Nossa equipe</h2>
 
     </div>
 
@@ -425,9 +338,9 @@
                     corporis voluptatum rem ut perspiciatis. Fuga?
                 </p>
                 <div class="box-single-medias">
-                    <!--<i class="fa fa-2x fa-facebook"></i>
+                    <i class="fa fa-2x fa-facebook"></i>
                     <i class="fa fa-2x fa-instagram"></i>
-                    <i class="fa fa-2x fa-github"></i>-->
+                    <i class="fa fa-2x fa-github"></i>
                 </div>
             </div>
         </div>
@@ -446,11 +359,11 @@
                     numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
                     officia corporis voluptatum rem ut perspiciatis. Fuga?
                 </p>
-                <!--<div class="box-single-medias">
-                <i class="fa fa-2x fa-facebook"></i>
-                <i class="fa fa-2x fa-instagram"></i>
-                <i class="fa fa-2x fa-github"></i>
-            </div> -->
+                <div class="box-single-medias">
+                    <i class="fa fa-2x fa-facebook"></i>
+                    <i class="fa fa-2x fa-instagram"></i>
+                    <i class="fa fa-2x fa-github"></i>
+                </div>
             </div>
         </div>
         <div class="box-single-team">
@@ -469,8 +382,8 @@
                     officia corporis voluptatum rem ut perspiciatis. Fuga?
                 </p>
                 <div class="box-single-medias">
-                    <!--<i class="fa fa-2x fa-instagram"></i>
-                <i class="fa fa-2x fa-github"></i>-->
+                    <i class="fa fa-2x fa-instagram"></i>
+                    <i class="fa fa-2x fa-github"></i>
                 </div>
             </div>
         </div>
@@ -481,29 +394,8 @@
                      title="TURMA G GRUPO 1 | Criador de site">
             </div>
             <div class="box-single-team-content">
-                <h1>Felipe Victor</h1>
+                <h1>Pedro Santana</h1>
                 <h3>Developer Full-Stack</h3>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
-                    laborum
-                    id
-                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
-                    officia corporis voluptatum rem ut perspiciatis. Fuga?
-                </p>
-                <div class="box-single-medias">
-                    <!--<i class="fa fa-2x fa-instagram"></i>
-                <i class="fa fa-2x fa-github"></i>-->
-                </div>
-            </div>
-        </div>
-        <div class="box-single-team">
-            <div class="box-single-team-img progressive">
-                <img data-src="" class="lazy preview" src="" alt=""
-                     title="TURMA G GRUPO 1 | Criador de site">
-            </div>
-            <div class="box-single-team-content">
-                <h1>Raylson Silva</h1>
-                <h3>Developer Web</h3>
                 <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
                     laborum
@@ -514,9 +406,15 @@
                 <div class="box-single-medias">
                     <i class="fa fa-2x fa-instagram"></i>
                     <i class="fa fa-2x fa-github"></i>
-
                 </div>
             </div>
+        </div>
+        <div class="box-single-team">
+            <div class="box-single-team-img progressive">
+                <img data-src="" class="lazy preview" src="" alt=""
+                     title="TURMA G GRUPO 1 | Criador de site">
+            </div>
+
             <div data-aos="fade-up">
                 <div class="line"></div>
                 <div class="clear"></div>
