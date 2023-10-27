@@ -2,11 +2,9 @@
 session_start();
 require_once __DIR__ . '/../../src/dao/usuariodao.php';
 require_once __DIR__ . '/../../src/dao/perfildao.php';
-
 $dao = new UsuarioDAO();
 $usuarios = $dao->getAll();
 $quantidadeRegistros = count($usuarios);
-
 
 ?>
     <link rel="stylesheet"
@@ -115,26 +113,39 @@ $quantidadeRegistros = count($usuarios);
                                     <table>
                                         <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Nome</th>
+                                            <th>ID</th>
+                                            <th><a href="index.php?asc=nome">Nome</a></th>
                                             <th>E-mail</th>
                                             <th>Perfil</th>
                                             <th>Ação</th>
-
                                         </tr>
                                         </thead>
 
+
                                         <tbody>
+
+                                        <!--TESTANDO CONDIÇÃO PARA EXIBIR O NOME EM ORDEM ALFABÉTICA NA CONSULTA DE USUÁRIOS-->
+                                        <?php /*if (isset($_GET['asc']) && $_GET['asc'] == "nome"):
+                                            $daoASC = new UsuarioDAO();
+                                            $usuarios = $daoASC->nomeAsc();
+                                            $quantidadeRegistros = count($usuarios);*/ ?>
+                                        <!--FIM DA CONDIÇÃO-->
+
+
                                         <?php if ($quantidadeRegistros == "0") : ?>
                                             <tr>
                                                 <td colspan="4">Não existem usuários cadastrados.</td>
                                             </tr>
                                         <?php else : ?>
+
                                             <?php foreach ($usuarios as $usuario):
+
+
                                                 $id = $usuario['perfil_id'];
                                                 $dao1 = new PerfilDAO();
                                                 $perfil = $dao1->getById($id);
                                                 ?>
+
 
                                                 <tr>
 
@@ -143,7 +154,8 @@ $quantidadeRegistros = count($usuarios);
                                                     <td><?= htmlspecialchars($usuario['email']); ?></td>
                                                     <td><?= htmlspecialchars($perfil['nome']); ?></td>
                                                     <td class="td__operacao">
-                                                        <a class="btnalterar" href="edit.php?id=<?= $usuario['id']; ?>">Alterar</a>
+                                                        <a class="btnalterar"
+                                                           href="edit.php?id=<?= $usuario['id']; ?>">Alterar</a>
                                                         <a class="btnexcluir"
                                                            href="delete.php?id=<?= $usuario['id']; ?>"
                                                            onclick="return confirm('Deseja confirmar a operação?');">Excluir</a>
@@ -151,6 +163,8 @@ $quantidadeRegistros = count($usuarios);
                                                 </tr>
                                             <?php endforeach; ?>
                                         <?php endif; ?>
+
+
                                         </tbody>
                                     </table>
                                 </section>
