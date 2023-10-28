@@ -2,12 +2,9 @@
 <html lang="pt-br">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,
-     initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!--Estilo CSS -->
     <link rel="stylesheet" href="../../assets/css/usuario.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet"
@@ -43,11 +40,7 @@
                         <span class="txt-link">Login</span>
                     </a>
                 </li>
-
-
             </ul>
-
-
         </nav>
     </nav>
 </header>
@@ -58,49 +51,32 @@
 
         <form action="save.php" method="post">
             <div class="container">
-
                 <div class="row text">
                     <div class="col-md-12">
                         <div class="card-body font-weight-bold">
-
                             <div class="form-group card-candidato-content">
+                                <label for="name">Nome *</label>
+                                <input name="name" type="text" class="form-control" id="name" placeholder="Nome" required>
 
-                                <input name="name" type="text" class="form-control" id="name"
-                                       placeholder="Nome">
+                                <label for="email">Email *</label>
+                                <input name="email" type="email" class="form-control" id="email" placeholder="E-mail" required>
 
-
-                                <input name="email" type="email" class="form-control" id="email"
-                                       placeholder="E-mail">
+                                <label for="cpf">CPF *</label>
+                                <input name="cpf" type="text" class="form-control" id="cpf" placeholder="00-000-000-00" required>
 
                                 <div class="card-candidato-content-row">
-                                    <div class="form-group col-xs-3">
-                                        <label for="cpf">Cpf</label>
-                                        <input name="cpf" type="text" class="form-control" id="cpf"
-                                               placeholder="00-000-000-00">
-                                    </div>
+                                    <label for="ddd">DDD</label>
+                                    <input name="ddd" type="text" class="form-control" id="ddd" placeholder="00" required>
 
-
-                                    <div class="form-group col-xs-3">
-
-                                        <label for="ddd"> DDD</label>
-                                        <input name="ddd" type="text" class="form-control" id="ddd"
-                                               placeholder="00">
-                                    </div>
-
-
-                                    <div class="form-group col-xs-3">
-                                        <label for="telefone">Telefone</label>
-                                        <input name="telefone" type="number" class="form-control" id="telefone"
-                                               placeholder="00000-0000">
-                                    </div>
+                                    <label for="telefone">Telefone</label>
+                                    <input name="telefone" type="number" class="form-control" id="telefone" placeholder="00000-0000" required>
                                 </div>
 
-                                <input name="senha" type="password" class="form-control" id="senha"
-                                       placeholder="Senha">
+                                <label for="senha">Senha</label>
+                                <input name="senha" type="password" class="form-control" id="senha" placeholder="Senha" required>
 
-
-                                <input name="senha2" type="password" class="form-control" id="senha2"
-                                       placeholder="Confirme a senha">
+                                <label for="senha2">Confirmar Senha</label>
+                                <input name="senha2" type="password" class "form-control" id="senha2" placeholder="Confirme a senha" required>
 
                                 <input type="hidden" id="perfil" name="perfil" value="2">
                             </div>
@@ -116,6 +92,11 @@
                 </div>
             </div>
         </form>
+    </div>
+</main>
+</body>
+</html>
+
     </div>
 
 
