@@ -57,7 +57,13 @@
     </nav>
 </header>
 
-
+<?php if (isset($_GET['cadastro']) && $_GET['cadastro'] == 'sucesso') { ?>
+    <div class="update-confirmation-success" style="width: 38%">
+        <div class="update-confirmation-header">
+            <h2>Você foi cadastrado, faça o login para ter o acesso!</h2>
+        </div>
+    </div>
+<?php } ?>
 <main class="main-blog">
     <div class="card-login">
         <form action="validarlogin.php" method="post">
@@ -65,7 +71,7 @@
             <div class="container">
                 <div class="row text">
                     <div class="col-md-12">
-                        <div class="card-login-content"
+                        <div class="card-login-content">
                         <div class="card-body font-weight-bold card-login-content-text">
 
                             <div class="form-group card-login-content-input">
@@ -96,13 +102,7 @@
 
 
 </main>
-<?php if (isset($_GET['cadastro']) && $_GET['cadastro'] == 'sucesso') { ?>
-    <div class="update-confirmation-success" style="width: 38%">
-        <div class="update-confirmation-header">
-            <h2>Você foi cadastrado, faça o login para ter o acesso!</h2>
-        </div>
-    </div>
-<?php } ?>
+
 
 </body>
 

@@ -270,6 +270,24 @@ nav.menu {
 
 }
 
+.main-cta-banner-busca{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.main-cta-banner-busca button{
+
+    
+}
+.main-cta-banner-busca input{
+    padding: 10px;
+    border-radius: 3px;
+    align-items: center;
+}
+
+
 .main-cta .main-cta-banner .saiba-mais {
     outline: 0;
     cursor: pointer;

@@ -34,6 +34,19 @@ class  VagaDAO
         $this->dbh = null;
         return $row;
     }
+    public function getByVaga(string $nome)
+    {
+        $vaga = $_POST['vaga'];
+        $query = ("SELECT * FROM vaga WHERE nome LIKE '%$vaga%'");
+        $stmt = $this->dbh->query($query);
+        /* $stmt->bindParam(':nome', $vaga);
+$stmt->execute(); */
+        $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+        $this->dbh = null;
+        return $resultados;
+    }
 
     public function insert($nome, $tipo, $descricao, $salario, $carga_horaria, $data_publicacao, $data_expiracao)
     {
@@ -102,12 +115,5 @@ VALUES (:nome, :tipo, :descricao, :salario, :carga_horaria, :data_publicacao, :d
         $result = $stmt->rowCount();
         $this->dbh = null;
         return $result;
-
-
     }
-
-
 }
-
-
-

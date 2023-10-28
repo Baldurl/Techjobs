@@ -5,7 +5,7 @@ require_once __DIR__ . '/../../src/dao/usuariodao.php';
 
 
 $dao = new UsuarioDAO();
-$usuario = $dao->getById();
+$usuario = $dao->getById($id);
 
 
 if (!$usuario) {
