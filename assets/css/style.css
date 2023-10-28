@@ -54,6 +54,7 @@ body {
     padding: 5px;
     transition: .5s;
 }
+
 .main-header .main-header-content .logo a:hover {
     background-color: #333333;
     color: coral;
@@ -185,18 +186,20 @@ nav.menu {
     opacity: 0.5;
     cursor: pointer;
     border: none !important;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
 
 
 
-.menu ul li.item-menu a .txt-link{
+.menu ul li.item-menu a .txt-link {
     margin-left: 10px;
     margin-right: 20px;
 
 }
-.menu ul li.item-menu a .icon{
-     font-size: 30px;
+
+.menu ul li.item-menu a .icon {
+    font-size: 30px;
     margin-left: 15px;
 
 
@@ -479,10 +482,7 @@ a {
 
 }
 
-.assinatura-box-content {
 
-
-}
 
 .box-single-content {
     margin-bottom: 50px !important;
@@ -717,6 +717,8 @@ section.noticias {
     color: #666
 }
 
+/* COMEÇO DOBRA CONTATO */
+
 .contacto {
     margin-bottom: 40px
 }
@@ -773,89 +775,80 @@ section.noticias {
     display: inline-block;
     padding: 0 15px
 }
+/* FIM DOBRA CONTATO*/
 
-
-.footer1 {
-    background-color: #000000;
-    padding: 25px
+/* INICIO DOBRA RODAPÉ */
+.main_optin_footer{
+    width: 100%;
+    background-color: #f7f7f7;
 }
-
-.box-footer1 .box-single-footer1 {
-    width: 20%;
-    float: left;
-    color: #fff
-}
-
-.box-footer1 .box-single-footer1 h2 {
-    font-weight: 400;
-    font-size: 25px;
-    text-transform: uppercase;
-    padding: 10px 0
-}
-
-.box-footer1 .box-single-footer1 p {
-    margin: 5px 0;
-    font-weight: lighter;
-    position: relative
-}
-
-.box-footer1 .box-single-footer1 p a {
-    position: relative;
-    color: #fff;
-    transition: .3s
-}
-
-.box-footer1 .box-single-footer1 p a:hover {
-    color: #424239;
-    padding-left: 10px !important;
-    transform: scaleX(1)
-}
-
-.box-footer1 .box-single-footer1 p i {
-    margin-right: 5px
-}
-
-.footer2 {
-    padding: 10px;
-    background-color: #000000;
-    color: #fff
-}
-
-.footer-main {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+.main_optin_footer_content{
+    max-width: 1300px;
+    padding: 40px 0;
     text-align: center;
-
+    color: #333;
+    margin: 0 auto;
 }
-
-.footer-main-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 150px 0;
+.main_optin_footer_content header h1{
+    font-size: 1.4rem;
+    margin-bottom: 40px;
 }
-
-.footer-main-content ul {
-    padding: 10px 0;
-
+.main_optin_footer_content .btn{
+    color:#fff;
+    background-color: #87b1fd;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
 }
-
-.footer-main-content li {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+.main_footer{
+   max-width: 1300px;
+   padding: 40px 0;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   margin: 0 20px;
+   color:#333;
+}
+.main_footer header{
+    flex-basis: 100%;
+}
+.main_footer header h1{
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+}
+.main_footer article h2{
+    margin-bottom: 20px;
+}
+.main_footer article ul li{
     list-style: none;
-
-
+    margin: 5px 0;
+}
+.main_footer article ul li a{
+    color:#333;
+}
+.main_footer article ul li a:hover{
+    text-decoration: underline;
+}
+.main_footer_our_pages, .main_footer_links{
+    flex-basis: 25%;
+    
 }
 
-.footer-main-content li a {
-    text-decoration: none;
-
-
+.main_footer_about{
+    flex-basis: 50%;
 }
 
+.main_footer_rights{
+    width: 100%;
+    background-color: #f7f7f7;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    color:#666;
+    font-weight: 300;
+    border-top: 1px solid #ebebeb;
+}
+/* FIM DOBRA RODAPÉ */
 .opt-in {
     background-color: #333333;
     visibility: collapse;

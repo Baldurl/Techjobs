@@ -112,11 +112,10 @@ $quantidadeRegistros = count($vagas);
                             <!--INFORMAÇÕES DA CONTA DO USUÁRIO-->
 
                             <section>
-                                <table id="example" class="display" style="width:100%">
+                                <table id="example" class="display" style="width:100%;">
                                     <thead>
                                     <tr>
-                                        <th>#</th>
-                                        <!--<th>Nome da empresa</th>-->
+                                        <th>Id</th>
                                         <th>Cargo</th>
                                         <th>Tipo</th>
                                         <th>Descrição</th>
@@ -143,8 +142,7 @@ $quantidadeRegistros = count($vagas);
 
                                                 <td><?php echo $vaga['id']; ?></td>
 
-                                                <!--<td><?php /*= htmlspecialchars($usuario['nome']); */
-                                                ?></td>-->
+                                            
                                                 <td><?= htmlspecialchars($vaga['nome']); ?></td>
                                                 <td><?= htmlspecialchars($vaga['tipo']); ?></td>
                                                 <td><?= htmlspecialchars($vaga['descricao']); ?></td>
