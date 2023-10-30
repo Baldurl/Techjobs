@@ -1,4 +1,3 @@
-
 .section__btn {
     display: flex;
     justify-content: center;
@@ -52,6 +51,7 @@
 
 
 }
+
 
 
 .btn-group {
@@ -120,7 +120,7 @@
     margin: 50px auto;
 }
 
-.update-confirmation-header > h2 {
+.update-confirmation-header>h2 {
 
     color: #333333;
     padding: 30px;

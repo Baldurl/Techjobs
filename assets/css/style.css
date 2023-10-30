@@ -42,7 +42,7 @@ body {
 
 .main-header .main-header-content .logo {
     flex-basis: 25%;
-    padding: 30px 0 0 0;
+    padding: 0 0 0 0;
 
 }
 
@@ -262,30 +262,54 @@ nav.menu {
     padding: 50px 0;
 }
 
-.main-cta .main-cta-banner .main-cta-banner-spacer h1 {
-    font-size: 3em;
+.main-cta .main-cta-banner .main-cta-banner-spacer label h1 {
+    font-size: 1.8em;
     font-weight: 800;
     color: #ffffff;
     text-align: center;
+    padding: 20px;
 
 }
 
 .main-cta-banner-busca{
     padding: 10px;
-    display: flex;
-    justify-content: center;
-    
+    width: 100%;
 }
 
-.main-cta-banner-busca button{
-
-    
-}
 .main-cta-banner-busca input{
     padding: 10px;
+    width: 700px;
     border-radius: 3px;
-    align-items: center;
+    
 }
+
+
+.btn-orange>button{
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    width: 150px;
+    background-color: rgb(248, 184, 110);
+    color: #333333;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.6s;
+
+}
+
+.btn-orange>button:hover {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0.9;
+
+
+}
+
+
 
 
 .main-cta .main-cta-banner .saiba-mais {

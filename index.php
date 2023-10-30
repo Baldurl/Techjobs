@@ -28,7 +28,9 @@
         <nav class="main-header-content">
 
             <div class="logo">
-                <a href="index.php">TechJobs</a>
+                <a href="index.php">
+                    <img src="assets/img/Techjobs-logo.png" alt="" width="130px" height="80px">
+                </a>
             </div>
 
 
@@ -65,15 +67,17 @@
         <article class="main-cta-banner">
             <div class="main-cta-banner-spacer">
                 <p>Aqui conectamos provedores de emprego e candidatos a trabalho</p>
-                <h1>Pesquisar Vagas</h1>
-
-
                 <div class="col-md-12">
                     <div class="card-body font-weight-bold">
                         <div class="form-group main-cta-banner-busca">
                             <form action="pesquisar.php" method="POST">
-                                <input type="text" name="vaga" size="50" placeholder="Insira o nome da vaga">
-                                <button type="submit" class=" btn-primary btn-lg btn-login">Buscar</button>
+                                <label for="vaga">
+                                    <h1>Pesquisar vagas</h1>
+                                </label>
+                                <input type="text" name="vaga" size="50" placeholder="Insira o nome da vaga"></input>
+                                <span class="btn-orange">
+                                    <button type="submit" class="btn-primary btn-lg">Buscar</button>
+                                </span>
                             </form>
                         </div>
                     </div>
