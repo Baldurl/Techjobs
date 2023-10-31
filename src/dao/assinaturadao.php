@@ -30,16 +30,25 @@ class  AssinaturaDAO
         $stmt->execute();
         $stmt->fetch();
         $row = $stmt->fetch(PDO::FETCH_BOTH);
-        return $row;
+       
 
         $this->dbh = null;
+
+        return $row;
     }
 
-    public function insert(string $nome)
+    public function insert(string $tipo, $data, $valor)
     {
-        $query = "insert into assinatura (nome) values (:nome)";
+
+
+        $tipo = $_POST['tipo'];
+        $data = $_POST['data'];
+        $valor = $_POST['valor'];
+        $query = "INSERT INTO assinatura (tipo, data, valor) VALUES (:nome, :data, :valor)";
         $stmt = $this->dbh->prepare($query);
-        $stmt->bindParam(":nome", $nome);
+        $stmt->bindParam(":tipo", $tipo);
+        $stmt->bindParam(":data", $data);
+        $stmt->bindParam(":valor", $valor);
         $result = $stmt->execute();
         $this->dbh = null;
 
@@ -47,12 +56,13 @@ class  AssinaturaDAO
     }
 
 
-    public function update(int $id, string $nome)
+    public function update(string $tipo, $data, float $valor)
     {
-        $query = "update assinatura set nome = :nome where id = :id";
+        $query = "UPDATE assinatura SET tipo = :tipo, data = :data WHERE id = :id";
         $stmt = $this->dbh->prepare($query);
-        $stmt->bindParam(":nome", $nome);
-        $stmt->bindParam(":id", $id);
+        $stmt->bindParam(":tipo", $tipo);
+        $stmt->bindParam(":data", $data);
+        $stmt->bindParam(":valor", $valor);
         $result = $stmt->execute();
         $this->dbh = null;
 

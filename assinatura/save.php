@@ -1,19 +1,19 @@
 <?php
 session_start();
-require_once __DIR__ . '/../../src/database/conexao.php';
-require_once __DIR__ . '/../../src/dao/usuariodao.php';
+require_once __DIR__ . '/../src/database/conexao.php';
+require_once __DIR__ . '/../src/dao/assinaturadao.php';
 
 
-$dao = new UsuarioDAO();
-$usuario = $dao->insert('$nome', '$razao_social', '$cpf', '$cnpj', '$senha', '$email', '$sexo', '$ddi', '$ddd', '$telefone', '$cep', '$cidade', '$logradouro', '$bairro', '$rua', '$complemento', '$perfil');
+$dao = new AssinaturaDAO();
+$assinatura = $dao->insert('$tipo', '$valor', '$data');
 
 
-if ($usuario) {
+if ($assinatura) {
 
-    header('location: index.php?cadastro=sucesso');
+    header('location: index.php?assinatura=sucesso');
 
 } else {
-    header('location: index.php?cadastro=erro');
+    header('location: index.php?assinatura=erro');
 }
 
 

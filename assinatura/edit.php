@@ -7,10 +7,10 @@ $perfis = $perfilDAO->getAll();
 
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT) ?? 0;
 $dao = new UsuarioDAO();
-$usuario = $dao->getById($id);
+$assinatura = $dao->getById($id);
 
-if (!$usuario) {
-    header('location: index.php?error=Usuário não encontrado!');
+if (!$assinatura) {
+    header('location: index.php?error=Assinatura não encontrada!');
     exit;
 }
 ?>
@@ -97,32 +97,29 @@ if (!$usuario) {
                 <div class="col-md-12">
                     <div class="card-body font-weight-bold card-information-main">
                         <div class="card-information-box">
-                            <span class="card-information-header"><h1>Alterar usuário</h1></span>
+                            <span class="card-information-header"><h1>Alterar Assinatura</h1></span>
                             <form action="update.php" method="POST">
-                                <input type="hidden" name="id" value="<?= $usuario['id'] ?>">
+                                <label>Valor</label>
+                                <select name="valor" id="valor">
+                                    <option value="mensal">R$ 15,00</option>
+                                    <option value="semestral">R$ 70,00</option>
+                                    <option value="mensal">R$ 100,00</option>
+                                </select>
 
-                                <label>E-mail</label><br>
-                                <input type="email" name="email" placeholder="Informe seu e-mail." size="80" required
-                                       autofocus
-                                       value="<?= htmlspecialchars($usuario['email']) ?>"><br>
+                                <label>Tipo</label><br>
+                                <select name="tipo" id="tipo">
+                                    <option value="mensal">1 Mês</option>
+                                    <option value="semestral">6 meses</option>
+                                    <option value="Anual">1 ano</option>
+                                </select>
 
-                                <label>Senha</label><br>
-                                <input type="password" name="senha" placeholder="****" size="80" required
-                                       autofocus
-                                       value="<?= htmlspecialchars($usuario['senha']) ?>"><br>
-
-
-                                <label>Nome</label><br>
-                                <input type="text" name="nome" placeholder="Informe seu nome." size="80" required
-                                       value="<?= htmlspecialchars($usuario['nome']) ?>"><br>
+                                <label>Data</label><br>
+                                <input type="date" name="data"  size="80" required autofocus
+                                       value="<?= htmlspecialchars($assinatura['data']) ?>"><br>
 
 
-                                <label>Perfil</label><br>
-                                <select name="perfil">
-                                    <?php foreach ($perfis as $perfil) : ?>
-                                        <option value="<?= $perfil['id'] ?>"><?= $perfil['nome'] ?></option>
-                                    <?php endforeach ?>
-                                </select><br>
+
+
                                 <div class="update-group-btns">
                                     <button type="submit" class="btn-blue btn-primary btn-lg ">Salvar
                                     </button>

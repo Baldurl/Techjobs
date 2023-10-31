@@ -146,26 +146,26 @@ $quantidadeRegistros = count($usuarios);
                                         </tr>
                                     <?php else : ?>
 
-                                        <?php foreach ($usuarios as $usuario):
+                                        <?php foreach ($assinaturas as $assinatura):
 
 
-                                            $id = $usuario['perfil_id'];
-                                            $dao1 = new PerfilDAO();
+                                            $id = $assinatura['perfil_id'];
+                                            $dao1 = new AssinaturaDAO();
                                             $perfil = $dao1->getById($id);
                                             ?>
 
 
                                             <tr>
 
-                                                <td><?php echo $usuario['id']; ?></td>
-                                                <td><?= htmlspecialchars($usuario['nome']); ?></td>
-                                                <td><?= htmlspecialchars($usuario['email']); ?></td>
-                                                <td><?= htmlspecialchars($perfil['nome']); ?></td>
+                                                <td><?php echo $assinatura['id']; ?></td>
+                                                <td><?= htmlspecialchars($assinatura['tipo']); ?></td>
+                                                <td><?= htmlspecialchars($assinatura['data']); ?></td>
+                                                <td><?= htmlspecialchars($assinatura['valor']); ?></td>
                                                 <td class="td__operacao">
                                                     <a class="btnalterar"
-                                                       href="edit.php?id=<?= $usuario['id']; ?>">Alterar</a>
+                                                       href="edit.php?id=<?= $assinatura['id']; ?>">Alterar</a>
                                                     <a class="btnexcluir"
-                                                       href="delete.php?id=<?= $usuario['id']; ?>"
+                                                       href="delete.php?id=<?= $assinatura['id']; ?>"
                                                        onclick="return confirm('Deseja confirmar a operação?');">Excluir</a>
                                                 </td>
                                             </tr>
