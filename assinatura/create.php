@@ -1,4 +1,10 @@
+<?php
+require_once __DIR__ . "/../src/dao/assinaturadao.php";
 
+
+
+
+?>
 
 <head>
     <!-- Required meta tags -->
@@ -20,9 +26,7 @@
         <nav class="main-header-content">
 
             <div class="logo">
-                <a href="index.php">
-                    <img src="assets/img/Techjobs-logo.png" alt="" width="130px" height="80px">
-                </a>
+                <a href="../../auth/home.php">TechJobs</a>
             </div>
 
 
@@ -78,16 +82,16 @@
                                 <div class="form-group card-candidato-content">
                                 <label>Valor</label>
                                 <select name="valor" id="valor">
-                                    <option value="15.00">R$ 15,00</option>
-                                    <option value="70.00">R$ 70,00</option>
-                                    <option value="100.00">R$ 100,00</option>
+                                    <option value="mensal">R$ 15,00</option>
+                                    <option value="semestral">R$ 70,00</option>
+                                    <option value="mensal">R$ 100,00</option>
                                 </select>
 
                                 <label>Tipo</label><br>
                                 <select name="tipo" id="tipo">
                                     <option value="mensal">1 Mês</option>
                                     <option value="semestral">6 meses</option>
-                                    <option value="anual">1 ano</option>
+                                    <option value="Anual">1 ano</option>
                                 </select>
 
                                 <label>Data</label><br>

@@ -489,13 +489,13 @@ a {
     background-color: white;
     align-items: center;
     justify-content: center;
-    border: #333 1px solid;
 }
 
-.main-assinatura-header {
+.main-assinatura-header>h1 {
     color: #333;
     text-align: center;
     padding: 40px;
+    font-size: 1.4rem;
 
 }
 
@@ -741,20 +741,24 @@ section.noticias {
 }
 
 .grupo-icones {
-    margin-bottom: 30px
+    margin-bottom: 30;
+    width: 100%;
 }
 
 .box-icones {
     display: flex;
-    justify-content: center
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .box-icones .box-single-icones {
-    width: 100%;
+   
     margin-top: 20px;
     margin-bottom: 30px;
     text-align: center
 }
+
+
 
 .box-icones .box-single-icones i {
     color: #000000;
@@ -766,6 +770,38 @@ section.noticias {
     padding: 5px 0;
     color: #666
 }
+
+.box-single-noticias-content-flex{
+    display: flex;
+    width: 100%;
+
+    
+}
+.box-single-noticias-content-links{
+    margin-right: 50px;
+
+    
+}
+
+.box-single-noticias-content-imagem{
+background-color: #f2f2f2;
+
+}
+
+.box-noticias-flex{
+
+display: flex;
+width: 100%;
+
+
+}
+
+.box-noticias-1{
+    flex-basis: 50%;
+
+}
+
+
 
 /* COMEÇO DOBRA CONTATO */
 

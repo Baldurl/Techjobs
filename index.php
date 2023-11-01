@@ -251,22 +251,19 @@
     </section>
 
 
-    <article class="opt-in">
-        <div class="opt-in-content">
-            <a href="#home" class="scrollup show-scroll">
-                <i class="fa fa-arrow-up scrollup__icon"></i>
-            </a>
-        </div>
-    </article>
+
+
+
+
 
     <section class="main-assinatura">
 
         <div class="main-assinatura-header">
-            <h1>Planos de assinatura</h1>
+
+            <h1>Quer receber nosso conteúdo exclusivo? Faça uma assinatura :) </h1>
+
         </div>
         <article class="main-assinatura-content">
-
-
 
             <div class="main-assinatura-spacer"></div>
             <img src="assets/img/undraw_Reading_time_re_phf7.png" width="800px" height="600px" alt="">
@@ -322,6 +319,92 @@
     </div>
 </article>-->
 
+
+
+
+    <section class="main-noticias">
+        <div class="noticias" id="news">
+            <div class="box-noticias" id="app">
+                <div class="box-single-noticias">
+                    <div class="box-single-noticias-content">
+                        <h2>Biblioteca de Cursos e Livros</h2>
+
+                        <div class="box-single-noticias-content-flex">
+                            <div class="box-single-noticias-content-links">
+                                <p>
+
+                                    Indicamos alguns cursos e livros para você iniciar sua carreira na tecnologia! <br>
+                                    <li><a href="https://skillsforall.com" target="_blank" rel="external" style="color:
+                             rgb(4, 185, 65);">Cursos da Cisco</a></li>
+                                    <li><a href="https://udemy.com" target="_blank" rel="external" style="color:
+                             rgb(186,85,211);">Cursos da udemy</a></li>
+                                    <li><a href="https://web.dio.me/" target="_blank" rel="external" style="color: rgb(24, 130,
+                             250);">DIO.</a></li>
+                                    <li><a href="https://workover.com.br/" target="_blank" rel="external" style="color:
+                             rgb(109, 5, 66);">Workover</a></li>
+                                    <li><a href="https://www.cursoemvideo.com/cursos/" target="_blank" rel="external" style="color:
+                              rgb(38, 6, 218);">Curso em Video</a></li>
+                                    <li><a href="https://stg.ada.tech/sou-aluno" target="_blank" rel="external" style="color:
+                                 rgb(4, 78, 1);">Ada-Tech</a></li><br>
+                                    <li><a href="https://drive.google.com/drive/folders/1AnNVHVEhmznbk9azvJSLPNATw23-uca5" target="_blank" rel="external">
+                                            Livros<i class="fa fa-arrow-right"></i></a></li><br><br>
+
+                                    O maior inimigo do conhecimento não é a ignorância, é a ilusão do conhecimento. <br> –
+                                    <i>Stephen Hawking!</i>
+                                </p>
+
+                            </div>
+                            <div class="box-single-noticias-content-imagem">
+                                <img src="assets/img/img-team.svg" alt="team">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+           
+
+                    <div class="box-noticias-1">
+                        <div class="box-single-noticias">
+
+                            <div class="box-single-noticias-content">
+                                <h2>Pensar Como um programador!!</h2>
+                                <p>
+                                    Pensar como um programador: é usar a tecnologia como extensão das suas capacidades. É
+                                    uma
+                                    forma que você tem de usar o digital para resolver problemas e alcançar seus objetivos.
+                                </p>
+                                <p>
+                                    <a href="https://www.freecodecamp.org/portuguese/news/como-pensar-como-um-programador-licoes-de-resolucao-de-problemas/" target="_blank" rel="external">Ver Mais <i class="fa fa-arrow-right"></i></a>
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="box-noticias-1">
+                        <div class="box-single-noticias">
+                            <div class="box-single-noticias-content">
+                                <h2>Tecnologias & Hardwares</h2>
+                                <p>
+                                    Conheça um dos maiores canais de tecnologia e hardware do país "Adrenaline".
+                                    Uma comunidade online com fonte de informação sobre Tecnologia, Hardware, jogos,
+                                    notícias,
+                                    artigos e análises de eletrônicos de consumo, gadgets, hardwares para computador e
+                                    games.
+                                </p>
+                                <p><a href="https://www.adrenaline.com.br/" target="_blank" rel="external">Ver Mais <i class="fa fa-arrow-right"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                
+                <div class="clear"></div>
+            </div>
+        </div>
+    </section>
 
     <section class="main-team">
         <div class="main-team-header">
@@ -405,69 +488,19 @@
                     </div>
                 </div>
             </div>
+
+
+            <!--   LINHA ANIMADA PARA SEPARAR CONTEÚDO
             <div class="box-single-team">
                 <div data-aos="fade-up">
                     <div class="line"></div>
                     <div class="clear"></div>
                 </div>
-            </div>
+            </div> 
+             FIM DA LINHA-->
 
         </div>
 
-    </section>
-
-    <section class="main-noticias">
-        <div class="noticias" id="news">
-            <div class="box-noticias" id="app">
-                <div class="box-single-noticias">
-                    <div class="box-single-noticias-content">
-                        <h2>Biblioteca de Cursos!!</h2>
-                        <p>
-                            O maior inimigo do conhecimento não é a ignorância, é a ilusão do conhecimento. <br> –
-                            <i>Stephen Hawking!</i>
-                            <li><a href="https://skillsforall.com" target="_blank" rel="external" style="color:
-                             rgb(4, 185, 65);">Cursos da Cisco</a></li>
-                            <li><a href="https://web.dio.me/" target="_blank" rel="external" style="color: rgb(24, 130,
-                             250);">DIO.</a></li>
-                            <li><a href="https://workover.com.br/" target="_blank" rel="external" style="color:
-                             rgb(109, 5, 66);">Workover</a></li>
-                            <li><a href="https://www.cursoemvideo.com/cursos/" target="_blank" rel="external" style="color:
-                              rgb(38, 6, 218);">Curso em Video</a></li>
-                            <li><a href="https://stg.ada.tech/sou-aluno" target="_blank" rel="external" style="color:
-                                 rgb(4, 78, 1);">Ada-Tech</a></li>
-                        </p>
-                        <p><a href="https://drive.google.com/drive/folders/1AnNVHVEhmznbk9azvJSLPNATw23-uca5" target="_blank" rel="external">Livros<i class="fa fa-arrow-right"></i></a></p>
-                    </div>
-                </div>
-                <div class="box-single-noticias">
-                    <div class="box-single-noticias-content">
-                        <h2>Pensar Como um programador!!</h2>
-                        <p>
-                            Pensar como um programador: é usar a tecnologia como extensão das suas capacidades. É
-                            uma
-                            forma que você tem de usar o digital para resolver problemas e alcançar seus objetivos.
-                        </p>
-                        <p>
-                            <a href="https://www.freecodecamp.org/portuguese/news/como-pensar-como-um-programador-licoes-de-resolucao-de-problemas/" target="_blank" rel="external">Ver Mais <i class="fa fa-arrow-right"></i></a>
-                        </p>
-                    </div>
-                </div>
-                <div class="box-single-noticias">
-                    <div class="box-single-noticias-content">
-                        <h2>Tecnologias & Hardwares</h2>
-                        <p>
-                            Conheça um dos maiores canais de tecnologia e hardware do país "Adrenaline".
-                            Uma comunidade online com fonte de informação sobre Tecnologia, Hardware, jogos,
-                            notícias,
-                            artigos e análises de eletrônicos de consumo, gadgets, hardwares para computador e
-                            games.
-                        </p>
-                        <p><a href="https://www.adrenaline.com.br/" target="_blank" rel="external">Ver Mais <i class="fa fa-arrow-right"></i></a></p>
-                    </div>
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
     </section>
 
 
@@ -504,21 +537,18 @@
     </section>
 
 
-    <section class="main-utilites" id="contacto">
+    <!-- SEÇÃO OPCIONAL DE UTILITÁRIOS    <section class="main-utilites" id="contacto">
 
-        <div>
-
-            <h2>UTILITÁRIOS</h2>
-        </div>
+ 
     </section>
-
+ FIM SEÇÃO UTILITÁRIOS -->
 
 
     <!-- INICIO DOBRA RODAPÉ -->
     <section class="main_optin_footer">
         <div class="main_optin_footer_content">
             <header>
-                <h1>Quer receber nosso conteúdo exclusivo? Faça uma assinatura :)</h1>
+                <h1>Recebe conteúdos exclusivos e aumente suas chances de arranjar emprego<br> Faça já sua assinatura</h1>
             </header>
             <article>
                 <header>
@@ -538,10 +568,10 @@
                 <h2>Nossas Páginas</h2>
             </header>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">A Escola</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="noticias.php">Notícias</a></li>
+                <li><a href="equipe.php">Nossa Equipe</a></li>
+                <li><a href="contato.php">Contato</a></li>
             </ul>
         </article>
 

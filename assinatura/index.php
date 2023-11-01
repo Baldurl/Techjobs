@@ -1,10 +1,10 @@
 <?php
 session_start();
-require_once __DIR__ . '/../src/dao/assinaturadao.php';
-
-$dao = new AssinaturaDAO();
-$assinaturas = $dao->getAll();
-$quantidadeRegistros = count($assinatura);
+require_once __DIR__ . '/../../src/dao/usuariodao.php';
+require_once __DIR__ . '/../../src/dao/perfildao.php';
+$dao = new UsuarioDAO();
+$usuarios = $dao->getAll();
+$quantidadeRegistros = count($usuarios);
 
 ?>
 <link rel="stylesheet"
