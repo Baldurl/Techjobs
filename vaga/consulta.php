@@ -84,11 +84,14 @@ foreach ($vagas as $vaga) {
         <div class="main-blog-content">
             <article>
                 <div class="icon"><i class="fa fa-3x fa-angellist"></i></div>
-                <div class="content">
+                <div class="content" title="<?= $vaga['descricao'] ?>"> 
                     <?php echo '<strong>Nome: </strong>' . $vaga['nome']  ?><br>
                     <p><?php echo '<strong>Tipo: </strong> ' . $vaga['tipo']  ?><br>
                         <?php echo '<strong>Salário: </strong> ' . $vaga['salario']  ?><br>
-                        <?php echo  '<strong>Descrição: </strong> ' . $vaga['descricao']  ?>
+                        <?php echo  '<strong>Descrição: </strong> ' .
+                         substr($vaga['descricao'], 0,
+                          (strlen($vaga['descricao']) >= 50 ? 50: 
+                          strlen($vaga['descricao'])))  ?>
 
 
                         <!-- <a href="https://monkeytype.com/" target="_blank" rel="external">Descrição</a> -->
