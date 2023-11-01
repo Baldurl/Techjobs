@@ -70,7 +70,7 @@
                 <div class="col-md-12">
                     <div class="card-body font-weight-bold">
                         <div class="form-group main-cta-banner-busca">
-                            <form action="pesquisar.php" method="POST">
+                            <form action="vaga/consulta.php" method="POST">
                                 <label for="vaga">
                                     <h1>Pesquisar vagas</h1>
                                 </label>
@@ -261,7 +261,13 @@
 
     <section class="main-assinatura">
 
+        <div class="main-assinatura-header">
+            <h1>Planos de assinatura</h1>
+        </div>
         <article class="main-assinatura-content">
+
+
+
             <div class="main-assinatura-spacer"></div>
             <img src="assets/img/undraw_Reading_time_re_phf7.png" width="800px" height="600px" alt="">
 
@@ -271,11 +277,9 @@
                     <div class="div-border">
 
                         <div class="box-single-content">
-                            <h1><a href="">Turma G<br>Mão na Massa</a></h1>
+                            <h1><a href="">Assinatura<br>Mensal</a></h1>
                             <p>
-                                Nasce da idéia de tornar o aprendizado em relação ao que é exigido pelo setor, mais
-                                fácil
-                                intuitivo e Dinâmico.
+                                Faça a assinatura mensal por somente R$12,00 à vista.
 
                             </p>
                         </div>
@@ -284,28 +288,24 @@
                     <div class="div-border">
 
                         <div class="box-single-content">
-                            <h1><a href="">Turma G<br>Mão na Massa</a></h1>
+                            <h1><a href="">Assinatura<br>6 meses</a></h1>
                             <p>
-                                Uma vez que são muitos protocolos e procedimentos para
-                                absorver,
-                                as
-                                vezes em pouco tempo. Esse trabalho serve como base para tirar duvidas e aprender.
+                                Faça a assinatura de 6 meses por somente R$70,00. <br>
+                                Parcelado em até 4 vezes sem juros.
+                            <p>Mais recomendado</p>
                             </p>
+
                         </div>
                     </div>
 
                     <div class="div-border">
 
                         <div class="box-single-content">
-                            <h1><a href="">Turma G<br>Mão na Massa</a></h1>
+                            <h1><a href="">Assinatura<br>Anual</a></h1>
                             <p>
-                                Nasce da idéia de tornar o aprendizado em relação ao que é exigido pelo setor, mais
-                                fácil
-                                intuitivo e Dinâmico. Uma vez que são muitos protocolos e procedimentos para
-                                absorver,
-                                as
-                                vezes em pouco tempo. Esse trabalho serve como base para tirar duvidas e aprender.
+                                Faça a assinatura anual por somente R$100,00.
                             </p>
+
                         </div>
                     </div>
                 </div>
