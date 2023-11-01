@@ -1,12 +1,12 @@
 <?php
-require_once __DIR__ . '/../../src/dao/usuariodao.php';
-require_once __DIR__ . "/../../src/dao/perfildao.php";
+require_once __DIR__ . '/../src/dao/assinaturadao.php';
 
-$perfilDAO = new PerfilDAO();
-$perfis = $perfilDAO->getAll();
+
+$assinaturaDAO = new AssinaturaDAO();
+$assinatura = $assinaturaDAO->getAll();
 
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT) ?? 0;
-$dao = new UsuarioDAO();
+$dao = new AssinaturaDAO();
 $assinatura = $dao->getById($id);
 
 if (!$assinatura) {
