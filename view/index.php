@@ -1,91 +1,37 @@
-<?php
-require_once __DIR__ . '/../src/database/conexao.php';
-require_once __DIR__ . '/../src/dao/usuariodao.php';
-require_once 'validarAcesso.php';
+<?php require_once __DIR__ . '/../layouts/headerHome.php'; ?>
 
 
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
     <link rel="shortcut icon" href="" type="">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Estilo BOOTSTRAP-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
           integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous"/>
     <link href="https://unpkg.com/progressive-image@1.2.0/dist/index.css" rel="stylesheet" type="text/css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-
     <!--Título do Browser-->
 
-    <title>TechJobs </title>
-
+    <title>TECH JOBS</title>
 </head>
 
 <body id="home">
-
-<header class="main-header">
-
-    <nav class="main-header-content">
-
-        <div class="logo">
-            <a href="home.php">TechJobs</a>
-        </div>
-
-
-        <nav class="menu">
-
-
-            <ul>
-                <li class="item-menu">
-                    <a href="home.php">
-                        <span class="icon"><i class="bi bi-house-door"></i></span>
-                        <span class="txt-link">Home</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="#">
-                        <span class="icon"><i class="bi bi-columns"></i></span>
-                        <span class="txt-link">Dashboard</span>
-                    </a>
-                </li>
-
-                <!--Colocar condição de acesso à configuração.
-             Se for um candidato, ele pode alterar dados sendo um perfil candidato.
-             Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
-
-                <li class="item-menu">
-                    <a href="../usuarios/administrador/index.php ">
-                        <span class="icon"><i class="bi bi-person"></i></span>
-                        <span class="txt-link">Perfil</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="logoff.php">
-                        <span class="icon"><i class="bi bi-box-arrow-right"></i></span>
-                        <span class="txt-link">Logoff</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </nav>
-</header>
-
-
 <div class="main-cta">
     <article class="main-cta-banner">
         <div class="main-cta-banner-spacer">
-            <p>Bem-vindo</p>
+            <p>Aqui conectamos provedores de emprego e candidatos a trabalho</p>
             <div class="col-md-12">
                 <div class="card-body font-weight-bold">
                     <div class="form-group main-cta-banner-busca">
@@ -102,7 +48,6 @@ require_once 'validarAcesso.php';
                 </div>
             </div>
 
-
             <div class="seta">
                 <i class="fa fa-arrow-down"></i>
             </div>
@@ -111,16 +56,19 @@ require_once 'validarAcesso.php';
     </article>
 </div>
 
-<section class="main-blog">
 
+<section class="main-blog">
     <div class="main-blog-header">
         <h2 class="aos-init aos-animate">
             Vagas em alta
         </h2>
     </div>
 
+    <div class="main-blog-content">
 
-    <?php require_once __DIR__ . '/../vaga/all.php'; ?>
+        <?php require_once __DIR__ . '/../vaga/all.php'; ?>
+
+    </div>
 
     <div class="main-blog-header">
         <h2 class="aos-init aos-animate">
@@ -280,15 +228,6 @@ require_once 'validarAcesso.php';
 </section>
 
 
-<!--<article class="opt-in">
-    <div class="opt-in-content">
-        <a href="#home" class="scrollup show-scroll">
-            <i class="fa fa-arrow-up scrollup__icon"></i>
-        </a>
-    </div>
-</article>
--->
-
 <section class="main-assinatura">
 
     <div class="main-assinatura-header">
@@ -299,7 +238,7 @@ require_once 'validarAcesso.php';
     <article class="main-assinatura-content">
 
         <div class="main-assinatura-spacer"></div>
-        <img src="../assets/img/undraw_Reading_time_re_phf7.png" width="800px" height="600px" alt="reading">
+        <img src="assets/img/undraw_Reading_time_re_phf7.png" width="800px" height="600px" alt="reading">
 
         <div class="assinatura-boxes">
             <div class="assinatura-box-content">
@@ -347,14 +286,14 @@ require_once 'validarAcesso.php';
 
 </section>
 
-<!--    <article class="opt-in">
-        <div class="opt-in-content">
-            <a href="#home" class="scrollup show-scroll">
-                <i class="fa fa-arrow-up scrollup__icon"></i>
-            </a>
-        </div>
-    </article>
--->
+<!--<article class="opt-in">
+<div class="opt-in-content">
+    <a href="#home" class="scrollup show-scroll">
+        <i class="fa fa-arrow-up scrollup__icon"></i>
+    </a>
+</div>
+</article>-->
+
 
 <section class="main-cursos">
     <div class="main-cursos-content" id="news">
@@ -392,7 +331,7 @@ require_once 'validarAcesso.php';
                     </p>
                 </div>
                 <div class="box-single-cursos-content-imagem">
-                    <img src="../assets/img/img-team.svg" alt="team">
+                    <img src="assets/img/img-team.svg" alt="team">
                 </div>
             </div>
         </div>
@@ -583,6 +522,14 @@ require_once 'validarAcesso.php';
     </div>
 </section>
 
+
+<!-- SEÇÃO OPCIONAL DE UTILITÁRIOS    <section class="main-utilites" id="contacto">
+
+
+</section>
+FIM SEÇÃO UTILITÁRIOS -->
+
+
 <!-- INICIO DOBRA RODAPÉ -->
 <section class="main_optin_footer">
     <div class="main_optin_footer_content">
@@ -606,9 +553,9 @@ require_once 'validarAcesso.php';
         </header>
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="noticias.php">Notícias</a></li>
-            <li><a href="equipe.php">Nossa Equipe</a></li>
-            <li><a href="contato.php">Contato</a></li>
+            <li><a href="view/blog.php">Notícias</a></li>
+            <li><a href="view/equipe.php">Nossa Equipe</a></li>
+            <li><a href="view/contato.php">Contato</a></li>
         </ul>
     </article>
 
@@ -635,7 +582,6 @@ require_once 'validarAcesso.php';
     <p>ETC - Todos os direitos reservados.</p>
 </footer>
 <!-- FIM DOBRA RODAPÉ -->
-
 
 <a href="#home" class="scrollup show-scroll" id="scroll-up">
     <i class="fa fa-arrow-up scrollup__icon"></i>

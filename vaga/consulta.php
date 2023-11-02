@@ -110,16 +110,16 @@ $usuario = $dao->getByUsuario('$usuario');*/
             </div>
 
         <?php } else { ?>
-
+            <div class="main-blog-header">
+                <h2 class="aos-init aos-animate">
+                    Resultado da busca:
+                </h2>
+            </div>
 
             <?php foreach ($vagas
 
                            as $vaga) { ?>
-                <div class="main-blog-header">
-                    <h2 class="aos-init aos-animate">
-                        Resultado da busca:
-                    </h2>
-                </div>
+
 
                 <article>
                     <div class="icon"><i class="fa fa-3x fa-angellist"></i></div>
@@ -137,7 +137,7 @@ $usuario = $dao->getByUsuario('$usuario');*/
 
                         <span class="btn-orange">
                                     <a href="candidatar.php?id=<?= $vaga['id'] ?>"><button type="submit"
-                                    class="btn-primary btn-lg">Candidatar</button></a>
+                                                                                           class="btn-primary btn-lg">Candidatar</button></a>
                                 </span>
 
                     </div>

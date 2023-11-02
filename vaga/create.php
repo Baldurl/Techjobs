@@ -27,12 +27,12 @@ $vagas = $vagaDAO->getAll();
     <nav class="main-header-content">
 
         <div class="logo">
-            <a href="../auth/home.php">TechJobs</a>
+            <a href="../view/home.php">TechJobs</a>
         </div>
         <nav class="menu">
             <ul>
                 <li class="item-menu">
-                    <a href="../auth/home.php">
+                    <a href="../view/home.php">
                         <span class="icon"><i class="bi bi-house-door"></i></span>
                         <span class="txt-link">Home</span>
                     </a>

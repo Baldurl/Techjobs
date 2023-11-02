@@ -26,7 +26,7 @@ $quantidadeRegistros = count($vagas);
     <nav class="main-header-content">
 
         <div class="logo">
-            <a href="../auth/home.php">TechJobs</a>
+            <a href="../view/home.php">TechJobs</a>
         </div>
 
 
@@ -35,7 +35,7 @@ $quantidadeRegistros = count($vagas);
 
             <ul>
                 <li class="item-menu">
-                    <a href="../auth/home.php">
+                    <a href="../view/home.php">
                         <span class="icon"><i class="bi bi-house-door"></i></span>
                         <span class="txt-link">Home</span>
                     </a>
@@ -143,13 +143,13 @@ $quantidadeRegistros = count($vagas);
                                                 <td><?php echo $vaga['id']; ?></td>
 
                                             
-                                                <td><?= htmlspecialchars($vaga['nome']); ?></td>
-                                                <td><?= htmlspecialchars($vaga['tipo']); ?></td>
-                                                <td><?= htmlspecialchars($vaga['descricao']); ?></td>
-                                                <td><?= htmlspecialchars($vaga['salario']); ?></td>
-                                                <td><?= htmlspecialchars($vaga['carga_horaria']); ?></td>
-                                                <td><?= htmlspecialchars($vaga['data_publicacao']); ?></td>
-                                                <td><?= htmlspecialchars($vaga['data_expiracao']); ?></td>
+                                                <td><?= ($vaga['nome']); ?></td>
+                                                <td><?= ($vaga['tipo']); ?></td>
+                                                <td><?= ($vaga['descricao']); ?></td>
+                                                <td><?= ($vaga['salario']); ?></td>
+                                                <td><?= ($vaga['carga_horaria']); ?></td>
+                                                <td><?= ($vaga['data_publicacao']); ?></td>
+                                                <td><?= ($vaga['data_expiracao']); ?></td>
                                                 <td class="td__operacao">
                                                     <a class="btnalterar"
                                                        href="edit.php?id=<?= $vaga['id']; ?>">Alterar</a>

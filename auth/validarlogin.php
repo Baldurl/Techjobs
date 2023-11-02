@@ -10,9 +10,9 @@ $usuario = $dao->validarLogin('$email', '$senha');
 
 if (!$usuario) {
 
-    header("location:auth.php?auth=erro");
+    header("location:index.php?login=erro");
     exit;
-//redireciona para a pagina auth.php para preencher os dados
+//redireciona para a pagina index.php para preencher os dados
 } else {
     //senão significa que o usuario foi encontrado
     $_SESSION['usuario'] = array(
@@ -22,7 +22,7 @@ if (!$usuario) {
         'perfil' => $usuario['perfil_id'],
     );
 
-    header('Location: home.php?auth=sucesso');
+    header('Location: ../view/home.php?auth=sucesso');
 }
 
 

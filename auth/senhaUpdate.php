@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../src/database/conexao.php';
 require_once __DIR__ . '/../src/dao/usuariodao.php';
-require_once __DIR__ . '/../layouts/header.php';
+require_once __DIR__ . '/../layouts/headerHome.php';
 /*session_start();
 $_SESSION['id'];*/
 

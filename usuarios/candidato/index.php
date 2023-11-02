@@ -40,7 +40,7 @@ if (!$usuario) {
     <nav class="main-header-content">
 
         <div class="logo">
-            <a href="../../auth/home.php">TechJobs</a>
+            <a href="../../view/home.php">TechJobs</a>
         </div>
 
         <nav class="menu">

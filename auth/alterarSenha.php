@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/../layouts/header.php';
+include __DIR__ . '/../layouts/headerHome.php';
 
 ?>
 

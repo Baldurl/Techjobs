@@ -23,15 +23,15 @@
 
                 <ul>
                     <li class="item-menu">
-                        <a href="home.php">
+                        <a href="../view/home.php">
                             <span class="icon"><i class="bi bi-house-door"></i></span>
                             <span class="txt-link">Home</span>
                         </a>
                     </li>
                     <li class="item-menu">
-                        <a href="#">
+                        <a href="../view/blog.php">
                             <span class="icon"><i class="bi bi-columns"></i></span>
-                            <span class="txt-link">Dashboard</span>
+                            <span class="txt-link">Blog</span>
                         </a>
                     </li>
 
@@ -46,7 +46,7 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
                         </a>
                     </li>
                     <li class="item-menu">
-                        <a href="logoff.php">
+                        <a href="../auth/logoff.php">
                             <span class="icon"><i class="bi bi-box-arrow-right"></i></span>
                             <span class="txt-link">Logoff</span>
                         </a>
