@@ -93,15 +93,13 @@
     </article>
 </div>
 
-<section class="main-blog">
 
+<section class="main-blog">
     <div class="main-blog-header">
         <h2 class="aos-init aos-animate">
             Vagas em alta
         </h2>
     </div>
-
-
     <?php require_once __DIR__ . '/vaga/all.php'; ?>
 
     <div class="main-blog-header">
@@ -608,7 +606,8 @@ FIM SEÇÃO UTILITÁRIOS -->
         <header>
             <h2>Techjobs</h2>
         </header>
-        <p>Mantenha-se atualizado com o mercado de trabalho. Desenvolva seu networking e trabalhe para construir o seu futuro</p>
+        <p>Mantenha-se atualizado com o mercado de trabalho. Desenvolva seu networking e trabalhe para construir o seu
+            futuro</p>
     </article>
 </section>
 <footer class="main_footer_rights">
@@ -651,7 +650,7 @@ FIM SEÇÃO UTILITÁRIOS -->
 
     gtag('config', 'G-RDBD06ZRL9');
 </script>
-</main>
+
 </body>
 
 </html>
