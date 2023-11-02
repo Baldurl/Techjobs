@@ -28,7 +28,7 @@ as $vaga) { ?>
                 <!-- <a href="https://monkeytype.com/" target="_blank" rel="external">Descrição</a> -->
             </p>
             <span class="btn-orange">
-                                    <a href="vaga/candidatar.php?id=<?= $vaga['id'] ?>"><button type="submit"
+                                    <a href="../vaga/candidatar.php?id=<?= $vaga['id'] ?>"><button type="submit"
                                                                                                 class="btn-primary btn-lg">Ver detalhes</button></a>
                                 </span>
         </div>

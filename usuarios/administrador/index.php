@@ -25,7 +25,6 @@ $quantidadeRegistros = count($usuarios);
 
 
 
-
 <header class="main-header">
 
     <nav class="main-header-content">
@@ -46,15 +45,15 @@ $quantidadeRegistros = count($usuarios);
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="#">
+                    <a href="../../view/blog.php">
                         <span class="icon"><i class="bi bi-columns"></i></span>
-                        <span class="txt-link">Dashboard</span>
+                        <span class="txt-link">Blog</span>
                     </a>
                 </li>
 
                 <!--Colocar condição de acesso à configuração.
-                 Se for um candidato, ele pode alterar dados sendo um perfil candidato.
-                 Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
+Se for um candidato, ele pode alterar dados sendo um perfil candidato.
+Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
 
                 <li class="item-menu">
                     <a href="index.php ">

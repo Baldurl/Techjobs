@@ -238,7 +238,7 @@
     <article class="main-assinatura-content">
 
         <div class="main-assinatura-spacer"></div>
-        <img src="assets/img/undraw_Reading_time_re_phf7.png" width="800px" height="600px" alt="reading">
+        <img src="../assets/img/undraw_Reading_time_re_phf7.png" width="800px" height="600px" alt="reading">
 
         <div class="assinatura-boxes">
             <div class="assinatura-box-content">
@@ -331,7 +331,7 @@
                     </p>
                 </div>
                 <div class="box-single-cursos-content-imagem">
-                    <img src="assets/img/img-team.svg" alt="team">
+                    <img src="../assets/img/img-team.svg" alt="team">
                 </div>
             </div>
         </div>

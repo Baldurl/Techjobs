@@ -1,6 +1,6 @@
 <?php
 
-/*session_start();
+session_start();
 if (!isset($_SESSION['usuario'])) {
-    header('Location: auth.php?auth=erro2');
-}*/
+    header('Location: ../auth/index.php?auth=erro2');
+}

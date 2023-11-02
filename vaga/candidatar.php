@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../auth/validarAcesso.php';
 require_once __DIR__ . '/../layouts/headerLogin.php';
 require_once __DIR__ . '/../src/dao/vagadao.php';
 require_once __DIR__ . '/../src/dao/usuariodao.php';
@@ -54,7 +55,7 @@ $empresa = $dao->getUsuario('$id', '$nome');
         <article>
 
             <div class="py-3 text-center" style="margin: 50px auto">
-                <h2>Confirmes seus dados e envie seu currículo:</h2>
+                <h2>Confirma seu e-mail e envie seu currículo: </h2>
             </div>
             <div class="content">
                 <div class="container">

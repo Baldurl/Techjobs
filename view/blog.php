@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . '/../layouts/headerHome.php'; ?>
+<?php require_once __DIR__ . '/../layouts/headerLogin.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +19,8 @@
     <title>TECH JOBS</title>
 </head>
 <body>
+
+
 
 
 <section class="main-noticias">

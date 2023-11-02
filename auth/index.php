@@ -64,6 +64,8 @@
         </div>
     </div>
 <?php } ?>
+
+
 <main class="main-blog">
     <div class="card-login">
         <form action="validarlogin.php" method="post">
@@ -86,6 +88,11 @@
                                 if (isset($_GET['auth']) && $_GET['auth'] == 'erro') { ?>
                                     <div style="color: darkred; font-size: 1.2rem"> Login
                                         inválido.
+                                    </div>
+                                <?php } ?>
+                                <?php
+                                if (isset($_GET['auth']) && $_GET['auth'] == 'erro2') { ?>
+                                    <div style="color: darkred; font-size: 1.2rem"> Faça o login para poder ter acesso às vagas
                                     </div>
                                 <?php } ?>
                             </div>
