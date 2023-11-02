@@ -22,8 +22,9 @@ class  VagaDAO
         return $rows;
     }
 
-    public function getById(int $id)
+    public function getById($id)
     {
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
         $query = "SELECT * FROM vaga WHERE id = :id;";
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(":id", $id);
@@ -34,9 +35,23 @@ class  VagaDAO
         $this->dbh = null;
         return $row;
     }
+
+
+    public function getUsuario($id, $nome)
+    {
+        $query = "SELECT vaga.id, vaga.usuario_id 
+                FROM vaga
+                INNER JOIN usuario
+                ON vaga.id=usuario.nome;";
+        $stmt = $this->dbh->query($query);
+        $row = $stmt->fetch();
+        $this->dbh = null;
+        return $row;
+    }
+
     public function getByVaga(string $nome)
     {
-        $vaga = $_POST['vaga'];
+        $vaga = filter_input(INPUT_POST, 'vaga', FILTER_SANITIZE_SPECIAL_CHARS);
         $query = ("SELECT * FROM vaga WHERE nome LIKE '%$vaga%'");
         $stmt = $this->dbh->query($query);
         /* $stmt->bindParam(':nome', $vaga);
@@ -116,4 +131,9 @@ VALUES (:nome, :tipo, :descricao, :salario, :carga_horaria, :data_publicacao, :d
         $this->dbh = null;
         return $result;
     }
+
+
 }
+
+
+

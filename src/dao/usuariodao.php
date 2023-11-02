@@ -22,7 +22,7 @@ class  UsuarioDAO
 
     }
 
-    public function getById(int $id)
+    public function getById($id)
     {
 
         $query = "SELECT * FROM usuario WHERE id = :id";

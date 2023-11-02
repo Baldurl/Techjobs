@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 26/10/2023 às 01:41
+-- Tempo de geração: 02/11/2023 às 00:38
 -- Versão do servidor: 8.0.30
 -- Versão do PHP: 8.1.10
 
@@ -29,9 +29,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `assinatura` (
   `id` int NOT NULL,
-  `período` int NOT NULL,
-  `valor` decimal(11,0) NOT NULL,
-  `data` date NOT NULL
+  `periodo` varchar(55) COLLATE utf8mb4_general_ci NOT NULL,
+  `valor` decimal(8,2) NOT NULL,
+  `data` date NOT NULL,
+  `usuario_id` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -43,7 +44,8 @@ CREATE TABLE `assinatura` (
 CREATE TABLE `avaliação` (
   `id` int NOT NULL,
   `nome` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `feedback` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
+  `feedback` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `usuario_id` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -55,7 +57,8 @@ CREATE TABLE `avaliação` (
 CREATE TABLE `pagamento` (
   `id` int NOT NULL,
   `meio_pagamento` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `tipo_pagamento` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+  `valor` varchar(40) COLLATE utf8mb4_general_ci NOT NULL,
+  `usuario_id` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -111,8 +114,30 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `razao_social`, `cpf`, `cnpj`, `senha`, `email`, `sexo`, `ddi`, `ddd`, `numero`, `cep`, `cidade`, `logradouro`, `bairro`, `lote`, `rua`, `complemento`, `perfil_id`) VALUES
-(1, 'Jordan', NULL, '075-276-691-01', NULL, '123456', 'jordan@gmail.com', 'Masculino', '', '61', '998490406', '72251702', 'Ceilândia', NULL, 'QNO 7', '10', 'B', NULL, 1),
-(29, 'Panda', NULL, '1212312312', NULL, '123', 'pandamandeus@gmail.com', NULL, NULL, '61', '998490406', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1);
+(1, 'Jordan', NULL, '075-276-691-01', NULL, '123', 'jordanvieiracarvalho@hotmail.com', 'Masculino', '', '61', '998490406', '72251702', 'Ceilândia', NULL, 'QNO 7', '10', 'B', NULL, 1),
+(29, 'Empresa', NULL, '1212312312', NULL, '123', 'empresa@gmail.com', NULL, NULL, '61', '998490406', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3),
+(36, 'Candidato', NULL, '07327669101', NULL, '123', 'candidato@email.com', NULL, NULL, '61', '998490406', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2),
+(39, 'Jordan', NULL, '3213213212', NULL, '123', 'comida@email.com', NULL, NULL, '12', '123123123', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `usuario_has_vaga`
+--
+
+CREATE TABLE `usuario_has_vaga` (
+  `usuario_id` int DEFAULT NULL,
+  `vaga_id` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Despejando dados para a tabela `usuario_has_vaga`
+--
+
+INSERT INTO `usuario_has_vaga` (`usuario_id`, `vaga_id`) VALUES
+(29, 2),
+(36, 2),
+(NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -128,8 +153,16 @@ CREATE TABLE `vaga` (
   `salario` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `carga_horaria` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `data_publicacao` date NOT NULL,
-  `data_expiracao` date NOT NULL
+  `data_expiracao` date NOT NULL,
+  `usuario_id` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `vaga`
+--
+
+INSERT INTO `vaga` (`id`, `nome`, `tipo`, `descricao`, `salario`, `carga_horaria`, `data_publicacao`, `data_expiracao`, `usuario_id`) VALUES
+(2, 'Técnico em informática', '123', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur dolor ea eligendi error, est eveniet inventore laborum nisi nobis nostrum omnis quaerat quas quod, rerum suscipit vel! Nisi, quaerat?&#13;&#10;', '10000,00', '123h', '1222-12-14', '2222-12-14', 29);
 
 --
 -- Índices para tabelas despejadas
@@ -139,7 +172,8 @@ CREATE TABLE `vaga` (
 -- Índices de tabela `assinatura`
 --
 ALTER TABLE `assinatura`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FKUsuario_3` (`usuario_id`);
 
 --
 -- Índices de tabela `avaliação`
@@ -151,7 +185,8 @@ ALTER TABLE `avaliação`
 -- Índices de tabela `pagamento`
 --
 ALTER TABLE `pagamento`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FKUsuario_2` (`usuario_id`);
 
 --
 -- Índices de tabela `perfil`
@@ -173,10 +208,18 @@ ALTER TABLE `usuario`
   ADD KEY `nome` (`nome`) USING BTREE;
 
 --
+-- Índices de tabela `usuario_has_vaga`
+--
+ALTER TABLE `usuario_has_vaga`
+  ADD KEY `FKUsuario_4` (`usuario_id`),
+  ADD KEY `FKVaga` (`vaga_id`);
+
+--
 -- Índices de tabela `vaga`
 --
 ALTER TABLE `vaga`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FKUsuario` (`usuario_id`);
 
 --
 -- AUTO_INCREMENT para tabelas despejadas
@@ -210,23 +253,48 @@ ALTER TABLE `perfil`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de tabela `vaga`
 --
 ALTER TABLE `vaga`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restrições para tabelas despejadas
 --
 
 --
+-- Restrições para tabelas `assinatura`
+--
+ALTER TABLE `assinatura`
+  ADD CONSTRAINT `FKUsuario_3` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Restrições para tabelas `pagamento`
+--
+ALTER TABLE `pagamento`
+  ADD CONSTRAINT `FKUsuario_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
 -- Restrições para tabelas `usuario`
 --
 ALTER TABLE `usuario`
   ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`perfil_id`) REFERENCES `perfil` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Restrições para tabelas `usuario_has_vaga`
+--
+ALTER TABLE `usuario_has_vaga`
+  ADD CONSTRAINT `FKUsuario_4` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `FKVaga` FOREIGN KEY (`vaga_id`) REFERENCES `vaga` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Restrições para tabelas `vaga`
+--
+ALTER TABLE `vaga`
+  ADD CONSTRAINT `FKUsuario` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
