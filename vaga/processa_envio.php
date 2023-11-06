@@ -7,6 +7,7 @@ require '../bibliotecas/phpmailer/PHPMailer.php';
 require '../bibliotecas/phpmailer/POP3.php';
 require '../bibliotecas/phpmailer/SMTP.php';
 
+
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\PHPMailer;
@@ -54,19 +55,27 @@ if (!$mensagem->mensagemValida()) {
     header('location:candidatar.php?candidatar=erro');
 }
 
+// OUTROS TRATAMENTOS DE ERROS
 
 require_once __DIR__ . '/../src/database/conexao.php';
 require_once __DIR__ . '/../src/dao/usuariodao.php';
+require_once __DIR__ . '/../src/dao/vagadao.php';
 
 $dao = new UsuarioDAO();
 $usuario = $dao->processarEnvioEmail('$email');
 
+$dao = new VagaDAO();
+$vaga = $dao->getById('$id');
+
+
+
 
 if ($usuario) {
-
+    //E-mail enviado com sucesso
+    return;
 } else {
-    echo 'O e-mail inserido não é válido';
-    header('location:candidatar.php?auth=erro2');
+    //echo 'O e-mail inserido não é válido';
+    header("location:candidatar.php?id=$vaga[id]&candidatar=erro3");
 }
 
 if ($_GET['acao'] == 'enviar') {

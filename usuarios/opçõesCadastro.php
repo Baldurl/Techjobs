@@ -1,6 +1,5 @@
 <?php
-include_once '../layouts/headerHome.php';
-include_once '../layouts/footer.php';
+
 
 ?>
 
@@ -17,12 +16,48 @@ include_once '../layouts/footer.php';
     <link href="https://unpkg.com/progressive-image@1.2.0/dist/index.css" rel="stylesheet" type="text/css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/usuario.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 
     <!--Título do Browser-->
     <title>Cadastro</title>
 </head>
+<header class="main-header">
+    <nav class="main-header-content">
+
+        <div class="logo">
+            <a href="../view/index.php">
+                <img src="../assets/img/Techjobs-logo.png" alt="" width="130px" height="80px">
+            </a>
+        </div>
+
+
+        <nav class="menu">
+            <ul>
+                <li class="item-menu">
+                    <a href="../view/index.php">
+                        <span class="icon"><i class="bi bi-house-door"></i></span>
+                        <span class="txt-link">Home</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="../view/blog.php">
+                        <span class="icon"><i class="bi bi-columns"></i></span>
+                        <span class="txt-link">Blog</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a style="color: coral" href="../auth/index.php">
+                        <span class="icon"><i class="bi bi-box-arrow-in-right"></i></span>
+                        <span class="txt-link">Login</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+    </nav>
+</header>
 <body id="home">
 <main class="main-cadastro">
 

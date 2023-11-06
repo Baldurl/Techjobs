@@ -42,11 +42,7 @@ $empresa = $dao->getUsuario('$id', '$nome');
                 <?php echo '<strong>Vaga: </strong>' . $vaga[1] ?><br>
                 <p><?php echo '<strong>Tipo: </strong> ' . $vaga[2] ?><br>
                     <?php echo '<strong>Salário: </strong> ' . $vaga[4] ?><br>
-                    <?php echo '<strong>Descrição: </strong> ' .
-                        substr($vaga[3], 0,
-                            (strlen($vaga[3]) >= 50 ? 50 :
-                                strlen($vaga[3]))) ?>
-                    <!-- <a href="https://monkeytype.com/" target="_blank" rel="external">Descrição</a> -->
+                    <?php echo '<strong>Descrição: </strong> ' . $vaga[3] ?>
                 </p>
             </div>
         </article>
@@ -63,11 +59,17 @@ $empresa = $dao->getUsuario('$id', '$nome');
                         <div class="col-md-12">
 
                             <div class="card-body font-weight-bold">
-                                <form action="processa_envio.php?acao=enviar" enctype="multipart/form-data" method="POST">
+                                <form action="processa_envio.php?id=<?=$vaga['id']?>&acao=enviar" enctype="multipart/form-data" method="POST">
                                     <div class="form-group">
+
                                         <label for="para">E-mail</label>
+
                                         <input name="para" type="email" class="form-control" id="para"
                                                placeholder="***@email.com">
+                                        <?php if (isset($_GET['candidatar']) && $_GET['candidatar'] == 'erro3') { ?>
+                                            <div style="color: darkred; font-size: 1.2rem"> E-mail inválido
+                                            </div>
+                                        <?php } ?>
                                     </div>
                                     <div class="form-group">
                                         <label for="arquivo">Enviar currículo</label>
