@@ -78,7 +78,7 @@ if ($usuario) {
     header("location:candidatar.php?id=$vaga[id]&candidatar=erro3");
 }
 
-if ($_GET['acao'] == 'enviar') {
+if ($_GET['acao'] && $_GET['acao'] == 'enviar') {
     $arquivo = $_FILES['arquivo'];
 
 
