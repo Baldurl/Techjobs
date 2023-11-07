@@ -556,9 +556,9 @@ FIM SEÇÃO UTILITÁRIOS -->
         </header>
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="view/blog.php">Notícias</a></li>
-            <li><a href="view/equipe.php">Nossa Equipe</a></li>
-            <li><a href="view/contato.php">Contato</a></li>
+            <li><a href="blog.php">Notícias</a></li>
+            <li><a href="equipe.php">Nossa Equipe</a></li>
+            <li><a href="contato.php">Contato</a></li>
         </ul>
     </article>
 
