@@ -1,10 +1,16 @@
 <?php
 session_start();
+
+
 if (isset($_SESSION['usuario'])) {
+    require_once __DIR__ . '/../auth/permissoes.php';
     require_once __DIR__ . '/../layouts/headerlogin.php';
 } else {
     require_once __DIR__ . '/../layouts/headerHome.php';
 }
+
+
+
 ?>
 
 <!DOCTYPE html>

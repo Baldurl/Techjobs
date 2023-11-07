@@ -48,10 +48,10 @@
                 </div>
             </div>
 
-<!--            <div class="seta">
-                <i class="fa fa-arrow-down"></i>
-            </div>
-            <p><a href="#" class="saiba-mais">Saiba Mais</a></p>-->
+            <!--            <div class="seta">
+                            <i class="fa fa-arrow-down"></i>
+                        </div>
+                        <p><a href="#" class="saiba-mais">Saiba Mais</a></p>-->
         </div>
     </article>
 </div>
@@ -73,14 +73,7 @@
 
     </div>
 
-    <div class="main-blog-header">
-        <h2 class="aos-init aos-animate">
-            "Por maior que seja o seu cansaço, nunca deixe de estudar! <br>
-            Estudar é um privilégio e só o seu
-            esforço pessoal te levará a conhecer pessoas e mundos que os acomodados jamais conhecerão,"
-        </h2>
-    </div>
-
+<!--
     <div class="main-blog-content">
         <article>
             <div class="icon"><i class="fa fa-3x fa-angellist"></i></div>
@@ -227,7 +220,7 @@
             </div>
         </article>
 
-    </div>
+    </div>-->
 </section>
 
 
@@ -299,6 +292,7 @@
 
 
 <section class="main-cursos">
+
     <div class="main-cursos-content" id="news">
         <header>
             <h2>Biblioteca de Cursos e Livros</h2>
@@ -343,6 +337,10 @@
 
 
 <section class="main-noticias">
+    <div class="main-noticias-header">
+        <h2>Notícias</h2>
+
+    </div>
     <div class="main-noticias-content" id="news">
         <div class="box-noticias">
             <div class="box-noticias-content">

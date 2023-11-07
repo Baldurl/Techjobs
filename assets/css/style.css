@@ -33,13 +33,18 @@ body {
     padding: 10px 0;
     height: 100px;
 
+
+
 }
+
 
 .main-header .main-header-content {
     display: flex;
     max-width: 1800px;
     margin: 0 auto;
     justify-content: space-between;
+    height: 100%;
+
 }
 
 .main-header .main-header-content .logo {
@@ -506,11 +511,19 @@ a {
     justify-content: center;
 }
 
-.main-assinatura-header > h1 {
-    color: #333;
+.main-assinatura-header {
+    background-color: #333333;
     text-align: center;
-    padding: 40px;
-    font-size: 1.4rem;
+
+}
+.main-assinatura-header  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    font-style: italic;
+    letter-spacing: -1px;
+    text-transform: capitalize;
+    padding: 35px 0;
 
 }
 
@@ -618,6 +631,7 @@ a {
 .main-cursos-content {
     max-width: 1300px;
     margin: 0 auto;
+
 }
 
 .main-cursos-content h2 {
@@ -718,6 +732,21 @@ a {
     background-color: white;
 
 }
+.main-noticias-header {
+    text-align: center;
+    background-color: #333333;
+
+}
+.main-noticias-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    font-style: italic;
+    letter-spacing: -1px;
+    text-transform: capitalize;
+    padding: 35px 0;
+
+}
 
 .main-noticias-content {
     max-width: 1300px;
@@ -769,6 +798,7 @@ a {
 
 .main-team-header {
     text-align: center;
+    background-color: #333333;
 
 }
 
@@ -776,7 +806,7 @@ a {
 
     font-size: 2rem;
     font-weight: 700;
-    color: #333333;
+    color: #ffffff;
     font-style: italic;
     letter-spacing: -1px;
     text-transform: capitalize;

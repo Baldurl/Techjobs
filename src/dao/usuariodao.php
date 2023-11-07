@@ -36,6 +36,20 @@ class  UsuarioDAO
         return $row;
     }
 
+    public function getByPerfilId($perfil_id)
+    {
+
+        $query = "SELECT * FROM usuario WHERE perfil_id = :perfil_id";
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(":perfil_id", $perfil_id);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_BOTH);
+
+        $this->dbh = null;
+
+        return $row;
+    }
+
 
     public function insert($nome, $razao_social, $cpf, $cnpj, $senha, $email, $sexo, $ddi, $ddd, $telefone, $cep, $cidade, $logradouro, $bairro, $rua, $complemento, $perfil)
     {
