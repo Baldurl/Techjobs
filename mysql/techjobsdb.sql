@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 07/11/2023 às 03:47
+-- Tempo de geração: 07/11/2023 às 10:28
 -- Versão do servidor: 8.0.30
 -- Versão do PHP: 8.1.10
 
@@ -138,7 +138,9 @@ INSERT INTO `usuario_has_vaga` (`usuario_id`, `vaga_id`) VALUES
 (1, 5),
 (36, 2),
 (36, 2),
-(1, 5);
+(1, 5),
+(1, 2),
+(1, 7);
 
 -- --------------------------------------------------------
 
@@ -165,7 +167,8 @@ CREATE TABLE `vaga` (
 INSERT INTO `vaga` (`id`, `nome`, `tipo`, `descricao`, `salario`, `carga_horaria`, `data_publicacao`, `data_expiracao`, `usuario_id`) VALUES
 (2, 'Técnico em informática', 'Efetivo/CLT', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur dolor ea eligendi error, est eveniet inventore laborum nisi nobis nostrum omnis quaerat quas quod, rerum suscipit vel! Nisi, quaerat?&#13;&#10;', '10000,00', '70h', '2023-11-03', '2023-11-25', 29),
 (5, 'Suporte de redes', 'Estágio', 'Requisitos:&#13;&#10;&#13;&#10;.Metodologia Ágil.&#13;&#10;.Saber conceitos básicos de CyberSegurança.&#13;&#10;.Estar cursando superior em sistemas da informação/segurança da informação.', 'R$1000,00', '40h semanais', '2023-11-02', '2023-12-03', 29),
-(6, 'Analista de dados', 'Efetivo/CLT', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur dolor ea eligendi error,  consectetur adipisicing elit. Aut consequuntur dolor ea eligendi error,  consectetur adipisicing elit. Aut consequuntur dolor ea eligendi error', '1000,00', '70h', '2023-06-11', '2023-12-14', 29);
+(6, 'Analista de dados', 'Efetivo/CLT', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur dolor ea eligendi error,  consectetur adipisicing elit. Aut consequuntur dolor ea eligendi error,  consectetur adipisicing elit. Aut consequuntur dolor ea eligendi error', '1000,00', '70h', '2023-06-11', '2023-12-14', 29),
+(7, 'PHP Júnior', 'Efetivo/Clt', 'LOREMLOREMLOREMLOREMLOREMLOREMLOREMLOREM', 'R$1000,00', '50h semanais', '2023-11-14', '2023-12-14', 1);
 
 --
 -- Índices para tabelas despejadas
@@ -262,7 +265,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `vaga`
 --
 ALTER TABLE `vaga`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restrições para tabelas despejadas
