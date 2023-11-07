@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../src/dao/vagadao.php';
+require_once __DIR__ . '/../layouts/headerLogin.php';
 
 $dao = new VagaDAO();
 $vagas = $dao->getAll();
@@ -21,52 +22,7 @@ $quantidadeRegistros = count($vagas);
 <link href=" https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
 
 
-<header class="main-header">
 
-    <nav class="main-header-content">
-
-        <div class="logo">
-            <a href="../view/home.php">TechJobs</a>
-        </div>
-
-
-        <nav class="menu">
-
-
-            <ul>
-                <li class="item-menu">
-                    <a href="../view/home.php">
-                        <span class="icon"><i class="bi bi-house-door"></i></span>
-                        <span class="txt-link">Home</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="#">
-                        <span class="icon"><i class="bi bi-columns"></i></span>
-                        <span class="txt-link">Dashboard</span>
-                    </a>
-                </li>
-
-                <!--Colocar condição de acesso à configuração.
-                 Se for um candidato, ele pode alterar dados sendo um perfil candidato.
-                 Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
-
-                <li class="item-menu">
-                    <a href="index.php ">
-                        <span class="icon"><i class="bi bi-person"></i></span>
-                        <span class="txt-link">Perfil</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="../auth/logoff.php">
-                        <span class="icon"><i class="bi bi-box-arrow-right"></i></span>
-                        <span class="txt-link">Logoff</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </nav>
-</header>
 
 <main class="main-vaga">
 
