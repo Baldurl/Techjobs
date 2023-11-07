@@ -1,5 +1,7 @@
 <?php
 require_once __DIR__ . '/../src/dao/vagadao.php';
+require_once __DIR__ . '/../src/dao/usuariodao.php';
+
 
 $dao = new VagaDAO();
 $vagas = $dao->getAll();
@@ -14,10 +16,18 @@ foreach ($vagas
 
 as $vaga) { ?>
 
+    <?php
+
+    $id = $vaga['usuario_id'];
+    $dao1 = new UsuarioDAO();
+    $usuario = $dao1->getById($id);
+    ?>
+
 
 
     <article>
         <div class="icon"><i class="fa fa-3x fa-angellist"></i></div>
+        <?php echo '<strong>Empresa: </strong>' . $usuario[1]  ?><br>
         <div class="content" title="<?= $vaga['descricao'] ?>">
             <?php echo '<strong>Vaga: </strong>' . $vaga['nome'] ?><br>
             <p><?php echo '<strong>Tipo: </strong> ' . $vaga['tipo'] ?><br>

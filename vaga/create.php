@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . "/../src/dao/vagadao.php";
+require_once __DIR__ . "/../layouts/headerLogin.php";
 
 $vagaDAO = new VagaDAO();
 $vagas = $vagaDAO->getAll();
@@ -22,49 +23,6 @@ $vagas = $vagaDAO->getAll();
 
     <title>Tech Jobs - Vaga</title>
 </head>
-<header class="main-header">
-
-    <nav class="main-header-content">
-
-        <div class="logo">
-            <a href="../view/home.php">TechJobs</a>
-        </div>
-        <nav class="menu">
-            <ul>
-                <li class="item-menu">
-                    <a href="../view/home.php">
-                        <span class="icon"><i class="bi bi-house-door"></i></span>
-                        <span class="txt-link">Home</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="#">
-                        <span class="icon"><i class="bi bi-columns"></i></span>
-                        <span class="txt-link">Dashboard</span>
-                    </a>
-                </li>
-
-                <!--Colocar condição de acesso à configuração.
-                 Se for um candidato, ele pode alterar dados sendo um perfil candidato.
-                 Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
-
-                <li class="item-menu">
-                    <a href="index.php ">
-                        <span class="icon"><i class="bi bi-person"></i></span>
-                        <span class="txt-link">Perfil</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="../auth/logoff.php">
-                        <span class="icon"><i class="bi bi-box-arrow-right"></i></span>
-                        <span class="txt-link">Logoff</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </nav>
-</header>
-
 
 <body>
 <main class="main-vaga">
@@ -88,7 +46,13 @@ $vagas = $vagaDAO->getAll();
 
                                 <div>
                                     <label for="tipo">Tipo: </label>
-                                    <input type="text" name="tipo" placeholder="Informe o tipo de contrato" required>
+                                    <select name="tipo" id="tipo">
+                                        <option value="">Selecione o tipo</option>
+                                        <option value="clt">Efetivo/CLT</option>
+                                        <option value="estagio">Estágio</option>
+                                        <option value="trainee">Trainee</option>
+                                    </select>
+                                    <!--<input type="text" name="tipo" placeholder="Informe o tipo de contrato" required>-->
                                 </div>
                                 <div style="font-size: 1.5rem;">
                                     <label>Descrição: </label>

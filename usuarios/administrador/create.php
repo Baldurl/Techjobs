@@ -23,10 +23,13 @@ $perfis = $perfilDAO->getAll();
 </head>
 <body>
 <header class="main-header">
+
     <nav class="main-header-content">
 
         <div class="logo">
-            <a href="../../view/home.php">TechJobs</a>
+            <a href="../../view/home.php">
+                <img src="../../assets/img/Tech%20(1).svg" alt="" width="200px" height="100px">
+            </a>
         </div>
 
 
@@ -41,15 +44,15 @@ $perfis = $perfilDAO->getAll();
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="#">
+                    <a href="../../view/blog.php">
                         <span class="icon"><i class="bi bi-columns"></i></span>
-                        <span class="txt-link">Dashboard</span>
+                        <span class="txt-link">Blog</span>
                     </a>
                 </li>
 
                 <!--Colocar condição de acesso à configuração.
-                 Se for um candidato, ele pode alterar dados sendo um perfil candidato.
-                 Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
+Se for um candidato, ele pode alterar dados sendo um perfil candidato.
+Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
 
                 <li class="item-menu">
                     <a href="index.php ">

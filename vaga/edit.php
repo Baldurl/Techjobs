@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../src/dao/usuariodao.php';
 require_once __DIR__ . "/../src/dao/vagadao.php";
+require_once __DIR__ . "/../layouts/headerLogin.php";
 
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT) ?? 0;
 $dao = new VagaDAO();
@@ -32,51 +33,6 @@ if (!$vaga) {
 
     <title>Tech Jobs - Vaga</title>
 </head>
-<header class="main-header">
-    <nav class="main-header-content">
-
-        <div class="logo">
-            <a href="../view/home.php">TechJobs</a>
-        </div>
-
-
-        <nav class="menu">
-
-
-            <ul>
-                <li class="item-menu">
-                    <a href="../view/home.php">
-                        <span class="icon"><i class="bi bi-house-door"></i></span>
-                        <span class="txt-link">Home</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="#">
-                        <span class="icon"><i class="bi bi-columns"></i></span>
-                        <span class="txt-link">Dashboard</span>
-                    </a>
-                </li>
-
-                <!--Colocar condição de acesso à configuração.
-                 Se for um candidato, ele pode alterar dados sendo um perfil candidato.
-                 Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
-
-                <li class="item-menu">
-                    <a href="index.php ">
-                        <span class="icon"><i class="bi bi-person"></i></span>
-                        <span class="txt-link">Perfil</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="../auth/logoff.php">
-                        <span class="icon"><i class="bi bi-box-arrow-right"></i></span>
-                        <span class="txt-link">Logoff</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </nav>
-</header>
 
 <body>
 <main class="main-vaga">
@@ -111,9 +67,12 @@ if (!$vaga) {
 
                                 <div>
                                     <label for="tipo">Tipo: </label>
-                                    <input type="text" name="tipo"
-                                           placeholder="Informe o tipo de contrato" required
-                                           value="<?= htmlspecialchars($vaga['tipo']) ?>">
+                                    <select name="tipo">
+                                        <option value="">Selecione o tipo</option>
+                                        <option value="Efetivo/Clt">Efetivo/CLT</option>
+                                        <option value="Estágio">Estágio</option>
+                                        <option value="Trainee">Trainee</option>
+                                    </select placeholder="Informe o tipo de contrato" required value="<?= htmlspecialchars($vaga['tipo']) ?>">
                                 </div>
                                 <div style="font-size: 1.5rem;">
                                     <label for="descricao">Descrição: </label>
