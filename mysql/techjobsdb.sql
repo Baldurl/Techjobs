@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 06/11/2023 às 18:13
+-- Tempo de geração: 07/11/2023 às 03:47
 -- Versão do servidor: 8.0.30
 -- Versão do PHP: 8.1.10
 
@@ -38,10 +38,10 @@ CREATE TABLE `assinatura` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `avaliação`
+-- Estrutura para tabela `avaliacao`
 --
 
-CREATE TABLE `avaliação` (
+CREATE TABLE `avaliacao` (
   `id` int NOT NULL,
   `nome` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `feedback` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
@@ -135,9 +135,10 @@ CREATE TABLE `usuario_has_vaga` (
 --
 
 INSERT INTO `usuario_has_vaga` (`usuario_id`, `vaga_id`) VALUES
-(29, 2),
+(1, 5),
 (36, 2),
-(NULL, NULL);
+(36, 2),
+(1, 5);
 
 -- --------------------------------------------------------
 
@@ -178,9 +179,9 @@ ALTER TABLE `assinatura`
   ADD KEY `FKUsuario_3` (`usuario_id`);
 
 --
--- Índices de tabela `avaliação`
+-- Índices de tabela `avaliacao`
 --
-ALTER TABLE `avaliação`
+ALTER TABLE `avaliacao`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -234,9 +235,9 @@ ALTER TABLE `assinatura`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `avaliação`
+-- AUTO_INCREMENT de tabela `avaliacao`
 --
-ALTER TABLE `avaliação`
+ALTER TABLE `avaliacao`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --

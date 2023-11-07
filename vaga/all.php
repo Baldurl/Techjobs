@@ -15,6 +15,7 @@ foreach ($vagas
 as $vaga) { ?>
 
 
+
     <article>
         <div class="icon"><i class="fa fa-3x fa-angellist"></i></div>
         <div class="content" title="<?= $vaga['descricao'] ?>">

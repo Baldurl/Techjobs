@@ -12,6 +12,10 @@ $dao = new VagaDAO();
 $empresa = $dao->getUsuario('$id', '$nome');
 
 
+/*$dao = new Usuariodao();
+$usuario = $dao->getById('$id');
+*/
+
 
 
 ?>
@@ -24,7 +28,7 @@ $empresa = $dao->getUsuario('$id', '$nome');
 
 
 <section class="main-blog">
-    <div class="main-blog-content">
+    <div class="main-blog-content1">
         <article>
             <div class="py-3 text-center" style="margin: 40px auto">
                 <h2>Dados da vaga:</h2>
@@ -59,7 +63,7 @@ $empresa = $dao->getUsuario('$id', '$nome');
                         <div class="col-md-12">
 
                             <div class="card-body font-weight-bold">
-                                <form action="processa_envio.php?id=<?=$vaga['id']?>&acao=enviar" enctype="multipart/form-data" method="POST">
+                                <form action="candidatar_save.php?id=<?=$vaga['id']?>&acao=enviar" enctype="multipart/form-data" method="POST">
                                     <div class="form-group">
 
                                         <label for="para">E-mail</label>

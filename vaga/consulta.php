@@ -3,6 +3,14 @@
 session_start();
 require_once __DIR__ . '/../src/dao/vagadao.php';
 
+if (isset($_SESSION['usuario'])) {
+    require_once __DIR__ . '/../layouts/headerlogin.php';
+} else {
+    require_once __DIR__ . '/../layouts/headerHome.php';
+}
+
+
+
 
 $dao = new VagaDAO();
 $vagas = $dao->getByVaga('$nome');
@@ -27,46 +35,6 @@ $usuario = $dao->getByUsuario('$usuario');*/
 
 
 <body id="home">
-<header class="main-header">
-
-    <nav class="main-header-content">
-
-        <div class="logo">
-            <a href="index.php">
-                <img src="../assets/img/Techjobs-logo.png" alt="" width="130px" height="80px">
-            </a>
-        </div>
-
-
-        <nav class="menu">
-
-            <ul>
-                <li class="item-menu">
-                    <a href="index.php">
-                        <span class="icon"><i class="bi bi-house-door"></i></span>
-                        <span class="txt-link">Home</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a style="color: coral" href="../auth/index.php">
-                        <span class="icon"><i class="bi bi-box-arrow-in-right"></i></span>
-                        <span class="txt-link">Login</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a style="color: coral" href="../usuarios/opçõesCadastro.php">
-                        <span class="icon"><i class="bi bi-box-arrow-in-right"></i></span>
-                        <span class="txt-link">Cadastrar</span>
-                    </a>
-                </li>
-
-            </ul>
-
-
-        </nav>
-    </nav>
-</header>
-
 
 <div class="main-cta">
     <article class="main-cta-banner">
@@ -88,10 +56,10 @@ $usuario = $dao->getByUsuario('$usuario');*/
                 </div>
             </div>
 
-            <div class="seta">
-                <i class="fa fa-arrow-down"></i>
-            </div>
-            <p><a href="#" class="saiba-mais">Saiba Mais</a></p>
+            <!--            <div class="seta">
+                            <i class="fa fa-arrow-down"></i>
+                        </div>
+                        <p><a href="#" class="saiba-mais">Saiba Mais</a></p>-->
         </div>
     </article>
 </div>

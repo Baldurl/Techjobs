@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . '/layouts/headerHome.php'; ?>
+<?php require_once __DIR__ . '/../layouts/headerHome.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

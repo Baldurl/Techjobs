@@ -14,7 +14,8 @@
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
 
     <title>Tech Jobs - Candidato</title>
 </head>
@@ -25,14 +26,16 @@
     <nav class="main-header-content">
 
         <div class="logo">
-            <a href="../../index.php">TechJobs</a>
+            <a href="../../view/index.php">
+                <img src="../../assets/img/Tech%20(1).svg" alt="" width="200px" height="100px">
+            </a>
         </div>
 
         <nav class="menu">
 
             <ul>
                 <li class="item-menu">
-                    <a href="../../index.php">
+                    <a href="../../view/index.php">
                         <span class="icon"><i class="bi bi-house-door"></i></span>
                         <span class="txt-link">Home</span>
                     </a>

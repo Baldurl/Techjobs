@@ -44,7 +44,7 @@ body {
 
 .main-header .main-header-content .logo {
     flex-basis: 25%;
-    padding: 0 0 0 0;
+    border: none !important;
 
 }
 
@@ -55,12 +55,13 @@ body {
     color: coral;
     padding: 5px;
     transition: .5s;
+
 }
 
 .main-header .main-header-content .logo a:hover {
-    background-color: #333333;
+
     color: coral;
-    opacity: 0.5;
+    opacity: 0.9;
     cursor: pointer;
     border: none !important;
     border-radius: 10px;
@@ -394,10 +395,31 @@ nav.menu {
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 20px;
-    margin-bottom: 50px;
+
 }
 
+.main-blog .main-blog-content1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px;
+
+}
+
+
 .main-blog .main-blog-content article {
+    flex-basis: calc(33% - 30px);
+    /*flex-basis: 100%;*/
+    margin-bottom: 60px;
+    border: none #e2dddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 12px 12px 2px 1px rgba(255, 132, 0, 0.2);
+    padding: 30px;
+
+
+}
+.main-blog .main-blog-content1 article {
     /*flex-basis: calc(33% - 30px);*/
     flex-basis: 100%;
     margin-bottom: 60px;
@@ -413,8 +435,15 @@ nav.menu {
 .main-blog .main-blog-content article h3 {
     margin: auto;
 }
+.main-blog .main-blog-content1 article h3 {
+    margin: auto;
+}
 
 .main-blog .main-blog-content article .icon {
+    padding: 15px;
+    margin: 0 auto;
+}
+.main-blog .main-blog-content1 article .icon {
     padding: 15px;
     margin: 0 auto;
 }

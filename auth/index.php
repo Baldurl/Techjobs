@@ -30,7 +30,9 @@
     <nav class="main-header-content">
 
         <div class="logo">
-            <a href="../index.php">TechJobs</a>
+            <a href="../view/index.php">
+                <img src="../assets/img/Tech%20(1).svg" alt="" width="200px" height="100px">
+            </a>
         </div>
 
         <nav class="menu">

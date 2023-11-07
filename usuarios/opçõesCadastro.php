@@ -28,7 +28,7 @@
 
         <div class="logo">
             <a href="../view/index.php">
-                <img src="../assets/img/Techjobs-logo.png" alt="" width="130px" height="80px">
+                <img src="../assets/img/Tech%20(1).svg" alt="" width="200px" height="100px">
             </a>
         </div>
 

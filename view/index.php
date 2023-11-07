@@ -48,10 +48,10 @@
                 </div>
             </div>
 
-            <div class="seta">
+<!--            <div class="seta">
                 <i class="fa fa-arrow-down"></i>
             </div>
-            <p><a href="#" class="saiba-mais">Saiba Mais</a></p>
+            <p><a href="#" class="saiba-mais">Saiba Mais</a></p>-->
         </div>
     </article>
 </div>
@@ -62,6 +62,9 @@
         <h2 class="aos-init aos-animate">
             Vagas em alta
         </h2>
+        <div class="seta">
+            <i class="fa fa-arrow-down"></i>
+        </div>
     </div>
 
     <div class="main-blog-content">

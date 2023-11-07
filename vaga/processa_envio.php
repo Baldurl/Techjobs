@@ -60,6 +60,7 @@ if (!$mensagem->mensagemValida()) {
 require_once __DIR__ . '/../src/database/conexao.php';
 require_once __DIR__ . '/../src/dao/usuariodao.php';
 require_once __DIR__ . '/../src/dao/vagadao.php';
+require_once __DIR__ . '/../src/dao/usuario_has_vagadao.php';
 
 $dao = new UsuarioDAO();
 $usuario = $dao->processarEnvioEmail('$email');
@@ -69,19 +70,19 @@ $vaga = $dao->getById('$id');
 
 
 
-
+    //TRATANDO ERRO DO PROCESSAMENTO DO E-MAIL
 if ($usuario) {
     //E-mail enviado com sucesso
-    return;
 } else {
     //echo 'O e-mail inserido não é válido';
     header("location:candidatar.php?id=$vaga[id]&candidatar=erro3");
 }
 
-if ($_GET['acao'] && $_GET['acao'] == 'enviar') {
+
+
+
+
     $arquivo = $_FILES['arquivo'];
-
-
     $dao1 = new UsuarioDAO();
     $usuario1 = $dao1->getById('$id');
 
@@ -131,7 +132,7 @@ if ($_GET['acao'] && $_GET['acao'] == 'enviar') {
 
     }
 
-}
+
 
 ?>
 
@@ -148,8 +149,8 @@ if ($_GET['acao'] && $_GET['acao'] == 'enviar') {
 </head>
 <body>
 <div class="container">
-
     <div class="py-3 text-center">
+
 
         <h2>Verificação do e-mail</h2>
     </div>
@@ -166,7 +167,7 @@ if ($_GET['acao'] && $_GET['acao'] == 'enviar') {
                              width="300"
                              height="200"
                              alt="robot">
-                        <a href="../index.php"
+                        <a href="../view/home.php"
                            class="d-block mx-auto mb-2 btn btn-success btn-lg mt-5 text-white">Voltar</br></a>
                     </div>
                 <?php } ?>

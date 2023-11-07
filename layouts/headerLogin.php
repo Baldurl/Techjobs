@@ -14,7 +14,9 @@
         <nav class="main-header-content">
 
             <div class="logo">
-                <a href="home.php">TechJobs</a>
+                <a href="home.php">
+                    <img src="../assets/img/Tech%20(1).svg" alt="" width="200px" height="100px">
+                </a>
             </div>
 
 
