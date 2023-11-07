@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__ . '/../auth/validarAcesso.php';
-require_once __DIR__ . '/../layouts/headerLogin.php';
 require_once __DIR__ . '/../src/dao/vagadao.php';
 require_once __DIR__ . '/../src/dao/usuariodao.php';
 
@@ -26,7 +25,54 @@ $usuario = $dao->getById('$id');
 <link rel="stylesheet" href="../assets/css/style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
+<header class="main-header">
 
+    <nav class="main-header-content">
+
+        <div class="logo">
+            <a href="../view/home.php">
+                <img src="../assets/img/Tech%20(1).svg" alt="" width="200px" height="100px">
+            </a>
+        </div>
+
+
+        <nav class="menu">
+
+
+            <ul>
+                <li class="item-menu">
+                    <a href="../view/home.php">
+                        <span class="icon"><i class="bi bi-house-door"></i></span>
+                        <span class="txt-link">Home</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="../view/blog.php">
+                        <span class="icon"><i class="bi bi-columns"></i></span>
+                        <span class="txt-link">Blog</span>
+                    </a>
+                </li>
+
+                <!--Colocar condição de acesso à configuração.
+Se for um candidato, ele pode alterar dados sendo um perfil candidato.
+Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
+
+                <li class="item-menu">
+                    <a href="../usuarios/administrador/index.php ">
+                        <span class="icon"><i class="bi bi-person"></i></span>
+                        <span class="txt-link">Perfil</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="../auth/logoff.php">
+                        <span class="icon"><i class="bi bi-box-arrow-right"></i></span>
+                        <span class="txt-link">Logoff</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </nav>
+</header>
 <section class="main-blog">
     <div class="main-blog-content1">
         <article>
