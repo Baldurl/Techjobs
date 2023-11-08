@@ -14,15 +14,14 @@ if (!count($vagas)) {
 
 foreach ($vagas
 
-as $vaga) { ?>
+         as $vaga) { ?>
 
-<?php
+    <?php
 
-$id = $vaga['usuario_id'];
-$dao1 = new UsuarioDAO();
-$usuario = $dao1->getById($id);
-?>
-
+    $id = $vaga['usuario_id'];
+    $dao1 = new UsuarioDAO();
+    $usuario = $dao1->getById($id);
+    ?>
 
 
     <article>
@@ -36,14 +35,18 @@ $usuario = $dao1->getById($id);
 
 
             </p>
-            <span class="btn-orange">
-                                    <a href="../vaga/candidatar.php?id=<?= $vaga['id'] ?>"><button type="submit"
-                                                                                                   class="btn-primary btn-lg">Ver detalhes</button></a>
-                                </span>
+            <span>
+               <a href="../vaga/candidatar.php?id=<?= $vaga['id'] ?>">
+
+                    <button type="submit"
+                            class="btn-orange">Ver detalhes</button>
+
+               </a>
+            </span>
         </div>
     </article>
 
-    <?php } ?>
+<?php } ?>
 
 
 

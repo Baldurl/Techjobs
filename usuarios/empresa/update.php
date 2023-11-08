@@ -1,18 +1,35 @@
 <?php
+session_start();
 header('Content-Type: text/html; charset=utf-8;');
-
-include_once __DIR__. '/../src/dao/perfildao.php';
+require_once __DIR__ . '/../../src/database/conexao.php';
+require_once __DIR__ . '/../../src/dao/usuariodao.php';
+require_once __DIR__ . '/../../auth/permissoes.php';
 
 # recebe os valores enviados do formulário via método post.
-$id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT) ?? 0;
-$nome = strtoupper(filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS));
 
-# cria um objeto da classe PerfilDAO e chama método para realizar ação.
-$dao = new PerfilDAO();
-$result = $dao->update($id, $nome);
 
-if ($result) {
-    header('location: index.php?msg=Empresa atualizada com sucesso!');
+
+
+$dao = new UsuarioDAO();
+$result = $dao->updateById($id, '$nome', '$senha');
+
+
+if ($result && !empty($_POST['nome']) || !empty($_POST['senha'])) {
+    header('location: index.php?msg=sucesso');
 } else {
-    header('location: index.php?error=Não foi possível atualizar a empresa!');
+    header('location: index.php?msg=erro');
 }
+
+
+
+/*if ($usuario && !empty($_POST['nome']) || !empty($_POST['senha'])
+    && $_POST['nome'] != $_SESSION['usuario']['nome'] || $_POST['senha'] != $_SESSION['usuario']['senha']) {
+    header('location: home.php?msg=sucesso');
+
+} else if ($usuario && empty($_POST['nome']) || empty($_POST['senha'])) {
+    header('location: edit.php?msg=erro');
+
+} else if ($usuario && $_POST['nome'] == $_SESSION['usuario']['nome'] && $_POST['senha'] == $_SESSION['usuario']['senha']) {
+    header('location: home.php?msg=erro2');
+}*/
+

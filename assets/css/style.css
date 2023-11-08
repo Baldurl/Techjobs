@@ -993,6 +993,56 @@ div.main-team-box {
 /* FIM DOBRA CONTATO*/
 
 /*OPT-IN*/
+.opt-on {
+    background-color: #333333;
+    visibility: collapse;
+    color: #fff;
+    width: 100%;
+}
+
+.opt-on-content {
+    max-width: calc(1300px - 40px);
+    padding: 40px 20px;
+    margin: 0 auto;
+    display: flex;
+
+}
+
+.main_optin {
+    width: 100%;
+    background-color: #333333;
+}
+
+.main_optin_content {
+    max-width: 1300px;
+    padding: 40px 0;
+    text-align: center;
+    color: #ffffff;
+    margin: 0 auto;
+}
+
+.main_optin_content header h1 {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+}
+
+.main_optin_content .btnn {
+    color: #fff;
+    background-color: #87b1fd;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+.main_optin_content .btnn:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+
+/*FIM OPT-IN*/
+
+
+/*OPT-IN*/
 .opt-in {
     background-color: #333333;
     visibility: collapse;
@@ -1026,12 +1076,16 @@ div.main-team-box {
     margin-bottom: 40px;
 }
 
-.main_optin_footer_content .btn {
+.main_optin_footer_content .btnn {
     color: #fff;
     background-color: #87b1fd;
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 1.2rem;
+}
+.main_optin_footer_content .btnn:hover {
+    text-decoration: none;
+    opacity: 0.8;
 }
 
 

@@ -1,45 +1,17 @@
 <?php
+session_start();
+require_once __DIR__ . '/../../src/dao/usuariodao.php';
+require_once __DIR__ . '/../../auth/permissoes.php';
 
 
+$dao = new UsuarioDAO();
+$result = $dao->deleteById($id);
 
-require_once '../../src/conexao.php';
-$nome = $_POST['nome'];
-$email = $_POST['email'];
-$senha = $_POST['senha'];
-$id = NULL;
-$perfil = 'candidato';
-
-
-//$dbh = Conexao::getConexao();
-
-$query = "INSERT INTO usuario (id, nome, senha, email) 
-            VALUES (:id, :nome, :senha, :email);";
-
-
-$stmt = $dbh->prepare($query);
-$stmt->bindParam(':id', $id);
-$stmt->bindParam(':nome', $nome);
-$stmt->bindParam(':senha', $senha);
-$stmt->bindParam(':email', $email);
-$stmt->execute();
-
-
-
-
-$query = "INSERT INTO perfil(id, nome) 
-            VALUES(:id, :nome);";
-$stmt = $dbh->prepare($query);
-$stmt->bindParam(':id', $id);
-$stmt->bindParam(':nome', $perfil);
-$result = $stmt->execute();
 
 
 if ($result) {
-    echo 'candidato cadastrado com sucesso. </br>';
-    echo '<a href="../../auth/index.php">Fazer auth</a></br>';
+    session_destroy();
+    header('location: ../../view/index.php?msg=Usuário excluído com sucesso!');
 } else {
-    echo 'Erro ao cadastrar perfil';
+    header('location: index.php?error=Não foi possível excluir o usuário!');
 }
-
-
-$dbh = null;

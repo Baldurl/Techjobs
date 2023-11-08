@@ -85,16 +85,6 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
 <body>
 <main class="main-vaga">
 
-    <?php if (isset($_GET['msg']) && $_GET['msg'] == 'erro') { ?>
-
-        <div class="update-confirmation-error">
-            <div class="update-confirmation-header">
-                <h2>Erro ao alterar dados!</h2>
-            </div>
-
-        </div>
-    <?php } ?>
-
     <div class="card-vaga">
         <h2>Alterar vaga</h2>
 

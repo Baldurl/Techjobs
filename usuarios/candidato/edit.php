@@ -2,15 +2,9 @@
 session_start();
 require_once __DIR__ . '/../../src/database/conexao.php';
 require_once __DIR__ . '/../../src/dao/usuariodao.php';
-
-$id = $_SESSION['usuario']['id'];
-$dao = new UsuarioDAO();
-$usuario = $dao->getById($id);
+require_once __DIR__ . '/../../auth/permissoes.php';
 
 
-$perfil_id = $_SESSION['usuario']['perfil'];
-$dao = new UsuarioDAO();
-$perfil = $dao->getByPerfilId('perfil_id');
 
 
 ?>
@@ -134,7 +128,7 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
                     <div class="card-body font-weight-bold card-information-main">
 
                         <div class="card-information-box">
-                            <span class="card-information-header"><h1>Informações</h1></span>
+                            <span class="card-information-header"><h1>Suas informações</h1></span>
                             <!--INFORMAÇÕES DA CONTA DO USUÁRIO-->
 
                             <div class="card-information-box-text">
@@ -171,8 +165,8 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
 
                                 <div class="row text">
                                     <div class="form-group card-candidato-content">
-                                        <input name="name" type="text" class="form-control"
-                                               id="name"
+                                        <input name="nome" type="text" class="form-control"
+                                               id="nome"
                                                placeholder="Nome">
 
                                         <input name="senha" type="text" class="form-control"
@@ -182,9 +176,7 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
                                 </div>
 
                                 <div class="update-group-btns">
-                                    <button type="submit" class="btn btn-primary btn-lg ">Alterar
-
-                                    </button>
+                                    <button type="submit" class="btn btn-primary btn-lg ">Alterar </button>
 
                                     <a href="index.php">
                                         <button type="button" class="btn btn-primary btn-lg ">

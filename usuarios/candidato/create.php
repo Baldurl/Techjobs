@@ -69,41 +69,41 @@
                             <div class="form-group card-candidato-content">
 
                                 <input name="name" type="text" class="form-control" id="name"
-                                       placeholder="Nome">
+                                       required placeholder="Nome">
 
 
                                 <input name="email" type="email" class="form-control" id="email"
-                                       placeholder="E-mail">
+                                       required  placeholder="E-mail">
 
                                 <div class="card-candidato-content-row">
-                                    <div class="form-group col-xs-3">
+                                    <div class="form-group col-xs-3" style="margin:20px;">
                                         <label for="cpf">Cpf</label>
                                         <input name="cpf" type="text" class="form-control" id="cpf"
-                                               placeholder="00-000-000-00">
+                                               required placeholder="000-000-000-00">
                                     </div>
 
 
-                                    <div class="form-group col-xs-3">
+                                    <div class="form-group col-xs-3" style="margin:20px;">
 
                                         <label for="ddd"> DDD</label>
                                         <input name="ddd" type="text" class="form-control" id="ddd"
-                                               placeholder="00">
+                                               required placeholder="00">
                                     </div>
 
 
-                                    <div class="form-group col-xs-3">
+                                    <div class="form-group col-xs-3" style="margin:20px;">
                                         <label for="telefone">Telefone</label>
-                                        <input name="telefone" type="number" class="form-control" id="telefone"
-                                               placeholder="00000-0000">
+                                        <input name="telefone" type="text" class="form-control" id="telefone"
+                                               required placeholder="00000-0000">
                                     </div>
                                 </div>
 
                                 <input name="senha" type="password" class="form-control" id="senha"
-                                       placeholder="Senha">
+                                       required  placeholder="Senha">
 
 
                                 <input name="senha2" type="password" class="form-control" id="senha2"
-                                       placeholder="Confirme a senha">
+                                       required placeholder="Confirme a senha">
 
                                 <input type="hidden" id="perfil" name="perfil" value="2">
                             </div>

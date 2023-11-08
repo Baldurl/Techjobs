@@ -1,5 +1,5 @@
 <?php
-session_start();
+header('Content-Type text/html; charset=utf-8;');
 require_once __DIR__ . '/../../src/database/conexao.php';
 require_once __DIR__ . '/../../src/dao/usuariodao.php';
 
@@ -9,13 +9,13 @@ $usuario = $dao->insert('$nome', '$razao_social', '$cpf', '$cnpj', '$senha', '$e
 
 
 if ($usuario) {
-    echo 'Usuário cadastrado com sucesso';
-    header('location: ../../auth/home.php?cadastro=sucesso');
+    /* 'Usuário cadastrado com sucesso';*/
+    header('location: ../../auth/index.php?candidato=sucesso');
 
 
 } else {
     echo 'Erro ao cadastrar usuário';
-    header('location: save.php?cadastro=erro');
+    header('location: create.php?candidato=erro');
 
 }
 

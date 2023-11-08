@@ -81,14 +81,14 @@
                             <div class="form-group card-login-content-input">
                                 <label for="email">E-mail</label>
                                 <input name="email" type="text" class="form-control" id="email"
-                                       placeholder="***@email.com">
+                                       required placeholder="***@email.com">
 
                                 <label for="senha">Senha</label>
                                 <input name="senha" type="password" class="form-control" id="senha"
-                                       placeholder="********">
+                                      required placeholder="********">
                                 <?php
                                 if (isset($_GET['auth']) && $_GET['auth'] == 'erro') { ?>
-                                    <div style="color: darkred; font-size: 1.2rem"> Login
+                                    <div style="color: darkred; font-size: 1.2rem"> Email ou senha
                                         inválido.
                                     </div>
                                 <?php } ?>
@@ -97,6 +97,22 @@
                                     <div style="color: darkred; font-size: 1.2rem"> Faça o login para poder ter acesso às vagas
                                     </div>
                                 <?php } ?>
+                                <?php
+                                if (isset($_GET['candidato']) && $_GET['candidato'] == 'sucesso') { ?>
+                                    <div style="color: darkseagreen; font-size: 1.2rem"> Candidato cadastrado com sucesso!
+                                    </div>
+                                <?php } ?>
+                                <?php
+                                if (isset($_GET['empresa']) && $_GET['empresa'] == 'sucesso') { ?>
+                                    <div style="color: darkseagreen; font-size: 1.2rem"> Empresa cadastrada com sucesso!
+                                    </div>
+                                <?php } ?>
+
+
+
+
+
+
                             </div>
                         </div>
                     </div>

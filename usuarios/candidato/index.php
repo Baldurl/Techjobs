@@ -2,15 +2,7 @@
 session_start();
 require_once __DIR__ . '/../../src/database/conexao.php';
 require_once __DIR__ . '/../../src/dao/usuariodao.php';
-
-$id = $_SESSION['usuario']['id'];
-$dao = new UsuarioDAO();
-$usuario = $dao->getById($id);
-
-
-$perfil_id = $_SESSION['usuario']['perfil'];
-$dao = new UsuarioDAO();
-$perfil = $dao->getByPerfilId('perfil_id');
+require_once __DIR__ . '/../../auth/permissoes.php';
 
 
 
@@ -143,7 +135,7 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
 
 
                         <div class="card-information-box">
-                            <span class="card-information-header"><h1>Informações</h1></span>
+                            <span class="card-information-header"><h1>Olá, <?php echo $usuario[1]; ?>!<br>Aqui estão suas informações...</h1></span>
                             <!--INFORMAÇÕES DA CONTA DO USUÁRIO-->
 
                             <div class="card-information-box-text">

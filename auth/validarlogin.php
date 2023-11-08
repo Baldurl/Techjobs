@@ -10,7 +10,7 @@ $usuario = $dao->validarLogin('$email', '$senha');
 
 if (!$usuario) {
 
-    header("location:index.php?login=erro");
+    header("location:index.php?auth=erro");
     exit;
 //redireciona para a pagina index.php para preencher os dados
 } else {

@@ -69,20 +69,20 @@
                             <div class="form-group card-empresa-content">
 
                                 <input name="name" type="text" class="form-control" id="name"
-                                       placeholder="Nome">
+                                       required  placeholder="Nome">
 
                                 <input name="razao_social" type="text" class="form-control" id="razao_social"
-                                       placeholder="Razão Social">
+                                       required  placeholder="Razão Social">
 
 
                                 <input name="email" type="email" class="form-control" id="email"
-                                       placeholder="E-mail">
+                                       required placeholder="E-mail">
 
                                 <div class="card-empresa-content-row">
                                     <div class="form-group col-xs-3" style="margin:20px;">
                                         <label for="cnpj">Cnpj</label>
                                         <input name="cnpj" type="text" class="form-control" id="cnpj"
-                                               placeholder="000.000.000/0000-00">
+                                               required placeholder="000.000.000/0000-00">
                                     </div>
 
 
@@ -90,23 +90,24 @@
 
                                         <label for="ddd"> DDD</label>
                                         <input name="ddd" type="text" class="form-control" id="ddd"
-                                               placeholder="00">
+                                               required  placeholder="00">
                                     </div>
 
 
                                     <div class="form-group col-xs-3" style="margin:20px;">
                                         <label for="telefone">Telefone</label>
                                         <input name="telefone" type="tel" class="form-control" id="telefone"
-                                               placeholder="00000-0000">
+                                               required  placeholder="00000-0000">
                                     </div>
                                 </div>
 
                                 <input name="senha" type="password" class="form-control" id="senha"
-                                       placeholder="Senha">
+                                       required  placeholder="Senha">
 
 
                                 <input name="senha2" type="password" class="form-control" id="senha2"
-                                       placeholder="Confirme a senha">
+                                       required  placeholder="Confirme a senha">
+                                <input type="hidden" id="perfil" name="perfil" value="3">
                             </div>
                         </div>
                     </div>

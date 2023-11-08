@@ -105,15 +105,13 @@ class  UsuarioDAO
         return $result;
     }
 
-    public function update($id, $email, $senha, $nome, $perfil): int
+    public function update($id, $nome, $email, $senha, $perfil): int
     {
         $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT) ?? 0;
         $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
         $perfil = filter_input(INPUT_POST, 'perfil', FILTER_SANITIZE_NUMBER_INT) ?? 0;
-
-
         $query = "UPDATE usuario SET nome = :nome, email = :email, senha = :senha, perfil_id = :perfil_id WHERE id = :id";
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(":nome", $nome);
@@ -130,8 +128,26 @@ class  UsuarioDAO
 
     }
 
+    public function updateById(int $id, $nome, $senha): int
+    {
+        $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+        $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
+        $query = "UPDATE usuario SET nome = :nome, senha = :senha WHERE id = :id";
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(":nome", $nome);
+        $stmt->bindParam(":senha", $senha);
+        $stmt->bindParam(":id", $id);
 
-    public function delete($id)
+        $result = $stmt->execute();
+        $this->dbh = null;
+
+        return $result;
+
+
+    }
+
+
+    public function delete( $id)
     {
 
         $query = "DELETE FROM usuario WHERE id = :id";
@@ -140,6 +156,18 @@ class  UsuarioDAO
 
         $result = $stmt->execute();
         $result = $stmt->rowcount();
+
+        $this->dbh = null;
+        return $result;
+    }
+    public function deleteById(int $id): int
+    {
+
+        $query = "DELETE FROM usuario WHERE id = :id";
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(":id", $id);
+
+        $result = $stmt->execute();
 
         $this->dbh = null;
         return $result;

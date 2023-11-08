@@ -1,22 +1,23 @@
 <?php
 session_start();
 header('Content-Type: text/html; charset=utf-8;');
-
-
 require_once __DIR__ . '/../../src/database/conexao.php';
 require_once __DIR__ . '/../../src/dao/usuariodao.php';
-
+require_once __DIR__ . '/../../auth/permissoes.php';
 
 # recebe os valores enviados do formulário via método post.
 
+
+
+
 $dao = new UsuarioDAO();
-$usuario = $dao->update('$id', '$nome', '$senha');
+$result = $dao->updateById($id, '$nome', '$senha');
 
 
-if ($usuario && !empty($_POST['nome']) || !empty($_POST['senha'])) {
-    header('location: home.php?msg=sucesso');
+if ($result && !empty($_POST['nome']) || !empty($_POST['senha'])) {
+    header('location: index.php?msg=sucesso');
 } else {
-    header('location: home.php?msg=erro');
+    header('location: index.php?msg=erro');
 }
 
 

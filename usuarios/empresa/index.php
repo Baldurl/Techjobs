@@ -29,6 +29,8 @@ $perfil = $dao->getByPerfilId('perfil_id');
     <link rel="stylesheet" href="../../assets/css/button.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
+<body>
+
 <header class="main-header">
 
     <nav class="main-header-content">
@@ -96,7 +98,87 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
         </nav>
     </nav>
 </header>
-<body>
+<main class="main-information">
+
+    <?php if (isset($_GET['msg']) && $_GET['msg'] == 'sucesso') { ?>
+        <div class="update-confirmation-success">
+            <div class="update-confirmation-header">
+                <h2>Dados alterados com sucesso!</h2>
+            </div>
+        </div>
+    <?php } else if (isset($_GET['msg']) && $_GET['msg'] == 'erro') { ?>
+
+    <div class="update-confirmation-error">
+
+        <div class="update-confirmation-header">
+            <h2>Erro ao alterar dados!</h2>
+        </div>
+
+
+        <?php } ?>
+    </div>
+    <div class="card-information">
+        <!-- INFORMAÇÕES DA SESSÃO DO USUÁRIO
+        <hr>
+        <h1><?php /*echo $_SESSION['usuario']['id']; */ ?></h1>
+        <h2><?php /*echo $_SESSION['usuario']['nome']; */ ?></h2>
+        <h3><?php /*echo $_SESSION['usuario']['email']; */ ?></h3>
+        <hr>
+        -->
+        <div class="container">
+            <div class="row text ">
+                <div class="col-md-12">
+                    <div class="card-body font-weight-bold card-information-main">
+
+
+                        <div class="card-information-box">
+                            <span class="card-information-header"><h1>Olá, <?php echo $usuario[1]; ?>!<br>Aqui estão suas informações...</h1></span>
+                            <!--INFORMAÇÕES DA CONTA DO USUÁRIO-->
+
+                            <div class="card-information-box-text">
+                                <div><h2>ID: </h2></div>
+                                <div><h2><?php echo $usuario[0]; ?></h2></div>
+                            </div>
+
+                            <div class="card-information-box-text">
+                                <div><h2>Nome: </h2></div>
+                                <div><h2><?php echo $usuario[1]; ?></h2></div>
+                            </div>
+                            <div class="card-information-box-text">
+                                <div><h2>Razão social: </h2></div>
+                                <div><h2><?php echo $usuario[2]; ?></h2></div>
+                            </div>
+
+
+                            <div class="card-information-box-text">
+                                <div><h2>Cnpj: </h2></div>
+                                <div><h2><?php echo $usuario[4]; ?></h2></div>
+                            </div>
+
+                            <div class="card-information-box-text">
+                                <div><h2>Senha: </h2></div>
+                                <div><h2><?php echo $usuario[5]; ?></h2></div>
+                            </div>
+
+                            <div class="card-information-box-text">
+                                <div><h2>Email: </h2></div>
+                                <div><h2><?php echo $usuario[6]; ?></h2></div>
+                            </div>
+                            <div class="btn-group">
+                                <a class="btnalterar" href="edit.php?id=<?php $usuario[0]; ?>">Alterar dados</a>
+                                <a class="btnexcluir" href="delete.php?id=<?php $usuario[0]; ?>"
+                                   onclick="return confirm('Deseja confirmar a operação?');">Deletar conta</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</main>
 
 </body>
 </html>

@@ -1,21 +1,16 @@
-<?php require_once __DIR__ . '/../layouts/headerHome.php'; ?>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="" type="">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--Estilo BOOTSTRAP-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-
+    <link rel="shortcut icon" href="" type="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
           integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous"/>
     <link href="https://unpkg.com/progressive-image@1.2.0/dist/index.css" rel="stylesheet" type="text/css">
@@ -23,16 +18,26 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/button.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+
     <!--Título do Browser-->
 
-    <title>TECH JOBS</title>
+    <title>TechJobs </title>
+
 </head>
 
 <body id="home">
+
+
+<?php
+require_once __DIR__ . '/../layouts/headerLogin.php';
+$nome = $_SESSION['usuario']['nome'];
+?>
+
 <div class="main-cta">
     <article class="main-cta-banner">
         <div class="main-cta-banner-spacer">
-            <p>Conectamos provedores de emprego e candidatos a trabalho</p>
+            <p>Olá, <?php echo $nome; ?><br>Seja bem-vindo(a)</p>
             <div class="col-md-12">
                 <div class="card-body font-weight-bold">
                     <div class="form-group main-cta-banner-busca">
@@ -41,13 +46,14 @@
                                 <h1>Pesquisar vagas</h1>
                             </label>
                             <input type="text" name="vaga" size="50" placeholder="Insira o nome da vaga"></input>
-                            <span">
-                                    <button type="submit" class="btn-orange">Buscar</button>
+                            <span>
+                                    <button type="submit" class="btn-blue">Buscar</button>
                                 </span>
                         </form>
                     </div>
                 </div>
             </div>
+
 
             <!--            <div class="seta">
                             <i class="fa fa-arrow-down"></i>
@@ -57,8 +63,8 @@
     </article>
 </div>
 
-
 <section class="main-blog">
+
     <div class="main-blog-header">
         <h2 class="aos-init aos-animate">
             Vagas em alta
@@ -69,231 +75,45 @@
     </div>
 
     <div class="main-blog-content">
-
         <?php require_once __DIR__ . '/../vaga/all.php'; ?>
-
     </div>
-
-<!--
-    <div class="main-blog-content">
-        <article>
-            <div class="icon"><i class="fa fa-3x fa-angellist"></i></div>
-            <div class="content">
-                <h3>HAPPY HOURS</h3>
-                <p>Aumente sua produtividade no happy hour,
-                    <a href="https://monkeytype.com/" target="_blank" rel="external">Clique aqui</a>
-                    e descubra uma maneira de treinar sua digitação.
-                </p>
-            </div>
-        </article>
-
-
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-desktop"></i>
-            </div>
-            <div class="content">
-                <h3>Design</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
-
-
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-code"></i>
-            </div>
-            <div class="content">
-                <h3>Programing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
-
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-code"></i>
-            </div>
-            <div class="content">
-                <h3>Programing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
-
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-code"></i>
-            </div>
-            <div class="content">
-                <h3>Programing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
-
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-code"></i>
-            </div>
-            <div class="content">
-                <h3>Programing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
-
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-code"></i>
-            </div>
-            <div class="content">
-                <h3>Programing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
-
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-code"></i>
-            </div>
-            <div class="content">
-                <h3>Programing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
-
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-code"></i>
-            </div>
-            <div class="content">
-                <h3>Programing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
-
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-code"></i>
-            </div>
-            <div class="content">
-                <h3>Programing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
-
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-code"></i>
-            </div>
-            <div class="content">
-                <h3>Programing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
-
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-code"></i>
-            </div>
-            <div class="content">
-                <h3>Programing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
-
-    </div>-->
 </section>
 
-
-<section class="main-assinatura">
-
-    <div class="main-assinatura-header">
-
-        <h1>Quer receber nosso conteúdo exclusivo? Faça uma assinatura :) </h1>
-
-    </div>
-    <article class="main-assinatura-content">
-
-        <div class="main-assinatura-spacer"></div>
-        <img src="../assets/img/undraw_Reading_time_re_phf7.png" width="800px" height="600px" alt="reading">
-
-        <div class="assinatura-boxes">
-            <div class="assinatura-box-content">
-
-                <div class="div-border">
-
-                    <div class="box-single-content">
-                        <a href="">Assinatura<br>
-                            <h1>Mensal</a></h1>
-                        <h2>
-                            R$12,00 à vista
-
-                        </h2>
-                    </div>
-                </div>
-
-                <div class="div-border">
-
-                    <div class="box-single-content">
-                        <a href="">Assinatura<br>
-                            <h1>6 meses</a></h1>
-                        <h2>
-                            R$60,00 <br>
-                        </h2>
-                        <p>Até 4 vezes sem juros</p>
-                        <p>Plano mais recomendado</p>
-
-                    </div>
-                </div>
-
-                <div class="div-border">
-
-                    <div class="box-single-content">
-                        <a href="">Assinatura<br>
-                            <h1>Anual</a></h1>
-                        <h2>
-                            R$100,00
-                        </h2>
-                        <p>Até 4 vezes sem juros</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </article>
-
-</section>
 
 <!--<article class="opt-in">
-<div class="opt-in-content">
-    <a href="#home" class="scrollup show-scroll">
-        <i class="fa fa-arrow-up scrollup__icon"></i>
-    </a>
-</div>
-</article>-->
+    <div class="opt-in-content">
+        <a href="#home" class="scrollup show-scroll">
+            <i class="fa fa-arrow-up scrollup__icon"></i>
+        </a>
+    </div>
+</article>
+-->
 
+<section class="main_optin">
+    <div class="main_optin_content">
+        <header>
+            <h1>Receba conteúdos exclusivos e alavanque suas chances de ser contratado<br> Veja os benefícios e faça já sua assinatura
+            </h1>
+        </header>
+        <article>
+            <header>
+                <a href="#" class="btn-blue">Assinatura premium</a>
+            </header>
+        </article>
+    </div>
+</section>
+
+
+<!--    <article class="opt-in">
+        <div class="opt-in-content">
+            <a href="#home" class="scrollup show-scroll">
+                <i class="fa fa-arrow-up scrollup__icon"></i>
+            </a>
+        </div>
+    </article>
+-->
 
 <section class="main-cursos">
-
     <div class="main-cursos-content" id="news">
         <header>
             <h2>Biblioteca de Cursos e Livros</h2>
@@ -338,10 +158,6 @@
 
 
 <section class="main-noticias">
-    <div class="main-noticias-header">
-        <h2>Notícias</h2>
-
-    </div>
     <div class="main-noticias-content" id="news">
         <div class="box-noticias">
             <div class="box-noticias-content">
@@ -372,7 +188,7 @@
                         games.
                     </p>
                     <p><a href="https://www.adrenaline.com.br/" target="_blank" rel="external">Ver Mais <i
-                                    class="fa fa-arrow-right"></i></a></p>
+                                class="fa fa-arrow-right"></i></a></p>
                 </div>
             </div>
         </div>
@@ -388,7 +204,7 @@
                         games.
                     </p>
                     <p><a href="https://www.adrenaline.com.br/" target="_blank" rel="external">Ver Mais <i
-                                    class="fa fa-arrow-right"></i></a></p>
+                                class="fa fa-arrow-right"></i></a></p>
                 </div>
             </div>
         </div>
@@ -404,7 +220,7 @@
                         games.
                     </p>
                     <p><a href="https://www.adrenaline.com.br/" target="_blank" rel="external">Ver Mais <i
-                                    class="fa fa-arrow-right"></i></a></p>
+                                class="fa fa-arrow-right"></i></a></p>
                 </div>
             </div>
         </div>
@@ -524,28 +340,8 @@
     </div>
 </section>
 
-
-<!-- SEÇÃO OPCIONAL DE UTILITÁRIOS    <section class="main-utilites" id="contacto">
-
-
-</section>
-FIM SEÇÃO UTILITÁRIOS -->
-
-
 <!-- INICIO DOBRA RODAPÉ -->
-<section class="main_optin_footer">
-    <div class="main_optin_footer_content">
-        <header>
-            <h1>Recebe conteúdos exclusivos e aumente suas chances de arranjar emprego<br> Faça já sua assinatura
-            </h1>
-        </header>
-        <article>
-            <header>
-                <h2><a href="#" class="btnn">Entrar para a lista premium</a></h2>
-            </header>
-        </article>
-    </div>
-</section>
+
 
 <section class="main_footer">
 
@@ -554,8 +350,8 @@ FIM SEÇÃO UTILITÁRIOS -->
             <h2>Nossas Páginas</h2>
         </header>
         <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="blog.php">Notícias</a></li>
+            <li><a href="../auth/index.php">Home</a></li>
+            <li><a href="noticias.php">Notícias</a></li>
             <li><a href="equipe.php">Nossa Equipe</a></li>
             <li><a href="contato.php">Contato</a></li>
         </ul>
@@ -584,6 +380,7 @@ FIM SEÇÃO UTILITÁRIOS -->
     <p>ETC - Todos os direitos reservados.</p>
 </footer>
 <!-- FIM DOBRA RODAPÉ -->
+
 
 <a href="#home" class="scrollup show-scroll" id="scroll-up">
     <i class="fa fa-arrow-up scrollup__icon"></i>
