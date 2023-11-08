@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 07/11/2023 às 10:28
+-- Tempo de geração: 08/11/2023 às 22:57
 -- Versão do servidor: 8.0.30
 -- Versão do PHP: 8.1.10
 
@@ -115,9 +115,12 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id`, `nome`, `razao_social`, `cpf`, `cnpj`, `senha`, `email`, `sexo`, `ddi`, `ddd`, `numero`, `cep`, `cidade`, `logradouro`, `bairro`, `lote`, `rua`, `complemento`, `perfil_id`) VALUES
 (1, 'Jordan', NULL, '075-276-691-01', NULL, '123', 'jordanvieiracarvalho@hotmail.com', 'Masculino', '', '61', '998490406', '72251702', 'Ceilândia', NULL, 'QNO 7', '10', 'B', NULL, 1),
-(29, 'Empresa', NULL, '1212312312', NULL, '123', 'empresa@gmail.com', NULL, NULL, '61', '998490406', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3),
-(36, 'Candidato', NULL, '07327669101', NULL, '123', 'candidato@email.com', NULL, NULL, '61', '998490406', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2),
-(39, 'Jordan', NULL, '3213213212', NULL, '123', 'comida@email.com', NULL, NULL, '12', '123123123', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2);
+(29, 'Empresa', NULL, '1212312312', NULL, '123', 'empresa@email.com', NULL, NULL, '61', '998490406', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(44, 'joao', NULL, '12312312312', NULL, '123', 'joao@email.com', NULL, NULL, '61', '91234-1234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(48, '123', NULL, '074276691-01', NULL, '123', '123@email.com', NULL, NULL, '12', '11234-1234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2),
+(49, 'laila', '', '07227669101', '', '123', 'laila@email.com', NULL, '55', '61', '93333-3333', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2),
+(50, 'lil', NULL, '07027669101', NULL, '123', 'lil@email.com', NULL, NULL, '61', '94444-4444', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2),
+(51, 'adidas', 'adidas', NULL, '111.111.111/1111', '123', 'adidas@email.com', NULL, NULL, '61', '91111-1111', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3);
 
 -- --------------------------------------------------------
 
@@ -136,11 +139,10 @@ CREATE TABLE `usuario_has_vaga` (
 
 INSERT INTO `usuario_has_vaga` (`usuario_id`, `vaga_id`) VALUES
 (1, 5),
-(36, 2),
-(36, 2),
 (1, 5),
 (1, 2),
-(1, 7);
+(1, 7),
+(49, 2);
 
 -- --------------------------------------------------------
 
@@ -165,9 +167,8 @@ CREATE TABLE `vaga` (
 --
 
 INSERT INTO `vaga` (`id`, `nome`, `tipo`, `descricao`, `salario`, `carga_horaria`, `data_publicacao`, `data_expiracao`, `usuario_id`) VALUES
-(2, 'Técnico em informática', 'Efetivo/CLT', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur dolor ea eligendi error, est eveniet inventore laborum nisi nobis nostrum omnis quaerat quas quod, rerum suscipit vel! Nisi, quaerat?&#13;&#10;', '10000,00', '70h', '2023-11-03', '2023-11-25', 29),
+(2, 'Técnico em informática', 'Estágio', 'lorem', '10000,00', '70h', '2023-11-03', '2023-11-25', 29),
 (5, 'Suporte de redes', 'Estágio', 'Requisitos:&#13;&#10;&#13;&#10;.Metodologia Ágil.&#13;&#10;.Saber conceitos básicos de CyberSegurança.&#13;&#10;.Estar cursando superior em sistemas da informação/segurança da informação.', 'R$1000,00', '40h semanais', '2023-11-02', '2023-12-03', 29),
-(6, 'Analista de dados', 'Efetivo/CLT', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur dolor ea eligendi error,  consectetur adipisicing elit. Aut consequuntur dolor ea eligendi error,  consectetur adipisicing elit. Aut consequuntur dolor ea eligendi error', '1000,00', '70h', '2023-06-11', '2023-12-14', 29),
 (7, 'PHP Júnior', 'Efetivo/Clt', 'LOREMLOREMLOREMLOREMLOREMLOREMLOREMLOREM', 'R$1000,00', '50h semanais', '2023-11-14', '2023-12-14', 1);
 
 --
@@ -259,13 +260,13 @@ ALTER TABLE `perfil`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT de tabela `vaga`
 --
 ALTER TABLE `vaga`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restrições para tabelas despejadas
@@ -293,8 +294,8 @@ ALTER TABLE `usuario`
 -- Restrições para tabelas `usuario_has_vaga`
 --
 ALTER TABLE `usuario_has_vaga`
-  ADD CONSTRAINT `FKUsuario_4` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `FKVaga` FOREIGN KEY (`vaga_id`) REFERENCES `vaga` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `FKUsuario_4` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FKVaga` FOREIGN KEY (`vaga_id`) REFERENCES `vaga` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Restrições para tabelas `vaga`
