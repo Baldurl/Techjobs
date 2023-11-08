@@ -40,19 +40,10 @@ $nome = $_SESSION['usuario']['nome'];
             <div class="col-md-12">
                 <div class="card-body font-weight-bold">
                     <div class="form-group main-cta-banner-busca">
-                        <form action="../vaga/consulta.php" method="POST">
-                            <label for="vaga">
-                                <h1>Pesquisar vagas</h1>
-                            </label>
-                            <input type="text" name="vaga" size="50" placeholder="Insira o nome da vaga"></input>
-                            <span>
-                                    <button type="submit" class="btn-primary btn-lg btn-orange" style="max-height: 50px">Buscar</button>
-                                </span>
                             <section class="section__btn">
                                 <a class="btn-orange" href="../vaga/create.php">Publicar nova vaga</a>
                                 <a class="btn" href="../vaga/index.php">Consultar suas vagas </a>
                             </section>
-                        </form>
                     </div>
                 </div>
             </div>
