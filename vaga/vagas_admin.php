@@ -71,22 +71,60 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
 </header>
 <main class="main-vaga">
 
-    <?php if (isset($_GET['msg']) && $_GET['msg'] == 'sucesso') { ?>
+    <?php if (isset($_GET['update']) && $_GET['update'] == 'sucesso') { ?>
         <div class="update-confirmation-success">
             <div class="update-confirmation-header">
-                <h2>Dados alterados com sucesso!</h2>
+                <h2>Vaga alterada com sucesso</h2>
             </div>
         </div>
-    <?php } else if (isset($_GET['msg']) && $_GET['msg'] == 'erro') { ?>
+    <?php } else if (isset($_GET['update']) && $_GET['update'] == 'erro') { ?>
 
     <div class="update-confirmation-error">
 
         <div class="update-confirmation-header">
-            <h2>Erro ao alterar dados!</h2>
+            <h2>Erro ao alterar vaga</h2>
         </div>
 
 
         <?php } ?>
+
+        <?php if (isset($_GET['delete']) && $_GET['delete'] == 'sucesso') { ?>
+            <div class="update-confirmation-success">
+                <div class="update-confirmation-header">
+                    <h2>Vaga excluída com sucesso</h2>
+                </div>
+            </div>
+        <?php } else if (isset($_GET['delete']) && $_GET['delete'] == 'erro') { ?>
+
+        <div class="update-confirmation-error">
+
+            <div class="update-confirmation-header">
+                <h2>Erro ao excluir vaga</h2>
+            </div>
+
+            <?php } ?>
+
+
+                    <?php if (isset($_GET['msg']) && $_GET['msg'] == 'sucesso') { ?>
+            <div class="update-confirmation-success">
+                <div class="update-confirmation-header">
+                    <h2>Vaga criada com sucesso</h2>
+                </div>
+            </div>
+        <?php } else if (isset($_GET['msg']) && $_GET['msg'] == 'erro') { ?>
+
+        <div class="update-confirmation-error">
+
+            <div class="update-confirmation-header">
+                <h2>Erro ao criar vaga</h2>
+            </div>
+
+            <?php } ?>
+
+
+
+
+
     </div>
     <div class="card-vaga">
         <header>

@@ -63,7 +63,7 @@ $stmt->execute(); */
         return $resultados;
     }
 
-    public function insert($nome, $tipo, $descricao, $salario, $carga_horaria, $data_publicacao, $data_expiracao)
+    public function insert($nome, $tipo, $descricao, $salario, $carga_horaria, $data_publicacao, $data_expiracao, $usuario_id)
     {
 
         $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -73,8 +73,9 @@ $stmt->execute(); */
         $carga_horaria = filter_input(INPUT_POST, 'carga_horaria', FILTER_SANITIZE_SPECIAL_CHARS);
         $data_publicacao = filter_input(INPUT_POST, 'data_publicacao', FILTER_SANITIZE_SPECIAL_CHARS);
         $data_expiracao = filter_input(INPUT_POST, 'data_expiracao', FILTER_SANITIZE_SPECIAL_CHARS);
-        $query = "INSERT INTO vaga (nome, tipo, descricao, salario, carga_horaria, data_publicacao, data_expiracao) 
-VALUES (:nome, :tipo, :descricao, :salario, :carga_horaria, :data_publicacao, :data_expiracao);";
+        $usuario_id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+        $query = "INSERT INTO vaga (nome, tipo, descricao, salario, carga_horaria, data_publicacao, data_expiracao, usuario_id) 
+VALUES (:nome, :tipo, :descricao, :salario, :carga_horaria, :data_publicacao, :data_expiracao, :usuario_id);";
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(":nome", $nome);
         $stmt->bindParam(":tipo", $tipo);
@@ -83,6 +84,7 @@ VALUES (:nome, :tipo, :descricao, :salario, :carga_horaria, :data_publicacao, :d
         $stmt->bindParam(":carga_horaria", $carga_horaria);
         $stmt->bindParam(":data_publicacao", $data_publicacao);
         $stmt->bindParam(":data_expiracao", $data_expiracao);
+        $stmt->bindParam(":usuario_id", $usuario_id);
 
         $result = $stmt->execute();
         $this->dbh = null;

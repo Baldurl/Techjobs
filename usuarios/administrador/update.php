@@ -16,7 +16,7 @@ $result = $dao->update('$id', '$nome', '$email', '$senha', '$perfil');
 
 
 if ($result) {
-    header('location: index.php?msg=Usuário atualizado com sucesso!');
+    header('location: index.php?update=sucesso!');
 } else {
-    header('location: index.php?error=Não foi possível atualizar o usuário!');
+    header('location: index.php?update=erro!');
 }

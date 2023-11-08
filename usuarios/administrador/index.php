@@ -80,23 +80,60 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
 </header>
 <main class="main-information">
 
-    <?php if (isset($_GET['msg']) && $_GET['msg'] == 'sucesso') { ?>
+    <?php if (isset($_GET['update']) && $_GET['update'] == 'sucesso') { ?>
         <div class="update-confirmation-success">
             <div class="update-confirmation-header">
-                <h2>Dados alterados com sucesso!</h2>
+                <h2>Dados do usuário alterados com sucesso!</h2>
             </div>
         </div>
-    <?php } else if (isset($_GET['msg']) && $_GET['msg'] == 'erro') { ?>
+    <?php } else if (isset($_GET['update']) && $_GET['update'] == 'erro') { ?>
 
     <div class="update-confirmation-error">
 
         <div class="update-confirmation-header">
-            <h2>Erro ao alterar dados!</h2>
+            <h2>Erro ao alterar dados do usuário!</h2>
         </div>
 
 
         <?php } ?>
-    </div>
+
+            <?php if (isset($_GET['delete']) && $_GET['delete'] == 'sucesso') { ?>
+        <div class="update-confirmation-success">
+            <div class="update-confirmation-header">
+                <h2>Usuário excluído com sucesso!</h2>
+            </div>
+        </div>
+    <?php } else if (isset($_GET['delete']) && $_GET['delete'] == 'erro') { ?>
+
+    <div class="update-confirmation-error">
+
+        <div class="update-confirmation-header">
+            <h2>Erro ao excluir usuário!</h2>
+        </div>
+
+
+        <?php } ?>
+
+
+        <?php if (isset($_GET['msg']) && $_GET['msg'] == 'sucesso') { ?>
+            <div class="update-confirmation-success">
+                <div class="update-confirmation-header">
+                    <h2>Usuário criado com sucesso</h2>
+                </div>
+            </div>
+        <?php } else if (isset($_GET['msg']) && $_GET['msg'] == 'erro') { ?>
+
+        <div class="update-confirmation-error">
+
+            <div class="update-confirmation-header">
+                <h2>Erro ao criar usuário</h2>
+            </div>
+
+            <?php } ?>
+
+
+
+        </div>
     <div class="card-information">
         <header class="card-information-header">
             <h2>Consulta de usuários</h2>

@@ -19,8 +19,8 @@ foreach ($vagas
     <?php
 
     $id = $vaga['usuario_id'];
-    $dao1 = new UsuarioDAO();
-    $usuario = $dao1->getById($id);
+    $dao = new UsuarioDAO();
+    $usuario = $dao->getById($id);
     ?>
 
 

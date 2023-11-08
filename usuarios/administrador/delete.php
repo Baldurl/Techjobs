@@ -7,7 +7,7 @@ $dao = new UsuarioDAO();
 $result = $dao->delete($id);
 
 if ($result > 0) {
-    header('location: index.php?msg=Usuário excluído com sucesso!');
+    header('location: index.php?delete=sucesso');
 } else {
-    header('location: index.php?error=Não foi possível excluir o usuário!');
+    header('location: index.php?delete=erro');
 }

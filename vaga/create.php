@@ -1,5 +1,7 @@
 <?php
 require_once __DIR__ . "/../src/dao/vagadao.php";
+require_once __DIR__ . "/../auth/validarAcesso.php";
+require_once __DIR__ . "/../auth/permissoes.php";
 
 $vagaDAO = new VagaDAO();
 $vagas = $vagaDAO->getAll();
@@ -129,7 +131,7 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
 
                             </div>
 
-
+                        <input type="hidden" name="id" value="<?= $id ?>">
                         </div>
                         <div class="update-group-btns">
                             <button type="submit" class="btn btn-primary btn-lg ">Salvar</button>

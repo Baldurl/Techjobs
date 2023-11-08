@@ -12,7 +12,7 @@ $result = $dao->update('$id', '$nome', '$tipo', '$desc', '$salario', '$cargaHora
 
 
 if ($result) {
-    header('location: index.php?msg=sucesso');
+    header('location: index.php?update=sucesso');
 } else {
-    header('location: index.php?error=Não foi possível atualizar a vaga!');
+    header('location: index.php?update=erro');
 }
