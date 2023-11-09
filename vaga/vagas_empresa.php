@@ -100,7 +100,7 @@ $quantidadeRegistros = count($vagas);
                                     <tbody>
                                     <?php if ($quantidadeRegistros == "0") : ?>
                                         <tr>
-                                            <td colspan="4">Não existem usuários cadastrados.</td>
+                                            <td colspan="4">Não existem vagas cadastradas.</td>
                                         </tr>
                                     <?php else : ?>
                                         <?php foreach ($vagas as $vaga) :
