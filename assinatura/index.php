@@ -2,9 +2,9 @@
 session_start();
 require_once __DIR__ . '/../../src/dao/usuariodao.php';
 require_once __DIR__ . '/../../src/dao/perfildao.php';
-$dao = new UsuarioDAO();
-$usuarios = $dao->getAll();
-$quantidadeRegistros = count($usuarios);
+$dao = new AssinaturaDAO();
+$assinaturas = $dao->getAll();
+$quantidadeRegistros = count($assinaturas);
 
 ?>
 <link rel="stylesheet"
@@ -93,10 +93,10 @@ $quantidadeRegistros = count($usuarios);
     </div>
     <div class="card-information">
         <header class="card-information-header">
-            <h2>Consulta de usuários</h2>
+            <h2>Consulta de Assinaturas</h2>
         </header>
         <section class="section__btn">
-            <a class="btn-blue" href="create.php">Novo usuário</a>
+            <a class="btn-blue" href="create.php">Nova assinatura</a>
             <a class="btn" href="../../vaga/index.php">Consultar vagas</a>
         </section>
 

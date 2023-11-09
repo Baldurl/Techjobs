@@ -6,7 +6,7 @@ $perfilDAO = new PerfilDAO();
 $perfis = $perfilDAO->getAll();
 
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT) ?? 0;
-$dao = new UsuarioDAO();
+$dao = new AssinaturaDAO();
 $assinatura = $dao->getById($id);
 
 if (!$assinatura) {
