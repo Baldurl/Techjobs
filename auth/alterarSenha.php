@@ -28,7 +28,7 @@ include __DIR__ . '/../layouts/headerHome.php';
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card-login-content"
+                        <div class="card-login-content">
                         <div class="card-body font-weight-bold">
                             <div style="color: #333333; padding: 5px 0 ; font-size: 1.2rem"
                                  class="form-group card-login-content-input">
