@@ -30,20 +30,32 @@ class  Usuario_has_vagaDAO
         return $result;
     }
 
-    public function publicar($vaga_id)
+
+
+    public function getInformation ($vaga_id, $usuario_id)
     {
-        $vaga = filter_input(INPUT_POST, 'vaga', FILTER_SANITIZE_SPECIAL_CHARS);
-        $query = "INSERT INTO usuario_has_vaga (vaga_id) VALUES (:vaga_id)";
-        $stmt = $this->dbh->prepare($query);
-        $stmt->bindParam(":vaga_id", $vaga);
-        $result = $stmt->execute();
+        $query = "SELECT * 
+        /* usuario_has_vaga.usuario_id as usuario_candidatado,   usuario candidatado */
+        /* usuario_has_vaga.vaga_id,  id da vaga */
+        /* vaga.usuario_id as usuario_empresa  empresa que publicou a vaga */
 
-        $this->dbh = null;
+         FROM usuario_has_vaga
+         WHERE vaga_id = :vaga_id and usuario_id = :usuario_id
+         INNER JOIN usuario ON usuario_has_vaga.usuario_id = usuario.id 
+         INNER JOIN vaga ON usuario_has_vaga.vaga_id = vaga.id";
+                 $stmt = $this->dbh->prepare($query);
+                 $stmt->bindParam(":vaga_id", $vaga_id);
+                 $stmt->bindParam(":usuario_id", $usuario_id);
+                 $stmt->execute();
+                 $row = $stmt->fetch(PDO::FETCH_BOTH);
+         
+                 $this->dbh = null;
+         
+                 return $row;
 
-        return $result;
+
+
     }
-
-
 }
 
 

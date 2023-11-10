@@ -3,8 +3,8 @@ require_once __DIR__ . '/../auth/validarAcesso.php';
 require_once __DIR__ . '/../src/dao/vagadao.php';
 require_once __DIR__ . '/../src/dao/usuariodao.php';
 require_once __DIR__ . '/../auth/permissoes.php';
-
 require_once __DIR__ . '/../src/dao/vagadao.php';
+require_once __DIR__ . '/../src/dao/usuario_has_vagadao.php';
 
 
 $dao = new VagaDAO();
@@ -16,6 +16,8 @@ $empresa = $dao->getUsuario('$id', '$nome');
 $dao = new UsuarioDAO();
 $usuarios = $dao->getAll();
 $quantidadeRegistros = count($usuarios);
+
+
 
 if (isset($_SESSION['usuario'])) {
     require_once __DIR__ . '/../layouts/headerlogin.php';
@@ -60,8 +62,8 @@ if (isset($_SESSION['usuario'])) {
             </article>
 
 
-            <article>
-
+          
+          <article>
                 <div class="py-3 text-center" style="margin: 50px auto">
                     <h2>Confirma seu e-mail e envie seu currículo: </h2>
                 </div>
@@ -103,8 +105,12 @@ if (isset($_SESSION['usuario'])) {
         </div>
     </section>
 
-<?php } else if ($perfil_id == 1 || 3) { ?>
-        <section class="main-blog">
+<?php } else if ($perfil_id == 1 || 3) { 
+
+     
+?>
+       
+       <section class="main-blog">
             <div class="main-blog-content1">
                 <article>
                     <div class="py-3 text-left" style="margin: 40px auto">
@@ -115,8 +121,8 @@ if (isset($_SESSION['usuario'])) {
                         <?php
 
                         $id = $vaga['usuario_id'];
-                        $dao1 = new UsuarioDAO();
-                        $usuario = $dao1->getById($id);
+                        $dao = new UsuarioDAO();
+                        $usuario = $dao->getById($id);
                         ?>
 
                     <?php echo '<strong>Empresa: </strong>' . $usuario[1] ?><br>
@@ -134,7 +140,7 @@ if (isset($_SESSION['usuario'])) {
                         <table id="example" class="display" style="width:100%;">
                             <thead>
                                 <tr>
-                                    <th>Usuário</th>
+                                    <th>Usuário candidatado nesta vaga</th>
                                     <th>Currículo</th>
                                     <th>E-mail</th>
 
@@ -142,34 +148,25 @@ if (isset($_SESSION['usuario'])) {
                             </thead>
 
                             <tbody>
-                            <?php if ($quantidadeRegistros == "0"): ?>
-                                    <tr>
-                                        <td colspan="4">Não existem vagas cadastradas.</td>
-                                    </tr>
-                            <?php else: ?>
-                                <?php foreach ($usuarios as $usuario):
-                                    /*$id =  $vaga['usuario_id'];
-                                    $dao1 = new UsuarioDAO();
-                                    $usuario = $dao1->getById($id);*/
-                                    ?>
+
+                        <?php
+                            $dao = new Usuario_has_vagaDAO();
+                            $informacao = $dao->getInformation('$vaga_id', '$usuario_id'); 
+                        ?>
                                         <tr>
 
-
-
                                             <td>
-                                            <?= ($usuario['nome']); ?>
+                                            <?= ($informacao['nome']); ?>
                                             </td>
                                             <td>
-                                            <?= ($vaga['nome']); ?>
+                                            <?= ($informacao['numero']); ?>
                                             </td>
                                             <td>
-                                            <?= ($usuario['email']); ?>
+                                            <?= ($informacao['email']); ?>
                                             </td>
 
                                             </td>
                                         </tr>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
                             </tbody>
                         </table>
 

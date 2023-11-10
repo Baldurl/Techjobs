@@ -65,7 +65,7 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
                 <li class="item-menu">
                     <a href="index.php ">
                         <span class="icon"><i class="bi bi-person"></i></span>
-                        <span class="txt-link">Perfil</span>
+                        <span class="txt-link">Admin</span>
                     </a>
                 </li>
                 <li class="item-menu">
