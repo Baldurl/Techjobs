@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 08/11/2023 às 23:33
+-- Tempo de geração: 10/11/2023 às 17:34
 -- Versão do servidor: 8.0.30
 -- Versão do PHP: 8.1.10
 
@@ -115,12 +115,11 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id`, `nome`, `razao_social`, `cpf`, `cnpj`, `senha`, `email`, `sexo`, `ddi`, `ddd`, `numero`, `cep`, `cidade`, `logradouro`, `bairro`, `lote`, `rua`, `complemento`, `perfil_id`) VALUES
 (1, 'Jordan', NULL, '075-276-691-01', NULL, '123', 'jordanvieiracarvalho@hotmail.com', 'Masculino', '', '61', '998490406', '72251702', 'Ceilândia', NULL, 'QNO 7', '10', 'B', NULL, 1),
-(29, 'Empresa', NULL, '1212312312', NULL, '123', 'empresa@email.com', NULL, NULL, '61', '998490406', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(44, 'joao', NULL, '12312312312', NULL, '123', 'joao@email.com', NULL, NULL, '61', '91234-1234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(48, '123', NULL, '074276691-01', NULL, '123', '12@email.com', NULL, NULL, '12', '11234-1234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(49, 'laila', '', '07227669101', '', '1234', 'laila@email.com', NULL, '55', '61', '93333-3333', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(50, 'lil', NULL, '07027669101', NULL, '123', 'lil@email.com', NULL, NULL, '61', '94444-4444', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(51, 'adidas', 'adidas', NULL, '111.111.111/1111', '123', 'adidas@email.com', NULL, NULL, '61', '91111-1111', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3);
+(29, 'Empresa', NULL, '1212312312', NULL, '123', 'empresa@email.com', NULL, NULL, '61', '998490406', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3),
+(44, 'joao', NULL, '12312312312', NULL, '123', 'joao@email.com', NULL, NULL, '61', '91234-1234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2),
+(49, 'laila', '', '07227669101', '', '1234', 'laila@email.com', NULL, '55', '61', '93333-3333', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2),
+(51, 'Adidas', 'adidas', NULL, '111.111.111/1111', '123', 'adidas@email.com', NULL, NULL, '61', '91111-1111', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3),
+(52, 'Nike', 'nike', NULL, '222.222.222/2222', '123', 'nike@email.com', NULL, NULL, '61', '92222-2222', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3);
 
 -- --------------------------------------------------------
 
@@ -138,11 +137,8 @@ CREATE TABLE `usuario_has_vaga` (
 --
 
 INSERT INTO `usuario_has_vaga` (`usuario_id`, `vaga_id`) VALUES
-(1, 5),
-(1, 5),
-(1, 2),
-(1, 7),
-(49, 2);
+(49, 15),
+(49, 15);
 
 -- --------------------------------------------------------
 
@@ -167,12 +163,9 @@ CREATE TABLE `vaga` (
 --
 
 INSERT INTO `vaga` (`id`, `nome`, `tipo`, `descricao`, `salario`, `carga_horaria`, `data_publicacao`, `data_expiracao`, `usuario_id`) VALUES
-(2, 'Técnico em informática', 'Efetivo/Clt', 'lorem ympsum', '10000,00', '70h', '2023-11-03', '2023-11-25', 29),
-(5, 'Suporte de redes', 'Estágio', 'Requisitos:&#13;&#10;&#13;&#10;.Metodologia Ágil.&#13;&#10;.Saber conceitos básicos de CyberSegurança.&#13;&#10;.Estar cursando superior em sistemas da informação/segurança da informação.', 'R$1000,00', '40h semanais', '2023-11-02', '2023-12-03', 29),
-(7, 'PHP Júnior', 'Efetivo/Clt', 'LOREMLOREMLOREMLOREMLOREMLOREMLOREMLOREM', 'R$1000,00', '50h semanais', '2023-11-14', '2023-12-14', 1),
-(12, 'Jordan', '', '123123123', '123', '123', '1111-12-12', '1222-03-12', 51),
-(13, 'Vaga na adidas', 'clt', '123', '123', '123', '1212-12-12', '1212-12-12', 51),
-(14, 'Outra vaga na adidas', 'estagio', '123', '123', '123', '1212-12-12', '1212-12-12', 51);
+(15, 'Vaga na adidas', 'Efetivo/Clt', 'O que é Lorem Ipsum? Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker. O que é Lorem Ipsum? Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.', 'R$1000,00', '50h semanais', '2023-11-09', '2023-11-15', 51),
+(16, 'Outra vaga na adidas', 'Efetivo/Clt', '.O que é Lorem Ipsum? Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker. .O que é Lorem Ipsum? Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.', 'R$2000,00', '70h semanais', '2023-11-14', '2023-11-20', 51),
+(17, 'Vaga na nike', 'Efetivo/Clt', 'Porque nós o usamos? É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de &#34;Conteúdo aqui, conteúdo aqui&#34;, fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão, e uma rápida busca por &#39;lorem ipsum&#39; mostra vários websites ainda em sua fase de construção. Várias versões novas surgiram ao longo dos anos, eventualmente por acidente, e às vezes de propósito (injetando humor, e coisas do gênero). Onde posso conseguí-lo? Existem muitas variações disponíveis de passagens de Lorem Ipsum, mas a maioria sofreu algum tipo de alteração, seja por inserção de passagens com humor, ou palavras aleatórias que não parecem nem um pouco convincentes. Se você pretende usar uma passagem de Lorem Ipsum, precisa ter certeza de que não há algo embaraçoso escrito escondido no meio do texto. Todos os geradores de Lorem Ipsum na internet tendem a repetir pedaços predefinidos conforme necessário, fazendo deste o primeiro gerador de Lorem Ipsum autêntico da internet. Ele usa um dicionário com mais de 200 palavras em Latim combinado com um punhado de modelos de estrutura de frases para gerar um Lorem Ipsum com aparência razoável, livre de repetições, inserções de humor, palavras não características, etc.', 'R$3000,00', '70h semanais', '2023-11-13', '2023-11-25', 52);
 
 --
 -- Índices para tabelas despejadas
@@ -263,13 +256,13 @@ ALTER TABLE `perfil`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT de tabela `vaga`
 --
 ALTER TABLE `vaga`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Restrições para tabelas despejadas
