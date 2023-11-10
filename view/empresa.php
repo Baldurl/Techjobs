@@ -85,7 +85,7 @@ $nome = $_SESSION['usuario']['nome'];
 <section class="main_optin">
     <div class="main_optin_content">
         <header>
-            <h1>Receba conteúdos exclusivos e alavanque suas vagas<br> Veja os benefícios e faça já sua assinatura
+            <h1>Receba conteúdos exclusivos e alavanque suas vagas!<br> Veja os benefícios e faça já sua assinatura
             </h1>
         </header>
         <article>

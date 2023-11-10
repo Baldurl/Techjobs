@@ -14,13 +14,17 @@ $dao = new VagaDAO();
 $vaga = $dao->getById('$id');
 
 
-
-
-
-
 $usuario_id = $id;
 $dao = new Usuario_has_vagaDAO();
 $candidatado = $dao->candidatar($usuario_id, $vaga_id);
+
+/*if ($candidatado) {
+    header ('Location: candidatar.php?candidatado=sucesso');
+
+} else {
+    header ('Location: candidatar.php?candidatado=erro');
+
+}*/
 
 
 

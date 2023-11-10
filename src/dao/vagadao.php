@@ -37,7 +37,7 @@ class  VagaDAO
     }
 
 
-    public function getUsuario($id, $nome)
+    public function getUsuario($id, $usuario_id)
     {
         $query = "SELECT vaga.id, vaga.usuario_id 
                 FROM vaga

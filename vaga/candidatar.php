@@ -18,7 +18,6 @@ $usuarios = $dao->getAll();
 $quantidadeRegistros = count($usuarios);
 
 
-
 if (isset($_SESSION['usuario'])) {
     require_once __DIR__ . '/../layouts/headerlogin.php';
 } else {
@@ -26,14 +25,13 @@ if (isset($_SESSION['usuario'])) {
 }
 
 
-
 ?>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-<link rel="stylesheet" href="../assets/css/style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 <?php if ($perfil_id == 2) { ?>
     <section class="main-blog">
@@ -44,11 +42,11 @@ if (isset($_SESSION['usuario'])) {
                 </div>
                 <div class="icon"><i class="fa fa-3x fa-angellist"></i></div>
                 <div class="content" title="<?= $vaga[3] ?>">
-                    <?php
 
+                    <?php
                     $id = $vaga['usuario_id'];
-                    $dao1 = new UsuarioDAO();
-                    $usuario = $dao1->getById($id);
+                    $dao = new UsuarioDAO();
+                    $usuario = $dao->getById($id);
                     ?>
 
                     <?php echo '<strong>Empresa: </strong>' . $usuario[1] ?><br>
@@ -62,8 +60,7 @@ if (isset($_SESSION['usuario'])) {
             </article>
 
 
-          
-          <article>
+            <article>
                 <div class="py-3 text-center" style="margin: 50px auto">
                     <h2>Confirma seu e-mail e envie seu currículo: </h2>
                 </div>
@@ -74,13 +71,15 @@ if (isset($_SESSION['usuario'])) {
 
                                 <div class="card-body font-weight-bold">
                                     <form action="candidatar_save.php?id=<?= $vaga['id'] ?>&acao=enviar"
-                                        enctype="multipart/form-data" method="POST">
+                                          enctype="multipart/form-data" method="POST">
                                         <div class="form-group">
 
                                             <label for="para">E-mail</label>
 
                                             <input name="para" type="email" class="form-control" id="para"
-                                                placeholder="***@email.com">
+                                                   placeholder="***@email.com">
+
+
                                             <?php if (isset($_GET['candidatar']) && $_GET['candidatar'] == 'erro3') { ?>
                                                 <div style="color: darkred; font-size: 1.2rem"> E-mail inválido
                                                 </div>
@@ -101,81 +100,76 @@ if (isset($_SESSION['usuario'])) {
             </article>
 
 
-
         </div>
     </section>
 
-<?php } else if ($perfil_id == 1 || 3) { 
+<?php } else if ($perfil_id == 1 || 3) {
 
-     
-?>
-       
-       <section class="main-blog">
-            <div class="main-blog-content1">
-                <article>
-                    <div class="py-3 text-left" style="margin: 40px auto">
-                        <h3>Dados da vaga: </h3>
-                    </div>
-                    <div class="icon"><i class="fa fa-3x fa-angellist"></i></div>
-                    <div class="content" title="<?= $vaga[3] ?>">
-                        <?php
 
-                        $id = $vaga['usuario_id'];
-                        $dao = new UsuarioDAO();
-                        $usuario = $dao->getById($id);
-                        ?>
+    ?>
+
+    <section class="main-blog">
+        <div class="main-blog-content1">
+            <article>
+                <div class="py-3 text-left" style="margin: 40px auto">
+                    <h3>Dados da vaga: </h3>
+                </div>
+                <div class="icon"><i class="fa fa-3x fa-angellist"></i></div>
+                <div class="content" title="<?= $vaga[3] ?>">
+                    <?php
+
+                    $id = $vaga['usuario_id'];
+                    $dao = new UsuarioDAO();
+                    $usuario = $dao->getById($id);
+                    ?>
 
                     <?php echo '<strong>Empresa: </strong>' . $usuario[1] ?><br>
                     <?php echo '<strong>Vaga: </strong>' . $vaga[1] ?><br>
-                        <p>
+                    <p>
                         <?php echo '<strong>Tipo: </strong> ' . $vaga[2] ?><br>
                         <?php echo '<strong>Salário: </strong> ' . $vaga[4] ?><br>
                         <?php echo '<strong>Descrição: </strong> ' . $vaga[3] ?>
-                        </p>
-                    </div>
-                    <div class="py-3 text-left" style="margin: 40px auto">
-                        <h3>Usuários cadastrados nessa vaga: </h3>
-                    </div>
-                    <section>
-                        <table id="example" class="display" style="width:100%;">
-                            <thead>
-                                <tr>
-                                    <th>Usuário candidatado nesta vaga</th>
-                                    <th>Currículo</th>
-                                    <th>E-mail</th>
+                    </p>
+                </div>
+                <div class="py-3 text-left" style="margin: 40px auto">
+                    <h3>Usuários cadastrados nessa vaga: </h3>
+                </div>
+                <section>
+                    <table id="example" class="display" style="width:100%;">
+                        <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Currículo</th>
+                            <th>E-mail</th>
 
-                                </tr>
-                            </thead>
+                        </tr>
+                        </thead>
 
-                            <tbody>
+                        <tbody>
 
                         <?php
-                            $dao = new Usuario_has_vagaDAO();
-                            $informacao = $dao->getInformation('$vaga_id', '$usuario_id'); 
+
+                        $dao = new Usuario_has_vagaDAO();
+                        $usuarios = $dao->getAllUsuarios('$usuario_id','$vaga_id');
+
+                        foreach ($usuarios as $usuario) {
+                            echo "<tr>";
+                            echo "<td>" . $usuario[3] . "</td>";
+                            echo "<td>" . $usuario[5] . "</td>";
+                            echo "<td>" . $usuario[8] . "</td>";
+                            echo "</tr>";
+                        }
+
+
                         ?>
-                                        <tr>
+                        </tbody>
+                    </table>
 
-                                            <td>
-                                            <?= ($informacao['nome']); ?>
-                                            </td>
-                                            <td>
-                                            <?= ($informacao['numero']); ?>
-                                            </td>
-                                            <td>
-                                            <?= ($informacao['email']); ?>
-                                            </td>
-
-                                            </td>
-                                        </tr>
-                            </tbody>
-                        </table>
-
-                    </section>
-                </article>
+                </section>
+            </article>
 
 
-
-            </div>
-        </section>
+        </div>
+    </section>
 
 <?php } ?>
