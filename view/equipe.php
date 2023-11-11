@@ -19,7 +19,68 @@
     <title>TECH JOBS</title>
 </head>
 <body>
+<section class="main-team">
+    <div class="main-team-header">
+        <h2>Nossa equipe</h2>
 
+    </div>
+
+
+    <div class="main-team-box app">
+
+        <div class="box-single-team">
+            <div class="box-single-team-content">
+                <h1>Lucas Caio</h1>
+                <h3>Developer front-end</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
+                    laborum
+                    id
+                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
+                    officia corporis voluptatum rem ut perspiciatis. Fuga?
+                </p>
+                <div class="box-single-medias">
+                    <i class="fa fa-2x fa-facebook"></i>
+                    <i class="fa fa-2x fa-instagram"></i>
+                    <i class="fa fa-2x fa-github"></i>
+                </div>
+            </div>
+        </div>
+        <div class="box-single-team">
+            <div class="box-single-team-content">
+                <h1>Jordan de Carvalho</h1>
+                <h3>Developer back-end</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
+                    laborum
+                    id
+                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
+                    officia corporis voluptatum rem ut perspiciatis. Fuga?
+                </p>
+                <div class="box-single-medias">
+                    <i class="fa fa-2x fa-instagram"></i>
+                    <i class="fa fa-2x fa-github"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="box-single-team">
+            <div class="box-single-team-content">
+                <h1>Pedro Santana</h1>
+                <h3>Developer Full-Stack</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
+                    laborum
+                    id
+                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
+                    officia corporis voluptatum rem ut perspiciatis. Fuga?
+                </p>
+                <div class="box-single-medias">
+                    <i class="fa fa-2x fa-instagram"></i>
+                    <i class="fa fa-2x fa-github"></i>
+                </div>
+            </div>
+        </div>
 </body>
 </html>
 
