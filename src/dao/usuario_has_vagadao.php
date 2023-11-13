@@ -33,7 +33,9 @@ class  Usuario_has_vagaDAO
     {
         $usuario_id = 49;
         $vaga_id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
-        $query = "SELECT * 
+        $query = "SELECT distinct(usuario_id) as usuario_candidatado,
+        nome, cpf, email,
+        vaga_id
         /* usuario_has_vaga.usuario_id as usuario_candidatado,   usuario candidatado */
         /* usuario_has_vaga.vaga_id,  id da vaga */
         /* vaga.usuario_id as usuario_empresa  empresa que publicou a vaga */
@@ -51,6 +53,9 @@ class  Usuario_has_vagaDAO
 
 
     }
+
+
+
 
 
 /*    public function getById(int $id)

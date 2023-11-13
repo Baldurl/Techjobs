@@ -24,7 +24,7 @@ class  VagaDAO
 
     public function getById($id)
     {
-        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS); 
         $query = "SELECT * FROM vaga WHERE id = :id;";
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(":id", $id);
