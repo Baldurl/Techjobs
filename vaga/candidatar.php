@@ -6,9 +6,9 @@ require_once __DIR__ . '/../auth/permissoes.php';
 require_once __DIR__ . '/../src/dao/vagadao.php';
 require_once __DIR__ . '/../src/dao/usuario_has_vagadao.php';
 
-
+$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS); 
 $dao = new VagaDAO();
-$vaga = $dao->getById('$id');
+$vaga = $dao->getById($id); 
 
 $dao = new VagaDAO();
 $empresa = $dao->getUsuario('$id', '$nome');
@@ -104,6 +104,9 @@ if (isset($_SESSION['usuario'])) {
     </section>
 
 <?php } else if ($perfil_id == 1 || 3) {
+        if (($_SESSION['usuario']) != $vaga['usuario_id'] ) {
+                header ('location: candidatar.php?testeeeeeeee');
+        }
 
 
     ?>
@@ -154,9 +157,9 @@ if (isset($_SESSION['usuario'])) {
 
                         foreach ($usuarios as $usuario) {
                             echo "<tr>";
+                            echo "<td>" . $usuario[1] . "</td>";
+                            echo "<td>" . $usuario[2] . "</td>";
                             echo "<td>" . $usuario[3] . "</td>";
-                            echo "<td>" . $usuario[5] . "</td>";
-                            echo "<td>" . $usuario[8] . "</td>";
                             echo "</tr>";
                         }
 

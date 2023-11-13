@@ -16,8 +16,9 @@ foreach ($vagas
 
          as $vaga) { ?>
 
-    <?php
 
+
+    <?php
     $id = $vaga['usuario_id'];
     $dao = new UsuarioDAO();
     $usuario = $dao->getById($id);

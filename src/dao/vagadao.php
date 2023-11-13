@@ -4,7 +4,7 @@
 include_once __DIR__ . '/../database/conexao.php';
 
 
-class  VagaDAO
+class VagaDAO
 {
     private $dbh;
 
@@ -22,9 +22,8 @@ class  VagaDAO
         return $rows;
     }
 
-    public function getById($id)
+    public function getById(int $id)
     {
-         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS); 
         $query = "SELECT * FROM vaga WHERE id = :id;";
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(":id", $id);
@@ -61,6 +60,22 @@ $stmt->execute(); */
 
         $this->dbh = null;
         return $resultados;
+    }
+
+    public function getByUsuarioId(int $usuario_id)
+    {
+        $query = ("SELECT * FROM vaga WHERE usuario_id = :usuario_id");
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(":usuario_id", $usuario_id);
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+        $this->dbh = null;
+        return $rows;
+
+
     }
 
     public function insert($nome, $tipo, $descricao, $salario, $carga_horaria, $data_publicacao, $data_expiracao, $usuario_id)
