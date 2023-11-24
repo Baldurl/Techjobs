@@ -6,9 +6,10 @@ require_once __DIR__ . '/../auth/permissoes.php';
 require_once __DIR__ . '/../src/dao/vagadao.php';
 require_once __DIR__ . '/../src/dao/usuario_has_vagadao.php';
 
-$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS); 
+
+$vaga_id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
 $dao = new VagaDAO();
-$vaga = $dao->getById($id); 
+$vaga = $dao->getById($vaga_id);
 
 $dao = new VagaDAO();
 $empresa = $dao->getUsuario('$id', '$nome');
@@ -87,8 +88,10 @@ if (isset($_SESSION['usuario'])) {
                                         </div>
                                         <div class="form-group">
                                             <label for="arquivo">Enviar currículo</label>
-                                            <input name="arquivo" type="file" class="form-control" id="arquivo">
+                                            <input accept="application/pdf" name="arquivo" type="file" class="form-control" id="arquivo">
                                         </div>
+
+                                        <!-- Criar condição de erro caso não for um pdf -->
 
 
                                         <button type="submit" class="btn btn-primary btn-lg">Candidatar</button>
@@ -104,8 +107,7 @@ if (isset($_SESSION['usuario'])) {
     </section>
 
 <?php } else if ($perfil_id == 1 || 3) {
-        if (($_SESSION['usuario']) != $vaga['usuario_id'] ) {
-                header ('location: candidatar.php?testeeeeeeee');
+        if (($_SESSION['usuario']) != $vaga['usuario_id'] ) {            
         }
 
 
@@ -151,9 +153,12 @@ if (isset($_SESSION['usuario'])) {
                         <tbody>
 
                         <?php
-
+                       
+                        
+                        
                         $dao = new Usuario_has_vagaDAO();
-                        $usuarios = $dao->getAllUsuarios('$usuario_id','$vaga_id');
+                        $usuarios = $dao->getAllUsuarios('$usuario_id', $vaga_id);
+                        
 
                         foreach ($usuarios as $usuario) {
                             echo "<tr>";

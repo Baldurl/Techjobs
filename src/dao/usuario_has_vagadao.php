@@ -29,22 +29,15 @@ class  Usuario_has_vagaDAO
     }
 
 
-    public function getAllUsuarios($usuario_id, $vaga_id)
+    public function getAllUsuarios( $usuario_id,  int $vaga_id)
     {
-        $usuario_id = 49;
-        $vaga_id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
-        $query = "SELECT distinct(usuario_id) as usuario_candidatado,
-        nome, cpf, email,
-        vaga_id
-        /* usuario_has_vaga.usuario_id as usuario_candidatado,   usuario candidatado */
-        /* usuario_has_vaga.vaga_id,  id da vaga */
-        /* vaga.usuario_id as usuario_empresa  empresa que publicou a vaga */
 
-         FROM usuario_has_vaga
-         INNER JOIN usuario ON usuario_has_vaga.usuario_id = usuario.id 
-                  WHERE  usuario_id = :usuario_id and vaga_id = :vaga_id";
+
+        $query = "SELECT distinct(usuario_id) as usuario_candidatado, nome, cpf, email, vaga_id
+                     FROM usuario_has_vaga
+                         INNER JOIN usuario ON usuario_has_vaga.usuario_id = usuario.id 
+                             WHERE   vaga_id = :vaga_id";
         $stmt = $this->dbh->prepare($query);
-        $stmt->bindParam(":usuario_id", $usuario_id);
         $stmt->bindParam(":vaga_id", $vaga_id);
         $stmt->execute();
         $rows = $stmt->fetchAll();
