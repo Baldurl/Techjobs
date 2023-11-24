@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Tempo de geração: 10/11/2023 às 17:34
--- Versão do servidor: 8.0.30
--- Versão do PHP: 8.1.10
+-- Host: 127.0.0.1
+-- Tempo de geração: 24-Nov-2023 às 14:05
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,56 +24,56 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `assinatura`
+-- Estrutura da tabela `assinatura`
 --
 
 CREATE TABLE `assinatura` (
-  `id` int NOT NULL,
-  `periodo` varchar(55) COLLATE utf8mb4_general_ci NOT NULL,
+  `id` int(11) NOT NULL,
+  `periodo` varchar(55) NOT NULL,
   `valor` decimal(8,2) NOT NULL,
   `data` date NOT NULL,
-  `usuario_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `usuario_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `avaliacao`
+-- Estrutura da tabela `avaliacao`
 --
 
 CREATE TABLE `avaliacao` (
-  `id` int NOT NULL,
-  `nome` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `feedback` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `usuario_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `id` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `feedback` varchar(255) NOT NULL,
+  `usuario_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `pagamento`
+-- Estrutura da tabela `pagamento`
 --
 
 CREATE TABLE `pagamento` (
-  `id` int NOT NULL,
-  `meio_pagamento` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `valor` varchar(40) COLLATE utf8mb4_general_ci NOT NULL,
-  `usuario_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `id` int(11) NOT NULL,
+  `meio_pagamento` varchar(50) NOT NULL,
+  `valor` varchar(40) NOT NULL,
+  `usuario_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `perfil`
+-- Estrutura da tabela `perfil`
 --
 
 CREATE TABLE `perfil` (
-  `id` int NOT NULL,
-  `nome` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `id` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `perfil`
+-- Extraindo dados da tabela `perfil`
 --
 
 INSERT INTO `perfil` (`id`, `nome`) VALUES
@@ -84,33 +84,33 @@ INSERT INTO `perfil` (`id`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuario`
+-- Estrutura da tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
-  `id` int NOT NULL,
-  `nome` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `razao_social` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `cpf` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `cnpj` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `senha` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `sexo` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `ddi` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `ddd` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `numero` varchar(17) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `cep` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `cidade` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `logradouro` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `bairro` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `lote` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `rua` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `complemento` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `perfil_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `id` int(11) NOT NULL,
+  `nome` varchar(40) DEFAULT NULL,
+  `razao_social` varchar(50) DEFAULT NULL,
+  `cpf` varchar(20) DEFAULT NULL,
+  `cnpj` varchar(18) DEFAULT NULL,
+  `senha` varchar(50) DEFAULT NULL,
+  `email` varchar(50) NOT NULL,
+  `sexo` varchar(20) DEFAULT NULL,
+  `ddi` varchar(6) DEFAULT NULL,
+  `ddd` varchar(20) DEFAULT NULL,
+  `numero` varchar(17) DEFAULT NULL,
+  `cep` varchar(15) DEFAULT NULL,
+  `cidade` varchar(30) DEFAULT NULL,
+  `logradouro` varchar(10) DEFAULT NULL,
+  `bairro` varchar(30) DEFAULT NULL,
+  `lote` varchar(10) DEFAULT NULL,
+  `rua` varchar(30) DEFAULT NULL,
+  `complemento` varchar(20) DEFAULT NULL,
+  `perfil_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `razao_social`, `cpf`, `cnpj`, `senha`, `email`, `sexo`, `ddi`, `ddd`, `numero`, `cep`, `cidade`, `logradouro`, `bairro`, `lote`, `rua`, `complemento`, `perfil_id`) VALUES
@@ -124,42 +124,42 @@ INSERT INTO `usuario` (`id`, `nome`, `razao_social`, `cpf`, `cnpj`, `senha`, `em
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuario_has_vaga`
+-- Estrutura da tabela `usuario_has_vaga`
 --
 
 CREATE TABLE `usuario_has_vaga` (
-  `usuario_id` int DEFAULT NULL,
-  `vaga_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `usuario_id` int(11) DEFAULT NULL,
+  `vaga_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `usuario_has_vaga`
+-- Extraindo dados da tabela `usuario_has_vaga`
 --
 
 INSERT INTO `usuario_has_vaga` (`usuario_id`, `vaga_id`) VALUES
-(49, 15),
+(44, 15),
 (49, 15);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `vaga`
+-- Estrutura da tabela `vaga`
 --
 
 CREATE TABLE `vaga` (
-  `id` int NOT NULL,
-  `nome` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `tipo` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `descricao` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `salario` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `carga_horaria` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `id` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `tipo` varchar(30) NOT NULL,
+  `descricao` longtext NOT NULL,
+  `salario` varchar(50) NOT NULL,
+  `carga_horaria` varchar(100) NOT NULL,
   `data_publicacao` date NOT NULL,
   `data_expiracao` date NOT NULL,
-  `usuario_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `usuario_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `vaga`
+-- Extraindo dados da tabela `vaga`
 --
 
 INSERT INTO `vaga` (`id`, `nome`, `tipo`, `descricao`, `salario`, `carga_horaria`, `data_publicacao`, `data_expiracao`, `usuario_id`) VALUES
@@ -172,34 +172,34 @@ INSERT INTO `vaga` (`id`, `nome`, `tipo`, `descricao`, `salario`, `carga_horaria
 --
 
 --
--- Índices de tabela `assinatura`
+-- Índices para tabela `assinatura`
 --
 ALTER TABLE `assinatura`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FKUsuario_3` (`usuario_id`);
 
 --
--- Índices de tabela `avaliacao`
+-- Índices para tabela `avaliacao`
 --
 ALTER TABLE `avaliacao`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `pagamento`
+-- Índices para tabela `pagamento`
 --
 ALTER TABLE `pagamento`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FKUsuario_2` (`usuario_id`);
 
 --
--- Índices de tabela `perfil`
+-- Índices para tabela `perfil`
 --
 ALTER TABLE `perfil`
   ADD PRIMARY KEY (`id`),
   ADD KEY `nome` (`nome`) USING BTREE;
 
 --
--- Índices de tabela `usuario`
+-- Índices para tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`),
@@ -211,90 +211,91 @@ ALTER TABLE `usuario`
   ADD KEY `nome` (`nome`) USING BTREE;
 
 --
--- Índices de tabela `usuario_has_vaga`
+-- Índices para tabela `usuario_has_vaga`
 --
 ALTER TABLE `usuario_has_vaga`
+  ADD UNIQUE KEY `fk_unique_pk` (`usuario_id`,`vaga_id`),
   ADD KEY `FKUsuario_4` (`usuario_id`),
   ADD KEY `FKVaga` (`vaga_id`);
 
 --
--- Índices de tabela `vaga`
+-- Índices para tabela `vaga`
 --
 ALTER TABLE `vaga`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FKUsuario` (`usuario_id`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `assinatura`
 --
 ALTER TABLE `assinatura`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `avaliacao`
 --
 ALTER TABLE `avaliacao`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `pagamento`
 --
 ALTER TABLE `pagamento`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `perfil`
 --
 ALTER TABLE `perfil`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT de tabela `vaga`
 --
 ALTER TABLE `vaga`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- Restrições para tabelas despejadas
+-- Restrições para despejos de tabelas
 --
 
 --
--- Restrições para tabelas `assinatura`
+-- Limitadores para a tabela `assinatura`
 --
 ALTER TABLE `assinatura`
-  ADD CONSTRAINT `FKUsuario_3` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `FKUsuario_3` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`);
 
 --
--- Restrições para tabelas `pagamento`
+-- Limitadores para a tabela `pagamento`
 --
 ALTER TABLE `pagamento`
-  ADD CONSTRAINT `FKUsuario_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `FKUsuario_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`);
 
 --
--- Restrições para tabelas `usuario`
+-- Limitadores para a tabela `usuario`
 --
 ALTER TABLE `usuario`
-  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`perfil_id`) REFERENCES `perfil` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`perfil_id`) REFERENCES `perfil` (`id`);
 
 --
--- Restrições para tabelas `usuario_has_vaga`
+-- Limitadores para a tabela `usuario_has_vaga`
 --
 ALTER TABLE `usuario_has_vaga`
   ADD CONSTRAINT `FKUsuario_4` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FKVaga` FOREIGN KEY (`vaga_id`) REFERENCES `vaga` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Restrições para tabelas `vaga`
+-- Limitadores para a tabela `vaga`
 --
 ALTER TABLE `vaga`
   ADD CONSTRAINT `FKUsuario` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
