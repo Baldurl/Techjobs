@@ -27,6 +27,7 @@ $usuario = $dao->getByUsuario('$usuario');*/
 
 <!--Estilo CSS-->
 <link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/button.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 
@@ -47,9 +48,9 @@ $usuario = $dao->getByUsuario('$usuario');*/
                                 <h1>Pesquisar vagas</h1>
                             </label>
                             <input type="text" name="vaga" size="50" placeholder="Insira o nome da vaga"></input>
-                            <span class="btn-orange">
-                                    <button type="submit" class="btn-primary btn-lg">Buscar</button>
-                                </span>
+                            
+                                    <button type="submit" class="btn-primary btn-orange">Buscar</button>
+                                
                         </form>
                     </div>
                 </div>
@@ -72,9 +73,16 @@ $usuario = $dao->getByUsuario('$usuario');*/
 
             <div class="main-blog-header">
                 <h2 class="aos-init aos-animate">
-                    Ainda não temos as vagas que você procura :(
+                    Ainda não temos as vagas que você procura :( <br>
+                    <a href="../">
+                     <button type="button" class="btn btn-primary btn-lg ">
+                                            Voltar
+                     </button>
+                    </a>
                 </h2>
+
             </div>
+
 
         <?php } else { ?>
             <div class="main-blog-header">

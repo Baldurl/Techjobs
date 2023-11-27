@@ -42,7 +42,7 @@ $nome = $_SESSION['usuario']['nome'];
                     <div class="form-group main-cta-banner-busca">
                             <section class="section__btn">
                                 <a class="btn-orange" href="../vaga/create.php">Publicar nova vaga</a>
-                                <a class="btn" href="../vaga/index.php">Consultar suas vagas </a>
+                                <a class="btn" href="../vaga/index.php">Consulte suas vagas </a>
                             </section>
                     </div>
                 </div>
@@ -57,21 +57,7 @@ $nome = $_SESSION['usuario']['nome'];
     </article>
 </div>
 
-<section class="main-blog">
 
-    <div class="main-blog-header">
-        <h2 class="aos-init aos-animate">
-            Veja as vagas que estão em alta:
-        </h2>
-        <div class="seta">
-            <i class="fa fa-arrow-down"></i>
-        </div>
-    </div>
-
-    <div class="main-blog-content">
-        <?php require_once __DIR__ . '/../vaga/all.php'; ?>
-    </div>
-</section>
 
 
 <!--<article class="opt-in">
@@ -82,8 +68,8 @@ $nome = $_SESSION['usuario']['nome'];
     </div>
 </article>
 -->
-<section class="main_optin">
-    <div class="main_optin_content">
+<section class="main_optin_footer">
+    <div class="main_optin_footer_content">
         <header>
             <h1>Receba conteúdos exclusivos e alavanque suas vagas!<br> Veja os benefícios e faça já sua assinatura
             </h1>
@@ -105,52 +91,15 @@ $nome = $_SESSION['usuario']['nome'];
     </article>
 -->
 
-<section class="main-cursos">
-    <div class="main-cursos-content" id="news">
-        <header>
-            <h2>Biblioteca de Cursos e Livros</h2>
-        </header>
-        <div class="box-cursos" id="app">
-            <div class="box-cursos-content">
 
-                <div class="box-single-cursos-content-links">
-                    <p>
-
-                        Indicamos alguns cursos e livros para você iniciar sua carreira na tecnologia! <br>
-                        <li><a href="https://skillsforall.com" target="_blank" rel="external" style="color:
-                             rgb(4, 185, 65);">Cursos da Cisco</a></li>
-                        <li><a href="https://udemy.com" target="_blank" rel="external" style="color:
-                             rgb(186,85,211);">Cursos da udemy</a></li>
-                        <li><a href="https://web.dio.me/" target="_blank" rel="external" style="color: rgb(24, 130,
-                             250);">DIO.</a></li>
-                        <li><a href="https://workover.com.br/" target="_blank" rel="external" style="color:
-                             rgb(109, 5, 66);">Workover</a></li>
-                        <li><a href="https://www.cursoemvideo.com/cursos/" target="_blank" rel="external"
-                               style="color:
-                              rgb(38, 6, 218);">Curso em Video</a></li>
-                        <li><a href="https://stg.ada.tech/sou-aluno" target="_blank" rel="external" style="color:
-                                 rgb(4, 78, 1);">Ada-Tech</a></li>
-                        <br>
-                        <li><a href="https://drive.google.com/drive/folders/1AnNVHVEhmznbk9azvJSLPNATw23-uca5"
-                               target="_blank" rel="external">
-                                Livros<i class="fa fa-arrow-right"></i></a></li>
-                        <br><br>
-
-                        O maior inimigo do conhecimento não é a ignorância, é a ilusão do conhecimento. <br> –
-                        <i>Stephen Hawking!</i>
-                    </p>
-                </div>
-                <div class="box-single-cursos-content-imagem">
-                    <img src="../assets/img/img-team.svg" alt="team">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 
 <section class="main-noticias">
+        <header>
+            <h2>Notícias em destaque</h2>
+        </header>
     <div class="main-noticias-content" id="news">
+
         <div class="box-noticias">
             <div class="box-noticias-content">
 
@@ -222,130 +171,8 @@ $nome = $_SESSION['usuario']['nome'];
 <div class="clear"></div>
 
 
-<section class="main-team">
-    <div class="main-team-header">
-        <h2>Nossa equipe</h2>
-
-    </div>
-
-
-    <div class="main-team-box app">
-
-        <div class="box-single-team">
-            <div class="box-single-team-content">
-                <h1>Lucas Caio</h1>
-                <h3>Developer front-end</h3>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
-                    laborum
-                    id
-                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
-                    officia corporis voluptatum rem ut perspiciatis. Fuga?
-                </p>
-                <div class="box-single-medias">
-                    <i class="fa fa-2x fa-facebook"></i>
-                    <i class="fa fa-2x fa-instagram"></i>
-                    <i class="fa fa-2x fa-github"></i>
-                </div>
-            </div>
-        </div>
-        <div class="box-single-team">
-            <div class="box-single-team-content">
-                <h1>Jordan de Carvalho</h1>
-                <h3>Developer back-end</h3>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
-                    laborum
-                    id
-                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
-                    officia corporis voluptatum rem ut perspiciatis. Fuga?
-                </p>
-                <div class="box-single-medias">
-                    <i class="fa fa-2x fa-instagram"></i>
-                    <i class="fa fa-2x fa-github"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="box-single-team">
-            <div class="box-single-team-content">
-                <h1>Pedro Santana</h1>
-                <h3>Developer Full-Stack</h3>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
-                    laborum
-                    id
-                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
-                    officia corporis voluptatum rem ut perspiciatis. Fuga?
-                </p>
-                <div class="box-single-medias">
-                    <i class="fa fa-2x fa-instagram"></i>
-                    <i class="fa fa-2x fa-github"></i>
-                </div>
-            </div>
-        </div>
-
-
-        <!--   LINHA ANIMADA PARA SEPARAR CONTEÚDO
-        <div class="box-single-team">
-            <div data-aos="fade-up">
-                <div class="line"></div>
-                <div class="clear"></div>
-            </div>
-        </div>
-         FIM DA LINHA-->
-
-    </div>
-
-</section>
-
-
-<section class="grupo-icones">
-
-    <div class="box-icones">
-        <div class="box-single-icones">
-            <i class="fa fa-5x fa-star"></i>
-            <h3>55</h3>
-            <p>prêmios</p>
-        </div>
-        <div class="box-single-icones">
-            <i class="fa fa-5x fa-heart-o"></i>
-            <h3>+180</h3>
-            <p>clientes felizes</p>
-        </div>
-        <div class="box-single-icones">
-            <i class="fa fa-5x fa-connectdevelop" aria-hidden="true"></i>
-            <h3>20</h3>
-            <p>anos de existênçia</p>
-        </div>
-        <div class="box-single-icones">
-            <i class="fa fa-5x fa-bolt" aria-hidden="true"></i>
-            <h3>24/24</h3>
-            <p>horas de trabalho</p>
-        </div>
-        <div class="box-single-icones">
-            <i class="fa fa-5x fa-map-marker"></i>
-            <h3>+3</h3>
-            <p>Agencias espalhadas pelo mundo</p>
-        </div>
-
-    </div>
-</section>
-
 <!-- INICIO DOBRA RODAPÉ -->
-<section class="main_optin_footer">
-    <div class="main_optin_footer_content">
-        <header>
-            <h1>Receba conteúdos exclusivos e aumente suas chances de arranjar emprego<br> Faça já sua assinatura
-            </h1>
-        </header>
-        <article>
-            <header>
-                <h2><a href="#" class="btnn">Entrar para a lista premium</a></h2>
-            </header>
-        </article>
-    </div>
-</section>
+
 
 <section class="main_footer">
 

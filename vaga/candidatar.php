@@ -32,6 +32,7 @@ if (isset($_SESSION['usuario'])) {
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/button.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 <?php if ($perfil_id == 2) { ?>
@@ -136,6 +137,15 @@ if (isset($_SESSION['usuario'])) {
                         <?php echo '<strong>Descrição: </strong> ' . $vaga[3] ?>
                     </p>
                 </div>
+                <tr>
+                <td class="td__operacao">
+                                                    <a class="btnalterar"
+                                                       href="edit.php?id=<?= $vaga['id']; ?>">Alterar</a>
+                                                    <a class="btnexcluir"
+                                                       href="delete.php?id=<?= $vaga['id']; ?>"
+                                                       onclick="return confirm('Deseja confirmar a operação?');">Excluir</a>
+                                                </td>
+                                                </tr>
                 <div class="py-3 text-left" style="margin: 40px auto">
                     <h3>Usuários cadastrados nessa vaga: </h3>
                 </div>
