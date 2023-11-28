@@ -106,8 +106,8 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
                                 <div>
                                     <label for="tipo">Tipo: </label>
                                     <select name="tipo">
-                                        <option value="">Selecione o tipo</option>
-                                        <option value="Efetivo/Clt">Efetivo/CLT</option>
+                                        <option value="<?= htmlspecialchars($vaga['tipo']) ?>"><?= htmlspecialchars($vaga['tipo']) ?></option>
+                                        <option value="Efetivo/CLT">Efetivo/CLT</option>
                                         <option value="Estágio">Estágio</option>
                                         <option value="Trainee">Trainee</option>
                                     </select placeholder="Informe o tipo de contrato" required value="<?= htmlspecialchars($vaga['tipo']) ?>">
@@ -116,7 +116,7 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
                                     <label for="descricao">Descrição: </label>
                                     <textarea id="descricao" name="descricao" rows="16" cols="100"
                                               required
-                                              placeholder="<?= htmlspecialchars($vaga['descricao']) ?>"></textarea>
+                                    ><?= htmlspecialchars($vaga['descricao']) ?></textarea>
                                 </div>
                                 <div>
                                     <label for="salario">Salário: </label>
