@@ -81,6 +81,23 @@
                 </div>
             </div>
         </div>
+        <div class="box-single-team">
+            <div class="box-single-team-content">
+                <h1>Ronan Souza</h1>
+                <h3>Developer Full-Stack</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
+                    laborum
+                    id
+                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
+                    officia corporis voluptatum rem ut perspiciatis. Fuga?
+                </p>
+                <div class="box-single-medias">
+                    <i class="fa fa-2x fa-instagram"></i>
+                    <i class="fa fa-2x fa-github"></i>
+                </div>
+            </div>
+        </div>
 </body>
 </html>
 

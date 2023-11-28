@@ -42,8 +42,8 @@
                             </label>
                             <input type="text" name="vaga" size="50" placeholder="Insira o nome da vaga"></input>
                             <span">
-                                    <button type="submit" class="btn-orange">Buscar</button>
-                                </span>
+                            <button type="submit" class="btn-orange">Buscar</button>
+                            </span>
                         </form>
                     </div>
                 </div>
@@ -74,154 +74,154 @@
 
     </div>
 
-<!--
-    <div class="main-blog-content">
-        <article>
-            <div class="icon"><i class="fa fa-3x fa-angellist"></i></div>
-            <div class="content">
-                <h3>HAPPY HOURS</h3>
-                <p>Aumente sua produtividade no happy hour,
-                    <a href="https://monkeytype.com/" target="_blank" rel="external">Clique aqui</a>
-                    e descubra uma maneira de treinar sua digitação.
-                </p>
-            </div>
-        </article>
+    <!--
+        <div class="main-blog-content">
+            <article>
+                <div class="icon"><i class="fa fa-3x fa-angellist"></i></div>
+                <div class="content">
+                    <h3>HAPPY HOURS</h3>
+                    <p>Aumente sua produtividade no happy hour,
+                        <a href="https://monkeytype.com/" target="_blank" rel="external">Clique aqui</a>
+                        e descubra uma maneira de treinar sua digitação.
+                    </p>
+                </div>
+            </article>
 
 
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-desktop"></i>
-            </div>
-            <div class="content">
-                <h3>Design</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
+            <article>
+                <div class="icon">
+                    <i class="fa fa-3x fa-desktop"></i>
+                </div>
+                <div class="content">
+                    <h3>Design</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
+                        Ex dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+            </article>
 
 
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-code"></i>
-            </div>
-            <div class="content">
-                <h3>Programing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
+            <article>
+                <div class="icon">
+                    <i class="fa fa-3x fa-code"></i>
+                </div>
+                <div class="content">
+                    <h3>Programing</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
+                        Ex dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+            </article>
 
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-code"></i>
-            </div>
-            <div class="content">
-                <h3>Programing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
+            <article>
+                <div class="icon">
+                    <i class="fa fa-3x fa-code"></i>
+                </div>
+                <div class="content">
+                    <h3>Programing</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
+                        Ex dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+            </article>
 
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-code"></i>
-            </div>
-            <div class="content">
-                <h3>Programing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
+            <article>
+                <div class="icon">
+                    <i class="fa fa-3x fa-code"></i>
+                </div>
+                <div class="content">
+                    <h3>Programing</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
+                        Ex dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+            </article>
 
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-code"></i>
-            </div>
-            <div class="content">
-                <h3>Programing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
+            <article>
+                <div class="icon">
+                    <i class="fa fa-3x fa-code"></i>
+                </div>
+                <div class="content">
+                    <h3>Programing</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
+                        Ex dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+            </article>
 
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-code"></i>
-            </div>
-            <div class="content">
-                <h3>Programing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
+            <article>
+                <div class="icon">
+                    <i class="fa fa-3x fa-code"></i>
+                </div>
+                <div class="content">
+                    <h3>Programing</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
+                        Ex dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+            </article>
 
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-code"></i>
-            </div>
-            <div class="content">
-                <h3>Programing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
+            <article>
+                <div class="icon">
+                    <i class="fa fa-3x fa-code"></i>
+                </div>
+                <div class="content">
+                    <h3>Programing</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
+                        Ex dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+            </article>
 
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-code"></i>
-            </div>
-            <div class="content">
-                <h3>Programing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
+            <article>
+                <div class="icon">
+                    <i class="fa fa-3x fa-code"></i>
+                </div>
+                <div class="content">
+                    <h3>Programing</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
+                        Ex dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+            </article>
 
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-code"></i>
-            </div>
-            <div class="content">
-                <h3>Programing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
+            <article>
+                <div class="icon">
+                    <i class="fa fa-3x fa-code"></i>
+                </div>
+                <div class="content">
+                    <h3>Programing</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
+                        Ex dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+            </article>
 
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-code"></i>
-            </div>
-            <div class="content">
-                <h3>Programing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
+            <article>
+                <div class="icon">
+                    <i class="fa fa-3x fa-code"></i>
+                </div>
+                <div class="content">
+                    <h3>Programing</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
+                        Ex dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+            </article>
 
-        <article>
-            <div class="icon">
-                <i class="fa fa-3x fa-code"></i>
-            </div>
-            <div class="content">
-                <h3>Programing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
-                    Ex dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </article>
+            <article>
+                <div class="icon">
+                    <i class="fa fa-3x fa-code"></i>
+                </div>
+                <div class="content">
+                    <h3>Programing</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro dolore optio.
+                        Ex dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+            </article>
 
-    </div>-->
+        </div>-->
 </section>
 
 
@@ -338,10 +338,9 @@
 
 
 <section class="main-noticias">
-    <div class="main-noticias-header">
-        <h2>Notícias</h2>
-
-    </div>
+    <header>
+        <h2>Notícias Recentes</h2>
+    </header>
     <div class="main-noticias-content" id="news">
         <div class="box-noticias">
             <div class="box-noticias-content">
@@ -379,7 +378,7 @@
         <div class="box-noticias">
             <div class="box-noticias">
                 <div class="box-noticias-content">
-                    <h2>Tecnologias & Hardwares</h2>
+                    <h2>Tecnologias & Inovação</h2>
                     <p>
                         Conheça um dos maiores canais de tecnologia e hardware do país "Adrenaline".
                         Uma comunidade online com fonte de informação sobre Tecnologia, Hardware, jogos,
@@ -462,6 +461,23 @@
         <div class="box-single-team">
             <div class="box-single-team-content">
                 <h1>Pedro Santana</h1>
+                <h3>Developer Full-Stack</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
+                    laborum
+                    id
+                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
+                    officia corporis voluptatum rem ut perspiciatis. Fuga?
+                </p>
+                <div class="box-single-medias">
+                    <i class="fa fa-2x fa-instagram"></i>
+                    <i class="fa fa-2x fa-github"></i>
+                </div>
+            </div>
+        </div>
+        <div class="box-single-team">
+            <div class="box-single-team-content">
+                <h1>Ronan Souza</h1>
                 <h3>Developer Full-Stack</h3>
                 <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum

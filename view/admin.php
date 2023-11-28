@@ -37,7 +37,7 @@ $nome = $_SESSION['usuario']['nome'];
 <div class="main-cta">
     <article class="main-cta-banner">
         <div class="main-cta-banner-spacer">
-            <p>Olá, <?php echo $nome; ?><br>Seja bem-vindo</p>
+            <p>Olá, <?php echo ucfirst($nome); ?><br>Seja bem-vindo(a)</p>
             <div class="col-md-12">
                 <div class="card-body font-weight-bold">
                     <div class="form-group main-cta-banner-busca">
@@ -90,8 +90,8 @@ $nome = $_SESSION['usuario']['nome'];
 </article>
 -->
 
-<section class="main_optin">
-    <div class="main_optin_content">
+<section style="background-color: #666666" class="main_optin">
+    <div  class="main_optin_content">
         <header>
             <h1>Ferramentas de Administrador
             </h1>
@@ -105,51 +105,10 @@ $nome = $_SESSION['usuario']['nome'];
 </section>
 
 
-<section class="main-cursos">
-    <div class="main-cursos-content" id="news">
-        <header>
-            <h2>Biblioteca de Cursos e Livros</h2>
-        </header>
-        <div class="box-cursos" id="app">
-            <div class="box-cursos-content">
-
-                <div class="box-single-cursos-content-links">
-                    <p>
-
-                        Indicamos alguns cursos e livros para você iniciar sua carreira na tecnologia! <br>
-                        <li><a href="https://skillsforall.com" target="_blank" rel="external" style="color:
-                             rgb(4, 185, 65);">Cursos da Cisco</a></li>
-                        <li><a href="https://udemy.com" target="_blank" rel="external" style="color:
-                             rgb(186,85,211);">Cursos da udemy</a></li>
-                        <li><a href="https://web.dio.me/" target="_blank" rel="external" style="color: rgb(24, 130,
-                             250);">DIO.</a></li>
-                        <li><a href="https://workover.com.br/" target="_blank" rel="external" style="color:
-                             rgb(109, 5, 66);">Workover</a></li>
-                        <li><a href="https://www.cursoemvideo.com/cursos/" target="_blank" rel="external"
-                               style="color:
-                              rgb(38, 6, 218);">Curso em Video</a></li>
-                        <li><a href="https://stg.ada.tech/sou-aluno" target="_blank" rel="external" style="color:
-                                 rgb(4, 78, 1);">Ada-Tech</a></li>
-                        <br>
-                        <li><a href="https://drive.google.com/drive/folders/1AnNVHVEhmznbk9azvJSLPNATw23-uca5"
-                               target="_blank" rel="external">
-                                Livros<i class="fa fa-arrow-right"></i></a></li>
-                        <br><br>
-
-                        O maior inimigo do conhecimento não é a ignorância, é a ilusão do conhecimento. <br> –
-                        <i>Stephen Hawking!</i>
-                    </p>
-                </div>
-                <div class="box-single-cursos-content-imagem">
-                    <img src="../assets/img/img-team.svg" alt="team">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
 <section class="main-noticias">
+    <header>
+        <h2>Notícias Recentes</h2>
+    </header>
     <div class="main-noticias-content" id="news">
         <div class="box-noticias">
             <div class="box-noticias-content">
@@ -270,6 +229,24 @@ $nome = $_SESSION['usuario']['nome'];
         <div class="box-single-team">
             <div class="box-single-team-content">
                 <h1>Pedro Santana</h1>
+                <h3>Developer Full-Stack</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
+                    laborum
+                    id
+                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
+                    officia corporis voluptatum rem ut perspiciatis. Fuga?
+                </p>
+                <div class="box-single-medias">
+                    <i class="fa fa-2x fa-instagram"></i>
+                    <i class="fa fa-2x fa-github"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="box-single-team">
+            <div class="box-single-team-content">
+                <h1>Ronan Souza</h1>
                 <h3>Developer Full-Stack</h3>
                 <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum

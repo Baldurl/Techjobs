@@ -65,7 +65,7 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
                     </li>
                 <?php } else if ($perfil_id == 2) { ?>
                     <li class="item-menu">
-                        <a href="../usuarios/empresa/index.php">
+                        <a href="../usuarios/candidato/index.php">
                             <span class="icon"><i class="bi bi-person"></i></span>
                             <span class="txt-link">Perfil</span>
                         </a>

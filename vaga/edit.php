@@ -106,7 +106,7 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
                                 <div>
                                     <label for="tipo">Tipo: </label>
                                     <select name="tipo">
-                                        <option value="<?= htmlspecialchars($vaga['tipo']) ?>"><?= htmlspecialchars($vaga['tipo']) ?></option>
+                                        <option value="<?= htmlspecialchars($vaga['tipo']) ?>"></option>
                                         <option value="Efetivo/CLT">Efetivo/CLT</option>
                                         <option value="Estágio">Estágio</option>
                                         <option value="Trainee">Trainee</option>

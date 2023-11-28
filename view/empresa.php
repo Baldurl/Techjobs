@@ -36,14 +36,28 @@ $nome = $_SESSION['usuario']['nome'];
 <div class="main-cta">
     <article class="main-cta-banner">
         <div class="main-cta-banner-spacer">
-            <p>Olá, <?php echo $nome; ?><br>Seja bem-vindo(a)</p>
+            <p>Olá, <?php echo ucfirst($nome); ?><br>Seja bem-vindo(a)</p>
             <div class="col-md-12">
                 <div class="card-body font-weight-bold">
                     <div class="form-group main-cta-banner-busca">
                             <section class="section__btn">
                                 <a class="btn-orange" href="../vaga/create.php">Publicar nova vaga</a>
                                 <a class="btn" href="../vaga/index.php">Consulte suas vagas </a>
+
                             </section>
+                        <section class="main_optin_empresa">
+                            <div class="main_optin_content_empresa">
+                                <header>
+                                    <h1>Receba conteúdos exclusivos e alavanque suas vagas!<br> Veja os benefícios e faça já sua assinatura
+                                    </h1>
+                                </header>
+                                <article>
+                                    <header>
+                                        <a href="#" class="btn-orange">Assinatura premium para empresas</a>
+                                    </header>
+                                </article>
+                            </div>
+                        </section>
                     </div>
                 </div>
             </div>
@@ -68,19 +82,7 @@ $nome = $_SESSION['usuario']['nome'];
     </div>
 </article>
 -->
-<section class="main_optin_footer">
-    <div class="main_optin_footer_content">
-        <header>
-            <h1>Receba conteúdos exclusivos e alavanque suas vagas!<br> Veja os benefícios e faça já sua assinatura
-            </h1>
-        </header>
-        <article>
-            <header>
-                <a href="#" class="btn-orange">Assinatura premium para empresas</a>
-            </header>
-        </article>
-    </div>
-</section>
+
 
 <!--    <article class="opt-in">
         <div class="opt-in-content">
@@ -96,7 +98,7 @@ $nome = $_SESSION['usuario']['nome'];
 
 <section class="main-noticias">
         <header>
-            <h2>Notícias em destaque</h2>
+            <h2>Notícias recentes</h2>
         </header>
     <div class="main-noticias-content" id="news">
 

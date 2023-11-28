@@ -37,7 +37,7 @@ $nome = $_SESSION['usuario']['nome'];
 <div class="main-cta">
     <article class="main-cta-banner">
         <div class="main-cta-banner-spacer">
-            <p>Olá, <?php echo $nome; ?><br>Seja bem-vindo(a)</p>
+            <p>Olá, <?php echo ucfirst($nome); ?><br>Seja bem-vindo(a)</p>
             <div class="col-md-12">
                 <div class="card-body font-weight-bold">
                     <div class="form-group main-cta-banner-busca">
@@ -157,7 +157,10 @@ $nome = $_SESSION['usuario']['nome'];
 </section>
 
 
-<section class="main-noticias">
+<section class="main-noticias">[
+    <header>
+        <h2>Notícias Recentes</h2>
+    </header>
     <div class="main-noticias-content" id="news">
         <div class="box-noticias">
             <div class="box-noticias-content">
@@ -228,117 +231,6 @@ $nome = $_SESSION['usuario']['nome'];
 </section>
 
 <div class="clear"></div>
-
-
-<section class="main-team">
-    <div class="main-team-header">
-        <h2>Nossa equipe</h2>
-
-    </div>
-
-
-    <div class="main-team-box app">
-
-        <div class="box-single-team">
-            <div class="box-single-team-content">
-                <h1>Lucas Caio</h1>
-                <h3>Developer front-end</h3>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
-                    laborum
-                    id
-                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
-                    officia corporis voluptatum rem ut perspiciatis. Fuga?
-                </p>
-                <div class="box-single-medias">
-                    <i class="fa fa-2x fa-facebook"></i>
-                    <i class="fa fa-2x fa-instagram"></i>
-                    <i class="fa fa-2x fa-github"></i>
-                </div>
-            </div>
-        </div>
-        <div class="box-single-team">
-            <div class="box-single-team-content">
-                <h1>Jordan de Carvalho</h1>
-                <h3>Developer back-end</h3>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
-                    laborum
-                    id
-                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
-                    officia corporis voluptatum rem ut perspiciatis. Fuga?
-                </p>
-                <div class="box-single-medias">
-                    <i class="fa fa-2x fa-instagram"></i>
-                    <i class="fa fa-2x fa-github"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="box-single-team">
-            <div class="box-single-team-content">
-                <h1>Pedro Santana</h1>
-                <h3>Developer Full-Stack</h3>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
-                    laborum
-                    id
-                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
-                    officia corporis voluptatum rem ut perspiciatis. Fuga?
-                </p>
-                <div class="box-single-medias">
-                    <i class="fa fa-2x fa-instagram"></i>
-                    <i class="fa fa-2x fa-github"></i>
-                </div>
-            </div>
-        </div>
-
-
-        <!--   LINHA ANIMADA PARA SEPARAR CONTEÚDO
-        <div class="box-single-team">
-            <div data-aos="fade-up">
-                <div class="line"></div>
-                <div class="clear"></div>
-            </div>
-        </div>
-         FIM DA LINHA-->
-
-    </div>
-
-</section>
-
-
-<section class="grupo-icones">
-
-    <div class="box-icones">
-        <div class="box-single-icones">
-            <i class="fa fa-5x fa-star"></i>
-            <h3>55</h3>
-            <p>prêmios</p>
-        </div>
-        <div class="box-single-icones">
-            <i class="fa fa-5x fa-heart-o"></i>
-            <h3>+180</h3>
-            <p>clientes felizes</p>
-        </div>
-        <div class="box-single-icones">
-            <i class="fa fa-5x fa-connectdevelop" aria-hidden="true"></i>
-            <h3>20</h3>
-            <p>anos de existênçia</p>
-        </div>
-        <div class="box-single-icones">
-            <i class="fa fa-5x fa-bolt" aria-hidden="true"></i>
-            <h3>24/24</h3>
-            <p>horas de trabalho</p>
-        </div>
-        <div class="box-single-icones">
-            <i class="fa fa-5x fa-map-marker"></i>
-            <h3>+3</h3>
-            <p>Agencias espalhadas pelo mundo</p>
-        </div>
-
-    </div>
-</section>
 
 <!-- INICIO DOBRA RODAPÉ -->
 

@@ -1090,7 +1090,39 @@ div.main-team-box {
 }
 
 
-/*FIM OPT-IN*/
+/*OPTIN EMPRESA*/
+
+.main_optin_empresa {
+    width: 100%;
+}
+
+.main_optin_content_empresa {
+    max-width: 1300px;
+    padding: 40px 0;
+    text-align: center;
+    color: #ffffff;
+    margin: 0 auto;
+}
+
+.main_optin_content_empresa header h1 {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+}
+
+.main_optin_content_empresa .btnn {
+    color: #fff;
+    background-color: #87b1fd;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+.main_optin_content_empresa .btnn:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+
+/*FIM OPT-IN EMPRESA*/
 
 
 /*OPT-IN*/

@@ -6,16 +6,14 @@ require_once __DIR__ . '/../auth/permissoes.php';
 require_once __DIR__ . '/../src/dao/vagadao.php';
 require_once __DIR__ . '/../src/dao/usuario_has_vagadao.php';
 
-$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS); 
+$vaga_id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
 $dao = new VagaDAO();
-$vaga = $dao->getById($id); 
+$vaga = $dao->getById($vaga_id);
 
 $dao = new VagaDAO();
 $empresa = $dao->getUsuario('$id', '$nome');
 
-$dao = new UsuarioDAO();
-$usuarios = $dao->getAll();
-$quantidadeRegistros = count($usuarios);
+
 
 
 if (isset($_SESSION['usuario'])) {
@@ -31,6 +29,7 @@ if (isset($_SESSION['usuario'])) {
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/button.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 <?php if ($perfil_id == 2) { ?>
@@ -85,8 +84,10 @@ if (isset($_SESSION['usuario'])) {
                                         </div>
                                         <div class="form-group">
                                             <label for="arquivo">Enviar currículo</label>
-                                            <input name="arquivo" type="file" class="form-control" id="arquivo">
+                                            <input accept="application/pdf" name="arquivo" type="file"
+                                                   class="form-control" id="arquivo">
                                         </div>
+                                        <!-- Criar condição de erro caso não for um pdf -->
 
 
                                         <button type="submit" class="btn btn-primary btn-lg">Candidatar</button>
@@ -102,9 +103,8 @@ if (isset($_SESSION['usuario'])) {
     </section>
 
 <?php } else if ($perfil_id == 1 || 3) {
-        if (($_SESSION['usuario']) != $vaga['usuario_id'] ) {
-                header ('location: candidatar.php?testeeeeeeee');
-        }
+    if (($_SESSION['usuario']) != $vaga['usuario_id']) {
+    }
 
 
     ?>
@@ -132,6 +132,19 @@ if (isset($_SESSION['usuario'])) {
                         <?php echo '<strong>Descrição: </strong> ' . $vaga[3] ?>
                     </p>
                 </div>
+                <tr>
+                    <td class="td__operacao">
+                        <a class="btnalterar"
+                           href="edit.php?id=<?= $vaga['id']; ?>">Alterar</a>
+                        <a class="btnexcluir"
+                           href="delete.php?id=<?= $vaga['id']; ?>"
+                           onclick="return confirm('Deseja confirmar a operação?');">Excluir</a>
+                    </td>
+                </tr>
+
+
+
+
                 <div class="py-3 text-left" style="margin: 40px auto">
                     <h3>Usuários cadastrados nessa vaga: </h3>
                 </div>
@@ -145,13 +158,10 @@ if (isset($_SESSION['usuario'])) {
 
                         </tr>
                         </thead>
-
                         <tbody>
-
                         <?php
-
                         $dao = new Usuario_has_vagaDAO();
-                        $usuarios = $dao->getAllUsuarios('$usuario_id','$vaga_id');
+                        $usuarios = $dao->getAllUsuarios('$usuario_id', $vaga_id);
 
                         foreach ($usuarios as $usuario) {
                             echo "<tr>";
@@ -160,8 +170,6 @@ if (isset($_SESSION['usuario'])) {
                             echo "<td>" . $usuario[3] . "</td>";
                             echo "</tr>";
                         }
-
-
                         ?>
                         </tbody>
                     </table>

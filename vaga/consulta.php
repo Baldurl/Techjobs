@@ -107,10 +107,10 @@ $usuario = $dao->getByUsuario('$usuario');*/
                         </p>
 
 
-                        <span class="btn-orange">
+
                                     <a href="candidatar.php?id=<?= $vaga['id'] ?>"><button type="submit"
-                                                                                           class="btn-primary btn-lg">Ver detalhes</button></a>
-                                </span>
+                                                                                           class="btn-orange">Ver detalhes</button></a>
+
 
                     </div>
                 </article>

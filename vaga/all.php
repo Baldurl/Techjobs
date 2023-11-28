@@ -27,12 +27,12 @@ foreach ($vagas
 
     <article>
         <div class="icon"><i class="fa fa-3x fa-angellist"></i></div>
-        <?php echo '<strong>Empresa: </strong>' . $usuario[1] ?><br>
+        <?php echo '<strong>Empresa: </strong>' . ucfirst($usuario[1]) ?><br>
         <div class="content" title="<?= $vaga['descricao'] ?>">
-            <?php echo '<strong>Vaga: </strong>' . $vaga['nome'] ?><br>
+            <?php echo '<strong>Vaga: </strong>' . ucfirst($vaga['nome']) ?><br>
             <p><?php echo '<strong>Tipo: </strong> ' . $vaga['tipo'] ?><br>
                 <?php echo '<strong>Salário: </strong> ' . $vaga['salario'] ?><br>
-                <?php echo '<strong>Descrição: ...</strong> '; ?>
+                <?php echo '<strong>Descrição: [...]</strong> '; ?>
 
 
             </p>

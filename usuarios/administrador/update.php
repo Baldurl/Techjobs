@@ -16,7 +16,7 @@ $result = $dao->update('$id', '$nome', '$email', '$senha', '$perfil');
 
 
 if ($result) {
-    header('location: index.php?update=sucesso!');
+    header('location: index.php?update=sucesso');
 } else {
-    header('location: index.php?update=erro!');
+    header('location: index.php?update=erro');
 }

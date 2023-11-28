@@ -135,7 +135,7 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
 
 
                         <div class="card-information-box">
-                            <span class="card-information-header"><h1>Olá, <?php echo $usuario[1]; ?>!<br>Aqui estão suas informações...</h1></span>
+                            <span class="card-information-header"><h1>Olá, <?php echo ucfirst($usuario[1]); ?>!<br>Aqui estão suas informações...</h1></span>
                             <!--INFORMAÇÕES DA CONTA DO USUÁRIO-->
 
                             <div class="card-information-box-text">
