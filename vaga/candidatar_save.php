@@ -20,20 +20,24 @@ $vaga = $dao->getById($vaga_id);
 try {
     $dao = new Usuario_has_vagaDAO();
     $candidatado = $dao->candidatar($usuario_id, $vaga_id);
+    header ('location: ../view/home');
     
 } catch(\PDOException $e) {
     echo 'Usuario ja participa dessa seleção';
-}
-// var_dump($candidatado);exit;
-// var_dump($vaga_id); exit;
+    
+    ?>  
+    
+    <a href="../view/home.php">
+<button type="button" class="btn btn-primary btn-lg ">
+    Voltar
+</button>
+    </a>
+    <?php } ?>
 
-/*if ($candidatado) {
-    header ('Location: candidatar.php?candidatado=sucesso');
 
-} else {
-    header ('Location: candidatar.php?candidatado=erro');
 
-}*/
+
+
 
 
 

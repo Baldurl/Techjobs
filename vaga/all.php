@@ -38,10 +38,12 @@ foreach ($vagas
             </p>
             <span>
                <a href="../vaga/candidatar.php?id=<?= $vaga['id'] ?>">
-
-                    <button type="submit"
-                            class="btn-orange">Ver detalhes</button>
-
+                    <button type="submit" class="btn-orange">Ver detalhes
+                    </button>
+               </a>
+               <a href="../vaga/avaliar.php?id=<?= $vaga['id'] ?>">
+                    <button type="submit" class="btn">Avaliar vaga
+                    </button>
                </a>
             </span>
         </div>

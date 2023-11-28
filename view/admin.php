@@ -62,6 +62,19 @@ $nome = $_SESSION['usuario']['nome'];
         </div>
     </article>
 </div>
+<section class="main_optin">
+    <div  class="main_optin_content">
+        <header>
+            <h1>Ferramentas de Administrador
+            </h1>
+        </header>
+        <article>
+            <header>
+                <a href="../usuarios/administrador/index.php" class="btn-blue">Funções</a>
+            </header>
+        </article>
+    </div>
+</section>
 
 <section class="main-blog">
 
@@ -90,19 +103,7 @@ $nome = $_SESSION['usuario']['nome'];
 </article>
 -->
 
-<section style="background-color: #666666" class="main_optin">
-    <div  class="main_optin_content">
-        <header>
-            <h1>Ferramentas de Administrador
-            </h1>
-        </header>
-        <article>
-            <header>
-                <a href="../usuarios/administrador/index.php" class="btn-blue">Funções</a>
-            </header>
-        </article>
-    </div>
-</section>
+
 
 
 <section class="main-noticias">
