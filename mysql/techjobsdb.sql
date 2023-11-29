@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Tempo de geração: 29/11/2023 às 11:01
--- Versão do servidor: 8.0.30
--- Versão do PHP: 8.1.10
+-- Host: 127.0.0.1
+-- Tempo de geração: 28-Nov-2023 às 13:57
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,66 +24,57 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `assinatura`
+-- Estrutura da tabela `assinatura`
 --
 
 CREATE TABLE `assinatura` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `periodo` varchar(55) NOT NULL,
   `valor` decimal(8,2) NOT NULL,
   `data` date NOT NULL,
-  `usuario_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `usuario_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `avaliacao`
+-- Estrutura da tabela `avaliacao`
 --
 
 CREATE TABLE `avaliacao` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `feedback` varchar(255) NOT NULL,
-  `usuario_id` int DEFAULT NULL,
-  `vaga_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Despejando dados para a tabela `avaliacao`
---
-
-INSERT INTO `avaliacao` (`id`, `nome`, `feedback`, `usuario_id`, `vaga_id`) VALUES
-(1, 'Sobre a vaga de informática ', '\r\nadalosdloasdkoaskdoaskdoaksodkaosd', NULL, NULL),
-(2, 'Sobre a vaga de informática ', 'SOBRE A VAGA DE INFORMÁTICA , SOBRE A VAGA DE INFORMÁTICA SOBRE A VAGA DE INFORMÁTICA ,SOBRE A VAGA DE INFORMÁTICA ,SOBRE A VAGA DE INFORMÁTICA ', NULL, NULL),
-(3, 'Sobre a vaga de informática ', 'SOBRE A VAGA DE INFORMÁTICA , SOBRE A VAGA DE INFORMÁTICA SOBRE A VAGA DE INFORMÁTICA ,SOBRE A VAGA DE INFORMÁTICA ,SOBRE A VAGA DE INFORMÁTICA ', NULL, NULL);
+  `usuario_id` int(11) DEFAULT NULL,
+  `vaga_id` int(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `pagamento`
+-- Estrutura da tabela `pagamento`
 --
 
 CREATE TABLE `pagamento` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `meio_pagamento` varchar(50) NOT NULL,
   `valor` varchar(40) NOT NULL,
-  `usuario_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `usuario_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `perfil`
+-- Estrutura da tabela `perfil`
 --
 
 CREATE TABLE `perfil` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `perfil`
+-- Extraindo dados da tabela `perfil`
 --
 
 INSERT INTO `perfil` (`id`, `nome`) VALUES
@@ -94,11 +85,11 @@ INSERT INTO `perfil` (`id`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuario`
+-- Estrutura da tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `nome` varchar(40) DEFAULT NULL,
   `razao_social` varchar(50) DEFAULT NULL,
   `cpf` varchar(20) DEFAULT NULL,
@@ -117,11 +108,11 @@ CREATE TABLE `usuario` (
   `rua` varchar(30) DEFAULT NULL,
   `complemento` varchar(20) DEFAULT NULL,
   `curriculo` varchar(100) NOT NULL,
-  `perfil_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `perfil_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `razao_social`, `cpf`, `cnpj`, `senha`, `email`, `sexo`, `ddi`, `ddd`, `numero`, `cep`, `cidade`, `logradouro`, `bairro`, `lote`, `rua`, `complemento`, `curriculo`, `perfil_id`) VALUES
@@ -137,16 +128,16 @@ INSERT INTO `usuario` (`id`, `nome`, `razao_social`, `cpf`, `cnpj`, `senha`, `em
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuario_has_vaga`
+-- Estrutura da tabela `usuario_has_vaga`
 --
 
 CREATE TABLE `usuario_has_vaga` (
-  `usuario_id` int DEFAULT NULL,
-  `vaga_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `usuario_id` int(11) DEFAULT NULL,
+  `vaga_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `usuario_has_vaga`
+-- Extraindo dados da tabela `usuario_has_vaga`
 --
 
 INSERT INTO `usuario_has_vaga` (`usuario_id`, `vaga_id`) VALUES
@@ -154,17 +145,16 @@ INSERT INTO `usuario_has_vaga` (`usuario_id`, `vaga_id`) VALUES
 (49, 15),
 (49, 16),
 (49, 18),
-(49, 19),
 (54, 19);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `vaga`
+-- Estrutura da tabela `vaga`
 --
 
 CREATE TABLE `vaga` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `tipo` varchar(30) NOT NULL,
   `descricao` longtext NOT NULL,
@@ -172,11 +162,11 @@ CREATE TABLE `vaga` (
   `carga_horaria` varchar(100) NOT NULL,
   `data_publicacao` date NOT NULL,
   `data_expiracao` date NOT NULL,
-  `usuario_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `usuario_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `vaga`
+-- Extraindo dados da tabela `vaga`
 --
 
 INSERT INTO `vaga` (`id`, `nome`, `tipo`, `descricao`, `salario`, `carga_horaria`, `data_publicacao`, `data_expiracao`, `usuario_id`) VALUES
@@ -191,35 +181,35 @@ INSERT INTO `vaga` (`id`, `nome`, `tipo`, `descricao`, `salario`, `carga_horaria
 --
 
 --
--- Índices de tabela `assinatura`
+-- Índices para tabela `assinatura`
 --
 ALTER TABLE `assinatura`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FKUsuario_3` (`usuario_id`);
 
 --
--- Índices de tabela `avaliacao`
+-- Índices para tabela `avaliacao`
 --
 ALTER TABLE `avaliacao`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_vaga` (`vaga_id`);
 
 --
--- Índices de tabela `pagamento`
+-- Índices para tabela `pagamento`
 --
 ALTER TABLE `pagamento`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FKUsuario_2` (`usuario_id`);
 
 --
--- Índices de tabela `perfil`
+-- Índices para tabela `perfil`
 --
 ALTER TABLE `perfil`
   ADD PRIMARY KEY (`id`),
   ADD KEY `nome` (`nome`) USING BTREE;
 
 --
--- Índices de tabela `usuario`
+-- Índices para tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`),
@@ -231,7 +221,7 @@ ALTER TABLE `usuario`
   ADD KEY `nome` (`nome`) USING BTREE;
 
 --
--- Índices de tabela `usuario_has_vaga`
+-- Índices para tabela `usuario_has_vaga`
 --
 ALTER TABLE `usuario_has_vaga`
   ADD UNIQUE KEY `fk_unique_pk` (`usuario_id`,`vaga_id`),
@@ -239,89 +229,89 @@ ALTER TABLE `usuario_has_vaga`
   ADD KEY `FKVaga` (`vaga_id`);
 
 --
--- Índices de tabela `vaga`
+-- Índices para tabela `vaga`
 --
 ALTER TABLE `vaga`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FKUsuario` (`usuario_id`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `assinatura`
 --
 ALTER TABLE `assinatura`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `avaliacao`
 --
 ALTER TABLE `avaliacao`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `pagamento`
 --
 ALTER TABLE `pagamento`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `perfil`
 --
 ALTER TABLE `perfil`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT de tabela `vaga`
 --
 ALTER TABLE `vaga`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- Restrições para tabelas despejadas
+-- Restrições para despejos de tabelas
 --
 
 --
--- Restrições para tabelas `assinatura`
+-- Limitadores para a tabela `assinatura`
 --
 ALTER TABLE `assinatura`
   ADD CONSTRAINT `FKUsuario_3` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`);
 
 --
--- Restrições para tabelas `avaliacao`
+-- Limitadores para a tabela `avaliacao`
 --
 ALTER TABLE `avaliacao`
   ADD CONSTRAINT `fk_vaga` FOREIGN KEY (`vaga_id`) REFERENCES `vaga` (`id`);
 
 --
--- Restrições para tabelas `pagamento`
+-- Limitadores para a tabela `pagamento`
 --
 ALTER TABLE `pagamento`
   ADD CONSTRAINT `FKUsuario_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`);
 
 --
--- Restrições para tabelas `usuario`
+-- Limitadores para a tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`perfil_id`) REFERENCES `perfil` (`id`);
 
 --
--- Restrições para tabelas `usuario_has_vaga`
+-- Limitadores para a tabela `usuario_has_vaga`
 --
 ALTER TABLE `usuario_has_vaga`
   ADD CONSTRAINT `FKUsuario_4` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FKVaga` FOREIGN KEY (`vaga_id`) REFERENCES `vaga` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Restrições para tabelas `vaga`
+-- Limitadores para a tabela `vaga`
 --
 ALTER TABLE `vaga`
   ADD CONSTRAINT `FKUsuario` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
