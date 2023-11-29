@@ -449,7 +449,7 @@ nav.menu {
 .main-blog .main-blog-content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: 20px;
 
 }
@@ -457,7 +457,7 @@ nav.menu {
 .main-blog .main-blog-content1 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: 20px;
 
 }

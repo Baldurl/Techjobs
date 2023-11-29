@@ -45,8 +45,8 @@ class  AvaliacaoDAO
         $vaga_id = filter_input(INPUT_POST, 'vaga_id', FILTER_SANITIZE_NUMBER_INT);
 
 
-        $query = "INSERT INTO usuario (nome, razao_social, usuario_id, vaga_id) 
-            VALUES (:nome, :razao_social, :usuario_id, :vaga_id);";
+        $query = "INSERT INTO avaliacao (nome, feedback, usuario_id, vaga_id) 
+            VALUES (:nome, :feedback, :usuario_id, :vaga_id);";
 
 
         $stmt = $this->dbh->prepare($query);

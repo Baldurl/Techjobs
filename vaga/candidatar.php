@@ -87,10 +87,29 @@ if (isset($_SESSION['usuario'])) {
                                             <input accept="application/pdf" name="arquivo" type="file"
                                                    class="form-control" id="arquivo">
                                         </div>
+
+                                        <?php if (isset($_GET['candidatar']) && $_GET['candidatar'] == 'erro2') { ?>
+                                            <div style="color: darkred; font-size: 1.2rem"> Você já participa dessa vaga
+                                            </div>
+                                        <?php } ?>
+
+                                        <?php if (isset($_GET['candidatar']) && $_GET['candidatar'] == 'sucesso') { ?>
+                                            <div style="color: lightgreen; font-size: 1.2rem"> Você se candidatou nessa vaga, espere ser chamado!
+                                            </div>
+                                        <?php } ?>
                                         <!-- Criar condição de erro caso não for um pdf -->
 
 
-                                        <button type="submit" class="btn btn-primary btn-lg">Candidatar</button>
+                                        <div class="update-group-btns">
+                                            <button type="submit" class="btn btn-primary btn-orange ">Confirmar
+                                            </button>
+
+                                            <a href="../view/home.php">
+                                                <button type="button" class="btn btn-primary btn-lg ">
+                                                    Voltar
+                                                </button>
+                                            </a>
+                                        </div>
                                     </form>
                                 </div>
                             </div>

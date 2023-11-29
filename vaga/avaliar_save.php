@@ -9,7 +9,7 @@ $resultado = $dao->insert('$nome', '$feedback', '$usuario_id', 'vaga_id');
 
 if ($resultado) {
 
-    header('location: index.php?avaiar=sucesso');
+    header('location: candidatar.php?avaliar=sucesso');
 
 } else {
     header('location: index.php?avaliar=erro');

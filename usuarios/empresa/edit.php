@@ -127,39 +127,6 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
                 <div class="col-md-12">
                     <div class="card-body font-weight-bold card-information-main">
 
-                        <div class="card-information-box">
-                            <span class="card-information-header"><h1>Suas informações:</h1></span>
-                            <!--INFORMAÇÕES DA CONTA DO USUÁRIO-->
-
-                            <div class="card-information-box-text">
-                                <div><h2>ID: </h2></div>
-                                <div><h2><?php echo $usuario[0]; ?></h2></div>
-                            </div>
-
-                            <div class="card-information-box-text">
-                                <div><h2>Nome: </h2></div>
-                                <div><h2><?php echo $usuario[1]; ?></h2></div>
-                            </div>
-                            <div class="card-information-box-text">
-                                <div><h2>Razão social: </h2></div>
-                                <div><h2><?php echo $usuario[2]; ?></h2></div>
-                            </div>
-
-
-                            <div class="card-information-box-text">
-                                <div><h2>Cnpj: </h2></div>
-                                <div><h2><?php echo $usuario[4]; ?></h2></div>
-                            </div>
-
-                            <div class="card-information-box-text">
-                                <div><h2>Senha: </h2></div>
-                                <div><h2><?php echo $usuario[5]; ?></h2></div>
-                            </div>
-
-                            <div class="card-information-box-text">
-                                <div><h2>Email: </h2></div>
-                                <div><h2><?php echo $usuario[6]; ?></h2></div>
-                            </div>
 
 
                         <div class="card-information-box">

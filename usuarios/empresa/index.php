@@ -141,6 +141,7 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
                                 <div><h2>Nome: </h2></div>
                                 <div><h2><?php echo $usuario[1]; ?></h2></div>
                             </div>
+
                             <div class="card-information-box-text">
                                 <div><h2>Razão social: </h2></div>
                                 <div><h2><?php echo $usuario[2]; ?></h2></div>
@@ -152,10 +153,6 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
                                 <div><h2><?php echo $usuario[4]; ?></h2></div>
                             </div>
 
-                            <div class="card-information-box-text">
-                                <div><h2>Senha: </h2></div>
-                                <div><h2><?php echo $usuario[5]; ?></h2></div>
-                            </div>
 
                             <div class="card-information-box-text">
                                 <div><h2>Email: </h2></div>
