@@ -1,6 +1,24 @@
 <?php
-session_start();
+require_once __DIR__ . "/../auth/validarAcesso.php";
 require_once __DIR__ . "/../layouts/headerLogin.php";
+require_once __DIR__ . "/../src/dao/avaliacaodao.php";
+require_once __DIR__ . "/../src/dao/usuariodao.php";
+require_once __DIR__ . "/../src/dao/vagadao.php";
+
+
+$usuario_id  = $_SESSION['usuario']['id'];
+$dao = new UsuarioDAO();
+$usuario = $dao->getbyId($usuario_id);
+
+$vaga_id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+$dao= new VagaDAO();
+$vaga = $dao->getbyId($vaga_id);
+
+
+
+
+
+
 
 
 ?>
@@ -25,7 +43,7 @@ require_once __DIR__ . "/../layouts/headerLogin.php";
     <div class="card-login">
 
 
-        <form action="avaliar_save.php" method="post">
+        <form action="avaliar_save.php?id=<?= $vaga_id ?>" method="post">
             <div class="container">
                 <div class="row text">
                     <div class="col-md-12">
@@ -39,13 +57,13 @@ require_once __DIR__ . "/../layouts/headerLogin.php";
                                     <label for="feedback">Descrição</label>
                                     <textarea style="width: 100%" name="feedback" id="feedback" cols="30" rows="10">
                                         </textarea>
-
-
+                                    <input type="hidden" name="usuario_id" value="<?= $usuario_id ?>">
                                 </div>
                             </div>
+                            <button type="submit" class=" btn-primary btn-orange">Confirmar</button>
+
                         </div>
 
-                        <button type="submit" class=" btn-primary btn-orange">Confirmar</button>
                     </div>
                 </div>
         </form>

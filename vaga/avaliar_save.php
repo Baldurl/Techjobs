@@ -2,16 +2,22 @@
 session_start();
 require_once __DIR__ . '/../src/database/conexao.php';
 require_once __DIR__ . '/../src/dao/avaliacaodao.php';
+require_once __DIR__ . '/../src/dao/usuariodao.php';
+require_once __DIR__ . '/../src/dao/vagadao.php';
 
 
-$dao = new AvaliacaoDAO();
-$resultado = $dao->insert('$nome', '$feedback', '$usuario_id', 'vaga_id');
+$vaga_id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+$dao = new VagaDAO();
+$vaga = $dao->getById($vaga_id);
 
-if ($resultado) {
 
-    header('location: candidatar.php?avaliar=sucesso');
+try {
+    $dao = new AvaliacaoDAO();
+    $resultado = $dao->insert('$nome', '$feedback', '$usuario_id', $vaga_id);
+    header ('location: ../vaga/candidatar.php?id='.$vaga_id.'&avaliar=sucesso');
 
-} else {
-    header('location: index.php?avaliar=erro');
+} catch(\PDOException $e) {
+    header('location: ../vaga/candidatar.php?id=' . $vaga_id . '&avaliar=erro2');
 }
+
 

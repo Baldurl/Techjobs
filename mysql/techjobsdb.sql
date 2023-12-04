@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 29/11/2023 às 11:01
+-- Tempo de geração: 04/12/2023 às 10:30
 -- Versão do servidor: 8.0.30
 -- Versão do PHP: 8.1.10
 
@@ -33,7 +33,7 @@ CREATE TABLE `assinatura` (
   `valor` decimal(8,2) NOT NULL,
   `data` date NOT NULL,
   `usuario_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------
 
@@ -47,16 +47,14 @@ CREATE TABLE `avaliacao` (
   `feedback` varchar(255) NOT NULL,
   `usuario_id` int DEFAULT NULL,
   `vaga_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Despejando dados para a tabela `avaliacao`
 --
 
 INSERT INTO `avaliacao` (`id`, `nome`, `feedback`, `usuario_id`, `vaga_id`) VALUES
-(1, 'Sobre a vaga de informática ', '\r\nadalosdloasdkoaskdoaskdoaksodkaosd', NULL, NULL),
-(2, 'Sobre a vaga de informática ', 'SOBRE A VAGA DE INFORMÁTICA , SOBRE A VAGA DE INFORMÁTICA SOBRE A VAGA DE INFORMÁTICA ,SOBRE A VAGA DE INFORMÁTICA ,SOBRE A VAGA DE INFORMÁTICA ', NULL, NULL),
-(3, 'Sobre a vaga de informática ', 'SOBRE A VAGA DE INFORMÁTICA , SOBRE A VAGA DE INFORMÁTICA SOBRE A VAGA DE INFORMÁTICA ,SOBRE A VAGA DE INFORMÁTICA ,SOBRE A VAGA DE INFORMÁTICA ', NULL, NULL);
+(27, 'Essa vaga em back-end é muito boa!', 'A vaga atendeu a minha necessidade, empresa fantástica, profissionais muito bem qualificados.', 49, 15);
 
 -- --------------------------------------------------------
 
@@ -69,7 +67,7 @@ CREATE TABLE `pagamento` (
   `meio_pagamento` varchar(50) NOT NULL,
   `valor` varchar(40) NOT NULL,
   `usuario_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------
 
@@ -80,7 +78,7 @@ CREATE TABLE `pagamento` (
 CREATE TABLE `perfil` (
   `id` int NOT NULL,
   `nome` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Despejando dados para a tabela `perfil`
@@ -118,7 +116,7 @@ CREATE TABLE `usuario` (
   `complemento` varchar(20) DEFAULT NULL,
   `curriculo` varchar(100) NOT NULL,
   `perfil_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Despejando dados para a tabela `usuario`
@@ -131,8 +129,7 @@ INSERT INTO `usuario` (`id`, `nome`, `razao_social`, `cpf`, `cnpj`, `senha`, `em
 (49, 'laila', '', '07227669101', '', '1234', 'laila@email.com', NULL, '55', '61', '93333-3333', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 2),
 (51, 'Adidas', 'adidas', NULL, '111.111.111/1111', '123', 'adidas@email.com', NULL, NULL, '61', '91111-1111', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 3),
 (52, 'Nike', 'nike', NULL, '222.222.222/2222', '123', 'nike@email.com', NULL, NULL, '61', '92222-2222', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 3),
-(53, 'ifoood', 'ifood', NULL, '22.222.222/0001-22', '0123', 'ifood@email.com', NULL, NULL, '61', '91234-1234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 3),
-(54, 'pedro', NULL, '111111111-10', NULL, '123', 'pedro@email.com', NULL, NULL, '61', '90123-4567', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 1);
+(53, 'ifoood', 'ifood', NULL, '22.222.222/0001-22', '0123', 'ifood@email.com', NULL, NULL, '61', '91234-1234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 3);
 
 -- --------------------------------------------------------
 
@@ -143,7 +140,7 @@ INSERT INTO `usuario` (`id`, `nome`, `razao_social`, `cpf`, `cnpj`, `senha`, `em
 CREATE TABLE `usuario_has_vaga` (
   `usuario_id` int DEFAULT NULL,
   `vaga_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Despejando dados para a tabela `usuario_has_vaga`
@@ -154,8 +151,7 @@ INSERT INTO `usuario_has_vaga` (`usuario_id`, `vaga_id`) VALUES
 (49, 15),
 (49, 16),
 (49, 18),
-(49, 19),
-(54, 19);
+(49, 19);
 
 -- --------------------------------------------------------
 
@@ -173,7 +169,7 @@ CREATE TABLE `vaga` (
   `data_publicacao` date NOT NULL,
   `data_expiracao` date NOT NULL,
   `usuario_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Despejando dados para a tabela `vaga`
@@ -202,7 +198,8 @@ ALTER TABLE `assinatura`
 --
 ALTER TABLE `avaliacao`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_vaga` (`vaga_id`);
+  ADD KEY `fk_vaga` (`vaga_id`),
+  ADD KEY `fk_usuario` (`usuario_id`);
 
 --
 -- Índices de tabela `pagamento`
@@ -259,7 +256,7 @@ ALTER TABLE `assinatura`
 -- AUTO_INCREMENT de tabela `avaliacao`
 --
 ALTER TABLE `avaliacao`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de tabela `pagamento`
@@ -283,7 +280,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `vaga`
 --
 ALTER TABLE `vaga`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Restrições para tabelas despejadas
@@ -299,7 +296,8 @@ ALTER TABLE `assinatura`
 -- Restrições para tabelas `avaliacao`
 --
 ALTER TABLE `avaliacao`
-  ADD CONSTRAINT `fk_vaga` FOREIGN KEY (`vaga_id`) REFERENCES `vaga` (`id`);
+  ADD CONSTRAINT `fk_usuario` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_vaga` FOREIGN KEY (`vaga_id`) REFERENCES `vaga` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Restrições para tabelas `pagamento`

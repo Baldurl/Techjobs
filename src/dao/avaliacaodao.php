@@ -22,12 +22,28 @@ class  AvaliacaoDAO
 
     }
 
-    public function getById($id)
+    public function getById(int $vaga_id)
     {
 
-        $query = "SELECT * FROM avaliacao WHERE id = :id";
+        $query = "SELECT *, avaliacao.id as avaliacao_id ,avaliacao.nome as titulo FROM avaliacao INNER JOIN usuario u on avaliacao.usuario_id = u.id WHERE vaga_id = :vaga_id";
         $stmt = $this->dbh->prepare($query);
-        $stmt->bindParam(":id", $id);
+        $stmt->bindParam(":vaga_id", $vaga_id);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        $this->dbh = null;
+        return $rows;
+    }
+
+    public function getByUsuarioId($usuario_id)
+    {
+
+        $query = "SELECT * 
+                         FROM avaliacao
+                             INNER JOIN usuario on avaliacao.usuario_id = usuario.id
+                              WHERE id = :id";
+
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(":vagaId", $vagaId);
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_BOTH);
 
@@ -36,14 +52,15 @@ class  AvaliacaoDAO
         return $row;
     }
 
-    public function insert($nome, $feedback, $usuario_id, $vaga_id)
+
+
+    public function insert($nome, $feedback,  $usuario_id,   int $vaga_id)
     {
+
 
         $nome = filter_input(INPUT_POST, 'nome');
         $feedback = filter_input(INPUT_POST, 'feedback');
         $usuario_id = filter_input(INPUT_POST, 'usuario_id', FILTER_SANITIZE_NUMBER_INT);
-        $vaga_id = filter_input(INPUT_POST, 'vaga_id', FILTER_SANITIZE_NUMBER_INT);
-
 
         $query = "INSERT INTO avaliacao (nome, feedback, usuario_id, vaga_id) 
             VALUES (:nome, :feedback, :usuario_id, :vaga_id);";
@@ -60,12 +77,14 @@ class  AvaliacaoDAO
         return $result;
     }
 
-    public function update($nome, $feedback): int
+    public function update($id, $nome, $feedback)
     {
+        $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT) ?? 0;
         $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
         $feedback = filter_input(INPUT_POST, 'feedback', FILTER_SANITIZE_EMAIL);
         $query = "UPDATE avaliacao SET nome = :nome, feedback = :feedback WHERE id = :id";
         $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(":id", $id);
         $stmt->bindParam(":nome", $nome);
         $stmt->bindParam(":feedback", $feedback);
         $result = $stmt->execute();

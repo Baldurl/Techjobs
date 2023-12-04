@@ -1322,6 +1322,14 @@ div.main-team-box {
 }
 
 
+.avaliacao-content{
+    border: 1px grey solid;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    padding: 25px;
+}
+
+
 /*
 .menu-mobile {
     display: none;
