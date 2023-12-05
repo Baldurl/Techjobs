@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 05/12/2023 às 04:53
+-- Tempo de geração: 05/12/2023 às 10:07
 -- Versão do servidor: 8.0.30
 -- Versão do PHP: 8.1.10
 
@@ -56,7 +56,8 @@ CREATE TABLE `avaliacao` (
 INSERT INTO `avaliacao` (`id`, `nome`, `feedback`, `usuario_id`, `vaga_id`) VALUES
 (28, 'Essa vaga em Web Design é magnífica', 'Profissionais muito bem qualificados, estou adquirindo muita eficiência e aprendizado.                                        ', 49, 15),
 (30, 'Programa de estágio eficiente', 'Estágio muito bom para quem está começando na área.                    ', 49, 17),
-(32, 'Vaga muito boa para profissionais experientes. ', 'Excelente carga horária e trabalho remoto, sem contar os benefícios inclusos, como os planos de saúde e o vale-refeição.                                       ', 44, 18);
+(32, 'Vaga muito boa para profissionais experientes. ', 'Excelente carga horária e trabalho remoto, sem contar os benefícios inclusos, como os planos de saúde e o vale-refeição.                                       ', 44, 18),
+(33, 'Essa vaga em suporte parece ser promissora!', 'Espero conseguir um emprego com essa empresa que estou de olho a muito tempo, boa sorte pra mim!', 49, 19);
 
 -- --------------------------------------------------------
 
@@ -128,12 +129,13 @@ INSERT INTO `usuario` (`id`, `nome`, `razao_social`, `cpf`, `cnpj`, `senha`, `em
 (1, 'Jordan', NULL, '075-276-691-01', NULL, '123', 'jordanvieiracarvalho@hotmail.com', 'Masculino', '', '61', '998490406', '72251702', 'Ceilândia', NULL, 'QNO 7', '10', 'B', NULL, '', 1),
 (29, 'microsoft', NULL, '1212312312', NULL, '123', 'microsoft@email.com', NULL, NULL, '61', '998490406', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 3),
 (44, 'joao', NULL, '12312312312', NULL, '123', 'joao@email.com', NULL, NULL, '61', '91234-1234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Currículo-Jordan.pdf', 2),
-(49, 'laila', '', '07227669101', '', '1234', 'laila@email.com', NULL, '55', '61', '93333-3333', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Currículo-Jordan.pdf', 2),
+(49, 'Laila', '', '07227669101', '', '123', 'laila@email.com', NULL, '55', '61', '93333-3333', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Currículo-Jordan.pdf', 2),
 (51, 'VagasApp', 'adidas', NULL, '111.111.111/1111', '123', 'vagasapp@email.com', NULL, NULL, '61', '91111-1111', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 3),
 (52, 'Salesjobs', 'nike', NULL, '222.222.222/2222', '123', 'salesjobs@email.com', NULL, NULL, '61', '92222-2222', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 3),
 (53, 'Vert Integradora de TI', 'ifood', NULL, '22.222.222/0001-22', '0123', 'vert@email.com', NULL, NULL, '61', '91234-1234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 3),
 (55, 'maria', NULL, '999999999-99', NULL, '123', 'maria@email.com', NULL, NULL, '61', '99999-9999', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Currículo-Jordan.pdf', 2),
-(56, 'Netvagas', 'Netvagas', '', '12.345.678/0001-00', '123', 'netvagas@email.com', NULL, '55', '61', '97777-7777', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3);
+(56, 'Netvagas', 'Netvagas', '', '12.345.678/0001-00', '123', 'netvagas@email.com', NULL, '55', '61', '97777-7777', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3),
+(58, 'a', '', '075276691-99', '', '123', 'a@email.com', NULL, '55', '61', '998490406', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -153,9 +155,12 @@ CREATE TABLE `usuario_has_vaga` (
 INSERT INTO `usuario_has_vaga` (`usuario_id`, `vaga_id`) VALUES
 (44, 15),
 (44, 18),
+(44, 19),
 (49, 15),
+(49, 17),
 (49, 18),
 (49, 19),
+(49, 21),
 (55, 15);
 
 -- --------------------------------------------------------
@@ -226,11 +231,11 @@ ALTER TABLE `perfil`
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `cpf` (`cpf`) USING BTREE,
-  ADD UNIQUE KEY `cnpj` (`cnpj`),
   ADD KEY `usuarios_ibfk_1` (`perfil_id`),
   ADD KEY `senha` (`senha`) USING BTREE,
-  ADD KEY `nome` (`nome`) USING BTREE;
+  ADD KEY `nome` (`nome`) USING BTREE,
+  ADD KEY `cnpj` (`cnpj`) USING BTREE,
+  ADD KEY `cpf` (`cpf`) USING BTREE;
 
 --
 -- Índices de tabela `usuario_has_vaga`
@@ -261,7 +266,7 @@ ALTER TABLE `assinatura`
 -- AUTO_INCREMENT de tabela `avaliacao`
 --
 ALTER TABLE `avaliacao`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de tabela `pagamento`
@@ -279,7 +284,7 @@ ALTER TABLE `perfil`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT de tabela `vaga`
