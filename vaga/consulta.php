@@ -2,6 +2,7 @@
 
 session_start();
 require_once __DIR__ . '/../src/dao/vagadao.php';
+require_once __DIR__ . '/../src/dao/usuariodao.php';
 
 if (isset($_SESSION['usuario'])) {
     require_once __DIR__ . '/../auth/permissoes.php';
@@ -95,6 +96,7 @@ $usuario = $dao->getByUsuario('$usuario');*/
             <?php foreach ($vagas
 
                            as $vaga) {
+
 
                 $id = $vaga['usuario_id'];
                 $dao = new UsuarioDAO();
