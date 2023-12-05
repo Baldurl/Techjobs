@@ -33,7 +33,12 @@
     <article class="main-cta-banner">
         <div class="main-cta-banner-spacer">
             <p>Conectamos provedores de emprego e candidatos a trabalho</p>
+            <?php if (isset($_GET['msg']) && $_GET['msg'] == 'usuario-delete') { ?>
+                <div style="color: lightgreen; font-size: 1.2rem; text-align: center"> Usuário excluído com sucesso
+                </div>
+            <?php } ?>
             <div class="col-md-12">
+
                 <div class="card-body font-weight-bold">
                     <div class="form-group main-cta-banner-busca">
                         <form action="../vaga/consulta.php" method="POST">
