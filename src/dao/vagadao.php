@@ -1,6 +1,5 @@
 <?php
 
-
 include_once __DIR__ . '/../database/conexao.php';
 
 
@@ -15,7 +14,11 @@ class VagaDAO
 
     public function getAll()
     {
-        $query = "SELECT * FROM vaga";
+        $query = "SELECT vaga.id, vaga.nome, vaga.tipo, vaga.descricao, vaga.salario, vaga.carga_horaria, vaga.data_publicacao, vaga.data_expiracao, vaga.usuario_id,
+       usuario.nome as nome_usuario
+                        FROM vaga
+                                INNER JOIN usuario 
+                                    ON vaga.usuario_id = usuario.id ";
         $stmt = $this->dbh->query($query);
         $rows = $stmt->fetchAll();
         $this->dbh = null;

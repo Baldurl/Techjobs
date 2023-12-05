@@ -38,7 +38,6 @@ if (isset($_SESSION['usuario'])) {
                 <div class="py-3 text-center" style="margin: 40px auto">
                     <h2>Dados da vaga:</h2>
                 </div>
-                <div class="icon"><i class="fa fa-3x fa-angellist"></i></div>
                 <div class="content" title="<?= $vaga[3] ?>">
 
                     <?php
@@ -47,11 +46,15 @@ if (isset($_SESSION['usuario'])) {
                     $usuario = $dao->getById($empresa_id);
                     ?>
 
-                    <?php echo '<strong>Empresa: </strong>' . $usuario[1] ?><br>
-                    <?php echo '<strong>Vaga: </strong>' . $vaga[1] ?><br>
+                    <?php echo '<strong>Empresa: </strong>' . ucfirst($usuario[1]) ?><br>
+                    <?php echo '<strong>Vaga: </strong>' . ucfirst($vaga[1]) ?><br>
                     <p>
-                        <?php echo '<strong>Tipo: </strong> ' . $vaga[2] ?><br>
+                        <?php echo '<strong>Tipo: </strong> ' . ucfirst($vaga[2]) ?><br>
                         <?php echo '<strong>Salário: </strong> ' . $vaga[4] ?><br>
+                        <?php echo '<strong>Data de publicação: </strong> ' . date('d/m/Y', strtotime(($vaga[6]))); ?>
+                        <br>
+                        <?php echo '<strong>Data de expiração: </strong> ' . date('d/m/Y', strtotime(($vaga[7]))); ?>
+                        <br>
                         <?php echo '<strong>Descrição: </strong> ' . $vaga[3] ?>
                     </p>
                 </div>
@@ -120,12 +123,17 @@ if (isset($_SESSION['usuario'])) {
             <article>
 
                 <div class="py-3 text-center" style="margin: 10px auto">
+                    <?php if (isset($_GET['avaliar']) && $_GET['avaliar'] == 'sucesso') { ?>
+                        <div style="color: lightgreen; font-size: 1.2rem"> Sua avaliação foi realizada!
+                        </div>
+                    <?php } ?>
                     <h2>Veja as valiações dessa vaga:</h2>
+
                 </div>
                 <?php
 
                 $dao = new AvaliacaoDAO();
-                $avaliacoes = $dao->getById($vaga_id);
+                $avaliacoes = $dao->getByVagaId($vaga_id);
                 $quantidadeAvaliacoes = count($avaliacoes);
 
                 if (!count($avaliacoes)) { ?>
@@ -134,6 +142,7 @@ if (isset($_SESSION['usuario'])) {
                         <a href="../vaga/avaliar.php?id=<?= $vaga['id'] ?>">
                             <button type="submit" class=" btn-orange">Avaliar
                             </button>
+
                         </a>
                     </div>
 
@@ -142,28 +151,28 @@ if (isset($_SESSION['usuario'])) {
 
                 foreach ($avaliacoes
 
-                         as $avaliacao) { ?>
+                as $avaliacao) { ?>
 
 
-                    <div class="content avaliacao-content" title="<?= $avaliacao[1] ?>">
+                <div class="content avaliacao-content" title="<?= $avaliacao[1] ?>">
 
-                        <strong>Usuário: </strong><?php echo ucfirst($avaliacao['nome']) ?><br>
-                        <?php echo $avaliacao['titulo'] ?><br>
-                        <?php echo $avaliacao['feedback'] ?><br>
-
+                    <strong>Usuário: </strong><?php echo ucfirst($avaliacao['nome']) ?><br>
+                   <h4> <?php echo $avaliacao['titulo'] ?><br></h4>
+                    <?php echo $avaliacao['feedback'] ?><br>
 
 
                     <?php
                     if ($id == $avaliacao['usuario_id']) { ?>
 
-                        <a class="btn" style="background-color: rgb(243, 156, 95);" href="avaliar_edit.php?id=<?= $avaliacao['avaliacao_id']; ?>">Alterar</a>
-                        <a class="btn" href="avaliar_delete.php?id=<?= $avaliacao['avaliacao_id']; ?>"
+
+                        <a class="btn"
+                           href="avaliar_delete.php?vaga_id=<?= $avaliacao['vaga_id']; ?>&id=<?= $avaliacao['avaliacao_id']; ?>"
                            onclick="return confirm('Deseja confirmar a operação?');">Excluir</a>
 
 
                     <?php }
-                } ?>
-                    </div>
+                    } ?>
+                </div>
 
                 <div class="py-3 text-center" style="margin: 20px auto">
                     <h4>Dê seu feedback</h4>
@@ -192,7 +201,6 @@ if (isset($_SESSION['usuario'])) {
                     <div class="py-3 text-left" style="margin: 40px auto">
                         <h3>Dados da vaga: </h3>
                     </div>
-                    <div class="icon"><i class="fa fa-3x fa-angellist"></i></div>
                     <div class="content" title="<?= $vaga[3] ?>">
                         <?php
 
@@ -201,11 +209,16 @@ if (isset($_SESSION['usuario'])) {
                         $usuario = $dao->getById($id);
                         ?>
 
-                        <?php echo '<strong>Empresa: </strong>' . $usuario[1] ?><br>
-                        <?php echo '<strong>Vaga: </strong>' . $vaga[1] ?><br>
+                        <?php echo '<strong>Empresa: </strong>' . ucfirst($usuario[1]) ?><br>
+                        <?php echo '<strong>Vaga: </strong>' . ucfirst($vaga[1]) ?><br>
                         <p>
-                            <?php echo '<strong>Tipo: </strong> ' . $vaga[2] ?><br>
+                            <?php echo '<strong>Tipo: </strong> ' . ucfirst($vaga[2]) ?><br>
                             <?php echo '<strong>Salário: </strong> ' . $vaga[4] ?><br>
+                            <?php echo '<strong>Data de publicação: </strong> ' . date('d/m/Y', strtotime(($vaga[6]))); ?>
+                            <br>
+                            <?php echo '<strong>Data de expiração: </strong> ' . date('d/m/Y', strtotime(($vaga[7]))); ?>
+                            <br>
+
                             <?php echo '<strong>Descrição: </strong> ' . $vaga[3] ?>
                         </p>
                     </div>
@@ -240,9 +253,10 @@ if (isset($_SESSION['usuario'])) {
 
                             foreach ($usuarios as $usuario) {
                                 echo "<tr>";
-                                echo "<td>" . $usuario[1] . "</td>";
-                                echo "<td>" . $usuario[2] . "</td>";
-                                echo "<td>" . $usuario[3] . "</td>";
+                                echo "<td>" . ucfirst($usuario[1]) . "</td>"; ?>
+                                <td><a href="../assets/img/<?php echo $usuario[2] ?> "> <?php echo $usuario[2] ?> </a>
+                                </td>"
+                                <?php echo "<td>" . ucfirst($usuario[3]) . "</td>";
                                 echo "</tr>";
                             }
                             ?>
@@ -259,7 +273,7 @@ if (isset($_SESSION['usuario'])) {
                     <?php
 
                     $dao = new AvaliacaoDAO();
-                    $avaliacoes = $dao->getById($vaga_id);
+                    $avaliacoes = $dao->getByVagaId($vaga_id);
                     $quantidadeAvaliacoes = count($avaliacoes);
 
                     if (!count($avaliacoes)) { ?>
@@ -281,11 +295,11 @@ if (isset($_SESSION['usuario'])) {
                         <div class="content avaliacao-content" title="<?= $avaliacao[1] ?>">
 
                             <strong>Usuário: </strong><?php echo ucfirst($avaliacao['nome']) ?><br>
-                            <?php echo $avaliacao['titulo'] ?><br>
+                            <h3><?php echo $avaliacao['titulo'] ?><br></h3>
                             <?php echo $avaliacao['feedback'] ?><br>
                         </div>
-                        <a class="btnalterar" href="avaliar_edit.php?id=<?= $avaliacao['avaliacao_id']; ?>">Alterar</a>
-                        <a class="btnexcluir" href="avaliar_delete.php?id=<?= $avaliacao['avaliacao_id']; ?>"
+                        <a class="btnexcluir"
+                           href="avaliar_delete.php?vaga_id=<?= $avaliacao['vaga_id']; ?>&id=<?= $avaliacao['avaliacao_id']; ?>"
                            onclick="return confirm('Deseja confirmar a operação?');">Excluir</a>
                         <a href="../">
                             <button type="submit" class=" btn">Voltar</button>

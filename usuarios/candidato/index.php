@@ -142,7 +142,7 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
 
                             <div class="card-information-box-text">
                                 <div><h2>Nome: </h2></div>
-                                <div><h2><?php echo $usuario[1]; ?></h2></div>
+                                <div><h2><?php echo ucfirst($usuario[1]); ?></h2></div>
                             </div>
 
                             <div class="card-information-box-text">

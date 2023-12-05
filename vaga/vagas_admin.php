@@ -1,5 +1,8 @@
 <?php
 require_once __DIR__ . '/../src/dao/vagadao.php';
+require_once __DIR__ . '/../auth/validarAcesso.php';
+header('Content-type: text/html; charset=utf-8');
+setlocale( LC_ALL, 'pt_BR.utf-8', 'pt_BR', 'Portuguese_Brazil');
 
 $dao = new VagaDAO();
 $vagas = $dao->getAll();
@@ -10,10 +13,9 @@ $quantidadeRegistros = count($vagas);
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous">
-<meta charset="UTF-8">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /> <!--Introduza esta linha no teu html-->
 <meta name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link href="../assets/css/button.css" rel="stylesheet">
 <link href="../assets/css/style.css" rel="stylesheet">
 <link href="../assets/css/usuario.css" rel="stylesheet">
@@ -154,7 +156,8 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
                                 <table id="example" class="display" style="width:100%;">
                                     <thead>
                                     <tr>
-                                        <th>Id</th>
+                                        <th>Id da vaga</th>
+                                        <th>Nome da empresa</th>
                                         <th>Cargo</th>
                                         <th>Tipo</th>
                                         <th>Descrição</th>
@@ -179,16 +182,20 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
                                             ?>
                                             <tr>
 
+
+
+
+
+
                                                 <td><?php echo $vaga['id']; ?></td>
-
-
+                                                <td><?php echo ucfirst($vaga['nome_usuario']); ?></td>
                                                 <td><?= ($vaga['nome']); ?></td>
                                                 <td><?= ($vaga['tipo']); ?></td>
-                                                <td><?= ($vaga['descricao']); ?></td>
+                                                <td><?= substr(($vaga['descricao']), 0, 49); ?>[...]</td>
                                                 <td><?= ($vaga['salario']); ?></td>
                                                 <td><?= ($vaga['carga_horaria']); ?></td>
-                                                <td><?= ($vaga['data_publicacao']); ?></td>
-                                                <td><?= ($vaga['data_expiracao']); ?></td>
+                                                <td><?= date('d/m/Y',  strtotime(($vaga['data_publicacao']))); ?></td>
+                                                <td><?= date('d/m/Y',  strtotime(($vaga['data_expiracao']))); ?></td>
                                                 <td class="td__operacao">
                                                     <a class="btnalterar"
                                                        href="edit.php?id=<?= $vaga['id']; ?>">Alterar</a>

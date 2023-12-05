@@ -15,6 +15,7 @@ $dao = new VagaDAO();
 $vagas = $dao->getByVaga('$nome');
 $quantidadeRegistros = count($vagas);
 
+
 /*$dao = new VagaDAO();
 $usuario = $dao->getByUsuario('$usuario');*/
 
@@ -48,9 +49,9 @@ $usuario = $dao->getByUsuario('$usuario');*/
                                 <h1>Pesquisar vagas</h1>
                             </label>
                             <input type="text" name="vaga" size="50" placeholder="Insira o nome da vaga"></input>
-                            
-                                    <button type="submit" class="btn-primary btn-orange">Buscar</button>
-                                
+
+                            <button type="submit" class="btn-primary btn-orange">Buscar</button>
+
                         </form>
                     </div>
                 </div>
@@ -75,9 +76,9 @@ $usuario = $dao->getByUsuario('$usuario');*/
                 <h2 class="aos-init aos-animate">
                     Ainda não temos as vagas que você procura :( <br>
                     <a href="../">
-                     <button type="button" class="btn btn-primary btn-lg ">
-                                            Voltar
-                     </button>
+                        <button type="button" class="btn btn-primary btn-lg ">
+                            Voltar
+                        </button>
                     </a>
                 </h2>
 
@@ -93,23 +94,41 @@ $usuario = $dao->getByUsuario('$usuario');*/
 
             <?php foreach ($vagas
 
-                           as $vaga) { ?>
+                           as $vaga) {
+
+                $id = $vaga['usuario_id'];
+                $dao = new UsuarioDAO();
+                $usuario = $dao->getById($id);
+                ?>
 
 
                 <article>
-                    <div class="icon"><i class="fa fa-3x fa-angellist"></i></div>
+                    <?php echo '<strong>Empresa: </strong>' . ucfirst($usuario[1]) ?><br>
+
                     <div class="content" title="<?= $vaga['descricao'] ?>">
-                        <?php echo '<strong>Vaga: </strong>' . $vaga['nome'] ?><br>
-                        <p><?php echo '<strong>Tipo: </strong> ' . $vaga['tipo'] ?><br>
+                        <?php echo '<strong>Vaga: </strong>' . substr(ucfirst($vaga['nome']), 0, 34); ?>[...]<br>
+                        <p><?php echo '<strong>Tipo: </strong> ' . ucfirst($vaga['tipo']) ?><br>
                             <?php echo '<strong>Salário: </strong> ' . $vaga['salario'] ?><br>
-                            <?php echo '<strong>Descrição: ...</strong> '; ?>
+                            <?php echo '<strong>Data de publicação: </strong> ' . date('d/m/Y', strtotime(($vaga['data_publicacao']))); ?>
+                            <br>
+                            <?php echo '<strong>Data de expiração: </strong> ' . date('d/m/Y', strtotime(($vaga['data_expiracao']))); ?>
+                            <br>
+
+                            <?php echo '<strong>Descrição: [...]</strong> '; ?>
 
                         </p>
 
 
-
-                                    <a href="candidatar.php?id=<?= $vaga['id'] ?>"><button type="submit"
-                                                                                           class="btn-orange">Ver detalhes</button></a>
+                        <span>
+               <a href="../vaga/candidatar.php?id=<?= $vaga['id'] ?>">
+                    <button type="submit" class="btn-orange">Ver detalhes
+                    </button>
+               </a>
+               <a href="../vaga/avaliar.php?id=<?= $vaga['id'] ?>">
+                    <button type="submit" class="btn">Avaliar vaga
+                    </button>
+               </a>
+            </span>
 
 
                     </div>

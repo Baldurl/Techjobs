@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../src/dao/usuariodao.php';
 require_once __DIR__ . "/../src/dao/vagadao.php";
-
+header('Content-Type: text/html; charset=utf-8');
 
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT) ?? 0;
 $dao = new VagaDAO();
@@ -13,6 +13,11 @@ if (!$vaga) {
     header('location: index.php?error=Vaga não encontrada!');
     exit;
 }
+
+$usuario_id = $vaga['usuario_id'];
+$dao = new UsuarioDAO();
+$usuario = $dao->getById($usuario_id);
+
 ?>
 
 <head>
@@ -86,7 +91,7 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
 <main class="main-vaga">
 
     <div class="card-vaga">
-        <h2>Alterar vaga</h2>
+        <h2>Alterar vaga do usuário <?= $usuario['nome'] ?></h2>
 
         <form action="update.php" method="post">
             <div class="container">
@@ -106,7 +111,7 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
                                 <div>
                                     <label for="tipo">Tipo: </label>
                                     <select name="tipo">
-                                        <option value="<?= htmlspecialchars($vaga['tipo']) ?>"></option>
+                                        <option value="<?= $vaga['tipo'] ?>"></option>
                                         <option value="Efetivo/CLT">Efetivo/CLT</option>
                                         <option value="Estágio">Estágio</option>
                                         <option value="Trainee">Trainee</option>
@@ -116,7 +121,7 @@ Se for um empresa, ele pode alterar dados sendo um perfil empresa. -->
                                     <label for="descricao">Descrição: </label>
                                     <textarea id="descricao" name="descricao" rows="16" cols="100"
                                               required
-                                    ><?= htmlspecialchars($vaga['descricao']) ?></textarea>
+                                    ><?= $vaga['descricao'] ?></textarea>
                                 </div>
                                 <div>
                                     <label for="salario">Salário: </label>

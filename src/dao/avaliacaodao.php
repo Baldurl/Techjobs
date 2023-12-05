@@ -22,12 +22,24 @@ class  AvaliacaoDAO
 
     }
 
-    public function getById(int $vaga_id)
+    public function getByVagaId(int $vaga_id)
     {
 
         $query = "SELECT *, avaliacao.id as avaliacao_id ,avaliacao.nome as titulo FROM avaliacao INNER JOIN usuario u on avaliacao.usuario_id = u.id WHERE vaga_id = :vaga_id";
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(":vaga_id", $vaga_id);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        $this->dbh = null;
+        return $rows;
+    }
+
+    public function getById(int $id)
+    {
+
+        $query = "SELECT * FROM avaliacao WHERE id = :id";
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(":id", $id);
         $stmt->execute();
         $rows = $stmt->fetchAll();
         $this->dbh = null;

@@ -224,8 +224,20 @@ class  UsuarioDAO
 
         return $usuario;
 
+    }
+
+    public function enviarCurriculo($curriculo, int $id){
+
+        $query = "UPDATE usuario SET curriculo = :curriculo WHERE id = :id";
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(":curriculo", $curriculo);
+        $stmt->bindParam(":id", $id);
+        $resultado = $stmt->execute();
+        $this->dbh = null;
+        return $resultado;
 
     }
+
 
 
 }

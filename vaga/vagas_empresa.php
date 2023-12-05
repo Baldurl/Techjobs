@@ -73,7 +73,7 @@ $vagas = $dao->getByUsuarioId($usuario_id);
 
                     <div class="col-md-12">
 
-                        <div class="card-body font-weight-bold card-vaga-main">
+                        <div class="card-body card-vaga-main">
 
 
                             <div class="card-vaga-box">
@@ -84,13 +84,14 @@ $vagas = $dao->getByUsuarioId($usuario_id);
 
                                     as $vaga) { ?>
                                     <article>
-                                        <div class="icon"><i class="fa fa-3x fa-angellist"></i></div>
                                         <div class="content" title="<?= $vaga['descricao'] ?>">
                                             <?php echo '<strong>Vaga: </strong>' . $vaga['nome'] ?><br>
                                             <p>
                                                 <?php echo '<strong>Tipo: </strong> ' . $vaga['tipo'] ?><br>
                                                 <?php echo '<strong>Salário: </strong> ' . $vaga['salario'] ?><br>
-                                                <?php echo '<strong>Descrição: ...</strong> '; ?>
+                                                <?php echo '<strong>Data de publicação: </strong> ' . date('d/m/Y',  strtotime(($vaga['data_publicacao']))); ?><br>
+                                                <?php echo '<strong>Data de expiração: </strong> ' . date('d/m/Y',  strtotime(($vaga['data_expiracao']))); ?><br>
+                                                <?php echo '<strong>Descrição: [...]</strong> '; ?>
 
 
                                             </p>

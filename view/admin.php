@@ -104,75 +104,76 @@ $nome = $_SESSION['usuario']['nome'];
 -->
 
 
-
-
 <section class="main-noticias">
     <header>
-        <h2>Notícias Recentes</h2>
+        <h2>Notícias recentes</h2>
     </header>
     <div class="main-noticias-content" id="news">
         <div class="box-noticias">
             <div class="box-noticias-content">
 
                 <div class="box-noticias-content">
-                    <h2>Pensar Como um programador!!</h2>
-                    <p>
-                        Pensar como um programador: é usar a tecnologia como extensão das suas capacidades. É
+                    <h2>Pensar como um programador!!</h2>
+                    <img src="../assets/img/programador.jpg" alt="Pensar como um rogramador" width="500" height="300" style="padding: 30px 0; border-radius: 15px">
+                    <h4>
+                        Pensar como um programador é usar a tecnologia como extensão das suas capacidades. É
                         uma
                         forma que você tem de usar o digital para resolver problemas e alcançar seus objetivos.
-                    </p>
-                    <p>
+                    </h4>
+                    <h4>
                         <a href="https://www.freecodecamp.org/portuguese/news/como-pensar-como-um-programador-licoes-de-resolucao-de-problemas/"
-                           target="_blank" rel="external">Ver Mais <i class="fa fa-arrow-right"></i></a>
-                    </p>
+                           target="_blank" style="text-decoration: none" rel="external">Ver Mais <i class="fa fa-arrow-right"></i></a>
+                    </h4>
                 </div>
             </div>
         </div>
         <div class="box-noticias">
             <div class="box-noticias">
                 <div class="box-noticias-content">
-                    <h2>Tecnologias & Hardwares</h2>
-                    <p>
+                    <h2>Tecnologias & hardwares</h2>
+                    <img src="../assets/img/adrenaline.jpg" alt="adrenaline" width="500" height="300" style="padding: 30px 0; border-radius: 15px">
+
+                    <h4>
                         Conheça um dos maiores canais de tecnologia e hardware do país "Adrenaline".
                         Uma comunidade online com fonte de informação sobre Tecnologia, Hardware, jogos,
                         notícias,
                         artigos e análises de eletrônicos de consumo, gadgets, hardwares para computador e
                         games.
-                    </p>
-                    <p><a href="https://www.adrenaline.com.br/" target="_blank" rel="external">Ver Mais <i
-                                    class="fa fa-arrow-right"></i></a></p>
+                    </h4>
+                    <h4><a href="https://www.adrenaline.com.br/" target="_blank" style="text-decoration: none" rel="external">Ver Mais <i
+                                    class="fa fa-arrow-right"></i></a></h4>
                 </div>
             </div>
         </div>
         <div class="box-noticias">
             <div class="box-noticias">
                 <div class="box-noticias-content">
-                    <h2>Tecnologias & Hardwares</h2>
-                    <p>
-                        Conheça um dos maiores canais de tecnologia e hardware do país "Adrenaline".
-                        Uma comunidade online com fonte de informação sobre Tecnologia, Hardware, jogos,
-                        notícias,
-                        artigos e análises de eletrônicos de consumo, gadgets, hardwares para computador e
-                        games.
-                    </p>
-                    <p><a href="https://www.adrenaline.com.br/" target="_blank" rel="external">Ver Mais <i
-                                    class="fa fa-arrow-right"></i></a></p>
+                    <h2>Tecnologia & inovação</h2>
+                    <img src="../assets/img/web-summit.jpg" alt="web-summit" width="500" height="300" style="padding: 30px 0; border-radius: 15px">
+
+                    <h4>
+                        Web Summit: Conheça 7 startups que prometem mudar seus setores com IA.
+                        O maior evento de inovação e tecnologia do mundo deixou claro a nova máxima:
+                        quanto mais inteligência artificial, melhor serão os negócios.
+                    </h4>
+                    <h4><a href="https://exame.com/inteligencia-artificial/web-summit-conheca-7-startups-que-prometem-mudar-seus-setores-com-ia/" target="_blank"
+                           style="text-decoration: none" rel="external">Ver Mais <i  class="fa fa-arrow-right"></i></a></h4>
                 </div>
             </div>
         </div>
         <div class="box-noticias">
             <div class="box-noticias">
                 <div class="box-noticias-content">
-                    <h2>Tecnologias & Hardwares</h2>
-                    <p>
-                        Conheça um dos maiores canais de tecnologia e hardware do país "Adrenaline".
-                        Uma comunidade online com fonte de informação sobre Tecnologia, Hardware, jogos,
-                        notícias,
-                        artigos e análises de eletrônicos de consumo, gadgets, hardwares para computador e
-                        games.
-                    </p>
-                    <p><a href="https://www.adrenaline.com.br/" target="_blank" rel="external">Ver Mais <i
-                                    class="fa fa-arrow-right"></i></a></p>
+                    <h2>Inteligência artificial na saúde</h2>
+                    <img src="../assets/img/saude-inteligencia-artificial.png" alt="saude-inteligencia-artificial" width="500" height="300" style="padding: 30px 0; border-radius: 15px">
+
+                    <h4>
+                        Cientistas citam regras para bem usar a inteligência artificial na saúde. Avanços em aplicações na oftalmologia,
+                        por exemplo, já permitem detectar doença de Parkinson com cerca de sete anos de antecedência.
+
+                    </h4>
+                    <h4 style="margin-bottom: 60px"><a href="https://veja.abril.com.br/coluna/coluna-claudio-lottenberg/regras-para-bem-usar-a-inteligencia-artificial-na-saude/" target="_blank"
+                                                       style="text-decoration: none;" rel="external">Ver Mais <i  class="fa fa-arrow-right"></i></a></h4>
                 </div>
             </div>
         </div>
@@ -196,11 +197,7 @@ $nome = $_SESSION['usuario']['nome'];
                 <h1>Lucas Caio</h1>
                 <h3>Developer front-end</h3>
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
-                    laborum
-                    id
-                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
-                    officia corporis voluptatum rem ut perspiciatis. Fuga?
+                    Especialista em front-end, apto a estilizar o site de maneira impecável utilizando css e html.
                 </p>
                 <div class="box-single-medias">
                     <i class="fa fa-2x fa-facebook"></i>
@@ -214,11 +211,7 @@ $nome = $_SESSION['usuario']['nome'];
                 <h1>Jordan de Carvalho</h1>
                 <h3>Developer back-end</h3>
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
-                    laborum
-                    id
-                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
-                    officia corporis voluptatum rem ut perspiciatis. Fuga?
+                    Especialista em back-end, responsável pelo desenvolvimento de APIs e aplicativos.
                 </p>
                 <div class="box-single-medias">
                     <i class="fa fa-2x fa-instagram"></i>
@@ -232,11 +225,7 @@ $nome = $_SESSION['usuario']['nome'];
                 <h1>Pedro Santana</h1>
                 <h3>Developer Full-Stack</h3>
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
-                    laborum
-                    id
-                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
-                    officia corporis voluptatum rem ut perspiciatis. Fuga?
+                    Especialista em análise de requisitos e desenvolvimento de sistemas, abraange de conhecimentos diversos da elaboração de projetos.
                 </p>
                 <div class="box-single-medias">
                     <i class="fa fa-2x fa-instagram"></i>
@@ -250,11 +239,7 @@ $nome = $_SESSION['usuario']['nome'];
                 <h1>Ronan Souza</h1>
                 <h3>Developer Full-Stack</h3>
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
-                    laborum
-                    id
-                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
-                    officia corporis voluptatum rem ut perspiciatis. Fuga?
+                    Especialista em atendimento ao suporte e suporte técnico.
                 </p>
                 <div class="box-single-medias">
                     <i class="fa fa-2x fa-instagram"></i>

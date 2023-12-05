@@ -33,11 +33,7 @@
                 <h1>Lucas Caio</h1>
                 <h3>Developer front-end</h3>
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
-                    laborum
-                    id
-                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
-                    officia corporis voluptatum rem ut perspiciatis. Fuga?
+                    Especialista em front-end, apto a estilizar o site de maneira impecável utilizando css e html.
                 </p>
                 <div class="box-single-medias">
                     <i class="fa fa-2x fa-facebook"></i>
@@ -51,11 +47,7 @@
                 <h1>Jordan de Carvalho</h1>
                 <h3>Developer back-end</h3>
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
-                    laborum
-                    id
-                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
-                    officia corporis voluptatum rem ut perspiciatis. Fuga?
+                    Especialista em back-end, responsável pelo desenvolvimento de APIs e aplicativos.
                 </p>
                 <div class="box-single-medias">
                     <i class="fa fa-2x fa-instagram"></i>
@@ -69,11 +61,7 @@
                 <h1>Pedro Santana</h1>
                 <h3>Developer Full-Stack</h3>
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
-                    laborum
-                    id
-                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
-                    officia corporis voluptatum rem ut perspiciatis. Fuga?
+                    Especialista em análise de requisitos e desenvolvimento de sistemas, abraange de conhecimentos diversos da elaboração de projetos.
                 </p>
                 <div class="box-single-medias">
                     <i class="fa fa-2x fa-instagram"></i>
@@ -81,16 +69,13 @@
                 </div>
             </div>
         </div>
+
         <div class="box-single-team">
             <div class="box-single-team-content">
                 <h1>Ronan Souza</h1>
                 <h3>Developer Full-Stack</h3>
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, unde dicta ipsum
-                    laborum
-                    id
-                    numquam placeat minima exercitationem tempora blanditiis tenetur temporibus! Repudiandae
-                    officia corporis voluptatum rem ut perspiciatis. Fuga?
+                    Especialista em atendimento ao suporte e suporte técnico.
                 </p>
                 <div class="box-single-medias">
                     <i class="fa fa-2x fa-instagram"></i>
@@ -98,6 +83,56 @@
                 </div>
             </div>
         </div>
+
+
+        <!--   LINHA ANIMADA PARA SEPARAR CONTEÚDO
+        <div class="box-single-team">
+            <div data-aos="fade-up">
+                <div class="line"></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+         FIM DA LINHA-->
+
+    </div>
+
+</section>
+<section class="main_footer">
+
+    <article class="main_footer_our_pages">
+        <header>
+            <h2>Nossas Páginas</h2>
+        </header>
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="blog.php">Notícias</a></li>
+            <li><a href="equipe.php">Nossa Equipe</a></li>
+            <li><a href="contato.php">Contato</a></li>
+        </ul>
+    </article>
+
+    <article class="main_footer_links">
+        <header>
+            <h2>Links Úteis</h2>
+        </header>
+        <ul>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Aviso Legal</a></li>
+            <li><a href="#">Termos de Uso</a></li>
+        </ul>
+    </article>
+
+    <article class="main_footer_about">
+        <header>
+            <h2>Techjobs</h2>
+        </header>
+        <p>Mantenha-se atualizado com o mercado de trabalho. Desenvolva seu networking e trabalhe para construir o seu
+            futuro</p>
+    </article>
+</section>
+<footer class="main_footer_rights">
+    <p>ETC - Todos os direitos reservados.</p>
+</footer>
 </body>
 </html>
 

@@ -567,13 +567,17 @@ a {
     text-align: center;
 
 }
-.main-assinatura-header  h1 {
+.main-assinatura-header h1 {
     font-size: 2rem;
     font-weight: 700;
     color: #ffffff;
-    font-style: italic;
-    letter-spacing: -1px;
-    text-transform: capitalize;
+    padding: 35px 0;
+
+}
+.main-assinatura-header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: cornflowerblue;
     padding: 35px 0;
 
 }
@@ -691,7 +695,6 @@ a {
     font-style: italic;
     letter-spacing: -1px;
     color: #201f1f;
-    text-transform: capitalize;
     padding: 35px 0;
 
 }
@@ -721,7 +724,6 @@ a {
     font-style: italic;
     letter-spacing: -1px;
     color: #201f1f;
-    text-transform: capitalize
 }
 
 .box-cursos-content p {
@@ -794,7 +796,6 @@ a {
     color: #ffffff;
     font-style: italic;
     letter-spacing: -1px;
-    text-transform: capitalize;
     padding: 35px 0;
 
 }
@@ -812,7 +813,6 @@ a {
     font-style: italic;
     letter-spacing: -1px;
     color: #201f1f;
-    text-transform: capitalize;
     padding: 35px 0;
 
 }
@@ -860,7 +860,6 @@ a {
     color: #ffffff;
     font-style: italic;
     letter-spacing: -1px;
-    text-transform: capitalize;
     padding: 35px 0;
 
 
@@ -1027,7 +1026,6 @@ div.main-team-box {
     margin-top: 50px;
     margin-bottom: 10px;
     font-size: 35px;
-    text-transform: capitalize
 }
 
 ::selection {

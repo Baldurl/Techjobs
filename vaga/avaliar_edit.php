@@ -10,9 +10,13 @@ $usuario_id  = $_SESSION['usuario']['id'];
 $dao = new UsuarioDAO();
 $usuario = $dao->getbyId($usuario_id);
 
-$vaga_id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+$vaga_id = filter_input(INPUT_GET, 'vaga_id', FILTER_SANITIZE_SPECIAL_CHARS);
 $dao= new VagaDAO();
 $vaga = $dao->getbyId($vaga_id);
+
+$dao= new AvaliacaoDAO();
+$avaliacao = $dao->getbyVagaId($vaga_id);
+
 
 
 
@@ -41,7 +45,7 @@ $vaga = $dao->getbyId($vaga_id);
     <div class="card-login">
 
 
-        <form action="avaliar_update.php" method="post">
+        <form action="avaliar_update.php?vaga_id=<?= $vaga_id ?>" method="post">
             <div class="container">
                 <div class="row text">
                     <div class="col-md-12">
@@ -50,12 +54,11 @@ $vaga = $dao->getbyId($vaga_id);
 
                                 <div class="form-group card-login-content-input">
                                     <label for="nome">Título</label>
-                                    <input type="text" name="nome" style="width: 100%">
+                                    <input type="text" name="nome" style="width: 100%" value="<?= $avaliacao['feedback'] ?>">
 
                                     <label for="feedback">Descrição</label>
                                     <textarea style="width: 100%" name="feedback" id="feedback" cols="30" rows="10">
-                                        </textarea>
-                                    <input type="hidden" name="vaga_id" value="<?= $vaga_id ?>">
+                                        <?php echo $avaliacao['feedback'] ?> </textarea>
                                 </div>
                             </div>
                             <button type="submit" class=" btn-primary btn-orange">Confirmar</button>

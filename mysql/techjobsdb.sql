@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 04/12/2023 às 10:30
+-- Tempo de geração: 05/12/2023 às 04:53
 -- Versão do servidor: 8.0.30
 -- Versão do PHP: 8.1.10
 
@@ -54,7 +54,9 @@ CREATE TABLE `avaliacao` (
 --
 
 INSERT INTO `avaliacao` (`id`, `nome`, `feedback`, `usuario_id`, `vaga_id`) VALUES
-(27, 'Essa vaga em back-end é muito boa!', 'A vaga atendeu a minha necessidade, empresa fantástica, profissionais muito bem qualificados.', 49, 15);
+(28, 'Essa vaga em Web Design é magnífica', 'Profissionais muito bem qualificados, estou adquirindo muita eficiência e aprendizado.                                        ', 49, 15),
+(30, 'Programa de estágio eficiente', 'Estágio muito bom para quem está começando na área.                    ', 49, 17),
+(32, 'Vaga muito boa para profissionais experientes. ', 'Excelente carga horária e trabalho remoto, sem contar os benefícios inclusos, como os planos de saúde e o vale-refeição.                                       ', 44, 18);
 
 -- --------------------------------------------------------
 
@@ -114,7 +116,7 @@ CREATE TABLE `usuario` (
   `lote` varchar(10) DEFAULT NULL,
   `rua` varchar(30) DEFAULT NULL,
   `complemento` varchar(20) DEFAULT NULL,
-  `curriculo` varchar(100) NOT NULL,
+  `curriculo` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `perfil_id` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
@@ -124,12 +126,14 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id`, `nome`, `razao_social`, `cpf`, `cnpj`, `senha`, `email`, `sexo`, `ddi`, `ddd`, `numero`, `cep`, `cidade`, `logradouro`, `bairro`, `lote`, `rua`, `complemento`, `curriculo`, `perfil_id`) VALUES
 (1, 'Jordan', NULL, '075-276-691-01', NULL, '123', 'jordanvieiracarvalho@hotmail.com', 'Masculino', '', '61', '998490406', '72251702', 'Ceilândia', NULL, 'QNO 7', '10', 'B', NULL, '', 1),
-(29, 'Empresa', NULL, '1212312312', NULL, '123', 'empresa@email.com', NULL, NULL, '61', '998490406', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 3),
-(44, 'joao', NULL, '12312312312', NULL, '123', 'joao@email.com', NULL, NULL, '61', '91234-1234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 2),
-(49, 'laila', '', '07227669101', '', '1234', 'laila@email.com', NULL, '55', '61', '93333-3333', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 2),
-(51, 'Adidas', 'adidas', NULL, '111.111.111/1111', '123', 'adidas@email.com', NULL, NULL, '61', '91111-1111', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 3),
-(52, 'Nike', 'nike', NULL, '222.222.222/2222', '123', 'nike@email.com', NULL, NULL, '61', '92222-2222', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 3),
-(53, 'ifoood', 'ifood', NULL, '22.222.222/0001-22', '0123', 'ifood@email.com', NULL, NULL, '61', '91234-1234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 3);
+(29, 'microsoft', NULL, '1212312312', NULL, '123', 'microsoft@email.com', NULL, NULL, '61', '998490406', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 3),
+(44, 'joao', NULL, '12312312312', NULL, '123', 'joao@email.com', NULL, NULL, '61', '91234-1234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Currículo-Jordan.pdf', 2),
+(49, 'laila', '', '07227669101', '', '1234', 'laila@email.com', NULL, '55', '61', '93333-3333', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Currículo-Jordan.pdf', 2),
+(51, 'VagasApp', 'adidas', NULL, '111.111.111/1111', '123', 'vagasapp@email.com', NULL, NULL, '61', '91111-1111', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 3),
+(52, 'Salesjobs', 'nike', NULL, '222.222.222/2222', '123', 'salesjobs@email.com', NULL, NULL, '61', '92222-2222', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 3),
+(53, 'Vert Integradora de TI', 'ifood', NULL, '22.222.222/0001-22', '0123', 'vert@email.com', NULL, NULL, '61', '91234-1234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 3),
+(55, 'maria', NULL, '999999999-99', NULL, '123', 'maria@email.com', NULL, NULL, '61', '99999-9999', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Currículo-Jordan.pdf', 2),
+(56, 'Netvagas', 'Netvagas', '', '12.345.678/0001-00', '123', 'netvagas@email.com', NULL, '55', '61', '97777-7777', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3);
 
 -- --------------------------------------------------------
 
@@ -148,10 +152,11 @@ CREATE TABLE `usuario_has_vaga` (
 
 INSERT INTO `usuario_has_vaga` (`usuario_id`, `vaga_id`) VALUES
 (44, 15),
+(44, 18),
 (49, 15),
-(49, 16),
 (49, 18),
-(49, 19);
+(49, 19),
+(55, 15);
 
 -- --------------------------------------------------------
 
@@ -161,7 +166,7 @@ INSERT INTO `usuario_has_vaga` (`usuario_id`, `vaga_id`) VALUES
 
 CREATE TABLE `vaga` (
   `id` int NOT NULL,
-  `nome` varchar(50) NOT NULL,
+  `nome` varchar(150) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `tipo` varchar(30) NOT NULL,
   `descricao` longtext NOT NULL,
   `salario` varchar(50) NOT NULL,
@@ -176,11 +181,11 @@ CREATE TABLE `vaga` (
 --
 
 INSERT INTO `vaga` (`id`, `nome`, `tipo`, `descricao`, `salario`, `carga_horaria`, `data_publicacao`, `data_expiracao`, `usuario_id`) VALUES
-(15, 'Vaga na adidas', 'Efetivo/Clt', 'O que é Lorem Ipsum? Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker. O que é Lorem Ipsum? Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.', 'R$1000,00', '50h semanais', '2023-11-09', '2023-11-15', 51),
-(16, 'Outra vaga na adidas', 'Efetivo/Clt', '.O que é Lorem Ipsum? Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker. .O que é Lorem Ipsum? Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.', 'R$2000,00', '70h semanais', '2023-11-14', '2023-11-20', 51),
-(17, 'Vaga na nike', 'Efetivo/Clt', 'Porque nós o usamos? É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de &#34;Conteúdo aqui, conteúdo aqui&#34;, fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão, e uma rápida busca por &#39;lorem ipsum&#39; mostra vários websites ainda em sua fase de construção. Várias versões novas surgiram ao longo dos anos, eventualmente por acidente, e às vezes de propósito (injetando humor, e coisas do gênero). Onde posso conseguí-lo? Existem muitas variações disponíveis de passagens de Lorem Ipsum, mas a maioria sofreu algum tipo de alteração, seja por inserção de passagens com humor, ou palavras aleatórias que não parecem nem um pouco convincentes. Se você pretende usar uma passagem de Lorem Ipsum, precisa ter certeza de que não há algo embaraçoso escrito escondido no meio do texto. Todos os geradores de Lorem Ipsum na internet tendem a repetir pedaços predefinidos conforme necessário, fazendo deste o primeiro gerador de Lorem Ipsum autêntico da internet. Ele usa um dicionário com mais de 200 palavras em Latim combinado com um punhado de modelos de estrutura de frases para gerar um Lorem Ipsum com aparência razoável, livre de repetições, inserções de humor, palavras não características, etc.', 'R$3000,00', '70h semanais', '2023-11-13', '2023-11-25', 52),
-(18, 'Suporte técnico', 'clt', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. &#13;&#10;Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'R$1300,00', '60h semanais', '2023-11-27', '2023-11-30', 29),
-(19, 'Recepcionista ', 'Estágio', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&#38;#13;&#38;#10;&#38;#13;&#38;#10;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'R$1000,00', '40h semanais', '2023-11-28', '2023-11-30', 53);
+(15, 'Web Designer', 'Efetivo/Clt', 'Procuramos um Web Designer talentoso e criativo para se juntar à nossa equipe e contribuir para a criação de experiências digitais excepcionais. Se você é apaixonado por design web, tem um olho afiado para detalhes e está atualizado com as tendências de design mais recentes, gostaríamos de ouvir de você.&#13;&#10;Responsabilidades:&#13;&#10;&#13;&#10;Design de Interface de Usuário (UI): Criar layouts atraentes e intuitivos para websites e aplicativos, garantindo a melhor experiência do usuário.&#13;&#10;Design Responsivo: Desenvolver designs que funcionem de forma eficaz em diferentes dispositivos e tamanhos de tela.&#13;&#10;Prototipagem: Criar protótipos interativos e wireframes para visualizar e testar conceitos de design.&#13;&#10;Colaboração: Trabalhar em estreita colaboração com a equipe de desenvolvimento, marketing e clientes para garantir a execução bem-sucedida dos projetos.&#13;&#10;Gestão de Conteúdo Visual: Contribuir para a seleção e criação de imagens, gráficos e elementos visuais que enriqueçam o conteúdo online.&#13;&#10;Manutenção e Atualização: Fornecer suporte contínuo para atualizações de conteúdo e melhorias de design em websites existentes.&#13;&#10;Tendências de Design: Manter-se atualizado sobre as tendências de design e tecnologias emergentes para garantir que nossos projetos estejam na vanguarda.&#13;&#10;&#13;&#10;&#13;&#10;Requisitos:&#13;&#10;&#13;&#10;Experiência comprovada em design web, preferencialmente com um portfólio de projetos anteriores.&#13;&#10;Domínio de ferramentas de design, como Adobe Creative Suite (Photoshop, Illustrator, XD) ou ferramentas similares.&#13;&#10;Conhecimento em HTML, CSS e outras tecnologias front-end é uma vantagem.&#13;&#10;Criatividade e habilidade para traduzir conceitos complexos em designs visualmente atraentes.&#13;&#10;Capacidade de trabalhar de forma independente e em equipe, gerenciando prazos e prioridades.&#13;&#10;Boa compreensão dos princípios de usabilidade e experiência do usuário (UX).&#13;&#10;&#13;&#10;Benefícios:&#13;&#10;&#13;&#10;Salário competitivo.&#13;&#10;Oportunidades de desenvolvimento profissional.&#13;&#10;Ambiente de trabalho criativo e colaborativo.&#13;&#10;Pacote de benefícios abrangente.&#13;&#10;', 'R$3500,00', '50h semanais', '2023-11-09', '2023-12-15', 51),
+(17, '(Homeoffice) Programa de Estágio - Tecnologia da informação', 'Estágio', 'Empresa brasileira de tecnologias e serviços que foi pioneira no mundo ao se especializar 100% em recrutamento, seleção e avaliação de profissionais de vendas e marketing. É norteada pelo foco em qualidade e gerar valor junto aos clientes, e usa tecnologia somada ao know-how dos consultores para ter alto nível de assertividade.&#13;&#10;&#13;&#10;O que oferecemos:&#13;&#10;&#13;&#10;- Oportunidade de aprendizado prático em um ambiente de trabalho colaborativo.&#13;&#10;- Experiência em uma empresa líder, com possibilidade de crescimento.&#13;&#10;- Mentoria e suporte contínuo para desenvolvimento profissional.&#13;&#10;&#13;&#10;Pré-requisitos:&#13;&#10;&#13;&#10;- Ensino superior em andamento em cursos relacionados a Tecnologia da Informação ou áreas correlatas;&#13;&#10;- Desejável experiência prévia em áreas de Suporte e SaaS;&#13;&#10;- Disponibilidade de atuar em horário comercial (pela manhã ou tarde);&#13;&#10;- Boa comunicação oral e escrita.&#13;&#10;&#13;&#10;', 'R$1200,00', '60h semanais', '2023-11-13', '2023-12-25', 52),
+(18, 'Desenvolvedor IOS Sênior', 'Efetivo/CLT', 'Com maestria técnica e excelência operacional estão sempre buscando entender as necessidades dos nossos clientes para criar e desenvolver os melhores produtos digitais.&#13;&#10;Nosso time é multidisciplinar, dominam metodologias e práticas ágeis, são dedicados a fazerem entregas constantes de valor.&#13;&#10;Diante disso, construímos o produto certo, do jeito correto e operamos para garantir a melhor experiência do cliente, além de estabilidade, qualidade e confiabilidade.&#13;&#10;&#13;&#10;RESPONSABILIDADES E ATRIBUIÇÕES&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;Desenvolvedor iOS Sênior para atuação em projeto da área financeira. &#13;&#10;&#13;&#10;Participar da concepção, desenvolvimento e entrega de produto digital destinado a plataforma Open Banking.&#13;&#10;&#13;&#10;&#13;&#10;REQUISITOS E QUALIFICAÇÕES&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;Experiência em desenvolvimento e manutenção de aplicativos mobile nativos iOS (Swift);&#13;&#10;Experiência no uso de Web Services (REST, JSON/XML);&#13;&#10;Sólidos conhecimentos em construção de views (Xibs, Storyboards, Autolayout, ViewCode);&#13;&#10;Conhecimento Metodologia Agile, Scrum.&#13;&#10;Conhecimentos em Programação Orientada a Objetos;&#13;&#10;Conhecimentos em programação com reativo (RxSwift);&#13;&#10;Conhecimentos em desenvolvimento de testes;&#13;&#10;Conhecimentos em desenvolvimento com frameworks;&#13;&#10;Persistência com Core Data ou Realm;&#13;&#10;Gestão de dependências com CocoaPods e Carthage;&#13;&#10;Guide Lines da Apple.&#13;&#10;&#13;&#10;NOSSOS BENEFÍCIOS:&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;● Plano de Saúde Bradesco (Coparticipação de 30%);&#13;&#10;● Odontológico Bradesco (Sem contribuição);&#13;&#10;● Dr. Alper - Plataforma healthtech com telemedicina, teleorientação médica e nutricionista;&#13;&#10;● Seguro de Vida;&#13;&#10;● Gympass;&#13;&#10;● Auxílio Creche;&#13;&#10;● Apoio Pass.&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;BENEFÍCIOS FLEXÍVEIS - que é possível direcionar os pontos da maneira que mais fizer sentido, dentre os benefícios:&#13;&#10;&#13;&#10;● Vale-alimentação;&#13;&#10;● Vale-refeição;&#13;&#10;● Auxílio Combustível;&#13;&#10;● Auxílio Home Office;&#13;&#10;● Previdência privada;&#13;&#10;● Upgrade de convênio médico.&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;', 'R$20000,00', '70h semanais', '2023-11-27', '2023-12-30', 29),
+(19, 'Técnico de Suporte', 'Efetivo/CLT', 'Sobre a vaga&#13;&#10;Vagas presenciais para Brasília / Anápolis / Campo Grande e Cuiabá&#13;&#10;Disponibilidade para atuação 12x36 dia ou noite - presencial&#13;&#10;Ensino médio completo.&#13;&#10;Experiência com suporte técnico presencial ou remoto&#13;&#10;&#13;&#10;Atribuições:&#13;&#10;&#13;&#10; Configurar, Desinstalar, Instalar e substituir - Gabinete Desktop - Monitor - Mouse&#13;&#10; Atualizar, configurar, criar atalho, Criar Imagem, formatar, mapear pasta, Realizar Backup de Sistema Operacional - Desktop&#13;&#10; Configurar E-Mail - Equipamentos Celular&#13;&#10; Alterar DNS - Equipamentos Estação de trabalho&#13;&#10; Equipamentos Estação de trabalho - Configurar Teclado - Monitor - Perfil Estação de Trabalho&#13;&#10; Equipamentos Estação de trabalho: Incluir e retirar do Domínio&#13;&#10; Configurar, Instalar - Equipamentos Multifuncional&#13;&#10; Atualizar, configurar, criar atalho, Criar Imagem, formatar, mapear pasta - Notebook&#13;&#10; Configurar Impressora e sanar dúvidas', 'R$2000,00', '40h semanais', '2023-11-28', '2023-12-30', 53),
+(21, 'Estagiário de TI', 'Estágio', 'PARA ISSO É ESSENCIAL QUE VOCÊ:&#13;&#10;&#13;&#10;Esteja cursando curso superior em Redes de Computadores e áreas relacionadas;&#13;&#10;Tenha conhecimentos em hardware de notebooks;&#13;&#10;Conheça sistemas operacionais Windows;&#13;&#10;Tenha conhecimentos básicos em redes IP (modelo OSI, DNS, DHCP).&#13;&#10;&#13;&#10;TRABALHO PRESENCIAL E DE TEMPO INTEGRAL.', 'R$1000,00', '30h semanais', '2023-12-03', '2023-12-10', 56);
 
 --
 -- Índices para tabelas despejadas
@@ -256,7 +261,7 @@ ALTER TABLE `assinatura`
 -- AUTO_INCREMENT de tabela `avaliacao`
 --
 ALTER TABLE `avaliacao`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT de tabela `pagamento`
@@ -274,13 +279,13 @@ ALTER TABLE `perfil`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT de tabela `vaga`
 --
 ALTER TABLE `vaga`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Restrições para tabelas despejadas

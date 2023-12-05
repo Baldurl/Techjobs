@@ -26,13 +26,16 @@ foreach ($vagas
 
 
     <article>
-        <div class="icon"><i class="fa fa-3x fa-angellist"></i></div>
         <?php echo '<strong>Empresa: </strong>' . ucfirst($usuario[1]) ?><br>
         <div class="content" title="<?= $vaga['descricao'] ?>">
-            <?php echo '<strong>Vaga: </strong>' . ucfirst($vaga['nome']) ?><br>
-            <p><?php echo '<strong>Tipo: </strong> ' . $vaga['tipo'] ?><br>
+            <?php echo '<strong>Vaga: </strong>' . substr(ucfirst($vaga['nome']), 0, 34); ?>[...]<br>
+            <p><?php echo '<strong>Tipo: </strong> ' . ucfirst($vaga['tipo']) ?><br>
                 <?php echo '<strong>Salário: </strong> ' . $vaga['salario'] ?><br>
+                <?php echo '<strong>Data de publicação: </strong> ' . date('d/m/Y',  strtotime(($vaga['data_publicacao']))); ?><br>
+
+                <?php echo '<strong>Data de expiração: </strong> ' . date('d/m/Y',  strtotime(($vaga['data_expiracao']))); ?><br>
                 <?php echo '<strong>Descrição: [...]</strong> '; ?>
+
 
 
             </p>
